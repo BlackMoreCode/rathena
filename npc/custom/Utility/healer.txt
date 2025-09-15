@@ -1,0 +1,61 @@
+//===== rAthena Script
+-	script	npc_healer	FAKE_NPC,{
+	OnTouch:
+		callfunc("func_healer");
+		end;
+}
+
+// Duplicates
+prontera,160,187,5	duplicate(npc_healer)	Healer#go0	4_F_ACOLYTE
+morocc,153,97,5	duplicate(npc_healer)	Healer#go1	4_F_JP_NOAH
+geffen,127,63,5	duplicate(npc_healer)	Healer#go2	4_F_JP_NOAH
+payon,173,104,5	duplicate(npc_healer)	Healer#go3	4_F_JP_NOAH
+alberta,30,240,5	duplicate(npc_healer)	Healer#go4	4_F_JP_NOAH
+izlude,123,148,5	duplicate(npc_healer)	Healer#go5	4_F_JP_NOAH
+// morocc,153,97,5  duplicate(npc_healer) Healer#go1  4_F_JP_NOAH
+
+
+/*
+ * Function for healer
+ */
+function	script	func_healer	{
+
+	if(@healer_delay > gettimetick(2))
+		return;
+
+	sc_end SC_STONE;
+	sc_end SC_FREEZE;
+	sc_end SC_STUN;
+	sc_end SC_SLEEP;
+	sc_end SC_POISON;
+	sc_end SC_CURSE;
+	sc_end SC_SILENCE;
+	sc_end SC_CONFUSION;
+	sc_end SC_BLIND;
+	sc_end SC_BLEEDING;
+	sc_end SC_CONFUSION;
+	sc_end SC_HALLUCINATION;
+
+	sc_start SC_BLESSING, 6000000, 15;
+	sc_start SC_INCREASEAGI, 6000000, 15;
+	specialeffect2 EF_BLESSING;
+	specialeffect2 EF_INCAGILITY;
+
+	.@repair = 1;
+	if(.@repair)
+	{
+		while(getbrokenid(1)) {
+		repair(1);
+		.@ef++;
+	}
+	if(.@ef) { specialeffect2 EF_REPAIRWEAPON; }
+	}
+
+	identifyall(true);
+	percentheal(100,100);
+	if(eaclass()|EAJ_FOURTHMASK)
+		healap 200;
+
+	@healer_delay = gettimetick(2) + 5;
+	return;
+}

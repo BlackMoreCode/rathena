@@ -1,0 +1,58 @@
+// Item trader
+// https://rathena.org/board/topic/121585-item-trader/
+// by Mabuhay
+// currency: 48486 : Heroic Poring coin
+// implemented item: 22829 (sealed card), 23719 (sealed card2), 23720 (Shadow Random Mix),  23806 (Ancient Heros Weapon Box), 22654 (golden seal card)
+// 100437 고대 영웅의 무기 개조 큐브, 100742 개방된 고대 영웅의 무기 상자
+
+prontera,147,187,0	script	Gambling Trader	123,{
+	// < ITEM FOR TRADE >, < AMOUNT >, < ITEM TRADED >, < AMOUNT >, < SUCCESS RATE >..
+	setarray .@trade,
+		48486, 10, 23806, 1, 100, 	// 100% check for hero box
+		48486, 25, 100437, 1, 100,	// Ancient Heros Weapon Modification Cube +9영웅무기 -> +7개방된 영웅 무기로 업글의 가챠.. 미친.
+		48486, 500, 23719, 1, 100,   // Sealed Card Album II
+		48486, 175, 23719, 1, 25,   // Sealed Card Album II 25%
+		48486, 500, 22829, 1, 100,   // Sealed Card Album I
+		48486, 175, 22829, 1, 25,   // Sealed Card Album I 25%
+		48486, 2, 23720, 1, 100,	// shadow item gacha
+		48486, 40, 23720, 20, 100,	// shadow item gacha x 20
+		48486, 30, 100742, 1, 100,	// Awakened Ancient Heros Weapon Box 개방된 영웅무기 가챠.
+		48486, 4000, 100819, 1, 100,	// 영웅의 무기 개조 상자
+		48486, 4000, 100820, 1, 100,	// 영웅의 무기 개조 상자 II
+		48486, 4000, 100834, 1, 100,	// 영웅의 무기 개조 상자 III	
+		48486, 4000, 100918, 1, 100,	// 영웅의 무기 개조 상자 IV	
+		48486, 4000, 100939, 1, 100,	// 영웅의 무기 개조 상자 V	
+		48486, 4000, 101190, 1, 100,	// 영웅의 무기 개조 상자 VI
+		48486, 100, 100412, 10, 100,	// 위대한 영웅의 용맹 // 작동됨, 개방된 영웅 무기 물리 특수옵션 2개 가챠  10개 입.
+		48486, 200, 100412, 20, 100,	// 위대한 영웅의 용맹 // 작동됨, 개방된 영웅 무기 물리 특수옵션 2개 가챠  10개 입.
+		48486, 100, 100413, 10, 100,	// 위대한 영웅의 지혜 // 작동됨, 개방된 영웅 무기 마법 특수옵션 2개 가챠  10개 입.
+		48486, 200, 100413, 20, 100,	// 위대한 영웅의 지혜 // 작동됨, 개방된 영웅 무기 마법 특수옵션 2개 가챠  10개 입.
+		48486, 100, 22654, 1, 1,   // Golden Card 1%
+		48486, 100, 23684, 1, 1;   // Phantom's Spirit (2018_Visionary_Card) 1%
+
+	.@size = getarraysize(.@trade);
+	for ( .@i = 0; .@i < .@size; .@i += 5 ) {
+		.@menu$ += .@trade[.@i+1] +" x "+getitemname(.@trade[.@i])+" for "+.@trade[.@i+3]+" x "+ getitemname(.@trade[.@i+2]) +":";
+	}
+	.@sel = select(.@menu$)-1;
+	.@s = .@sel * 5;
+	mes "You have selected "+.@trade[.@s+1] +" x "+getitemname(.@trade[.@s])+" for "+.@trade[.@s+3]+" x "+ getitemname(.@trade[.@s+2]) +"?";
+	mes "This has "+ .@trade[.@s+4]+"% success rate.";
+	next;
+	select("Trade anyways");
+	if ( countitem(.@trade[.@s]) < .@trade[.@s+1] ) {
+		mes "You dont have enough item required.";
+		close;
+	}
+	delitem .@trade[.@s], .@trade[.@s+1];
+	if ( .@trade[.@s+4] <= rand(100) ) {
+		mes "Opps! It failed!";
+		next;
+		mes "Try again next time.";
+		close;
+	}
+	mes "Congrats! You got it!";
+	close2;
+	getitem .@trade[.@s+2], .@trade[.@s+3];
+	end;
+}

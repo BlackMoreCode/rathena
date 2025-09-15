@@ -1,0 +1,32 @@
+prontera,138,171,5	script	Welcome_Freebies	4_F_KR_TIGER,{
+
+
+	if(#sorry == 1) {
+		mes "Hey! you already got daily cash reward.";
+		mes "NOT more than once, buddy.";
+		next;
+		mes "Tears aint gonna give you more booooi!";
+		close;
+			} else {
+			mes "Welcome To CopeRO! " + strcharinfo(0) + " !!";
+			next;
+			mes "I assume you are new player who joined the world of CopeRO?";
+			next;
+			mes "Take my reward, and enjoy the server!";
+				getitem 7539,500; // poring coin
+				getitem 4302,1;	   // Taogun Ka card
+				getitem 4174,1;   // Demon Fungus card
+				getitem 4403,1;  // kiel card
+				getitem 100515,3; // Cachua_Costume_Box (vanity)
+				set #CASHPOINTS,#CASHPOINTS + 50000; //+50000 Cash Points
+			
+			announce "CopeRO : Happy New year To [ "+strcharinfo(0)+" ] !!",1;
+			emotion e_thx;
+			
+			set #sorry,1;
+			close;
+			}
+
+end;
+
+}

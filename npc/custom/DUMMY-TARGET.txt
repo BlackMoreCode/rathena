@@ -1,0 +1,165 @@
+//===== Cope-RO Scripts ======================================
+//= [Paid] Dummy Target Exclusive Only (Immortals-RO | Wager-RO)
+//===== Scripted By: =========================================
+//= [Meroy]
+//===== Current Version: =====================================
+//= 1.0
+//===== Description: =========================================
+//= Set Parameters & Lock System (Features)
+//===== Additional Comments: =================================
+//= 1.0 - First Release [Paid Script]
+//        Please do not SHARE my Paid Script ($20)
+//============================================================
+quiz_00.gat, 106, 102, 4	script	test_dummy_main#0	4_M_KY_HEAD,{
+
+	mes "[ Monster Control ]";
+	if(.lock_player[atoi(strnpcinfo(2))]) {
+		mes "[ Warning ] : The Punching Bag is currently Owned and Locked.";
+		mes " ";
+	}
+	mes "Monster Name : "+ .name$[atoi(strnpcinfo(2))];
+	getunitdata .gid[atoi(strnpcinfo(2))],.@in;
+	mes "Race : "+ .race$[.@in[UMOB_RACE]];
+	mes "Size : "+ .size$[.@in[UMOB_SIZE]];
+	mes "Element : "+ .element$[.@in[UMOB_ELETYPE]] +" Lv"+ .@in[UMOB_ELELEVEL];
+	for( .@i = 0; .@i < getarraysize(.status$); .@i++ ) {
+		mes .status$[.@i] +" : "+ .@in[.status[.@i]];
+	}
+	if(.lock_player[atoi(strnpcinfo(2))] && .lock_player[atoi(strnpcinfo(2))] != getcharid(3))
+		end;
+	if(!.lock_player[atoi(strnpcinfo(2))]) .@lockme$ = "Lock";
+	switch(select(.@lockme$ +":Race:Size:Element:Status:Reset")){
+		case 1:
+			clear;
+			mes "[ Monster Control ]";
+			mes "Do you like to lock this monster for you for " + .min_lock + " minute?";
+			if(select("- Cancel:- Lock Unit") == 1)
+				end;
+			if(inarray($@TEST_DUMMY_LOCK,getcharid(3)) != -1){
+				clear;
+				mes "[ Monster Control ]";
+				mes "You already have another monster locked to you!";
+				end;
+			}
+			.lock_player[atoi(strnpcinfo(2))] = getcharid(3);
+			$@TEST_DUMMY_LOCK[getarraysize($@TEST_DUMMY_LOCK)] = getcharid(3);
+			donpcevent strnpcinfo(0) +"::OnLock";
+			clear;
+			mes "[ Monster Control ]";
+			mes "This current Unit is now locked to you.";
+			end;
+		case 2:
+			.@s = select(implode(.race$,":")) -1;
+			setunitdata .gid[atoi(strnpcinfo(2))],UMOB_RACE,.@s;
+			end;
+		case 3:
+			.@s = select(implode(.size$,":")) -1;
+			setunitdata .gid[atoi(strnpcinfo(2))],UMOB_SIZE,.@s;
+			end;
+		case 4:
+			.@s = select(implode(.element$,":")) -1;
+			.@sl = select("Lv1:Lv2:Lv3:Lv4");
+			setunitdata .gid[atoi(strnpcinfo(2))],UMOB_ELETYPE,.@s;
+			setunitdata .gid[atoi(strnpcinfo(2))],UMOB_ELELEVEL,.@sl;
+			end;
+		case 5:
+			.@s = select(implode(.status$,":")) -1;
+			input .@sl,1,10000;
+			setunitdata .gid[atoi(strnpcinfo(2))],.status[.@s],.@sl;
+			end;
+		case 6:
+			callsub OnDefault;
+			end;
+	}
+	end;
+
+OnLock:
+	while(.lock_player[atoi(strnpcinfo(2))]){
+		.@lock++;
+		if(.@lock >= .min_lock)
+			break;
+		sleep 60000;
+	}
+	if((.@ndx = inarray($@TEST_DUMMY_LOCK,.lock_player[atoi(strnpcinfo(2))])) != -1)
+		deletearray $@TEST_DUMMY_LOCK[.@ndx],1;
+	.lock_player[atoi(strnpcinfo(2))] = 0;
+	end;
+
+OnDead:
+	monster strnpcinfo(4),.x[atoi(strnpcinfo(2))],.y[atoi(strnpcinfo(2))],.name$[atoi(strnpcinfo(2))],.mob_id[atoi(strnpcinfo(2))],1,strnpcinfo(0)+"::OnDead";
+	.gid[atoi(strnpcinfo(2))] = $@mobid[0];
+	getunitdata .gid[atoi(strnpcinfo(2))],.@in;
+	.hp[atoi(strnpcinfo(2))] = .@in[UMOB_HP];
+	end;
+
+OnDefault:
+	setunitdata .gid[atoi(strnpcinfo(2))],UMOB_RACE,0;
+	setunitdata .gid[atoi(strnpcinfo(2))],UMOB_SIZE,1;
+	setunitdata .gid[atoi(strnpcinfo(2))],UMOB_ELETYPE,0;
+	setunitdata .gid[atoi(strnpcinfo(2))],UMOB_ELELEVEL,1;
+	for( .@i = 0; .@i < getarraysize(.status$); .@i++ ) {
+		setunitdata .gid[atoi(strnpcinfo(2))],.status[.@i],0;
+	}
+	return;
+
+OnStart:
+	setarray .size$,"Small","Medium","Large";
+	setarray .race$,"Formless","Undead","Brute","Plant","Insect","Fish","Demon","Demi-Human","Angel","Dragon","Player";
+	setarray .element$,"Neutral","Water","Earth","Fire","Wind","Poison","Holy","Shadow","Ghost","Undead";
+	setarray .status$,"Str","Agi","Vit","Int","Dex","Luk","Def","MDef","Flee","Dodge";
+	setarray .status,UMOB_STR,UMOB_AGI,UMOB_VIT,UMOB_INT,UMOB_DEX,UMOB_LUK,UMOB_DEF,UMOB_MDEF,UMOB_FLEE,UMOB_PDODGE;
+	sleep(rand(1,10));
+	.npc_talk$ = "test_dummy_talk#"+ atoi(strnpcinfo(2));
+	unitwarp getnpcid(0,.npc_talk$),strnpcinfo(4),.x[atoi(strnpcinfo(2))],.y[atoi(strnpcinfo(2))];
+	waitingroom .dps +" DPS",0,"OnDead";
+	donpcevent strnpcinfo(0)+"::OnDead";
+callsub OnDefault;
+	while(true){
+		if(unitexists(.gid[atoi(strnpcinfo(2))])){
+			getunitdata .gid[atoi(strnpcinfo(2))],.@in;
+			if(.hp[atoi(strnpcinfo(2))] >.@in[UMOB_HP]){
+				.dps = .hp[atoi(strnpcinfo(2))] - .@in[UMOB_HP];
+				if(.show_dps_in_chat)
+					npctalk .dps +" DPS",.npc_talk$;
+				delwaitingroom strnpcinfo(0);
+				waitingroom .dps +" DPS",0,strnpcinfo(0)+"OnDead";
+				showscript .dps +" DPS",.gid[atoi(strnpcinfo(2))],AREA;
+				.hp[atoi(strnpcinfo(2))] = .@in[UMOB_HP];
+			}
+		}
+		sleep 1000;
+	}
+	end;
+
+OnInit:
+	setarray .x,
+		168,168,182,111,115,118;
+	setarray .y,
+		184,190, 158, 98, 98, 98;
+	setarray .name$,
+		"Punching Bag 1","Punching Bag 2","Punching Bag 3","Punching Bag 4","Punching Bag 5","Punching Bag 6";
+	setarray .mob_id,
+		1905,1905,1905,1905,1905,1905;
+	.show_dps_in_chat = true;
+	.min_lock = 2;		// Minutes LOCK to Player (New Feature)
+	callsub OnStart;
+	end;
+}
+
+// DO NOT CHANGE THIS NAME: 'test_dummy_talk#'
+prontera,0,0,0	script	test_dummy_talk#0	HIDDEN_WARP_NPC,{}
+prontera,0,0,0	script	test_dummy_talk#1	HIDDEN_WARP_NPC,{}
+
+// Duplicate (Leave It Like This) DO NOT TOUCH (DUMMY)
+quiz_00,0,0,0	script	test_dummy_talk#2	HIDDEN_WARP_NPC,{}
+quiz_00,0,0,0	script	test_dummy_talk#3	HIDDEN_WARP_NPC,{}
+quiz_00,0,0,0	script	test_dummy_talk#4	HIDDEN_WARP_NPC,{}
+quiz_00,0,0,0	script	test_dummy_talk#5	HIDDEN_WARP_NPC,{}
+
+prontera,168,198,4	duplicate(test_dummy_main#0)	Monster Control#1	4_M_KY_HEAD
+prontera,168,187,4	duplicate(test_dummy_main#0)	Monstrol Control#2	4_M_KY_HEAD
+
+// Duplicate (Leave It Like This) DO NOT TOUCH (DUMMY)
+quiz_00,110,102,0	duplicate(test_dummy_main#0)	test_dummy_main#3	4_M_KY_HEAD
+quiz_00,114,102,0	duplicate(test_dummy_main#0)	test_dummy_main#4	4_M_KY_HEAD
+quiz_00,118,102,0	duplicate(test_dummy_main#0)	test_dummy_main#5	4_M_KY_HEAD

@@ -1,0 +1,187 @@
+//===== Cope-RO Scripts ======================================
+//= Extended Dynamic Shop (Barter)
+//===== Scripted By: =========================================
+//= [Meroy]
+//===== Current Version: =====================================
+//= 1.0
+//===== Description: =========================================
+//= Extended Dynamic Shop
+//===== Additional Comments: =================================
+//= 1.0 - First Release
+//============================================================
+//= 1.1 - Price adjustment, fully ready for HPC shop, not really for  highend equipment
+//============================================================
+
+// TODO: Fix Price | Item ID for Payment(as currency)
+prontera.gat, 147, 187, 4	script	Heroic Coin Trader	4_F_JP_RINNE,{
+
+	mes "[ Heroic Coin Trader ]";
+	mes "Heroic Poring Coin shop, refined!";
+	mes "Huge thanks to ROYR!";
+	switch(select("- Heroic Coin Trader")) {
+	case 1:
+		close2;
+		callshop "hpc_shop_1";
+		end;
+	}
+	end;
+
+OnInit:
+	barter_clear "hpc_shop_1";
+	barter_add "hpc_shop_1", 23806, 1, 48486, 10;
+	barter_add "hpc_shop_1", 22654, 1, 48486, 1500;
+	barter_add "hpc_shop_1", 23684, 1, 48486, 1200;
+	barter_add "hpc_shop_1", 23806, 1, 48486, 1000;
+	barter_add "hpc_shop_1", 23719, 1, 48486, 500;
+	barter_add "hpc_shop_1", 22829, 1, 48486, 500;
+	barter_add "hpc_shop_1", 23720, 1, 48486, 2;
+
+	barter_add "hpc_shop_1", 100437, 1, 48486, 25;
+	barter_add "hpc_shop_1", 100742, 1, 48486, 30;
+	barter_add "hpc_shop_1", 100819, 1, 48486, 4000;
+	barter_add "hpc_shop_1", 100820, 1, 48486, 4000;
+	barter_add "hpc_shop_1", 100834, 1, 48486, 4000;
+	barter_add "hpc_shop_1", 100918, 1, 48486, 4000;
+	barter_add "hpc_shop_1", 100939, 1, 48486, 4000;
+	barter_add "hpc_shop_1", 101190, 1, 48486, 4000;
+	barter_add "hpc_shop_1", 100412, 1, 48486, 100;
+	barter_add "hpc_shop_1", 100413, 1, 48486, 100;
+
+}
+
+// TODO: Fix Price | Item ID for Payment(as currency)
+prontera.gat, 149, 185, 4	script	Highend Equipments	4_F_JP_RINNE,{
+
+	mes "[ Highend Equipments ]";
+	mes "Pricing here is subject to change, if and where needed";
+	mes "You can buy it, but I will NOT reimburse you when it gets cheaper";
+	switch(select("- Helmet:- Shoes:- Garment:- Armor:- Accessory")) {
+	case 1:
+		close2;
+		callshop "equipment_helm_shop";
+		end;
+	case 2:
+		close2;
+		callshop "equipment_shoes_shop";
+		end;
+	case 3:
+		close2;
+		callshop "equipment_garment_shop";
+		end;
+	case 4:
+		close2;
+		callshop "equipment_armor_shop";
+		end;
+	case 5:
+		close2;
+		callshop "equipment_accessory_shop";
+		end;
+	}
+	end;
+
+OnInit:
+	// Helmets
+	barter_clear "equipment_helm_shop";
+	barter_add	 "equipment_helm_shop", 400134, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 400141, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 400146, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 400150, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 400002, 1, 48486, 400;
+	barter_add	 "equipment_helm_shop", 420066, 1, 48486, 400;
+	barter_add	 "equipment_helm_shop", 420076, 1, 48486, 400;
+	barter_add	 "equipment_helm_shop", 410094, 1, 48486, 400;
+	barter_add	 "equipment_helm_shop", 400154, 1, 48486, 1300;
+	barter_add	 "equipment_helm_shop", 400246, 1, 48486, 1300;
+
+	barter_add	 "equipment_helm_shop", 19474, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19475, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19476, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19477, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19478, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19479, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19480, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19481, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19482, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19483, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19484, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19485, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19486, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19487, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19488, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19489, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19490, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19491, 1, 48486, 1000;
+	barter_add	 "equipment_helm_shop", 19492, 1, 48486, 1000;
+
+	barter_add	 "equipment_helm_shop", 400245, 1, 48486, 1300;
+	barter_add	 "equipment_helm_shop", 400261, 1, 48486, 1300;
+	barter_add	 "equipment_helm_shop", 400262, 1, 48486, 1300;
+	barter_add	 "equipment_helm_shop", 400263, 1, 48486, 1300;
+	barter_add	 "equipment_helm_shop", 400264, 1, 48486, 1300;
+	barter_add	 "equipment_helm_shop", 400265, 1, 48486, 1300;
+	barter_add	 "equipment_helm_shop", 400266, 1, 48486, 1300;
+	barter_add	 "equipment_helm_shop", 400267, 1, 48486, 1300;
+
+	// Shoes
+	barter_clear "equipment_shoes_shop";
+	barter_add	 "equipment_shoes_shop", 22006, 1, 48486, 200;
+	barter_add	 "equipment_shoes_shop", 22007, 1, 48486, 200;
+	barter_add	 "equipment_shoes_shop", 22008, 1, 48486, 200;
+	barter_add	 "equipment_shoes_shop", 22009, 1, 48486, 200;
+	barter_add	 "equipment_shoes_shop", 22010, 1, 48486, 200;
+	barter_add	 "equipment_shoes_shop", 22011, 1, 48486, 200;
+
+	barter_add	 "equipment_shoes_shop", 22141, 1, 48486, 600;
+	barter_add	 "equipment_shoes_shop", 22208, 1, 48486, 400;
+	barter_add	 "equipment_shoes_shop", 470087, 1, 48486, 600;
+	barter_add	 "equipment_shoes_shop", 470108, 1, 48486, 1250;
+	barter_add	 "equipment_shoes_shop", 470109, 1, 48486, 1250;
+	barter_add	 "equipment_shoes_shop", 470110, 1, 48486, 1250;
+	barter_add	 "equipment_shoes_shop", 470111, 1, 48486, 1250;
+	// Garment
+	barter_clear "equipment_garment_shop";
+	barter_add	 "equipment_garment_shop", 20963, 1, 1000322, 500;
+	barter_add	 "equipment_garment_shop", 20964, 1, 1000322, 500;
+	barter_add	 "equipment_garment_shop", 20965, 1, 1000322, 500;
+	barter_add	 "equipment_garment_shop", 20966, 1, 1000322, 500;
+	barter_add	 "equipment_garment_shop", 20967, 1, 1000322, 500;
+	barter_add	 "equipment_garment_shop", 20968, 1, 1000322, 500;
+
+	barter_add	 "equipment_garment_shop", 20856, 1, 48486, 600;
+	barter_add	 "equipment_garment_shop", 20946, 1, 48486, 400;
+	barter_add	 "equipment_garment_shop", 480090, 1, 48486, 400;
+	barter_add	 "equipment_garment_shop", 480091, 1, 48486, 400;
+	barter_add	 "equipment_garment_shop", 480174, 1, 48486, 1800;
+	// Armor
+	barter_clear "equipment_armor_shop";
+	barter_add	 "equipment_armor_shop", 15212, 1, 48486, 600;
+	barter_add	 "equipment_armor_shop", 15391, 1, 48486, 1200;
+	barter_add	 "equipment_armor_shop", 15392, 1, 48486, 1200;
+	barter_add	 "equipment_armor_shop", 15393, 1, 48486, 1200;
+	barter_add	 "equipment_armor_shop", 15394, 1, 48486, 1200;
+	barter_add	 "equipment_armor_shop", 15395, 1, 48486, 1200;
+	barter_add	 "equipment_armor_shop", 15396, 1, 48486, 1200;
+	
+	barter_add	 "equipment_armor_shop", 450177, 1, 48486, 500;
+	barter_add	 "equipment_armor_shop", 450178, 1, 48486, 500;
+	// Accessory
+	barter_clear "equipment_accessory_shop";
+	barter_add	 "equipment_accessory_shop", 490044, 1, 48486, 750;
+	barter_add	 "equipment_accessory_shop", 490045, 1, 48486, 750;
+	barter_add	 "equipment_accessory_shop", 490046, 1, 48486, 750;
+	barter_add	 "equipment_accessory_shop", 490047, 1, 48486, 750;
+	barter_add	 "equipment_accessory_shop", 490048, 1, 48486, 750;
+	barter_add	 "equipment_accessory_shop", 490049, 1, 48486, 750;
+	barter_add	 "equipment_accessory_shop", 490050, 1, 48486, 750;
+	barter_add	 "equipment_accessory_shop", 490051, 1, 48486, 750;
+	barter_add	 "equipment_accessory_shop", 490052, 1, 48486, 750;
+	barter_add	 "equipment_accessory_shop", 490053, 1, 48486, 750;
+	barter_add	 "equipment_accessory_shop", 490054, 1, 48486, 750;
+	barter_add	 "equipment_accessory_shop", 490055, 1, 48486, 750;
+
+	barter_add	 "equipment_accessory_shop", 490106, 1, 48486, 300;
+	barter_add	 "equipment_accessory_shop", 490107, 1, 48486, 300;
+	barter_add	 "equipment_accessory_shop", 490108, 1, 48486, 300;
+	barter_add	 "equipment_accessory_shop", 490109, 1, 48486, 300;
+	end;
+}

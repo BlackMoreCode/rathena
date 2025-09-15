@@ -1,0 +1,28 @@
+//===== Cope-RO Scripts ======================================
+//= Global Drop System
+//===== Scripted By: =========================================
+//= [Meroy]
+//===== Current Version: =====================================
+//= 1.0
+//===== Description: =========================================
+//= Specific Map Drop System
+//===== Additional Comments: =================================
+//= 1.0 - First Release
+//============================================================
+-	script	Cope_Drop_Maps	FAKE_NPC,{
+
+OnNPCKillEvent:
+    if( inarray(.map_list$,strcharinfo(3)) != -1 ) {
+        if( rand(100) <= 10 ) { //10% ETEL DUST
+            getitem 1000322,1;
+        }
+        if( rand(100) <= 15 ) { //15% HPC
+            getitem 48486,1;
+        }
+    }
+    end;
+
+OnInit:
+    setarray .map_list$,"mag_dun03","ein_dun03","nif_dun01","sp_rudus4","amicitia1","amicitia2","nif_dun02";
+    end;
+}

@@ -1,0 +1,42 @@
+// Item trader
+// https://rathena.org/board/topic/121585-item-trader/
+// by Mabuhay
+// currency: 48486 : Heroic Poring coin
+// implemented item: 22829 (sealed card), 23719 (sealed card2), 23720 (Shadow Random Mix),  23806 (Ancient Heros Weapon Box), 22654 (golden seal card)
+// 100437 고대 영웅의 무기 개조 큐브, 100742 개방된 고대 영웅의 무기 상자
+
+prontera,149,185,0	script	Bulk Trader	4_BLACKDRAGON,{
+	// < ITEM FOR TRADE >, < AMOUNT >, < ITEM TRADED >, < AMOUNT >, < SUCCESS RATE >..
+	setarray .@trade,
+		48486, 20, 23720, 10, 100,	// shadow item gacha
+		48486, 5000, 22829, 10, 100,   // Sealed Card Album I
+		48486, 1300, 22829, 10, 25,   // Sealed Card Album I
+		48486, 5000, 23719, 10, 100,   // Sealed Card Album II
+		48486, 1300, 23719, 10, 25,   // Sealed Card Album II
+
+	.@size = getarraysize(.@trade);
+	for ( .@i = 0; .@i < .@size; .@i += 5 ) {
+		.@menu$ += .@trade[.@i+1] +" x "+getitemname(.@trade[.@i])+" for "+.@trade[.@i+3]+" x "+ getitemname(.@trade[.@i+2]) +":";
+	}
+	.@sel = select(.@menu$)-1;
+	.@s = .@sel * 5;
+	mes "You have selected "+.@trade[.@s+1] +" x "+getitemname(.@trade[.@s])+" for "+.@trade[.@s+3]+" x "+ getitemname(.@trade[.@s+2]) +"?";
+	mes "This has "+ .@trade[.@s+4]+"% success rate.";
+	next;
+	select("Trade anyways");
+	if ( countitem(.@trade[.@s]) < .@trade[.@s+1] ) {
+		mes "You dont have enough item required.";
+		close;
+	}
+	delitem .@trade[.@s], .@trade[.@s+1];
+	if ( .@trade[.@s+4] <= rand(100) ) {
+		mes "Opps! It failed!";
+		next;
+		mes "Try again next time.";
+		close;
+	}
+	mes "Congrats! You got it!";
+	close2;
+	getitem .@trade[.@s+2], .@trade[.@s+3];
+	end;
+}

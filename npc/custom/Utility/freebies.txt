@@ -1,0 +1,69 @@
+prontera,139,175,5	script	Freebies	4_TREASURE_BOX,{
+
+	switch(select("Daily Rewards", "Newbie Starter Rewards")){
+	case 1:
+		callsub Sub_DailyReward;
+		break;
+	case 2:
+		callsub Sub_NewbieReward;
+		break;
+	}
+	end;
+
+Sub_NewbieReward:
+	if(#reward_newbie_received) {
+		mes "["+strnpcinfo(1)+"]";
+		mes "You've already received your starter kit, I can't help you any further.";
+		return;
+	}
+	// Items bound to account
+	setarray .@newbie_rewards[0],
+			601, 100, // Fly Wings
+			12208, 1, // Battle Manual for 30 mins
+			12210, 1, // Bubble Gum for 30 mins
+			547, 100; // Condensed White Potion
+	.@size = getarraysize(.@newbie_rewards);
+	for(.@i = 0; .@i < .@size; .@i += 2) {
+		.@id = .@newbie_rewards[.@i];
+		.@amount = .@newbie_rewards[.@i + 1];
+		if(checkweight(.@id, .@amount)) {
+			getitembound .@id, .@amount, Bound_Account;
+		}
+	}
+	specialeffect2 391;
+	specialeffect2 582;
+	#reward_newbie_received = gettimetick(2); // account wide
+	return;
+	end;
+
+Sub_DailyReward:
+	.@today = gettime(DT_DAYOFYEAR);
+	if(#reward_daily == .@today) {
+		mes "[ "+strnpcinfo(1)+" ]";
+		mes "You've already received your Daily Rewards, I can't help you any further. Return back next day.";
+		close;
+	}
+	switch(gettime(DT_DAYOFWEEK)) {
+		// .@reward[]<itemID>,<Amount>,<itemID2>,<Amount2>..<itemID N>,<Amount N>
+		case MONDAY: 	setarray .@reward[0], 547,100,   7619,1; break;
+		case TUESDAY: 	setarray .@reward[0], 11502,100, 7620,1; break;
+		case WEDNESDAY: setarray .@reward[0], 7776,1, 	 7776,1; break;
+		case THURSDAY: 	setarray .@reward[0], 12075,1, 	 604,10; break;
+		case FRIDAY: 	setarray .@reward[0], 12080,1, 	12085,1; break;
+		case SATURDAY: 	setarray .@reward[0], 12090,1,  12095,1; break;
+		case SUNDAY: 	setarray .@reward[0], 985,10, 	 984,10; break;
+	}
+	// Items bound to account
+	for(.@i = 0; .@i < getarraysize(.@reward); .@i += 2) {
+		.@id = .@reward[.@i];
+		.@amount = .@reward[.@i + 1];
+		if(checkweight(.@id, .@amount)) {
+			getitembound .@id, .@amount, Bound_Account;
+		}
+	}
+	#reward_daily = gettime(DT_DAYOFYEAR);
+	specialeffect2 587;
+	specialeffect2 582;
+	return;
+	end;
+}

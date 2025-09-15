@@ -1,0 +1,33 @@
+//===== rAthena Script
+-	script	Global_Drop_Bonus	-1,{
+    // 초기화: 드랍 리스트 설정
+    OnInit:
+        setarray .items[0], // lower to higher
+            7539,  1, 20,   // Poring Coin – 20%
+            7000, 1, 3,     //  event stone coin
+            48486, 1,	5;   // HPC         –  5%
+        end;
+
+    // NPC 처치 시 이벤트 핸들러
+    OnNPCKillEvent:
+        .@rnd   = rand(100);   // 0~99 사이 난수
+        .@count = 0;           // 보너스는 한 번만
+
+        if ( killedrid > 0 ) {  // 유효한 몬스터일 때
+            .@accumulation = 0;
+            for ( .@i = 0; .@i < getarraysize(.items); .@i += 3 ) {
+                .@accumulation += .items[.@i + 2];
+                if ( .@rnd <  .@accumulation ) {
+                    getitem .items[.@i], .items[.@i + 1];
+                    dispbottom "You have obtained "
+                               + getitemname(.items[.@i])
+                               + " [" + .items[.@i + 1] + "] from "
+                               + getmonsterinfo(killedrid, MOB_NAME)
+                               + " (Chance: " + .items[.@i + 2] + "%).",
+                              0xFFFF66;
+                    break;
+                }
+            }
+        }
+        end;
+}

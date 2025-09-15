@@ -1,0 +1,22 @@
+//===== rAthena Script ======================================= 
+
+prontera,163,187,3	script	CopeRO_Headgear_Crafter	4_M_02,{
+	mes "[CopeRO Headgear Crafter]";
+	mes "Craft exclusive headgear using your coins and materials!";
+	next;
+
+	switch( select("Craft CopeRO headgears", "Leave") ) {
+	case 1:
+		mes "[CopeRO Headgear Crafter]";
+		mes "Select the headgear you want to craft:";
+		close2;
+		callshop "barter_copero_headgear";
+		end;
+	case 2:
+		close;
+	}
+	end;
+OnInit:
+	setunittitle getnpcid(0), "<Headgear Crafter>";
+	end;
+}
