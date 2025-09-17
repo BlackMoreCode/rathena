@@ -6149,7 +6149,7 @@ bool pc_dropitem(map_session_data *sd,int32 n,int32 amount)
  * @param fitem Item that will be picked
  * @return False = fail; True = success
  *------------------------------------------*/
-bool pc_takeitem(map_session_data *sd,struct flooritem_data *fitem)
+bool pc_takeitem(map_session_data *sd,flooritem_data *fitem)
 {
 	int32 flag = 0;
 	t_tick tick = gettick();
@@ -9813,7 +9813,7 @@ int32 pc_dead(map_session_data *sd,block_list *src)
 	}
 
 	if(sd->status.pet_id > 0 && sd->pd) {
-		struct pet_data *pd = sd->pd;
+		pet_data *pd = sd->pd;
 		if( !mapdata->getMapFlag(MF_NOEXPPENALTY) ) {
 			pet_set_intimate(pd, pd->pet.intimate + pd->get_pet_db()->die);
 			clif_send_petdata( sd, *sd->pd, CHANGESTATEPET_INTIMACY );
