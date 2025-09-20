@@ -13,6 +13,12 @@ prontera,163,187,3	script	CopeRO_Headgear_Crafter	4_M_02,{
 		callshop "barter_copero_headgear";
 		end;
 	case 2:
+		mes "[CopeRO mid game gear shop]";
+		mes "Select what you need / 필요한 아이템을 고르세요:";
+		close2;
+		callshop "barter_copero_weapon_gears";
+		end;
+	case 3:
 		close;
 	}
 	end;

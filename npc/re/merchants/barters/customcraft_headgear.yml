@@ -60,3 +60,23 @@ Body:
                 - Index: 2
                   Item: HPC
                   Amount: 100
+    - Name: barter_copero_weapon_gears
+      Items:
+          - Index: 0
+            Item: Overwhelm_Armor_Box
+            RequiredItems:
+                - Index: 0
+                  Item: HPC
+                  Amount: 100
+          - Index: 1
+            Item: Hero_Weapon_Box
+            RequiredItems:
+                - Index: 0
+                  Item: HPC
+                  Amount: 100
+          - Index: 2
+            Item: Great_Hero_Boots
+            RequiredItems:
+                - Index: 0
+                  Item: HPC
+                  Amount: 200
