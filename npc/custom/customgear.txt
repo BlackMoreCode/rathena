@@ -1,11 +1,11 @@
 //===== rAthena Script ======================================= 
 
 prontera,163,187,3	script	CopeRO_Headgear_Crafter	4_M_02,{
-	mes "[CopeRO Headgear Crafter]";
+	mes "[CopeRO Gear Crafter]";
 	mes "Craft exclusive headgear using your coins and materials!";
 	next;
 
-	switch( select("Craft CopeRO headgears", "Leave") ) {
+	switch( select("Craft CopeRO headgears", "Cope Mid-game gears", "Leave") ) {
 	case 1:
 		mes "[CopeRO Headgear Crafter]";
 		mes "Select the headgear you want to craft:";
@@ -14,15 +14,15 @@ prontera,163,187,3	script	CopeRO_Headgear_Crafter	4_M_02,{
 		end;
 	case 2:
 		mes "[CopeRO mid game gear shop]";
-		mes "Select what you need / 필요한 아이템을 고르세요:";
+		mes "Select what you need:";
 		close2;
-		callshop "barter_copero_weapon_gears";
+		callshop "barter_copero_gears";
 		end;
 	case 3:
 		close;
 	}
 	end;
 OnInit:
-	setunittitle getnpcid(0), "<Headgear Crafter>";
+	setunittitle getnpcid(0), "<Gear Crafter>";
 	end;
 }
