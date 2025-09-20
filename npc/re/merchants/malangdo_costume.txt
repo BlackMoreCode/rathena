@@ -44,7 +44,7 @@ mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 		close;
 	}
 	disable_items;
-	mes "[Designer Heidam]";
+	mes "[Designer Heidam / 헤이담 펠로우]";
 	mes "I am Designer Heidam, who has all kinds of cool costumes in the World.";
 	mes "If you have any Kitcoins with you, come look for Designer Heidam!";
 	next;
@@ -789,6 +789,9 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 		case 31573:	// C_Mecha_Cat_Ears
 		case 31598:	// C_Forest_Guide
 		case 31624:	// C_HeartOfCat_TW
+		case 48488: // Winky_Hat_Blue (copeRO custom)
+		case 48489: // Winky_Hat_Black (copeRO custom)
+		case 48490: // Winky_Hat_Red (copeRO custom)
 			// top + mid
 		case 19574:	// C_Lord_of_Death
 		case 19578:	// C_Goggle
@@ -1026,6 +1029,7 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 		case 31616:	// C_Sleep_Sheep_TW
 		case 31625:	// C_Protect_Cloth
 		case 31698:	// C_Pigtail_Red_Hood
+		case 48485: //Shin_Sharn_Hoiste_Mask; copeRO
 			break;
 		default:
 			mes "[Aver De Dosh]";
