@@ -66,3 +66,6 @@ Body:
                 - Index: 0
                   Item: HPC
                   Amount: 200
+          - Index: 3
+            Item: Shadow_Changer_NPC
+            Zeny: 5000000
