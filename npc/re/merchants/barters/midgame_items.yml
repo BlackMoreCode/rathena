@@ -69,3 +69,387 @@ Body:
           - Index: 3
             Item: Shadow_Changer_NPC
             Zeny: 5000000
+          - Index: 4
+            Item: S_Bearers_Cube
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 35
+          - Index: 5
+            Item: S_Beginner_Shoes
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 6
+            Item: S_Beginner_Shield
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 7
+            Item: S_Rookie_Shoes
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 8
+            Item: S_Rookie_Shield
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 9
+            Item: S_Advanced_Shoes
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 10
+            Item: S_Advanced_Shield
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 11
+            Item: S_Expert_Shoes
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 12
+            Item: S_Expert_Shield
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 13
+            Item: EXPShadow_Mix2
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 75
+          - Index: 14
+            Item: S_Big_Armor
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 15
+            Item: S_Big_Weapon
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 16
+            Item: S_Medium_Armor
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 17
+            Item: S_Medium_Weapon
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 18
+            Item: S_Small_Armor
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 19
+            Item: S_Small_Weapon
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 20
+            Item: S_Reload_Shoes
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 21
+            Item: S_Reload_Shield
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 22
+            Item: S_Reload_Armor
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 23
+            Item: S2_Reload_Armor
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 10
+          - Index: 24
+            Item: S_Physical_Earring
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 25
+            Item: S_Physical_Weapon
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 26
+            Item: S_Physical_Pendant
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 27
+            Item: S_Physical_Shoes
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 28
+            Item: S_Physical_Shield
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 29
+            Item: S_Physical_Armor
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 30
+            Item: S_Autospell_Shield
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 31
+            Item: S_Autospell_Armor
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 32
+            Item: S_Autospell_Shoes
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 33
+            Item: S_Autospell_Weapon
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 34
+            Item: S_Autospell_Pendant
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 35
+            Item: S_Autospell_Earring
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 36
+            Item: S_Caster_Pendant
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 37
+            Item: S_Caster_Earring
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 38
+            Item: S_Caster_Weapon
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 39
+            Item: S_Caster_Shoes
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 40
+            Item: S_Caster_Shield
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 41
+            Item: S_Caster_Armor
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 42
+            Item: S2_Caster_Armor
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 10
+          - Index: 43
+            Item: S_Blitz_Earring
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 44
+            Item: S_Blitz_Pendent
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 45
+            Item: S_Blitz_Shoes
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 46
+            Item: S_Blitz_Shield
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 47
+            Item: S_Blitz_Weapon
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 48
+            Item: S_Blitz_Armor
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 49
+            Item: S_Critical_Armor
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 50
+            Item: S_Critical_Shield
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 51
+            Item: S_Critical_Shoes
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 52
+            Item: CriticalHit_Mix
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 75
+          - Index: 53
+            Item: Shadow_Changer_A_W
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 50
+          - Index: 54
+            Item: S_Magical_Earring
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 55
+            Item: S_Magical_Weapon
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 56
+            Item: S_Magical_Pendant
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 57
+            Item: S_Magical_Shoes
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 58
+            Item: S_Magical_Shield
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 59
+            Item: S_Magical_Armor
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 60
+            Item: S_AllMighty_Earring
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 75
+          - Index: 61
+            Item: S_AllMighty_Pendant
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 75
+          - Index: 62
+            Item: S_Infinity_Earring
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 63
+            Item: S_Infinity_Pendant
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 64
+            Item: S_Hasty_Shoes
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 65
+            Item: S_Hasty_Armor
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 5
+          - Index: 66
+            Item: S2_Hasty_Shoes
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 75
+          - Index: 67
+            Item: Shadow_Changer_W_Shi
+            RequiredItems:
+                - Index: 0
+                  Item: Cachua_Coupon
+                  Amount: 50
