@@ -168,104 +168,104 @@ L_sal:
 close;
 
 winner:
-	specialeffect 540; specialeffect 500; sleep2 220; cutin "StartP0",2; sleep2 220; specialeffect 18; cutin "StartP1",2; sleep2 220; specialeffect 18; cutin "StartP2",2; sleep2 220;
-	specialeffect 18; cutin "Pwin",2; sleep2 220; soundeffectall "poring_attack.wav",0;  cutin "Pwin1",2; sleep2 220; soundeffectall "poring_attack.wav",0; cutin "Pwin2",2; sleep2 220;
-	soundeffectall "poring_attack.wav",0; cutin "Pwin3",2; sleep2 220; soundeffectall "poring_attack.wav",0; cutin "Pwin1",2; sleep2 220; soundeffectall "poring_attack.wav",0; cutin "Pwin2",2; 
-	sleep2 220; cutin "Pwin3",2; soundeffectall "poring_attack.wav",0; sleep2 220; cutin "Pwin3",255; specialeffect 10; getitem 7539,5; end;//poring coins
+	specialeffect 540; specialeffect 500; sleep2 220; sleep2 220; specialeffect 18; sleep2 220; specialeffect 18; sleep2 220;
+	specialeffect 18; sleep2 220; soundeffectall "poring_attack.wav",0; sleep2 220; soundeffectall "poring_attack.wav",0; sleep2 220;
+	soundeffectall "poring_attack.wav",0; sleep2 220; soundeffectall "poring_attack.wav",0; sleep2 220; soundeffectall "poring_attack.wav",0; 
+	sleep2 220; soundeffectall "poring_attack.wav",0; sleep2 220; specialeffect 10; getitem 7539,5; end;//poring coins
 
 GCW:
-	specialeffect 540; specialeffect 500; sleep2 300; cutin "StartGC0",2; sleep2 300; specialeffect 18;  cutin "StartGC1",2; sleep2 300; specialeffect 18; cutin "StartGC2",2; sleep2 300;
-	specialeffect 18; cutin "StartGC3",2; sleep2 300;  cutin "StartGCW",2; specialeffect2 565; sleep2 300; cutin "StartGCW1",2; sleep2 300; specialeffect2 566; cutin "StartGCW2",2; sleep2 300; cutin "StartGCW3",2; specialeffect2 567; sleep2 300; cutin "StartGCW4",2; 
-	sleep2 300; cutin "StartGC3",2; sleep2 300; specialeffect2 969; cutin "StartGCW4",2; sleep2 300; cutin "StartGCW4",255; specialeffect 10; npctalk "x3 Yggdrasil Berry"; getitem 607,3; end;//Yggdrasil Berry
+	specialeffect 540; specialeffect 500; sleep2 300; sleep2 300; specialeffect 18; sleep2 300; specialeffect 18; sleep2 300;
+	specialeffect 18; sleep2 300; specialeffect2 565; sleep2 300; sleep2 300; specialeffect2 566; sleep2 300; specialeffect2 567; sleep2 300; 
+	sleep2 300; sleep2 300; specialeffect2 969; sleep2 300; specialeffect 10; npctalk "x3 Yggdrasil Berry"; getitem 607,3; end;//Yggdrasil Berry
 
 winner2:
-	specialeffect 540; specialeffect 500; sleep2 220; cutin "StartP0",2; sleep2 220; specialeffect 18; cutin "Starte",2; sleep2 220; specialeffect 18; cutin "Starte2",2; sleep2 220;
-	specialeffect 18; cutin "Starte3",2; sleep2 220; specialeffect 18; cutin "ewin1",2; sleep2 220; specialeffect 18; cutin "ewin2",2; sleep2 220;
-	specialeffect 18; cutin "ewin3",2; sleep2 220; specialeffect 18; cutin "ewin1",2; sleep2 220; specialeffect 18; cutin "ewin2",2; sleep2 220;
-	specialeffect 18; cutin "ewin3",2; sleep2 220;  sleep2 100; cutin "ewin3",255; specialeffect 10; specialeffect 18; npctalk "Random Item Prize"; 
+	specialeffect 540; specialeffect 500; sleep2 220; sleep2 220; specialeffect 18; sleep2 220; specialeffect 18; sleep2 220;
+	specialeffect 18; sleep2 220; specialeffect 18; sleep2 220; specialeffect 18; sleep2 220;
+	specialeffect 18; sleep2 220; specialeffect 18; sleep2 220; specialeffect 18; sleep2 220;
+	specialeffect 18; sleep2 220; sleep2 100; specialeffect 10; specialeffect 18; npctalk "Random Item Prize"; 
 	switch( rand(13) ) {
-	case 0: getitem 22821,1; break;//�� ���� �ν���
+	case 0: getitem 22821,1; break;//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½ï¿½
 	case 1: getitem 5819,1; break;//carnival circlet
 	case 2: getitem 7539,5; break;//5 porint coins
-	case 3: getitem 100008,1; break;//�� ���Ǵ�Ƽ �帵ũ
+	case 3: getitem 100008,1; break;//ï¿½ï¿½ ï¿½ï¿½ï¿½Ç´ï¿½Æ¼ ï¿½å¸µÅ©
 	case 4: getitem 5817,1; break;//valentine pledge
-	case 5: getitem 17229,1; break;//���� �ĸ����� ����
-	case 6: getitem 22816,1; break;//�� �Ź��� ������
-	case 7: getitem 100005,1; break;//�� ����������
+	case 5: getitem 17229,1; break;//ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	case 6: getitem 22816,1; break;//ï¿½ï¿½ ï¿½Å¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	case 7: getitem 100005,1; break;//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 case 8:
-	specialeffect 540; specialeffect 500; sleep2 120; cutin "StartP0",2;  sleep2 120; specialeffect 311; specialeffect2 268; cutin "StartR",2; sleep2 120; 
-	specialeffect2 268; specialeffect 311; cutin "StartR2",2; sleep2 120; specialeffect2 268; specialeffect 31; cutin "StartRW",2; specialeffect 40; sleep2 120;
-	mapannounce "prontera","Poring Slots: " + strcharinfo(0) + " YOU WON SPECIAL PRIIIIZE.",0; getitem 12704,2; sleep2 120; cutin "StartRW",255; break; //elixir of life
+	specialeffect 540; specialeffect 500; sleep2 120; sleep2 120; specialeffect 311; specialeffect2 268; sleep2 120; 
+	specialeffect2 268; specialeffect 311; sleep2 120; specialeffect2 268; specialeffect 31; specialeffect 40; sleep2 120;
+	mapannounce "prontera","Poring Slots: " + strcharinfo(0) + " YOU WON SPECIAL PRIIIIZE.",0; getitem 12704,2; sleep2 120; break; //elixir of life
 
 case 9:
-	specialeffect 540; specialeffect 500; sleep2 120; cutin "StartP0",2;  sleep2 120; specialeffect 380; specialeffect2 268; cutin "StartR",2; sleep2 120; 
-	specialeffect2 268; specialeffect 380; cutin "StartR2",2; sleep2 120; specialeffect2 268; specialeffect 160; cutin "StartRL",2; specialeffect 40; npctalk "You just activated... MY TRAP CARD"; sleep2 120; cutin "StartRL",255; break;
+	specialeffect 540; specialeffect 500; sleep2 120; sleep2 120; specialeffect 380; specialeffect2 268; sleep2 120; 
+	specialeffect2 268; specialeffect 380; sleep2 120; specialeffect2 268; specialeffect 160; specialeffect 40; npctalk "You just activated... MY TRAP CARD"; sleep2 120; break;
 
 case 10:
 	getitem 12232,3; break;//ginger bread
 
 case 11:
-	specialeffect 540; specialeffect 500; sleep2 120; cutin "StartP0",2;  sleep2 120; specialeffect 311; specialeffect2 268; cutin "StartR",2; sleep2 120; 
-	specialeffect2 268; specialeffect 311; cutin "StartR2",2; sleep2 120; specialeffect2 268; specialeffect 31; cutin "StartRW",2; specialeffect 40; sleep2 120;
-	mapannounce "prontera","Poring Slots: " + strcharinfo(0) + " YOU WON SPECIAL PRIIIIZE.",0; getitem F_Rand( 7231,616,7776,48485),1; sleep2 120; cutin "StartRW",255; break;	//any of these--shin sharun jackpot is hidden here.	
+	specialeffect 540; specialeffect 500; sleep2 120; sleep2 120; specialeffect 311; specialeffect2 268; sleep2 120; 
+	specialeffect2 268; specialeffect 311; sleep2 120; specialeffect2 268; specialeffect 31; specialeffect 40; sleep2 120;
+	mapannounce "prontera","Poring Slots: " + strcharinfo(0) + " YOU WON SPECIAL PRIIIIZE.",0; getitem F_Rand( 7231,616,7776,48485),1; sleep2 120; break;	//any of these--shin sharun jackpot is hidden here.	
 
 case 12:
-	specialeffect 540; specialeffect 500; sleep2 120; cutin "StartP0",2;  sleep2 120; specialeffect 311; specialeffect2 268; cutin "StartR",2; sleep2 120; 
-	specialeffect2 268; specialeffect 311; cutin "StartR2",2; sleep2 120; specialeffect2 268; specialeffect 31; cutin "StartRW",2; specialeffect 40; sleep2 120;
-	mapannounce "prontera","Poring Slots: " + strcharinfo(0) + " YOU WON SPECIAL PRIIIIZE.",0; getitem 12858,3; sleep2 120; cutin "StartRW",255; break; //RG kyasir
+	specialeffect 540; specialeffect 500; sleep2 120; sleep2 120; specialeffect 311; specialeffect2 268; sleep2 120; 
+	specialeffect2 268; specialeffect 311; sleep2 120; specialeffect2 268; specialeffect 31; specialeffect 40; sleep2 120;
+	mapannounce "prontera","Poring Slots: " + strcharinfo(0) + " YOU WON SPECIAL PRIIIIZE.",0; getitem 12858,3; sleep2 120; break; //RG kyasir
 }
 end;
 
 almost:
-	specialeffect 540; specialeffect 500; sleep2 120; cutin "StartP0",2; sleep2 120; specialeffect 18; cutin "Starte",2; sleep2 120; specialeffect 18; cutin "Starte2",2; sleep2 120;
-	specialeffect 18; cutin "Starte2p",2; sleep2 200; cutin "Starte2p1",2; sleep2 120; cutin "Starte2p2",2; sleep2 200; cutin "Starte2p3",2; soundeffectall "yoyo_die.wav",0; sleep2 200; 
-	cutin "Starte2p4",2; sleep2 300; specialeffect2 501; cutin "Starte2p4",255; specialeffect2 2; specialeffect 734; percentheal -6,0; sleep2 190; specialeffect 734; specialeffect2 1; percentheal -5,0; sleep2 220;
+	specialeffect 540; specialeffect 500; sleep2 120; sleep2 120; specialeffect 18; sleep2 120; specialeffect 18; sleep2 120;
+	specialeffect 18; sleep2 200; sleep2 120; sleep2 200; soundeffectall "yoyo_die.wav",0; sleep2 200; 
+	sleep2 300; specialeffect2 501; specialeffect2 2; specialeffect 734; percentheal -6,0; sleep2 190; specialeffect 734; specialeffect2 1; percentheal -5,0; sleep2 220;
 	specialeffect2 3; specialeffect 734; percentheal -7,0; specialeffect2 2; sleep2 400; specialeffect2 4; sleep2 190; npctalk "GET REKT SON!"; heal -200,0; end;//drops hp by 200
 
 Pierde1:
-	specialeffect 540; specialeffect 500; sleep2 120; cutin "StartP0",2; sleep2 120; specialeffect 18; cutin "StartP1",2; sleep2 120; specialeffect 18; cutin "StartP2",2; sleep2 120;
-	specialeffect 18; cutin "Lose",2; emotion ET_WHISP; sleep2 120; specialeffect2 380; cutin "Lose2",2; emotion ET_WHISP; sleep2 120; soundeffectall "wraith_die.wav",0; cutin "Lose3",2; sleep2 120; emotion ET_WHISP; cutin "Lose4",2; sleep2 120; cutin "Lose4",255; end; //grip reaper trolls you
+	specialeffect 540; specialeffect 500; sleep2 120; sleep2 120; specialeffect 18; sleep2 120; specialeffect 18; sleep2 120;
+	specialeffect 18; emotion ET_WHISP; sleep2 120; specialeffect2 380; emotion ET_WHISP; sleep2 120; soundeffectall "wraith_die.wav",0; sleep2 120; emotion ET_WHISP; sleep2 120; end; //grip reaper trolls you
 
 Pierde2:
-	specialeffect 540; specialeffect 500; sleep2 120; cutin "StartP0",2; sleep2 120; specialeffect 18; cutin "Starte",2; sleep2 120; specialeffect 18; cutin "Starte2",2; sleep2 120;
-	specialeffect 18; cutin "StarteL",2; sleep2 200; specialeffect2 380; soundeffectall "isilla_die.wav",0; cutin "Startel1",2; sleep2 120; cutin "Startel2",2; sleep2 120;
-	cutin "Startel3",2; sleep2 100; cutin "Startel4",2; sleep2 200; cutin "Startel5",2; sleep2 200; cutin "Startel5",255; sleep2 100; specialeffect 268; sleep2 120;
+	specialeffect 540; specialeffect 500; sleep2 120; sleep2 120; specialeffect 18; sleep2 120; specialeffect 18; sleep2 120;
+	specialeffect 18; sleep2 200; specialeffect2 380; soundeffectall "isilla_die.wav",0; sleep2 120; sleep2 120;
+	sleep2 100; sleep2 200; sleep2 200; sleep2 100; specialeffect 268; sleep2 120;
 	specialeffect2 274; npctalk "Stealing 2 Poring Coin"; delitem 7539,2; end; //STEALS 2 coins from you, forcing you to have 3 coins to play
 
 ultralose:
-	specialeffect 540; specialeffect 500; sleep2 120; cutin "StartP0",2;  sleep2 120; specialeffect 380; specialeffect2 268; cutin "StarL1",2; sleep2 120; specialeffect2 268;
-	specialeffect 380; cutin "StarL2",2; sleep2 120; specialeffect 380; npctalk "SUCKER PUNCH TIME!"; specialeffect2 268; cutin "StarL3",2;
+	specialeffect 540; specialeffect 500; sleep2 120; sleep2 120; specialeffect 380; specialeffect2 268; sleep2 120; specialeffect2 268;
+	specialeffect 380; sleep2 120; specialeffect 380; npctalk "SUCKER PUNCH TIME!"; specialeffect2 268;
 	soundeffectall "naght_sieger_die.wav",0; specialeffect2 268; sleep2 50; specialeffect2 1; sleep2 50;
 	makeitem 7539,1,"prontera",161,167; sleep2 50; makeitem 7539,1,"prontera",158,164; sleep2 50; specialeffect2 1; makeitem 7539,1,"prontera",167,166; sleep2 120; specialeffect2 1; 
-	cutin "ultralose",2; delitem 7539,1; sleep2 50; specialeffect2 1; sleep2 50; specialeffect2 1; monster "prontera",158,170,"Thief",1261,1;
-	sleep2 200; cutin "ultralose1",2; sleep2 200; cutin "ultralose2",2; sleep2 200; cutin "ultralose3",2; sleep2 200; cutin "ultralose4",2; delitem 7539,1;
-	sleep2 200; cutin "ultralose4",255; delitem 7539,1; npctalk "3 Poring Coins Stolen"; percentheal -50,-50; end;
+	delitem 7539,1; sleep2 50; specialeffect2 1; sleep2 50; specialeffect2 1; monster "prontera",158,170,"Thief",1261,1;
+	sleep2 200; sleep2 200; sleep2 200; sleep2 200; delitem 7539,1;
+	sleep2 200; delitem 7539,1; npctalk "3 Poring Coins Stolen"; percentheal -50,-50; end;
 
 ultrasafe:
-	specialeffect 540; specialeffect 500; sleep2 120; cutin "StartP0",2; sleep2 120; specialeffect 380; specialeffect2 268; cutin "StarL1",2; sleep2 120; specialeffect2 268;
-	specialeffect 380; cutin "StarL2",2; sleep2 120; specialeffect 380; specialeffect2 268; cutin "StarL3",2; sleep2 120; cutin "ultrasafe1",2; sleep2 300; specialeffect 40; cutin "ultrasafe2",2;
-	sleep2 120; specialeffect 75; cutin "ultrasafe3",2; sleep2 120; cutin "ultrasafe4",2; soundeffectall "poring_attack.wav",0; sleep2 120; cutin "ultrasafe5",2; soundeffectall "poring_die.wav",0; sleep2 50;
-	soundeffectall "poring_die.wav",0; sleep2 100; cutin "ultrasafe6",2; soundeffectall "poring_attack.wav",0; sleep2 120;  cutin "ultrasafe7",2; soundeffectall "poring_die.wav",0; specialeffect2 82; sleep2 120; 
-	cutin "ultrasafe8",2; specialeffect2 84; sleep2 120; cutin "ultrasafe9",2; sleep2 50; specialeffect 18; getitem F_Rand( 12411,12412),1; sleep2 120; cutin "ultrasafe10",2; sleep2 50; specialeffect 18; sleep2 50; 
-	specialeffect 18;cutin "ultrasafe10",255; npctalk "Oridecon welcomes you"; percentheal 100,100; end;
+	specialeffect 540; specialeffect 500; sleep2 120; sleep2 120; specialeffect 380; specialeffect2 268; sleep2 120; specialeffect2 268;
+	specialeffect 380; sleep2 120; specialeffect 380; specialeffect2 268; sleep2 120; sleep2 300; specialeffect 40;
+	sleep2 120; specialeffect 75; sleep2 120; soundeffectall "poring_attack.wav",0; sleep2 120; soundeffectall "poring_die.wav",0; sleep2 50;
+	soundeffectall "poring_die.wav",0; sleep2 100; soundeffectall "poring_attack.wav",0; sleep2 120; soundeffectall "poring_die.wav",0; specialeffect2 82; sleep2 120; 
+	specialeffect2 84; sleep2 120; sleep2 50; specialeffect 18; getitem F_Rand( 12411,12412),1; sleep2 120; sleep2 50; specialeffect 18; sleep2 50; 
+	specialeffect 18; npctalk "Oridecon welcomes you"; percentheal 100,100; end;
 
 sandiW:
-	specialeffect 540; specialeffect 500; sleep2 300; cutin "StartP0",2; sleep2 300; soundeffectall "rafflesia_attack.wav",0; cutin "StartS1",2;
-	sleep2 300; cutin "StartS2",2; soundeffectall "rafflesia_attack.wav",0; sleep2 300;  cutin "StartS3",2; soundeffectall "rafflesia_attack.wav",0;
-	sleep2 370; cutin "StartSW1",2; specialeffect 18;  sleep2 370; cutin "StartSW2",2; specialeffect 18; sleep2 370; specialeffect 18; cutin "StartSW3",2; 
-	sleep2 370; cutin "StartSW4",2; specialeffect 18; sleep2 370; cutin "StartSW5",2; sleep2 100; specialeffect 18; cutin "StartSW1",2; sleep2 100;
-	specialeffect 18; sleep2 100; cutin "StartSW2",2; sleep2 100; cutin "StartSW3",2; specialeffect 18; sleep2 100; specialeffect 18; cutin "StartSW4",2; sleep2 100;
-	specialeffect 18; cutin "StartSW5",2; sleep2 100; cutin "StartSW5",255; specialeffect2 568; npctalk "REFORGE GOD IS HERE!";  sleep2 300; specialeffect 10; getitem F_Rand( 14176,14177,16261,16260),1; end;
+	specialeffect 540; specialeffect 500; sleep2 300; sleep2 300; soundeffectall "rafflesia_attack.wav",0;
+	sleep2 300; soundeffectall "rafflesia_attack.wav",0; sleep2 300; soundeffectall "rafflesia_attack.wav",0;
+	sleep2 370; specialeffect 18; sleep2 370; specialeffect 18; sleep2 370; specialeffect 18; 
+	sleep2 370; specialeffect 18; sleep2 370; sleep2 100; specialeffect 18; sleep2 100;
+	specialeffect 18; sleep2 100; sleep2 100; specialeffect 18; sleep2 100; specialeffect 18; sleep2 100;
+	specialeffect 18; sleep2 100; sleep2 100; specialeffect2 568; npctalk "REFORGE GOD IS HERE!"; sleep2 300; specialeffect 10; getitem F_Rand( 14176,14177,16261,16260),1; end;
 
 sandiL:
-	specialeffect 540; specialeffect 500; sleep2 300; cutin "StartP0",2;  sleep2 300; soundeffectall "rafflesia_attack.wav",0; cutin "StartS1",2;
-	sleep2 350; soundeffectall "rafflesia_attack.wav",0; cutin "StartS2",2; sleep2 350; specialeffect 380; npctalk "OMG SHIIIIT!!"; specialeffect2 268; cutin "StartSL1",2;
-	soundeffectall "naga_attack.wav",0; sleep2 300; cutin "StartSL2",2; sleep2 300; cutin "StartSL3",2; sleep2 300; cutin "StartSL4",2; sleep2 300; cutin "StartSL5",2;
-	soundeffectall "rafflesia_attack.wav",0; sleep2 300; cutin "StartSL6",2; soundeffectall "naga_attack.wav",0; sleep2 300; cutin "StartSL7",2; sleep2 300;
-	cutin "StartSL8",2; sleep2 300; soundeffectall "rafflesia_attack.wav",0; sleep2 300; specialeffect 380; cutin "StartSL9",2; sleep2 300;
-	cutin "StartSL10",2; sleep2 300; cutin "StartSL11",2; sleep2 300; cutin "StartSL11",255;  npctalk "Almost!";
-	percentheal -50,-50; heal -200,0;  end;
+	specialeffect 540; specialeffect 500; sleep2 300; sleep2 300; soundeffectall "rafflesia_attack.wav",0;
+	sleep2 350; soundeffectall "rafflesia_attack.wav",0; sleep2 350; specialeffect 380; npctalk "OMG SHIIIIT!!"; specialeffect2 268;
+	soundeffectall "naga_attack.wav",0; sleep2 300; sleep2 300; sleep2 300; sleep2 300;
+	soundeffectall "rafflesia_attack.wav",0; sleep2 300; soundeffectall "naga_attack.wav",0; sleep2 300; sleep2 300;
+	sleep2 300; soundeffectall "rafflesia_attack.wav",0; sleep2 300; specialeffect 380; sleep2 300;
+	sleep2 300; sleep2 300; npctalk "Almost!";
+	percentheal -50,-50; heal -200,0; end;
 
 Falta2:
 	mes "You need 3 Poring coins to play!";
@@ -287,5 +287,3 @@ Falta:
 		end;
 	}
 }
-
-
