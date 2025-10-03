@@ -27,10 +27,7 @@
 #   MaxWeight                Base maximum weight. (Default: 20000)
 #   HpFactor                 Exponential HP increase. Per base level: [HpFactor * BaseLv / 100]. Used when macro HP_SP_TABLES is disabled. (Default: 0)
 #   HpIncrease               Linear HP increase. Per base level: [HpIncrease / 100]. Used when macro HP_SP_TABLES is disabled. (Default: 500)
-#   SpFactor                 Exponential SP increase. Per base level: [SpFactor * BaseLv / 100]. Used when macro HP_SP_TABLES is disabled. (Default: 0)
 #   SpIncrease               Linear SP increase. Per base level: [SpIncrease / 100]. Used when macro HP_SP_TABLES is disabled. (Default: 100)
-#   ApFactor                 Exponential AP increase. Per base level: [ApFactor * BaseLv / 100]. Used when macro HP_SP_TABLES is disabled. (Default: 0)
-#   ApIncrease               Linear AP increase. Per base level: [ApIncrease / 100]. Used when macro HP_SP_TABLES is disabled. (Default: 0)
 #   BaseASPD:                Base ASPD for each weapon type. (Default: 2000)
 #     Weapon                 Weapon type with associated ASPD.
 #   BonusStats:              Job level bonus stats/traits.
@@ -79,10 +76,9 @@
 #       Ap                   Base AP.
 ###########################################################################
 
-
 Header:
   Type: JOB_STATS
-  Version: 3
+  Version: 2
 
 Body:
 
@@ -528,9 +524,9 @@ Body:
       - Level: 97
         Exp: 58135000
       - Level: 98
-        Exp: 69416440
+        Exp: 99999998
       - Level: 99
-        Exp: 70804768
+        Exp: 99999999
       # Custom levels exp up to 1000 level
 # Custom levels exp up to 1000 level (25x rate - original pattern ÷ 4)
       - Level: 100
@@ -2557,7 +2553,7 @@ Body:
       - Level: 98
         Exp: 343210000
       - Level: 99
-        Exp: 343210000
+        Exp: 99999999
       # Custom levels exp up 1000
 # Custom levels exp up to 1000 level (25x rate - original pattern ÷ 4)
       - Level: 100
@@ -4401,7 +4397,7 @@ Body:
       Baby_Merchant: true
       Baby_Thief: true
       Taekwon: true
-    MaxJobLevel: 120
+    MaxJobLevel: 50
     JobExp:
       - Level: 1
         Exp: 30
@@ -4677,7 +4673,7 @@ Body:
       Baby_Dancer: true
       Baby_Crusader2: true
       Soul_Linker: true
-    MaxJobLevel: 120
+    MaxJobLevel: 50
     JobExp:
       - Level: 1
         Exp: 144
@@ -4951,7 +4947,7 @@ Body:
       Acolyte_High: true
       Merchant_High: true
       Thief_High: true
-    MaxJobLevel: 120
+    MaxJobLevel: 50
     JobExp:
       - Level: 1
         Exp: 60
@@ -5454,7 +5450,7 @@ Body:
   - Jobs:
       Gunslinger: true
       Ninja: true
-    MaxJobLevel: 120
+    MaxJobLevel: 70
     JobExp:
       - Level: 1
         Exp: 72
@@ -5945,7 +5941,7 @@ Body:
   - Jobs:
       Supernovice: true
       Super_Baby: true
-    MaxJobLevel: 120
+    MaxJobLevel: 99
     JobExp:
       - Level: 1
         Exp: 30

@@ -1,0 +1,2836 @@
+# This file is a part of rAthena.
+#   Copyright(C) 2021 rAthena Development Team
+#   https://rathena.org - https://github.com/rathena
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+###########################################################################
+# Statpoint Database
+###########################################################################
+#
+# Statpoint Settings
+#
+###########################################################################
+# - Level             BaseLevel required.
+#   Points            Total status points given from BaseLevel 1 to 'Level'.
+#   TraitPoints       Total trait points given from BaseLevel 1 to 'Level'.
+###########################################################################
+
+Header:
+  Type: STATPOINT_DB
+  Version: 2
+
+Body:
+  - Level: 1
+    Points: 48
+  - Level: 2
+    Points: 51
+  - Level: 3
+    Points: 54
+  - Level: 4
+    Points: 57
+  - Level: 5
+    Points: 60
+  - Level: 6
+    Points: 64
+  - Level: 7
+    Points: 68
+  - Level: 8
+    Points: 72
+  - Level: 9
+    Points: 76
+  - Level: 10
+    Points: 80
+  - Level: 11
+    Points: 85
+  - Level: 12
+    Points: 90
+  - Level: 13
+    Points: 95
+  - Level: 14
+    Points: 100
+  - Level: 15
+    Points: 105
+  - Level: 16
+    Points: 111
+  - Level: 17
+    Points: 117
+  - Level: 18
+    Points: 123
+  - Level: 19
+    Points: 129
+  - Level: 20
+    Points: 135
+  - Level: 21
+    Points: 142
+  - Level: 22
+    Points: 149
+  - Level: 23
+    Points: 156
+  - Level: 24
+    Points: 163
+  - Level: 25
+    Points: 170
+  - Level: 26
+    Points: 178
+  - Level: 27
+    Points: 186
+  - Level: 28
+    Points: 194
+  - Level: 29
+    Points: 202
+  - Level: 30
+    Points: 210
+  - Level: 31
+    Points: 219
+  - Level: 32
+    Points: 228
+  - Level: 33
+    Points: 237
+  - Level: 34
+    Points: 246
+  - Level: 35
+    Points: 255
+  - Level: 36
+    Points: 265
+  - Level: 37
+    Points: 275
+  - Level: 38
+    Points: 285
+  - Level: 39
+    Points: 295
+  - Level: 40
+    Points: 305
+  - Level: 41
+    Points: 316
+  - Level: 42
+    Points: 327
+  - Level: 43
+    Points: 338
+  - Level: 44
+    Points: 349
+  - Level: 45
+    Points: 360
+  - Level: 46
+    Points: 372
+  - Level: 47
+    Points: 384
+  - Level: 48
+    Points: 396
+  - Level: 49
+    Points: 408
+  - Level: 50
+    Points: 420
+  - Level: 51
+    Points: 433
+  - Level: 52
+    Points: 446
+  - Level: 53
+    Points: 459
+  - Level: 54
+    Points: 472
+  - Level: 55
+    Points: 485
+  - Level: 56
+    Points: 499
+  - Level: 57
+    Points: 513
+  - Level: 58
+    Points: 527
+  - Level: 59
+    Points: 541
+  - Level: 60
+    Points: 555
+  - Level: 61
+    Points: 570
+  - Level: 62
+    Points: 585
+  - Level: 63
+    Points: 600
+  - Level: 64
+    Points: 615
+  - Level: 65
+    Points: 630
+  - Level: 66
+    Points: 646
+  - Level: 67
+    Points: 662
+  - Level: 68
+    Points: 678
+  - Level: 69
+    Points: 694
+  - Level: 70
+    Points: 710
+  - Level: 71
+    Points: 727
+  - Level: 72
+    Points: 744
+  - Level: 73
+    Points: 761
+  - Level: 74
+    Points: 778
+  - Level: 75
+    Points: 795
+  - Level: 76
+    Points: 813
+  - Level: 77
+    Points: 831
+  - Level: 78
+    Points: 849
+  - Level: 79
+    Points: 867
+  - Level: 80
+    Points: 885
+  - Level: 81
+    Points: 904
+  - Level: 82
+    Points: 923
+  - Level: 83
+    Points: 942
+  - Level: 84
+    Points: 961
+  - Level: 85
+    Points: 980
+  - Level: 86
+    Points: 1000
+  - Level: 87
+    Points: 1020
+  - Level: 88
+    Points: 1040
+  - Level: 89
+    Points: 1060
+  - Level: 90
+    Points: 1080
+  - Level: 91
+    Points: 1101
+  - Level: 92
+    Points: 1122
+  - Level: 93
+    Points: 1143
+  - Level: 94
+    Points: 1164
+  - Level: 95
+    Points: 1185
+  - Level: 96
+    Points: 1207
+  - Level: 97
+    Points: 1229
+  - Level: 98
+    Points: 1251
+  - Level: 99
+    Points: 1273
+  - Level: 100
+    Points: 1295
+  - Level: 101
+    Points: 1318
+  - Level: 102
+    Points: 1341
+  - Level: 103
+    Points: 1364
+  - Level: 104
+    Points: 1387
+  - Level: 105
+    Points: 1410
+  - Level: 106
+    Points: 1433
+  - Level: 107
+    Points: 1456
+  - Level: 108
+    Points: 1479
+  - Level: 109
+    Points: 1502
+  - Level: 110
+    Points: 1525
+  - Level: 111
+    Points: 1549
+  - Level: 112
+    Points: 1573
+  - Level: 113
+    Points: 1597
+  - Level: 114
+    Points: 1621
+  - Level: 115
+    Points: 1645
+  - Level: 116
+    Points: 1669
+  - Level: 117
+    Points: 1693
+  - Level: 118
+    Points: 1717
+  - Level: 119
+    Points: 1741
+  - Level: 120
+    Points: 1765
+  - Level: 121
+    Points: 1790
+  - Level: 122
+    Points: 1815
+  - Level: 123
+    Points: 1840
+  - Level: 124
+    Points: 1865
+  - Level: 125
+    Points: 1890
+  - Level: 126
+    Points: 1915
+  - Level: 127
+    Points: 1940
+  - Level: 128
+    Points: 1965
+  - Level: 129
+    Points: 1990
+  - Level: 130
+    Points: 2015
+  - Level: 131
+    Points: 2041
+  - Level: 132
+    Points: 2067
+  - Level: 133
+    Points: 2093
+  - Level: 134
+    Points: 2119
+  - Level: 135
+    Points: 2145
+  - Level: 136
+    Points: 2171
+  - Level: 137
+    Points: 2197
+  - Level: 138
+    Points: 2223
+  - Level: 139
+    Points: 2249
+  - Level: 140
+    Points: 2275
+  - Level: 141
+    Points: 2302
+  - Level: 142
+    Points: 2329
+  - Level: 143
+    Points: 2356
+  - Level: 144
+    Points: 2383
+  - Level: 145
+    Points: 2410
+  - Level: 146
+    Points: 2437
+  - Level: 147
+    Points: 2464
+  - Level: 148
+    Points: 2491
+  - Level: 149
+    Points: 2518
+  - Level: 150
+    Points: 2545
+  - Level: 151
+    Points: 2573
+  - Level: 152
+    Points: 2601
+  - Level: 153
+    Points: 2629
+  - Level: 154
+    Points: 2657
+  - Level: 155
+    Points: 2685
+  - Level: 156
+    Points: 2713
+  - Level: 157
+    Points: 2741
+  - Level: 158
+    Points: 2769
+  - Level: 159
+    Points: 2797
+  - Level: 160
+    Points: 2825
+  - Level: 161
+    Points: 2854
+  - Level: 162
+    Points: 2883
+  - Level: 163
+    Points: 2912
+  - Level: 164
+    Points: 2941
+  - Level: 165
+    Points: 2970
+  - Level: 166
+    Points: 2999
+  - Level: 167
+    Points: 3028
+  - Level: 168
+    Points: 3057
+  - Level: 169
+    Points: 3086
+  - Level: 170
+    Points: 3115
+  - Level: 171
+    Points: 3145
+  - Level: 172
+    Points: 3175
+  - Level: 173
+    Points: 3205
+  - Level: 174
+    Points: 3235
+  - Level: 175
+    Points: 3265
+  - Level: 176
+    Points: 3295
+  - Level: 177
+    Points: 3325
+  - Level: 178
+    Points: 3355
+  - Level: 179
+    Points: 3385
+  - Level: 180
+    Points: 3415
+  - Level: 181
+    Points: 3446
+  - Level: 182
+    Points: 3477
+  - Level: 183
+    Points: 3508
+  - Level: 184
+    Points: 3539
+  - Level: 185
+    Points: 3570
+  - Level: 186
+    Points: 3601
+  - Level: 187
+    Points: 3632
+  - Level: 188
+    Points: 3663
+  - Level: 189
+    Points: 3694
+  - Level: 190
+    Points: 3725
+  - Level: 191
+    Points: 3757
+  - Level: 192
+    Points: 3789
+  - Level: 193
+    Points: 3821
+  - Level: 194
+    Points: 3853
+  - Level: 195
+    Points: 3885
+  - Level: 196
+    Points: 3917
+  - Level: 197
+    Points: 3949
+  - Level: 198
+    Points: 3981
+  - Level: 199
+    Points: 4013
+  - Level: 200
+    Points: 4045
+  - Level: 201
+    Points: 4078
+    TraitPoints: 1
+  - Level: 202
+    Points: 4111
+    TraitPoints: 4
+  - Level: 203
+    Points: 4144
+    TraitPoints: 7
+  - Level: 204
+    Points: 4177
+    TraitPoints: 10
+  - Level: 205
+    Points: 4210
+    TraitPoints: 13
+  - Level: 206
+    Points: 4243
+    TraitPoints: 16
+  - Level: 207
+    Points: 4276
+    TraitPoints: 19
+  - Level: 208
+    Points: 4309
+    TraitPoints: 22
+  - Level: 209
+    Points: 4342
+    TraitPoints: 25
+  - Level: 210
+    Points: 4375
+    TraitPoints: 28
+  - Level: 211
+    Points: 4409
+    TraitPoints: 31
+  - Level: 212
+    Points: 4443
+    TraitPoints: 34
+  - Level: 213
+    Points: 4477
+    TraitPoints: 37
+  - Level: 214
+    Points: 4511
+    TraitPoints: 40
+  - Level: 215
+    Points: 4545
+    TraitPoints: 43
+  - Level: 216
+    Points: 4579
+    TraitPoints: 46
+  - Level: 217
+    Points: 4613
+    TraitPoints: 49
+  - Level: 218
+    Points: 4647
+    TraitPoints: 52
+  - Level: 219
+    Points: 4681
+    TraitPoints: 55
+  - Level: 220
+    Points: 4715
+    TraitPoints: 58
+  - Level: 221
+    Points: 4750
+    TraitPoints: 61
+  - Level: 222
+    Points: 4785
+    TraitPoints: 64
+  - Level: 223
+    Points: 4820
+    TraitPoints: 67
+  - Level: 224
+    Points: 4855
+    TraitPoints: 70
+  - Level: 225
+    Points: 4890
+    TraitPoints: 73
+  - Level: 226
+    Points: 4925
+    TraitPoints: 76
+  - Level: 227
+    Points: 4960
+    TraitPoints: 79
+  - Level: 228
+    Points: 4995
+    TraitPoints: 82
+  - Level: 229
+    Points: 5030
+    TraitPoints: 85
+  - Level: 230
+    Points: 5065
+    TraitPoints: 88
+  - Level: 231
+    Points: 5101
+    TraitPoints: 91
+  - Level: 232
+    Points: 5137
+    TraitPoints: 94
+  - Level: 233
+    Points: 5173
+    TraitPoints: 97
+  - Level: 234
+    Points: 5209
+    TraitPoints: 100
+  - Level: 235
+    Points: 5245
+    TraitPoints: 103
+  - Level: 236
+    Points: 5281
+    TraitPoints: 106
+  - Level: 237
+    Points: 5317
+    TraitPoints: 109
+  - Level: 238
+    Points: 5353
+    TraitPoints: 112
+  - Level: 239
+    Points: 5389
+    TraitPoints: 115
+  - Level: 240
+    Points: 5425
+    TraitPoints: 118
+  - Level: 241
+    Points: 5462
+    TraitPoints: 121
+  - Level: 242
+    Points: 5499
+    TraitPoints: 124
+  - Level: 243
+    Points: 5536
+    TraitPoints: 127
+  - Level: 244
+    Points: 5573
+    TraitPoints: 130
+  - Level: 245
+    Points: 5610
+    TraitPoints: 133
+  - Level: 246
+    Points: 5647
+    TraitPoints: 136
+  - Level: 247
+    Points: 5684
+    TraitPoints: 139
+  - Level: 248
+    Points: 5721
+    TraitPoints: 142
+  - Level: 249
+    Points: 5758
+    TraitPoints: 145
+  - Level: 250
+    Points: 5795
+    TraitPoints: 148
+  - Level: 251
+    Points: 5833
+    TraitPoints: 151
+  - Level: 252
+    Points: 5871
+    TraitPoints: 154
+  - Level: 253
+    Points: 5909
+    TraitPoints: 157
+  - Level: 254
+    Points: 5947
+    TraitPoints: 160
+  - Level: 255
+    Points: 5985
+    TraitPoints: 163
+  - Level: 256
+    Points: 6023
+    TraitPoints: 166
+  - Level: 257
+    Points: 6061
+    TraitPoints: 169
+  - Level: 258
+    Points: 6099
+    TraitPoints: 172
+  - Level: 259
+    Points: 6137
+    TraitPoints: 175
+  - Level: 260
+    Points: 6175
+    TraitPoints: 178
+  - Level: 261
+    Points: 6214
+    TraitPoints: 181
+  - Level: 262
+    Points: 6253
+    TraitPoints: 184
+  - Level: 263
+    Points: 6292
+    TraitPoints: 187
+  - Level: 264
+    Points: 6331
+    TraitPoints: 190
+  - Level: 265
+    Points: 6370
+    TraitPoints: 193
+  - Level: 266
+    Points: 6409
+    TraitPoints: 196
+  - Level: 267
+    Points: 6448
+    TraitPoints: 199
+  - Level: 268
+    Points: 6487
+    TraitPoints: 202
+  - Level: 269
+    Points: 6526
+    TraitPoints: 205
+  - Level: 270
+    Points: 6565
+    TraitPoints: 208
+  - Level: 271
+    Points: 6605
+    TraitPoints: 211
+  - Level: 272
+    Points: 6645
+    TraitPoints: 214
+  - Level: 273
+    Points: 6685
+    TraitPoints: 217
+  - Level: 274
+    Points: 6725
+    TraitPoints: 220
+  - Level: 275
+    Points: 6765
+    TraitPoints: 223
+  - Level: 276
+    Points: 6805
+    TraitPoints: 226
+  - Level: 277
+    Points: 6845
+    TraitPoints: 229
+  - Level: 278
+    Points: 6885
+    TraitPoints: 232
+  - Level: 279
+    Points: 6925
+    TraitPoints: 235
+  - Level: 280
+    Points: 6965
+    TraitPoints: 238
+  - Level: 281
+    Points: 7006
+    TraitPoints: 241
+  - Level: 282
+    Points: 7047
+    TraitPoints: 244
+  - Level: 283
+    Points: 7088
+    TraitPoints: 247
+  - Level: 284
+    Points: 7129
+    TraitPoints: 250
+  - Level: 285
+    Points: 7170
+    TraitPoints: 253
+  - Level: 286
+    Points: 7211
+    TraitPoints: 256
+  - Level: 287
+    Points: 7252
+    TraitPoints: 259
+  - Level: 288
+    Points: 7293
+    TraitPoints: 262
+  - Level: 289
+    Points: 7334
+    TraitPoints: 265
+  - Level: 290
+    Points: 7375
+    TraitPoints: 268
+  - Level: 291
+    Points: 7417
+    TraitPoints: 271
+  - Level: 292
+    Points: 7459
+    TraitPoints: 274
+  - Level: 293
+    Points: 7501
+    TraitPoints: 277
+  - Level: 294
+    Points: 7543
+    TraitPoints: 280
+  - Level: 295
+    Points: 7585
+    TraitPoints: 283
+  - Level: 296
+    Points: 7627
+    TraitPoints: 286
+  - Level: 297
+    Points: 7669
+    TraitPoints: 289
+  - Level: 298
+    Points: 7711
+    TraitPoints: 292
+  - Level: 299
+    Points: 7753
+    TraitPoints: 295
+  - Level: 300
+    Points: 7795
+    TraitPoints: 298
+  - Level: 301
+    Points: 7838
+    TraitPoints: 301
+  - Level: 302
+    Points: 7881
+    TraitPoints: 304
+  - Level: 303
+    Points: 7924
+    TraitPoints: 307
+  - Level: 304
+    Points: 7967
+    TraitPoints: 310
+  - Level: 305
+    Points: 8010
+    TraitPoints: 313
+  - Level: 306
+    Points: 8053
+    TraitPoints: 316
+  - Level: 307
+    Points: 8096
+    TraitPoints: 319
+  - Level: 308
+    Points: 8139
+    TraitPoints: 322
+  - Level: 309
+    Points: 8182
+    TraitPoints: 325
+  - Level: 310
+    Points: 8225
+    TraitPoints: 328
+  - Level: 311
+    Points: 8269
+    TraitPoints: 331
+  - Level: 312
+    Points: 8313
+    TraitPoints: 334
+  - Level: 313
+    Points: 8357
+    TraitPoints: 337
+  - Level: 314
+    Points: 8401
+    TraitPoints: 340
+  - Level: 315
+    Points: 8445
+    TraitPoints: 343
+  - Level: 316
+    Points: 8489
+    TraitPoints: 346
+  - Level: 317
+    Points: 8533
+    TraitPoints: 349
+  - Level: 318
+    Points: 8577
+    TraitPoints: 352
+  - Level: 319
+    Points: 8621
+    TraitPoints: 355
+  - Level: 320
+    Points: 8665
+    TraitPoints: 358
+  - Level: 321
+    Points: 8710
+    TraitPoints: 361
+  - Level: 322
+    Points: 8755
+    TraitPoints: 364
+  - Level: 323
+    Points: 8800
+    TraitPoints: 367
+  - Level: 324
+    Points: 8845
+    TraitPoints: 370
+  - Level: 325
+    Points: 8890
+    TraitPoints: 373
+  - Level: 326
+    Points: 8935
+    TraitPoints: 376
+  - Level: 327
+    Points: 8980
+    TraitPoints: 379
+  - Level: 328
+    Points: 9025
+    TraitPoints: 382
+  - Level: 329
+    Points: 9070
+    TraitPoints: 385
+  - Level: 330
+    Points: 9115
+    TraitPoints: 388
+  - Level: 331
+    Points: 9161
+    TraitPoints: 391
+  - Level: 332
+    Points: 9207
+    TraitPoints: 394
+  - Level: 333
+    Points: 9253
+    TraitPoints: 397
+  - Level: 334
+    Points: 9299
+    TraitPoints: 400
+  - Level: 335
+    Points: 9345
+    TraitPoints: 403
+  - Level: 336
+    Points: 9391
+    TraitPoints: 406
+  - Level: 337
+    Points: 9437
+    TraitPoints: 409
+  - Level: 338
+    Points: 9483
+    TraitPoints: 412
+  - Level: 339
+    Points: 9529
+    TraitPoints: 415
+  - Level: 340
+    Points: 9575
+    TraitPoints: 418
+  - Level: 341
+    Points: 9622
+    TraitPoints: 421
+  - Level: 342
+    Points: 9669
+    TraitPoints: 424
+  - Level: 343
+    Points: 9716
+    TraitPoints: 427
+  - Level: 344
+    Points: 9763
+    TraitPoints: 430
+  - Level: 345
+    Points: 9810
+    TraitPoints: 433
+  - Level: 346
+    Points: 9857
+    TraitPoints: 436
+  - Level: 347
+    Points: 9904
+    TraitPoints: 439
+  - Level: 348
+    Points: 9951
+    TraitPoints: 442
+  - Level: 349
+    Points: 9998
+    TraitPoints: 445
+  - Level: 350
+    Points: 10045
+    TraitPoints: 448
+  - Level: 351
+    Points: 10093
+    TraitPoints: 451
+  - Level: 352
+    Points: 10141
+    TraitPoints: 454
+  - Level: 353
+    Points: 10189
+    TraitPoints: 457
+  - Level: 354
+    Points: 10237
+    TraitPoints: 460
+  - Level: 355
+    Points: 10285
+    TraitPoints: 463
+  - Level: 356
+    Points: 10333
+    TraitPoints: 466
+  - Level: 357
+    Points: 10381
+    TraitPoints: 469
+  - Level: 358
+    Points: 10429
+    TraitPoints: 472
+  - Level: 359
+    Points: 10477
+    TraitPoints: 475
+  - Level: 360
+    Points: 10525
+    TraitPoints: 478
+  - Level: 361
+    Points: 10574
+    TraitPoints: 481
+  - Level: 362
+    Points: 10623
+    TraitPoints: 484
+  - Level: 363
+    Points: 10672
+    TraitPoints: 487
+  - Level: 364
+    Points: 10721
+    TraitPoints: 490
+  - Level: 365
+    Points: 10770
+    TraitPoints: 493
+  - Level: 366
+    Points: 10819
+    TraitPoints: 496
+  - Level: 367
+    Points: 10868
+    TraitPoints: 499
+  - Level: 368
+    Points: 10917
+    TraitPoints: 502
+  - Level: 369
+    Points: 10966
+    TraitPoints: 505
+  - Level: 370
+    Points: 11015
+    TraitPoints: 508
+  - Level: 371
+    Points: 11065
+    TraitPoints: 511
+  - Level: 372
+    Points: 11115
+    TraitPoints: 514
+  - Level: 373
+    Points: 11165
+    TraitPoints: 517
+  - Level: 374
+    Points: 11215
+    TraitPoints: 520
+  - Level: 375
+    Points: 11265
+    TraitPoints: 523
+  - Level: 376
+    Points: 11315
+    TraitPoints: 526
+  - Level: 377
+    Points: 11365
+    TraitPoints: 529
+  - Level: 378
+    Points: 11415
+    TraitPoints: 532
+  - Level: 379
+    Points: 11465
+    TraitPoints: 535
+  - Level: 380
+    Points: 11515
+    TraitPoints: 538
+  - Level: 381
+    Points: 11566
+    TraitPoints: 541
+  - Level: 382
+    Points: 11617
+    TraitPoints: 544
+  - Level: 383
+    Points: 11668
+    TraitPoints: 547
+  - Level: 384
+    Points: 11719
+    TraitPoints: 550
+  - Level: 385
+    Points: 11770
+    TraitPoints: 553
+  - Level: 386
+    Points: 11821
+    TraitPoints: 556
+  - Level: 387
+    Points: 11872
+    TraitPoints: 559
+  - Level: 388
+    Points: 11923
+    TraitPoints: 562
+  - Level: 389
+    Points: 11974
+    TraitPoints: 565
+  - Level: 390
+    Points: 12025
+    TraitPoints: 568
+  - Level: 391
+    Points: 12077
+    TraitPoints: 571
+  - Level: 392
+    Points: 12129
+    TraitPoints: 574
+  - Level: 393
+    Points: 12181
+    TraitPoints: 577
+  - Level: 394
+    Points: 12233
+    TraitPoints: 580
+  - Level: 395
+    Points: 12285
+    TraitPoints: 583
+  - Level: 396
+    Points: 12337
+    TraitPoints: 586
+  - Level: 397
+    Points: 12389
+    TraitPoints: 589
+  - Level: 398
+    Points: 12441
+    TraitPoints: 592
+  - Level: 399
+    Points: 12493
+    TraitPoints: 595
+  - Level: 400
+    Points: 12545
+    TraitPoints: 598
+  - Level: 401
+    Points: 12598
+    TraitPoints: 601
+  - Level: 402
+    Points: 12651
+    TraitPoints: 604
+  - Level: 403
+    Points: 12704
+    TraitPoints: 607
+  - Level: 404
+    Points: 12757
+    TraitPoints: 610
+  - Level: 405
+    Points: 12810
+    TraitPoints: 613
+  - Level: 406
+    Points: 12863
+    TraitPoints: 616
+  - Level: 407
+    Points: 12916
+    TraitPoints: 619
+  - Level: 408
+    Points: 12969
+    TraitPoints: 622
+  - Level: 409
+    Points: 13022
+    TraitPoints: 625
+  - Level: 410
+    Points: 13075
+    TraitPoints: 628
+  - Level: 411
+    Points: 13129
+    TraitPoints: 631
+  - Level: 412
+    Points: 13183
+    TraitPoints: 634
+  - Level: 413
+    Points: 13237
+    TraitPoints: 637
+  - Level: 414
+    Points: 13291
+    TraitPoints: 640
+  - Level: 415
+    Points: 13345
+    TraitPoints: 643
+  - Level: 416
+    Points: 13399
+    TraitPoints: 646
+  - Level: 417
+    Points: 13453
+    TraitPoints: 649
+  - Level: 418
+    Points: 13507
+    TraitPoints: 652
+  - Level: 419
+    Points: 13561
+    TraitPoints: 655
+  - Level: 420
+    Points: 13615
+    TraitPoints: 658
+  - Level: 421
+    Points: 13670
+    TraitPoints: 661
+  - Level: 422
+    Points: 13725
+    TraitPoints: 664
+  - Level: 423
+    Points: 13780
+    TraitPoints: 667
+  - Level: 424
+    Points: 13835
+    TraitPoints: 670
+  - Level: 425
+    Points: 13890
+    TraitPoints: 673
+  - Level: 426
+    Points: 13945
+    TraitPoints: 676
+  - Level: 427
+    Points: 14000
+    TraitPoints: 679
+  - Level: 428
+    Points: 14055
+    TraitPoints: 682
+  - Level: 429
+    Points: 14110
+    TraitPoints: 685
+  - Level: 430
+    Points: 14165
+    TraitPoints: 688
+  - Level: 431
+    Points: 14221
+    TraitPoints: 691
+  - Level: 432
+    Points: 14277
+    TraitPoints: 694
+  - Level: 433
+    Points: 14333
+    TraitPoints: 697
+  - Level: 434
+    Points: 14389
+    TraitPoints: 700
+  - Level: 435
+    Points: 14445
+    TraitPoints: 703
+  - Level: 436
+    Points: 14501
+    TraitPoints: 706
+  - Level: 437
+    Points: 14557
+    TraitPoints: 709
+  - Level: 438
+    Points: 14613
+    TraitPoints: 712
+  - Level: 439
+    Points: 14669
+    TraitPoints: 715
+  - Level: 440
+    Points: 14725
+    TraitPoints: 718
+  - Level: 441
+    Points: 14782
+    TraitPoints: 721
+  - Level: 442
+    Points: 14839
+    TraitPoints: 724
+  - Level: 443
+    Points: 14896
+    TraitPoints: 727
+  - Level: 444
+    Points: 14953
+    TraitPoints: 730
+  - Level: 445
+    Points: 15010
+    TraitPoints: 733
+  - Level: 446
+    Points: 15067
+    TraitPoints: 736
+  - Level: 447
+    Points: 15124
+    TraitPoints: 739
+  - Level: 448
+    Points: 15181
+    TraitPoints: 742
+  - Level: 449
+    Points: 15238
+    TraitPoints: 745
+  - Level: 450
+    Points: 15295
+    TraitPoints: 748
+  - Level: 451
+    Points: 15353
+    TraitPoints: 751
+  - Level: 452
+    Points: 15411
+    TraitPoints: 754
+  - Level: 453
+    Points: 15469
+    TraitPoints: 757
+  - Level: 454
+    Points: 15527
+    TraitPoints: 760
+  - Level: 455
+    Points: 15585
+    TraitPoints: 763
+  - Level: 456
+    Points: 15643
+    TraitPoints: 766
+  - Level: 457
+    Points: 15701
+    TraitPoints: 769
+  - Level: 458
+    Points: 15759
+    TraitPoints: 772
+  - Level: 459
+    Points: 15817
+    TraitPoints: 775
+  - Level: 460
+    Points: 15875
+    TraitPoints: 778
+  - Level: 461
+    Points: 15934
+    TraitPoints: 781
+  - Level: 462
+    Points: 15993
+    TraitPoints: 784
+  - Level: 463
+    Points: 16052
+    TraitPoints: 787
+  - Level: 464
+    Points: 16111
+    TraitPoints: 790
+  - Level: 465
+    Points: 16170
+    TraitPoints: 793
+  - Level: 466
+    Points: 16229
+    TraitPoints: 796
+  - Level: 467
+    Points: 16288
+    TraitPoints: 799
+  - Level: 468
+    Points: 16347
+    TraitPoints: 802
+  - Level: 469
+    Points: 16406
+    TraitPoints: 805
+  - Level: 470
+    Points: 16465
+    TraitPoints: 808
+  - Level: 471
+    Points: 16525
+    TraitPoints: 811
+  - Level: 472
+    Points: 16585
+    TraitPoints: 814
+  - Level: 473
+    Points: 16645
+    TraitPoints: 817
+  - Level: 474
+    Points: 16705
+    TraitPoints: 820
+  - Level: 475
+    Points: 16765
+    TraitPoints: 823
+  - Level: 476
+    Points: 16825
+    TraitPoints: 826
+  - Level: 477
+    Points: 16885
+    TraitPoints: 829
+  - Level: 478
+    Points: 16945
+    TraitPoints: 832
+  - Level: 479
+    Points: 17005
+    TraitPoints: 835
+  - Level: 480
+    Points: 17065
+    TraitPoints: 838
+  - Level: 481
+    Points: 17126
+    TraitPoints: 841
+  - Level: 482
+    Points: 17187
+    TraitPoints: 844
+  - Level: 483
+    Points: 17248
+    TraitPoints: 847
+  - Level: 484
+    Points: 17309
+    TraitPoints: 850
+  - Level: 485
+    Points: 17370
+    TraitPoints: 853
+  - Level: 486
+    Points: 17431
+    TraitPoints: 856
+  - Level: 487
+    Points: 17492
+    TraitPoints: 859
+  - Level: 488
+    Points: 17553
+    TraitPoints: 862
+  - Level: 489
+    Points: 17614
+    TraitPoints: 865
+  - Level: 490
+    Points: 17675
+    TraitPoints: 868
+  - Level: 491
+    Points: 17737
+    TraitPoints: 871
+  - Level: 492
+    Points: 17799
+    TraitPoints: 874
+  - Level: 493
+    Points: 17861
+    TraitPoints: 877
+  - Level: 494
+    Points: 17923
+    TraitPoints: 880
+  - Level: 495
+    Points: 17985
+    TraitPoints: 883
+  - Level: 496
+    Points: 18047
+    TraitPoints: 886
+  - Level: 497
+    Points: 18109
+    TraitPoints: 889
+  - Level: 498
+    Points: 18171
+    TraitPoints: 892
+  - Level: 499
+    Points: 18233
+    TraitPoints: 895
+  - Level: 500
+    Points: 37295
+    TraitPoints: 898
+  - Level: 501
+    Points: 18358
+    TraitPoints: 901
+  - Level: 502
+    Points: 18421
+    TraitPoints: 904
+  - Level: 503
+    Points: 18484
+    TraitPoints: 907
+  - Level: 504
+    Points: 18547
+    TraitPoints: 910
+  - Level: 505
+    Points: 18610
+    TraitPoints: 913
+  - Level: 506
+    Points: 18673
+    TraitPoints: 916
+  - Level: 507
+    Points: 18736
+    TraitPoints: 919
+  - Level: 508
+    Points: 18799
+    TraitPoints: 922
+  - Level: 509
+    Points: 18862
+    TraitPoints: 925
+  - Level: 510
+    Points: 18925
+    TraitPoints: 928
+  - Level: 511
+    Points: 18989
+    TraitPoints: 931
+  - Level: 512
+    Points: 19053
+    TraitPoints: 934
+  - Level: 513
+    Points: 19117
+    TraitPoints: 937
+  - Level: 514
+    Points: 19181
+    TraitPoints: 940
+  - Level: 515
+    Points: 19245
+    TraitPoints: 943
+  - Level: 516
+    Points: 19309
+    TraitPoints: 946
+  - Level: 517
+    Points: 19373
+    TraitPoints: 949
+  - Level: 518
+    Points: 19437
+    TraitPoints: 952
+  - Level: 519
+    Points: 19501
+    TraitPoints: 955
+  - Level: 520
+    Points: 19565
+    TraitPoints: 958
+  - Level: 521
+    Points: 19630
+    TraitPoints: 961
+  - Level: 522
+    Points: 19695
+    TraitPoints: 964
+  - Level: 523
+    Points: 19760
+    TraitPoints: 967
+  - Level: 524
+    Points: 19825
+    TraitPoints: 970
+  - Level: 525
+    Points: 19890
+    TraitPoints: 973
+  - Level: 526
+    Points: 19955
+    TraitPoints: 976
+  - Level: 527
+    Points: 20020
+    TraitPoints: 979
+  - Level: 528
+    Points: 20085
+    TraitPoints: 982
+  - Level: 529
+    Points: 20150
+    TraitPoints: 985
+  - Level: 530
+    Points: 20215
+    TraitPoints: 988
+  - Level: 531
+    Points: 20281
+    TraitPoints: 991
+  - Level: 532
+    Points: 20347
+    TraitPoints: 994
+  - Level: 533
+    Points: 20413
+    TraitPoints: 997
+  - Level: 534
+    Points: 20479
+    TraitPoints: 1000
+  - Level: 535
+    Points: 20545
+    TraitPoints: 1003
+  - Level: 536
+    Points: 20611
+    TraitPoints: 1006
+  - Level: 537
+    Points: 20677
+    TraitPoints: 1009
+  - Level: 538
+    Points: 20743
+    TraitPoints: 1012
+  - Level: 539
+    Points: 20809
+    TraitPoints: 1015
+  - Level: 540
+    Points: 20875
+    TraitPoints: 1018
+  - Level: 541
+    Points: 20942
+    TraitPoints: 1021
+  - Level: 542
+    Points: 21009
+    TraitPoints: 1024
+  - Level: 543
+    Points: 21076
+    TraitPoints: 1027
+  - Level: 544
+    Points: 21143
+    TraitPoints: 1030
+  - Level: 545
+    Points: 21210
+    TraitPoints: 1033
+  - Level: 546
+    Points: 21277
+    TraitPoints: 1036
+  - Level: 547
+    Points: 21344
+    TraitPoints: 1039
+  - Level: 548
+    Points: 21411
+    TraitPoints: 1042
+  - Level: 549
+    Points: 21478
+    TraitPoints: 1045
+  - Level: 550
+    Points: 21545
+    TraitPoints: 1048
+  - Level: 551
+    Points: 21613
+    TraitPoints: 1051
+  - Level: 552
+    Points: 21681
+    TraitPoints: 1054
+  - Level: 553
+    Points: 21749
+    TraitPoints: 1057
+  - Level: 554
+    Points: 21817
+    TraitPoints: 1060
+  - Level: 555
+    Points: 21885
+    TraitPoints: 1063
+  - Level: 556
+    Points: 21953
+    TraitPoints: 1066
+  - Level: 557
+    Points: 22021
+    TraitPoints: 1069
+  - Level: 558
+    Points: 22089
+    TraitPoints: 1072
+  - Level: 559
+    Points: 22157
+    TraitPoints: 1075
+  - Level: 560
+    Points: 22225
+    TraitPoints: 1078
+  - Level: 561
+    Points: 22294
+    TraitPoints: 1081
+  - Level: 562
+    Points: 22363
+    TraitPoints: 1084
+  - Level: 563
+    Points: 22432
+    TraitPoints: 1087
+  - Level: 564
+    Points: 22501
+    TraitPoints: 1090
+  - Level: 565
+    Points: 22570
+    TraitPoints: 1093
+  - Level: 566
+    Points: 22639
+    TraitPoints: 1096
+  - Level: 567
+    Points: 22708
+    TraitPoints: 1099
+  - Level: 568
+    Points: 22777
+    TraitPoints: 1102
+  - Level: 569
+    Points: 22846
+    TraitPoints: 1105
+  - Level: 570
+    Points: 22915
+    TraitPoints: 1108
+  - Level: 571
+    Points: 22985
+    TraitPoints: 1111
+  - Level: 572
+    Points: 23055
+    TraitPoints: 1114
+  - Level: 573
+    Points: 23125
+    TraitPoints: 1117
+  - Level: 574
+    Points: 23195
+    TraitPoints: 1120
+  - Level: 575
+    Points: 23265
+    TraitPoints: 1123
+  - Level: 576
+    Points: 23335
+    TraitPoints: 1126
+  - Level: 577
+    Points: 23405
+    TraitPoints: 1129
+  - Level: 578
+    Points: 23475
+    TraitPoints: 1132
+  - Level: 579
+    Points: 23545
+    TraitPoints: 1135
+  - Level: 580
+    Points: 23615
+    TraitPoints: 1138
+  - Level: 581
+    Points: 23686
+    TraitPoints: 1141
+  - Level: 582
+    Points: 23757
+    TraitPoints: 1144
+  - Level: 583
+    Points: 23828
+    TraitPoints: 1147
+  - Level: 584
+    Points: 23899
+    TraitPoints: 1150
+  - Level: 585
+    Points: 23970
+    TraitPoints: 1153
+  - Level: 586
+    Points: 24041
+    TraitPoints: 1156
+  - Level: 587
+    Points: 24112
+    TraitPoints: 1159
+  - Level: 588
+    Points: 24183
+    TraitPoints: 1162
+  - Level: 589
+    Points: 24254
+    TraitPoints: 1165
+  - Level: 590
+    Points: 24325
+    TraitPoints: 1168
+  - Level: 591
+    Points: 24397
+    TraitPoints: 1171
+  - Level: 592
+    Points: 24469
+    TraitPoints: 1174
+  - Level: 593
+    Points: 24541
+    TraitPoints: 1177
+  - Level: 594
+    Points: 24613
+    TraitPoints: 1180
+  - Level: 595
+    Points: 24685
+    TraitPoints: 1183
+  - Level: 596
+    Points: 24757
+    TraitPoints: 1186
+  - Level: 597
+    Points: 24829
+    TraitPoints: 1189
+  - Level: 598
+    Points: 24901
+    TraitPoints: 1192
+  - Level: 599
+    Points: 24973
+    TraitPoints: 1195
+  - Level: 600
+    Points: 25045
+    TraitPoints: 1198
+  - Level: 601
+    Points: 25118
+    TraitPoints: 1201
+  - Level: 602
+    Points: 25191
+    TraitPoints: 1204
+  - Level: 603
+    Points: 25264
+    TraitPoints: 1207
+  - Level: 604
+    Points: 25337
+    TraitPoints: 1210
+  - Level: 605
+    Points: 25410
+    TraitPoints: 1213
+  - Level: 606
+    Points: 25483
+    TraitPoints: 1216
+  - Level: 607
+    Points: 25556
+    TraitPoints: 1219
+  - Level: 608
+    Points: 25629
+    TraitPoints: 1222
+  - Level: 609
+    Points: 25702
+    TraitPoints: 1225
+  - Level: 610
+    Points: 25775
+    TraitPoints: 1228
+  - Level: 611
+    Points: 25849
+    TraitPoints: 1231
+  - Level: 612
+    Points: 25923
+    TraitPoints: 1234
+  - Level: 613
+    Points: 25997
+    TraitPoints: 1237
+  - Level: 614
+    Points: 26071
+    TraitPoints: 1240
+  - Level: 615
+    Points: 26145
+    TraitPoints: 1243
+  - Level: 616
+    Points: 26219
+    TraitPoints: 1246
+  - Level: 617
+    Points: 26293
+    TraitPoints: 1249
+  - Level: 618
+    Points: 26367
+    TraitPoints: 1252
+  - Level: 619
+    Points: 26441
+    TraitPoints: 1255
+  - Level: 620
+    Points: 26515
+    TraitPoints: 1258
+  - Level: 621
+    Points: 26590
+    TraitPoints: 1261
+  - Level: 622
+    Points: 26665
+    TraitPoints: 1264
+  - Level: 623
+    Points: 26740
+    TraitPoints: 1267
+  - Level: 624
+    Points: 26815
+    TraitPoints: 1270
+  - Level: 625
+    Points: 26890
+    TraitPoints: 1273
+  - Level: 626
+    Points: 26965
+    TraitPoints: 1276
+  - Level: 627
+    Points: 27040
+    TraitPoints: 1279
+  - Level: 628
+    Points: 27115
+    TraitPoints: 1282
+  - Level: 629
+    Points: 27190
+    TraitPoints: 1285
+  - Level: 630
+    Points: 27265
+    TraitPoints: 1288
+  - Level: 631
+    Points: 27341
+    TraitPoints: 1291
+  - Level: 632
+    Points: 27417
+    TraitPoints: 1294
+  - Level: 633
+    Points: 27493
+    TraitPoints: 1297
+  - Level: 634
+    Points: 27569
+    TraitPoints: 1300
+  - Level: 635
+    Points: 27645
+    TraitPoints: 1303
+  - Level: 636
+    Points: 27721
+    TraitPoints: 1306
+  - Level: 637
+    Points: 27797
+    TraitPoints: 1309
+  - Level: 638
+    Points: 27873
+    TraitPoints: 1312
+  - Level: 639
+    Points: 27949
+    TraitPoints: 1315
+  - Level: 640
+    Points: 28025
+    TraitPoints: 1318
+  - Level: 641
+    Points: 28102
+    TraitPoints: 1321
+  - Level: 642
+    Points: 28179
+    TraitPoints: 1324
+  - Level: 643
+    Points: 28256
+    TraitPoints: 1327
+  - Level: 644
+    Points: 28333
+    TraitPoints: 1330
+  - Level: 645
+    Points: 28410
+    TraitPoints: 1333
+  - Level: 646
+    Points: 28487
+    TraitPoints: 1336
+  - Level: 647
+    Points: 28564
+    TraitPoints: 1339
+  - Level: 648
+    Points: 28641
+    TraitPoints: 1342
+  - Level: 649
+    Points: 28718
+    TraitPoints: 1345
+  - Level: 650
+    Points: 28795
+    TraitPoints: 1348
+  - Level: 651
+    Points: 28873
+    TraitPoints: 1351
+  - Level: 652
+    Points: 28951
+    TraitPoints: 1354
+  - Level: 653
+    Points: 29029
+    TraitPoints: 1357
+  - Level: 654
+    Points: 29107
+    TraitPoints: 1360
+  - Level: 655
+    Points: 29185
+    TraitPoints: 1363
+  - Level: 656
+    Points: 29263
+    TraitPoints: 1366
+  - Level: 657
+    Points: 29341
+    TraitPoints: 1369
+  - Level: 658
+    Points: 29419
+    TraitPoints: 1372
+  - Level: 659
+    Points: 29497
+    TraitPoints: 1375
+  - Level: 660
+    Points: 29575
+    TraitPoints: 1378
+  - Level: 661
+    Points: 29654
+    TraitPoints: 1381
+  - Level: 662
+    Points: 29733
+    TraitPoints: 1384
+  - Level: 663
+    Points: 29812
+    TraitPoints: 1387
+  - Level: 664
+    Points: 29891
+    TraitPoints: 1390
+  - Level: 665
+    Points: 29970
+    TraitPoints: 1393
+  - Level: 666
+    Points: 30049
+    TraitPoints: 1396
+  - Level: 667
+    Points: 30128
+    TraitPoints: 1399
+  - Level: 668
+    Points: 30207
+    TraitPoints: 1402
+  - Level: 669
+    Points: 30286
+    TraitPoints: 1405
+  - Level: 670
+    Points: 30365
+    TraitPoints: 1408
+  - Level: 671
+    Points: 30445
+    TraitPoints: 1411
+  - Level: 672
+    Points: 30525
+    TraitPoints: 1414
+  - Level: 673
+    Points: 30605
+    TraitPoints: 1417
+  - Level: 674
+    Points: 30685
+    TraitPoints: 1420
+  - Level: 675
+    Points: 30765
+    TraitPoints: 1423
+  - Level: 676
+    Points: 30845
+    TraitPoints: 1426
+  - Level: 677
+    Points: 30925
+    TraitPoints: 1429
+  - Level: 678
+    Points: 31005
+    TraitPoints: 1432
+  - Level: 679
+    Points: 31085
+    TraitPoints: 1435
+  - Level: 680
+    Points: 31165
+    TraitPoints: 1438
+  - Level: 681
+    Points: 31246
+    TraitPoints: 1441
+  - Level: 682
+    Points: 31327
+    TraitPoints: 1444
+  - Level: 683
+    Points: 31408
+    TraitPoints: 1447
+  - Level: 684
+    Points: 31489
+    TraitPoints: 1450
+  - Level: 685
+    Points: 31570
+    TraitPoints: 1453
+  - Level: 686
+    Points: 31651
+    TraitPoints: 1456
+  - Level: 687
+    Points: 31732
+    TraitPoints: 1459
+  - Level: 688
+    Points: 31813
+    TraitPoints: 1462
+  - Level: 689
+    Points: 31894
+    TraitPoints: 1465
+  - Level: 690
+    Points: 31975
+    TraitPoints: 1468
+  - Level: 691
+    Points: 32057
+    TraitPoints: 1471
+  - Level: 692
+    Points: 32139
+    TraitPoints: 1474
+  - Level: 693
+    Points: 32221
+    TraitPoints: 1477
+  - Level: 694
+    Points: 32303
+    TraitPoints: 1480
+  - Level: 695
+    Points: 32385
+    TraitPoints: 1483
+  - Level: 696
+    Points: 32467
+    TraitPoints: 1486
+  - Level: 697
+    Points: 32549
+    TraitPoints: 1489
+  - Level: 698
+    Points: 32631
+    TraitPoints: 1492
+  - Level: 699
+    Points: 32713
+    TraitPoints: 1495
+  - Level: 700
+    Points: 32795
+    TraitPoints: 1498
+  - Level: 701
+    Points: 32878
+    TraitPoints: 1501
+  - Level: 702
+    Points: 32961
+    TraitPoints: 1504
+  - Level: 703
+    Points: 33044
+    TraitPoints: 1507
+  - Level: 704
+    Points: 33127
+    TraitPoints: 1510
+  - Level: 705
+    Points: 33210
+    TraitPoints: 1513
+  - Level: 706
+    Points: 33293
+    TraitPoints: 1516
+  - Level: 707
+    Points: 33376
+    TraitPoints: 1519
+  - Level: 708
+    Points: 33459
+    TraitPoints: 1522
+  - Level: 709
+    Points: 33542
+    TraitPoints: 1525
+  - Level: 710
+    Points: 33625
+    TraitPoints: 1528
+  - Level: 711
+    Points: 33709
+    TraitPoints: 1531
+  - Level: 712
+    Points: 33793
+    TraitPoints: 1534
+  - Level: 713
+    Points: 33877
+    TraitPoints: 1537
+  - Level: 714
+    Points: 33961
+    TraitPoints: 1540
+  - Level: 715
+    Points: 34045
+    TraitPoints: 1543
+  - Level: 716
+    Points: 34129
+    TraitPoints: 1546
+  - Level: 717
+    Points: 34213
+    TraitPoints: 1549
+  - Level: 718
+    Points: 34297
+    TraitPoints: 1552
+  - Level: 719
+    Points: 34381
+    TraitPoints: 1555
+  - Level: 720
+    Points: 34465
+    TraitPoints: 1558
+  - Level: 721
+    Points: 34550
+    TraitPoints: 1561
+  - Level: 722
+    Points: 34635
+    TraitPoints: 1564
+  - Level: 723
+    Points: 34720
+    TraitPoints: 1567
+  - Level: 724
+    Points: 34805
+    TraitPoints: 1570
+  - Level: 725
+    Points: 34890
+    TraitPoints: 1573
+  - Level: 726
+    Points: 34975
+    TraitPoints: 1576
+  - Level: 727
+    Points: 35060
+    TraitPoints: 1579
+  - Level: 728
+    Points: 35145
+    TraitPoints: 1582
+  - Level: 729
+    Points: 35230
+    TraitPoints: 1585
+  - Level: 730
+    Points: 35315
+    TraitPoints: 1588
+  - Level: 731
+    Points: 35401
+    TraitPoints: 1591
+  - Level: 732
+    Points: 35487
+    TraitPoints: 1594
+  - Level: 733
+    Points: 35573
+    TraitPoints: 1597
+  - Level: 734
+    Points: 35659
+    TraitPoints: 1600
+  - Level: 735
+    Points: 35745
+    TraitPoints: 1603
+  - Level: 736
+    Points: 35831
+    TraitPoints: 1606
+  - Level: 737
+    Points: 35917
+    TraitPoints: 1609
+  - Level: 738
+    Points: 36003
+    TraitPoints: 1612
+  - Level: 739
+    Points: 36089
+    TraitPoints: 1615
+  - Level: 740
+    Points: 36175
+    TraitPoints: 1618
+  - Level: 741
+    Points: 36262
+    TraitPoints: 1621
+  - Level: 742
+    Points: 36349
+    TraitPoints: 1624
+  - Level: 743
+    Points: 36436
+    TraitPoints: 1627
+  - Level: 744
+    Points: 36523
+    TraitPoints: 1630
+  - Level: 745
+    Points: 36610
+    TraitPoints: 1633
+  - Level: 746
+    Points: 36697
+    TraitPoints: 1636
+  - Level: 747
+    Points: 36784
+    TraitPoints: 1639
+  - Level: 748
+    Points: 36871
+    TraitPoints: 1642
+  - Level: 749
+    Points: 36958
+    TraitPoints: 1645
+  - Level: 750
+    Points: 37045
+    TraitPoints: 1648
+  - Level: 751
+    Points: 37133
+    TraitPoints: 1651
+  - Level: 752
+    Points: 37221
+    TraitPoints: 1654
+  - Level: 753
+    Points: 37309
+    TraitPoints: 1657
+  - Level: 754
+    Points: 37397
+    TraitPoints: 1660
+  - Level: 755
+    Points: 37485
+    TraitPoints: 1663
+  - Level: 756
+    Points: 37573
+    TraitPoints: 1666
+  - Level: 757
+    Points: 37661
+    TraitPoints: 1669
+  - Level: 758
+    Points: 37749
+    TraitPoints: 1672
+  - Level: 759
+    Points: 37837
+    TraitPoints: 1675
+  - Level: 760
+    Points: 37925
+    TraitPoints: 1678
+  - Level: 761
+    Points: 38014
+    TraitPoints: 1681
+  - Level: 762
+    Points: 38103
+    TraitPoints: 1684
+  - Level: 763
+    Points: 38192
+    TraitPoints: 1687
+  - Level: 764
+    Points: 38281
+    TraitPoints: 1690
+  - Level: 765
+    Points: 38370
+    TraitPoints: 1693
+  - Level: 766
+    Points: 38459
+    TraitPoints: 1696
+  - Level: 767
+    Points: 38548
+    TraitPoints: 1699
+  - Level: 768
+    Points: 38637
+    TraitPoints: 1702
+  - Level: 769
+    Points: 38726
+    TraitPoints: 1705
+  - Level: 770
+    Points: 38815
+    TraitPoints: 1708
+  - Level: 771
+    Points: 38905
+    TraitPoints: 1711
+  - Level: 772
+    Points: 38995
+    TraitPoints: 1714
+  - Level: 773
+    Points: 39085
+    TraitPoints: 1717
+  - Level: 774
+    Points: 39175
+    TraitPoints: 1720
+  - Level: 775
+    Points: 39265
+    TraitPoints: 1723
+  - Level: 776
+    Points: 39355
+    TraitPoints: 1726
+  - Level: 777
+    Points: 39445
+    TraitPoints: 1729
+  - Level: 778
+    Points: 39535
+    TraitPoints: 1732
+  - Level: 779
+    Points: 39625
+    TraitPoints: 1735
+  - Level: 780
+    Points: 39715
+    TraitPoints: 1738
+  - Level: 781
+    Points: 39806
+    TraitPoints: 1741
+  - Level: 782
+    Points: 39897
+    TraitPoints: 1744
+  - Level: 783
+    Points: 39988
+    TraitPoints: 1747
+  - Level: 784
+    Points: 40079
+    TraitPoints: 1750
+  - Level: 785
+    Points: 40170
+    TraitPoints: 1753
+  - Level: 786
+    Points: 40261
+    TraitPoints: 1756
+  - Level: 787
+    Points: 40352
+    TraitPoints: 1759
+  - Level: 788
+    Points: 40443
+    TraitPoints: 1762
+  - Level: 789
+    Points: 40534
+    TraitPoints: 1765
+  - Level: 790
+    Points: 40625
+    TraitPoints: 1768
+  - Level: 791
+    Points: 40717
+    TraitPoints: 1771
+  - Level: 792
+    Points: 40809
+    TraitPoints: 1774
+  - Level: 793
+    Points: 40901
+    TraitPoints: 1777
+  - Level: 794
+    Points: 40993
+    TraitPoints: 1780
+  - Level: 795
+    Points: 41085
+    TraitPoints: 1783
+  - Level: 796
+    Points: 41177
+    TraitPoints: 1786
+  - Level: 797
+    Points: 41269
+    TraitPoints: 1789
+  - Level: 798
+    Points: 41361
+    TraitPoints: 1792
+  - Level: 799
+    Points: 41453
+    TraitPoints: 1795
+  - Level: 800
+    Points: 41545
+    TraitPoints: 1798
+  - Level: 801
+    Points: 41638
+    TraitPoints: 1801
+  - Level: 802
+    Points: 41731
+    TraitPoints: 1804
+  - Level: 803
+    Points: 41824
+    TraitPoints: 1807
+  - Level: 804
+    Points: 41917
+    TraitPoints: 1810
+  - Level: 805
+    Points: 42010
+    TraitPoints: 1813
+  - Level: 806
+    Points: 42103
+    TraitPoints: 1816
+  - Level: 807
+    Points: 42196
+    TraitPoints: 1819
+  - Level: 808
+    Points: 42289
+    TraitPoints: 1822
+  - Level: 809
+    Points: 42382
+    TraitPoints: 1825
+  - Level: 810
+    Points: 42475
+    TraitPoints: 1828
+  - Level: 811
+    Points: 42569
+    TraitPoints: 1831
+  - Level: 812
+    Points: 42663
+    TraitPoints: 1834
+  - Level: 813
+    Points: 42757
+    TraitPoints: 1837
+  - Level: 814
+    Points: 42851
+    TraitPoints: 1840
+  - Level: 815
+    Points: 42945
+    TraitPoints: 1843
+  - Level: 816
+    Points: 43039
+    TraitPoints: 1846
+  - Level: 817
+    Points: 43133
+    TraitPoints: 1849
+  - Level: 818
+    Points: 43227
+    TraitPoints: 1852
+  - Level: 819
+    Points: 43321
+    TraitPoints: 1855
+  - Level: 820
+    Points: 43415
+    TraitPoints: 1858
+  - Level: 821
+    Points: 43510
+    TraitPoints: 1861
+  - Level: 822
+    Points: 43605
+    TraitPoints: 1864
+  - Level: 823
+    Points: 43700
+    TraitPoints: 1867
+  - Level: 824
+    Points: 43795
+    TraitPoints: 1870
+  - Level: 825
+    Points: 43890
+    TraitPoints: 1873
+  - Level: 826
+    Points: 43985
+    TraitPoints: 1876
+  - Level: 827
+    Points: 44080
+    TraitPoints: 1879
+  - Level: 828
+    Points: 44175
+    TraitPoints: 1882
+  - Level: 829
+    Points: 44270
+    TraitPoints: 1885
+  - Level: 830
+    Points: 44365
+    TraitPoints: 1888
+  - Level: 831
+    Points: 44461
+    TraitPoints: 1891
+  - Level: 832
+    Points: 44557
+    TraitPoints: 1894
+  - Level: 833
+    Points: 44653
+    TraitPoints: 1897
+  - Level: 834
+    Points: 44749
+    TraitPoints: 1900
+  - Level: 835
+    Points: 44845
+    TraitPoints: 1903
+  - Level: 836
+    Points: 44941
+    TraitPoints: 1906
+  - Level: 837
+    Points: 45037
+    TraitPoints: 1909
+  - Level: 838
+    Points: 45133
+    TraitPoints: 1912
+  - Level: 839
+    Points: 45229
+    TraitPoints: 1915
+  - Level: 840
+    Points: 45325
+    TraitPoints: 1918
+  - Level: 841
+    Points: 45422
+    TraitPoints: 1921
+  - Level: 842
+    Points: 45519
+    TraitPoints: 1924
+  - Level: 843
+    Points: 45616
+    TraitPoints: 1927
+  - Level: 844
+    Points: 45713
+    TraitPoints: 1930
+  - Level: 845
+    Points: 45810
+    TraitPoints: 1933
+  - Level: 846
+    Points: 45907
+    TraitPoints: 1936
+  - Level: 847
+    Points: 46004
+    TraitPoints: 1939
+  - Level: 848
+    Points: 46101
+    TraitPoints: 1942
+  - Level: 849
+    Points: 46198
+    TraitPoints: 1945
+  - Level: 850
+    Points: 46295
+    TraitPoints: 1948
+  - Level: 851
+    Points: 46393
+    TraitPoints: 1951
+  - Level: 852
+    Points: 46491
+    TraitPoints: 1954
+  - Level: 853
+    Points: 46589
+    TraitPoints: 1957
+  - Level: 854
+    Points: 46687
+    TraitPoints: 1960
+  - Level: 855
+    Points: 46785
+    TraitPoints: 1963
+  - Level: 856
+    Points: 46883
+    TraitPoints: 1966
+  - Level: 857
+    Points: 46981
+    TraitPoints: 1969
+  - Level: 858
+    Points: 47079
+    TraitPoints: 1972
+  - Level: 859
+    Points: 47177
+    TraitPoints: 1975
+  - Level: 860
+    Points: 47275
+    TraitPoints: 1978
+  - Level: 861
+    Points: 47374
+    TraitPoints: 1981
+  - Level: 862
+    Points: 47473
+    TraitPoints: 1984
+  - Level: 863
+    Points: 47572
+    TraitPoints: 1987
+  - Level: 864
+    Points: 47671
+    TraitPoints: 1990
+  - Level: 865
+    Points: 47770
+    TraitPoints: 1993
+  - Level: 866
+    Points: 47869
+    TraitPoints: 1996
+  - Level: 867
+    Points: 47968
+    TraitPoints: 1999
+  - Level: 868
+    Points: 48067
+    TraitPoints: 2002
+  - Level: 869
+    Points: 48166
+    TraitPoints: 2005
+  - Level: 870
+    Points: 48265
+    TraitPoints: 2008
+  - Level: 871
+    Points: 48365
+    TraitPoints: 2011
+  - Level: 872
+    Points: 48465
+    TraitPoints: 2014
+  - Level: 873
+    Points: 48565
+    TraitPoints: 2017
+  - Level: 874
+    Points: 48665
+    TraitPoints: 2020
+  - Level: 875
+    Points: 48765
+    TraitPoints: 2023
+  - Level: 876
+    Points: 48865
+    TraitPoints: 2026
+  - Level: 877
+    Points: 48965
+    TraitPoints: 2029
+  - Level: 878
+    Points: 49065
+    TraitPoints: 2032
+  - Level: 879
+    Points: 49165
+    TraitPoints: 2035
+  - Level: 880
+    Points: 49265
+    TraitPoints: 2038
+  - Level: 881
+    Points: 49366
+    TraitPoints: 2041
+  - Level: 882
+    Points: 49467
+    TraitPoints: 2044
+  - Level: 883
+    Points: 49568
+    TraitPoints: 2047
+  - Level: 884
+    Points: 49669
+    TraitPoints: 2050
+  - Level: 885
+    Points: 49770
+    TraitPoints: 2053
+  - Level: 886
+    Points: 49871
+    TraitPoints: 2056
+  - Level: 887
+    Points: 49972
+    TraitPoints: 2059
+  - Level: 888
+    Points: 50073
+    TraitPoints: 2062
+  - Level: 889
+    Points: 50174
+    TraitPoints: 2065
+  - Level: 890
+    Points: 50275
+    TraitPoints: 2068
+  - Level: 891
+    Points: 50377
+    TraitPoints: 2071
+  - Level: 892
+    Points: 50479
+    TraitPoints: 2074
+  - Level: 893
+    Points: 50581
+    TraitPoints: 2077
+  - Level: 894
+    Points: 50683
+    TraitPoints: 2080
+  - Level: 895
+    Points: 50785
+    TraitPoints: 2083
+  - Level: 896
+    Points: 50887
+    TraitPoints: 2086
+  - Level: 897
+    Points: 50989
+    TraitPoints: 2089
+  - Level: 898
+    Points: 51091
+    TraitPoints: 2092
+  - Level: 899
+    Points: 51193
+    TraitPoints: 2095
+  - Level: 900
+    Points: 51295
+    TraitPoints: 2098
+  - Level: 901
+    Points: 51398
+    TraitPoints: 2101
+  - Level: 902
+    Points: 51501
+    TraitPoints: 2104
+  - Level: 903
+    Points: 51604
+    TraitPoints: 2107
+  - Level: 904
+    Points: 51707
+    TraitPoints: 2110
+  - Level: 905
+    Points: 51810
+    TraitPoints: 2113
+  - Level: 906
+    Points: 51913
+    TraitPoints: 2116
+  - Level: 907
+    Points: 52016
+    TraitPoints: 2119
+  - Level: 908
+    Points: 52119
+    TraitPoints: 2122
+  - Level: 909
+    Points: 52222
+    TraitPoints: 2125
+  - Level: 910
+    Points: 52325
+    TraitPoints: 2128
+  - Level: 911
+    Points: 52429
+    TraitPoints: 2131
+  - Level: 912
+    Points: 52533
+    TraitPoints: 2134
+  - Level: 913
+    Points: 52637
+    TraitPoints: 2137
+  - Level: 914
+    Points: 52741
+    TraitPoints: 2140
+  - Level: 915
+    Points: 52845
+    TraitPoints: 2143
+  - Level: 916
+    Points: 52949
+    TraitPoints: 2146
+  - Level: 917
+    Points: 53053
+    TraitPoints: 2149
+  - Level: 918
+    Points: 53157
+    TraitPoints: 2152
+  - Level: 919
+    Points: 53261
+    TraitPoints: 2155
+  - Level: 920
+    Points: 53365
+    TraitPoints: 2158
+  - Level: 921
+    Points: 53470
+    TraitPoints: 2161
+  - Level: 922
+    Points: 53575
+    TraitPoints: 2164
+  - Level: 923
+    Points: 53680
+    TraitPoints: 2167
+  - Level: 924
+    Points: 53785
+    TraitPoints: 2170
+  - Level: 925
+    Points: 53890
+    TraitPoints: 2173
+  - Level: 926
+    Points: 53995
+    TraitPoints: 2176
+  - Level: 927
+    Points: 54100
+    TraitPoints: 2179
+  - Level: 928
+    Points: 54205
+    TraitPoints: 2182
+  - Level: 929
+    Points: 54310
+    TraitPoints: 2185
+  - Level: 930
+    Points: 54415
+    TraitPoints: 2188
+  - Level: 931
+    Points: 54521
+    TraitPoints: 2191
+  - Level: 932
+    Points: 54627
+    TraitPoints: 2194
+  - Level: 933
+    Points: 54733
+    TraitPoints: 2197
+  - Level: 934
+    Points: 54839
+    TraitPoints: 2200
+  - Level: 935
+    Points: 54945
+    TraitPoints: 2203
+  - Level: 936
+    Points: 55051
+    TraitPoints: 2206
+  - Level: 937
+    Points: 55157
+    TraitPoints: 2209
+  - Level: 938
+    Points: 55263
+    TraitPoints: 2212
+  - Level: 939
+    Points: 55369
+    TraitPoints: 2215
+  - Level: 940
+    Points: 55475
+    TraitPoints: 2218
+  - Level: 941
+    Points: 55582
+    TraitPoints: 2221
+  - Level: 942
+    Points: 55689
+    TraitPoints: 2224
+  - Level: 943
+    Points: 55796
+    TraitPoints: 2227
+  - Level: 944
+    Points: 55903
+    TraitPoints: 2230
+  - Level: 945
+    Points: 56010
+    TraitPoints: 2233
+  - Level: 946
+    Points: 56117
+    TraitPoints: 2236
+  - Level: 947
+    Points: 56224
+    TraitPoints: 2239
+  - Level: 948
+    Points: 56331
+    TraitPoints: 2242
+  - Level: 949
+    Points: 56438
+    TraitPoints: 2245
+  - Level: 950
+    Points: 56545
+    TraitPoints: 2248
+  - Level: 951
+    Points: 56653
+    TraitPoints: 2251
+  - Level: 952
+    Points: 56761
+    TraitPoints: 2254
+  - Level: 953
+    Points: 56869
+    TraitPoints: 2257
+  - Level: 954
+    Points: 56977
+    TraitPoints: 2260
+  - Level: 955
+    Points: 57085
+    TraitPoints: 2263
+  - Level: 956
+    Points: 57193
+    TraitPoints: 2266
+  - Level: 957
+    Points: 57301
+    TraitPoints: 2269
+  - Level: 958
+    Points: 57409
+    TraitPoints: 2272
+  - Level: 959
+    Points: 57517
+    TraitPoints: 2275
+  - Level: 960
+    Points: 57625
+    TraitPoints: 2278
+  - Level: 961
+    Points: 57734
+    TraitPoints: 2281
+  - Level: 962
+    Points: 57843
+    TraitPoints: 2284
+  - Level: 963
+    Points: 57952
+    TraitPoints: 2287
+  - Level: 964
+    Points: 58061
+    TraitPoints: 2290
+  - Level: 965
+    Points: 58170
+    TraitPoints: 2293
+  - Level: 966
+    Points: 58279
+    TraitPoints: 2296
+  - Level: 967
+    Points: 58388
+    TraitPoints: 2299
+  - Level: 968
+    Points: 58497
+    TraitPoints: 2302
+  - Level: 969
+    Points: 58606
+    TraitPoints: 2305
+  - Level: 970
+    Points: 58715
+    TraitPoints: 2308
+  - Level: 971
+    Points: 58825
+    TraitPoints: 2311
+  - Level: 972
+    Points: 58935
+    TraitPoints: 2314
+  - Level: 973
+    Points: 59045
+    TraitPoints: 2317
+  - Level: 974
+    Points: 59155
+    TraitPoints: 2320
+  - Level: 975
+    Points: 59265
+    TraitPoints: 2323
+  - Level: 976
+    Points: 59375
+    TraitPoints: 2326
+  - Level: 977
+    Points: 59485
+    TraitPoints: 2329
+  - Level: 978
+    Points: 59595
+    TraitPoints: 2332
+  - Level: 979
+    Points: 59705
+    TraitPoints: 2335
+  - Level: 980
+    Points: 59815
+    TraitPoints: 2338
+  - Level: 981
+    Points: 59926
+    TraitPoints: 2341
+  - Level: 982
+    Points: 60037
+    TraitPoints: 2344
+  - Level: 983
+    Points: 60148
+    TraitPoints: 2347
+  - Level: 984
+    Points: 60259
+    TraitPoints: 2350
+  - Level: 985
+    Points: 60370
+    TraitPoints: 2353
+  - Level: 986
+    Points: 60481
+    TraitPoints: 2356
+  - Level: 987
+    Points: 60592
+    TraitPoints: 2359
+  - Level: 988
+    Points: 60703
+    TraitPoints: 2362
+  - Level: 989
+    Points: 60814
+    TraitPoints: 2365
+  - Level: 990
+    Points: 60925
+    TraitPoints: 2368
+  - Level: 991
+    Points: 61037
+    TraitPoints: 2371
+  - Level: 992
+    Points: 61149
+    TraitPoints: 2374
+  - Level: 993
+    Points: 61261
+    TraitPoints: 2377
+  - Level: 994
+    Points: 61373
+    TraitPoints: 2380
+  - Level: 995
+    Points: 61485
+    TraitPoints: 2383
+  - Level: 996
+    Points: 61597
+    TraitPoints: 2386
+  - Level: 997
+    Points: 61709
+    TraitPoints: 2389
+  - Level: 998
+    Points: 61821
+    TraitPoints: 2392
+  - Level: 999
+    Points: 61933
+    TraitPoints: 2395
+  - Level: 1000
+    # Points: 102545 #default (only for 2 stats max)
+    TraitPoints: 2401
+    Points: 100000 #modified for 1k levels only, for max 2 stats + 25% for 3rd stat (like 999 str, 999 agi, 250 vit)
+    TraitPoints: 2404

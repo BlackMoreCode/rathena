@@ -28,13 +28,29 @@
 ###########################################################################
 
 Header:
-  Type: STATPOINT_DB
-  Version: 2
+    Type: STATPOINT_DB
+    Version: 2
 
 Footer:
-  Imports:
-  - Path: db/pre-re/statpoint.yml
-    Mode: Prerenewal
-  - Path: db/re/statpoint.yml
-    Mode: Renewal
-  - Path: db/import/statpoint.yml
+    Imports:
+        - Path: db/pre-re/statpoint.yml
+          Mode: Prerenewal
+        - Path: db/re/statpoint.yml
+          Mode: Renewal
+        - Path: db/import/pre1000_status_points_pre.yml
+
+        # #####################################################################################
+        # High Rate related settings. Enable only 1 file for server depends on your max levels
+        # #####################################################################################
+
+        # ------------------------------------------------------------
+        # Step 1: lets define maximum level and stats for all classes
+        # Note: must be done inside db/job_stats.yml
+        # ------------------------------------------------------------
+
+        # --------------------------------------------------------------------
+        # Step 2: now enable the file for max level in file /db/statpoint.yml
+        # --------------------------------------------------------------------
+
+        # - Path: db/highrate/pre1000_status_points_pre.yml
+        #   Mode: Prerenewal
