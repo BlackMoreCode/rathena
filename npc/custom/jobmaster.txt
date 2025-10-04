@@ -383,9 +383,10 @@ function	Confirm_Change	{
 		.@job_option$ = " ~ ^0055FFRebirth^000000";
 	
 	if (select(.@job_option$+": ~ ^777777" + 
-			((.@back) ?"Go back" : "Cancel") + "^000000") == 1) {
-		Job_Change(.@class);
-	}
+            ((.@back) ?"Go back" : "Cancel") + "^000000") == 1) {
+        set SkillPoint,0;
+        Job_Change(.@class);
+    }
 	if (!.@back)
 		close; // "Cancel" pressed
 	return;
@@ -514,7 +515,7 @@ OnInit:
 	.BabyExpanded = true;				// Enable Baby Expanded classes: Ex. Baby Ninja, Baby Taekwon, etc.
 	.BabySummoner = true;				// Enable Baby Summoner?
 	.LastJob = true;					// Enforce linear class changes?
-	.SkillPointCheck = true;			// Force player to use up all skill points?
+	.SkillPointCheck = false;			// Force player to use up all skill points?
 	.Platinum = true;					// Get platinum skills automatically?
 	.GetJobEquip = false;				// Get job equipment (mostly weapons) on job change?
 

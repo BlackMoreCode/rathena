@@ -10475,7 +10475,7 @@ Body:
       Baby_Thief: true
       Taekwon: true
       Baby_Taekwon: true
-    MaxJobLevel: 70
+    MaxJobLevel: 120
     JobExp:
       - Level: 1
         Exp: 60
@@ -10750,7 +10750,7 @@ Body:
       Baby_Crusader2: true
       Soul_Linker: true
       Baby_Soul_Linker: true
-    MaxJobLevel: 100
+    MaxJobLevel: 120
     JobExp:
       - Level: 1
         Exp: 2500
@@ -10997,7 +10997,7 @@ Body:
       Ninja: true
       Baby_Ninja: true
       Baby_Gunslinger: true
-    MaxJobLevel: 70
+    MaxJobLevel: 120
     JobExp:
       - Level: 1
         Exp: 200
@@ -11244,7 +11244,7 @@ Body:
       Star_Gladiator2: true
       Baby_Star_Gladiator: true
       Baby_Star_Gladiator2: true
-    MaxJobLevel: 70
+    MaxJobLevel: 120
     JobExp:
       - Level: 1
         Exp: 50700
@@ -11517,7 +11517,7 @@ Body:
       Acolyte_High: true
       Merchant_High: true
       Thief_High: true
-    MaxJobLevel: 70
+    MaxJobLevel: 120
     JobExp:
       - Level: 1
         Exp: 340
@@ -11775,7 +11775,7 @@ Body:
       Clown: true
       Gypsy: true
       Paladin2: true
-    MaxJobLevel: 70
+    MaxJobLevel: 120
     JobExp:
       - Level: 1
         Exp: 1803
@@ -12081,7 +12081,7 @@ Body:
       Baby_Soul_Reaper: true
       Star_Emperor2: true
       Baby_Star_Emperor2: true
-    MaxJobLevel: 100
+    MaxJobLevel: 120
     JobExp:
       - Level: 1
         Exp: 853
