@@ -1,28 +1,237 @@
+//===== rAthena Script =======================================
 //===== Cope-RO Scripts ======================================
-//= Global Drop System
-//===== Scripted By: =========================================
-//= [Meroy]
+//= Map-Specific Drop System
+//= 맵별 드롭 시스템
 //===== Current Version: =====================================
-//= 1.0
+//= 1.1
 //===== Description: =========================================
-//= Specific Map Drop System
+//= Allows different items to drop on different maps
+//= with configurable drop rates per map
+//= 맵마다 다른 아이템과 확률을 설정할 수 있는 드롭 시스템
 //===== Additional Comments: =================================
-//= 1.0 - First Release
+//= 1.0 - First Release [Initial common drop system]
+//=       초기 공통 드롭 시스템
+//= 1.1 - Added map-specific drop tables with individual rates
+//=       맵별 개별 드롭 테이블 및 확률 시스템 추가
 //============================================================
+
 -	script	Cope_Drop_Maps	FAKE_NPC,{
 
 OnNPCKillEvent:
-    if( inarray(.map_list$,strcharinfo(3)) != -1 ) {
-        if( rand(100) <= 10 ) { //10% ETEL DUST
-            getitem 1000322,1;
-        }
-        if( rand(100) <= 15 ) { //15% HPC
-            getitem 48486,1;
-        }
-    }
-    end;
+	// Get current map name / 현재 맵 이름 가져오기
+	.@map$ = strcharinfo(3);
+	
+	// ========================================
+	// Common Drops (Applied to all registered maps)
+	// 공통 드롭 (등록된 모든 맵에 적용)
+	// ========================================
+	if (inarray(.common_maps$,.@map$) != -1) {
+		// ETEL DUST - 10% drop rate / 10% 드롭 확률
+		// rand(10000) generates 0-9999, so < 1000 means 10%
+		// rand(10000)은 0-9999를 생성하므로 < 1000은 10%를 의미
+		if (rand(10000) < 1000) {
+			getitem 1000322,1;
+		}
+		
+		// HPC - 15% drop rate / 15% 드롭 확률
+		if (rand(10000) < 1500) {
+			getitem 48486,1;
+		}
+	}
+	
+	// ========================================
+	// Map-Specific Drops (Different items per map)
+	// 맵별 특수 드롭 (맵마다 다른 아이템)
+	// ========================================
+	// Use if-else chain for string comparison
+	// 문자열 비교를 위해 if-else 체인 사용
+	
+	if (.@map$ == "amicitia1") {
+		// Get number of items in drop table / 드롭 테이블의 아이템 수 가져오기
+		.@drop_count = getarraysize(.amicitia1_items);
+		
+		// Loop through all items in the drop table
+		// 드롭 테이블의 모든 아이템을 순회
+		for (.@i = 0; .@i < .@drop_count; .@i++) {
+			// Check if item drops based on its rate
+			// 해당 아이템의 확률로 드롭 여부 체크
+			if (rand(10000) < .amicitia1_rates[.@i]) {
+				getitem .amicitia1_items[.@i],1;
+			}
+		}
+	}
+	else if (.@map$ == "amicitia2") {
+		.@drop_count = getarraysize(.amicitia2_items);
+		for (.@i = 0; .@i < .@drop_count; .@i++) {
+			if (rand(10000) < .amicitia2_rates[.@i]) {
+				getitem .amicitia2_items[.@i],1;
+			}
+		}
+	}
+	else if (.@map$ == "nif_dun01") {
+		.@drop_count = getarraysize(.nif_dun01_items);
+		for (.@i = 0; .@i < .@drop_count; .@i++) {
+			if (rand(10000) < .nif_dun01_rates[.@i]) {
+				getitem .nif_dun01_items[.@i],1;
+			}
+		}
+	}
+	else if (.@map$ == "mag_dun03") {
+		.@drop_count = getarraysize(.mag_dun03_items);
+		for (.@i = 0; .@i < .@drop_count; .@i++) {
+			if (rand(10000) < .mag_dun03_rates[.@i]) {
+				getitem .mag_dun03_items[.@i],1;
+			}
+		}
+	}
+	
+	// ========================================
+	// HOW TO ADD NEW MAPS / 새 맵 추가 방법:
+	// ========================================
+	// Add an 'else if' block following the pattern above
+	// 위 패턴을 따라 'else if' 블록 추가
+	//
+	// Example / 예시:
+	/*
+	else if (.@map$ == "new_map_name") {
+		.@drop_count = getarraysize(.new_map_items);
+		for (.@i = 0; .@i < .@drop_count; .@i++) {
+			if (rand(10000) < .new_map_rates[.@i]) {
+				getitem .new_map_items[.@i],1;
+			}
+		}
+	}
+	*/
+	
+	end;
 
 OnInit:
-    setarray .map_list$,"mag_dun03","ein_dun03","nif_dun01","sp_rudus4","amicitia1","amicitia2","nif_dun02";
-    end;
+	// ========================================
+	// Common Drop Configuration / 공통 드롭 설정
+	// ========================================
+	// Maps where common drops (ETEL DUST, HPC) will occur
+	// 공통 드롭(ETEL DUST, HPC)이 발생할 맵 목록
+	setarray .common_maps$,
+		"mag_dun03",
+		"ein_dun03",
+		"nif_dun01",
+		"sp_rudus4",
+		"amicitia1",
+		"amicitia2",
+		"nif_dun02";
+	
+	// ========================================
+	// Map-Specific Drop Tables / 맵별 드롭 테이블
+	// ========================================
+	// Each map needs TWO arrays:
+	// 각 맵은 두 개의 배열이 필요합니다:
+	// 1. _items array: Item IDs / 아이템 ID 배열
+	// 2. _rates array: Drop rates (out of 10000) / 드롭 확률 배열 (10000 기준)
+	//
+	// Rate calculation / 확률 계산:
+	// - 0.01% = 1 out of 10000
+	// - 0.1%  = 10 out of 10000
+	// - 0.5%  = 50 out of 10000
+	// - 1%    = 100 out of 10000
+	// - 10%   = 1000 out of 10000
+	// - 100%  = 10000 out of 10000
+	
+	// ========================================
+	// amicitia1 drop table / amicitia1 드롭 테이블
+	// ========================================
+	// Furious & Wrath weapons (Level 215)
+	// 퓨리어스 & 진노 무기 (215제)
+	// 0.5% chance for each item / 각 아이템 0.5% 확률
+	setarray .amicitia1_items,
+		500101, 510150, 530057, 540088, 540090,
+		550141, 550143, 550145, 550148, 560067,
+		570072, 580072, 600059, 610071, 610072,
+		620040, 640053, 700100, 830038, 500102,
+		500103, 510151, 510152, 510153, 530058,
+		540086, 540087, 540091, 550144, 550146,
+		550150, 560068, 570073, 580073, 590087,
+		630045, 650049, 700101, 810042, 460072;
+	setarray .amicitia1_rates,
+		50, 50, 50, 50, 50,
+		50, 50, 50, 50, 50,
+		50, 50, 50, 50, 50,
+		50, 50, 50, 50, 50,
+		50, 50, 50, 50, 50,
+		50, 50, 50, 50, 50,
+		50, 50, 50, 50, 50,
+		50, 50, 50, 50, 50;
+	
+	// ========================================
+	// amicitia2 drop table / amicitia2 드롭 테이블
+	// ========================================
+	// Wrath Crown series (Level 235 headgear)
+	// 진노의 관 시리즈 (235제 상단 투구)
+	// 0.5% chance for each item / 각 아이템 0.5% 확률
+	setarray .amicitia2_items,
+		400608, 400609, 400610, 400628, 400629,
+		400630, 400650, 400651, 400652, 400661,
+		400662, 400663, 400673, 400674, 400675,
+		400694, 400695, 400696;
+	setarray .amicitia2_rates,
+		50, 50, 50, 50, 50,
+		50, 50, 50, 50, 50,
+		50, 50, 50, 50, 50,
+		50, 50, 50;
+	
+	// ========================================
+	// nif_dun01 drop table / nif_dun01 드롭 테이블
+	// ========================================
+	// Good/Evil weapon boxes and crown box (Level 215)
+	// 선의/악의 무기 상자 및 선악의 관 상자 (215제)
+	// 1% chance for each item / 각 아이템 1% 확률
+	setarray .nif_dun01_items,
+		102070, // Good weapon box / 선의 무기 상자
+		102071, // Evil weapon box / 악의 무기 상자
+		102074; // Good/Evil crown box / 선악의 관 상자
+	setarray .nif_dun01_rates,
+		100, // 1%
+		100, // 1%
+		100; // 1%
+	
+	// ========================================
+	// mag_dun03 drop table / mag_dun03 드롭 테이블
+	// ========================================
+	// Helm of Faith box (Level 180 headgear)
+	// 헬름 오브 페이스 상자 (180제 투구)
+	// 1% chance / 1% 확률
+	setarray .mag_dun03_items,
+		101314; // Helm of Faith box / 헬름 오브 페이스 상자
+	setarray .mag_dun03_rates,
+		100; // 1%
+	
+	// ========================================
+	// HOW TO ADD A NEW MAP / 새 맵 추가 방법:
+	// ========================================
+	// Step 1: Add map to common_maps$ if needed (optional)
+	// 1단계: 필요시 common_maps$에 맵 추가 (선택사항)
+	//
+	// Step 2: Create drop table arrays for the new map
+	// 2단계: 새 맵을 위한 드롭 테이블 배열 생성
+	//
+	// Template / 템플릿:
+	/*
+	setarray .your_map_name_items,
+		ItemID1,
+		ItemID2,
+		ItemID3;
+	setarray .your_map_name_rates,
+		Rate1,   // (out of 10000)
+		Rate2,
+		Rate3;
+	*/
+	//
+	// Step 3: Add 'else if' block in OnNPCKillEvent above
+	// 3단계: 위 OnNPCKillEvent에 'else if' 블록 추가
+	//
+	// Important: Array sizes must match!
+	// 중요: 배열 크기가 일치해야 합니다!
+	// If _items has 3 elements, _rates must also have 3 elements
+	// _items가 3개 요소를 가지면, _rates도 3개 요소를 가져야 함
+	
+	end;
 }
