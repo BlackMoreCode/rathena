@@ -28,7 +28,7 @@ prontera,160,180,4	script	Item Exchanger	24000,{
 	// mes "어떻게 하시겠어요?";
 	next;
 	
-	switch(select("Exchange items:Buy with Zeny:Buy with HPC:Cancel")) {
+	switch(select("Exchange items:Buy with Zeny:Buy with HPC:Check exchangeable items:Check reward pool:Cancel")) {
 	case 1:
 		// Item exchange option / 아이템 교환 옵션
 		callsub S_ItemExchange;
@@ -42,6 +42,14 @@ prontera,160,180,4	script	Item Exchanger	24000,{
 		callsub S_HPCPurchase;
 		break;
 	case 4:
+		// Check exchangeable items / 교환 가능 아이템 확인
+		callsub S_CheckAcceptedItems;
+		break;
+	case 5:
+		// Check reward pool / 보상 풀 확인
+		callsub S_CheckRewardPool;
+		break;
+	case 6:
 		// Cancel / 취소
 		mes "[Item Exchanger]";
 		mes "Come back anytime!";
@@ -78,20 +86,8 @@ S_ItemExchange:
 		mes "[Item Exchanger]";
 		mes "You don't have any items I can exchange.";
 		// mes "교환 가능한 아이템이 없습니다.";
-		mes "Come back when you have one of these:";
-		// mes "다음 아이템 중 하나를 가지고 오세요:";
-		next;
-		
-		// Show list of acceptable items (first 10 only to avoid overflow)
-		// 교환 가능한 아이템 목록 표시 (처음 10개만, 오버플로우 방지)
-		mes "[Item Exchanger]";
-		for (.@i = 0; .@i < getarraysize(.accepted_items) && .@i < 10; .@i++) {
-			mes "- " + getitemname(.accepted_items[.@i]);
-		}
-		if (getarraysize(.accepted_items) > 10) {
-			mes "... and more.";
-			// mes "... 그 외 다수.";
-		}
+		mes "Use 'Check exchangeable items' to see the full list.";
+		// mes "'교환 가능 아이템 확인'으로 전체 목록을 확인하세요.";
 		close;
 	}
 	
@@ -231,6 +227,85 @@ S_HPCPurchase:
 	mes "Here is your item:";
 	// mes "아이템입니다:";
 	mes "^008800" + getitemname(.reward_items[.@rand]) + "^000000!";
+	close;
+
+// ========================================
+// Sub: Check Accepted Items / 서브: 교환 가능 아이템 확인
+// ========================================
+S_CheckAcceptedItems:
+	mes "[Item Exchanger]";
+	mes "Here are all the items I can accept for exchange:";
+	// mes "교환 가능한 모든 아이템 목록입니다:";
+	mes "^0000FF(Total: " + getarraysize(.accepted_items) + " items)^000000";
+	// mes "^0000FF(총 " + getarraysize(.accepted_items) + "개 아이템)^000000";
+	next;
+	
+	.@total = getarraysize(.accepted_items);
+	.@page = 0;
+	.@items_per_page = 10;
+	
+	while (.@page * .@items_per_page < .@total) {
+		mes "[Item Exchanger]";
+		mes "Page " + (.@page + 1) + " / " + ((.@total + .@items_per_page - 1) / .@items_per_page);
+		// mes "페이지 " + (.@page + 1) + " / " + ((.@total + .@items_per_page - 1) / .@items_per_page);
+		
+		.@start = .@page * .@items_per_page;
+		.@end = .@start + .@items_per_page;
+		if (.@end > .@total) .@end = .@total;
+		
+		for (.@i = .@start; .@i < .@end; .@i++) {
+			.@has_item = countitem(.accepted_items[.@i]);
+			if (.@has_item > 0) {
+				mes "^00FF00[O]^000000 " + getitemname(.accepted_items[.@i]) + " ^999999(Own: " + .@has_item + ")^000000";
+			} else {
+				mes "   " + getitemname(.accepted_items[.@i]);
+			}
+		}
+		
+		next;
+		.@page++;
+	}
+	
+	mes "[Item Exchanger]";
+	mes "That's all the items I accept!";
+	// mes "이상입니다!";
+	close;
+
+// ========================================
+// Sub: Check Reward Pool / 서브: 보상 풀 확인
+// ========================================
+S_CheckRewardPool:
+	mes "[Item Exchanger]";
+	mes "Here are all possible rewards:";
+	// mes "가능한 모든 보상 목록입니다:";
+	mes "^0000FF(Total: " + getarraysize(.reward_items) + " items)^000000";
+	// mes "^0000FF(총 " + getarraysize(.reward_items) + "개 아이템)^000000";
+	next;
+	
+	.@total = getarraysize(.reward_items);
+	.@page = 0;
+	.@items_per_page = 10;
+	
+	while (.@page * .@items_per_page < .@total) {
+		mes "[Item Exchanger]";
+		mes "Page " + (.@page + 1) + " / " + ((.@total + .@items_per_page - 1) / .@items_per_page);
+		// mes "페이지 " + (.@page + 1) + " / " + ((.@total + .@items_per_page - 1) / .@items_per_page);
+		
+		.@start = .@page * .@items_per_page;
+		.@end = .@start + .@items_per_page;
+		if (.@end > .@total) .@end = .@total;
+		
+		for (.@i = .@start; .@i < .@end; .@i++) {
+			mes "- " + getitemname(.reward_items[.@i]);
+		}
+		
+		next;
+		.@page++;
+	}
+	
+	mes "[Item Exchanger]";
+	mes "All items have equal chance!";
+	// mes "모든 아이템의 확률은 동일합니다!";
 	close;
 
 // ========================================
