@@ -1,0 +1,317 @@
+//===== rAthena Script =======================================
+//= Item Exchange NPC
+//= 아이템 교환 NPC
+//===== Description: =========================================
+//= Accepts predefined items and gives random items from
+//= another pool, or allows purchase with Zeny/HPC
+//= 미리 정의된 아이템을 받아 다른 풀에서 랜덤 아이템을 주거나
+//= Zeny/HPC로 구매 가능
+//===== Additional Comments: =================================
+//= Based on rAthena scripting conventions
+//= rAthena 스크립팅 컨벤션 기준
+//============================================================
+
+prontera,160,180,4	script	Item Exchanger	24000,{
+	
+	// ========================================
+	// Main Menu / 메인 메뉴
+	// ========================================
+	mes "[Item Exchanger]";
+	mes "Hello! I can exchange certain items";
+	mes "for random rewards from my collection.";
+	// mes "안녕하세요! 특정 아이템을";
+	// mes "랜덤 보상으로 교환해드립니다.";
+	next;
+	
+	mes "[Item Exchanger]";
+	mes "What would you like to do?";
+	// mes "어떻게 하시겠어요?";
+	next;
+	
+	switch(select("Exchange items:Buy with Zeny:Buy with HPC:Cancel")) {
+	case 1:
+		// Item exchange option / 아이템 교환 옵션
+		callsub S_ItemExchange;
+		break;
+	case 2:
+		// Zeny purchase option / Zeny 구매 옵션
+		callsub S_ZenyPurchase;
+		break;
+	case 3:
+		// HPC purchase option / HPC 구매 옵션
+		callsub S_HPCPurchase;
+		break;
+	case 4:
+		// Cancel / 취소
+		mes "[Item Exchanger]";
+		mes "Come back anytime!";
+		// mes "언제든 다시 오세요!";
+		close;
+	}
+	end;
+
+// ========================================
+// Sub: Item Exchange / 서브: 아이템 교환
+// ========================================
+S_ItemExchange:
+	mes "[Item Exchanger]";
+	mes "Checking your inventory...";
+	// mes "인벤토리를 확인하는 중...";
+	next;
+	
+	// Build dynamic menu based on player's inventory
+	// 플레이어 인벤토리를 기반으로 동적 메뉴 생성
+	.@menu$ = "";
+	.@count = 0;
+	
+	for (.@i = 0; .@i < getarraysize(.accepted_items); .@i++) {
+		if (countitem(.accepted_items[.@i]) > 0) {
+			.@available_items[.@count] = .accepted_items[.@i];
+			.@menu$ = .@menu$ + getitemname(.accepted_items[.@i]) + ":";
+			.@count++;
+		}
+	}
+	
+	// Check if player has any exchangeable items
+	// 교환 가능한 아이템이 있는지 확인
+	if (.@count == 0) {
+		mes "[Item Exchanger]";
+		mes "You don't have any items I can exchange.";
+		// mes "교환 가능한 아이템이 없습니다.";
+		mes "Come back when you have one of these:";
+		// mes "다음 아이템 중 하나를 가지고 오세요:";
+		next;
+		
+		// Show list of acceptable items (first 10 only to avoid overflow)
+		// 교환 가능한 아이템 목록 표시 (처음 10개만, 오버플로우 방지)
+		mes "[Item Exchanger]";
+		for (.@i = 0; .@i < getarraysize(.accepted_items) && .@i < 10; .@i++) {
+			mes "- " + getitemname(.accepted_items[.@i]);
+		}
+		if (getarraysize(.accepted_items) > 10) {
+			mes "... and more.";
+			// mes "... 그 외 다수.";
+		}
+		close;
+	}
+	
+	.@menu$ = .@menu$ + "Cancel";
+	
+	// Player selects which item to exchange
+	// 플레이어가 교환할 아이템 선택
+	mes "[Item Exchanger]";
+	mes "Which item would you like to exchange?";
+	// mes "어떤 아이템을 교환하시겠어요?";
+	next;
+	
+	.@choice = select(.@menu$) - 1;
+	
+	// Check if player cancelled / 플레이어가 취소했는지 확인
+	if (.@choice >= .@count) {
+		mes "[Item Exchanger]";
+		mes "Maybe next time!";
+		// mes "다음에 또 오세요!";
+		close;
+	}
+	
+	.@selected_item = .@available_items[.@choice];
+	
+	// Double-check player still has the item (safety check)
+	// 플레이어가 여전히 아이템을 가지고 있는지 재확인 (안전 체크)
+	if (!countitem(.@selected_item)) {
+		mes "[Item Exchanger]";
+		mes "You don't have that item anymore.";
+		// mes "해당 아이템이 더 이상 없습니다.";
+		close;
+	}
+	
+	// Remove one of the selected item from player's inventory
+	// 플레이어 인벤토리에서 선택한 아이템 1개 제거
+	delitem .@selected_item, 1;
+	
+	// Get random item from reward pool
+	// 보상 풀에서 랜덤 아이템 선택
+	.@rand = rand(getarraysize(.reward_items));
+	
+	// Give the random reward item to player
+	// 플레이어에게 랜덤 보상 아이템 지급
+	getitem .reward_items[.@rand], 1;
+	
+	mes "[Item Exchanger]";
+	mes "Here is your reward:";
+	// mes "보상입니다:";
+	mes "^008800" + getitemname(.reward_items[.@rand]) + "^000000!";
+	close;
+
+// ========================================
+// Sub: Zeny Purchase / 서브: Zeny 구매
+// ========================================
+S_ZenyPurchase:
+	mes "[Item Exchanger]";
+	mes "I can sell you a random item";
+	mes "for ^FF0000" + .zeny_price + " Zeny^000000.";
+	// mes "랜덤 아이템을";
+	// mes "^FF0000" + .zeny_price + " Zeny^000000에 판매합니다.";
+	next;
+	
+	mes "[Item Exchanger]";
+	mes "Would you like to purchase?";
+	// mes "구매하시겠어요?";
+	next;
+	
+	if (select("Yes:No") == 2) {
+		mes "[Item Exchanger]";
+		mes "Maybe next time!";
+		// mes "다음에 또 오세요!";
+		close;
+	}
+	
+	// Check if player has enough Zeny
+	// 플레이어가 충분한 Zeny를 가지고 있는지 확인
+	if (Zeny < .zeny_price) {
+		mes "[Item Exchanger]";
+		mes "You don't have enough Zeny.";
+		// mes "Zeny가 부족합니다.";
+		close;
+	}
+	
+	// Deduct Zeny / Zeny 차감
+	Zeny -= .zeny_price;
+	
+	// Give random reward / 랜덤 보상 지급
+	.@rand = rand(getarraysize(.reward_items));
+	getitem .reward_items[.@rand], 1;
+	
+	mes "[Item Exchanger]";
+	mes "Here is your item:";
+	// mes "아이템입니다:";
+	mes "^008800" + getitemname(.reward_items[.@rand]) + "^000000!";
+	close;
+
+// ========================================
+// Sub: HPC Purchase / 서브: HPC 구매
+// ========================================
+S_HPCPurchase:
+	mes "[Item Exchanger]";
+	mes "I can sell you a random item";
+	mes "for ^FF0000" + .hpc_price + " HPC^000000.";
+	// mes "랜덤 아이템을";
+	// mes "^FF0000" + .hpc_price + " HPC^000000에 판매합니다.";
+	next;
+	
+	mes "[Item Exchanger]";
+	mes "Would you like to purchase?";
+	// mes "구매하시겠어요?";
+	next;
+	
+	if (select("Yes:No") == 2) {
+		mes "[Item Exchanger]";
+		mes "Maybe next time!";
+		// mes "다음에 또 오세요!";
+		close;
+	}
+	
+	// Check if player has enough HPC (Item ID: 48486)
+	// 플레이어가 충분한 HPC를 가지고 있는지 확인 (아이템 코드: 48486)
+	if (countitem(48486) < .hpc_price) {
+		mes "[Item Exchanger]";
+		mes "You don't have enough HPC.";
+		// mes "HPC가 부족합니다.";
+		close;
+	}
+	
+	// Deduct HPC / HPC 차감
+	delitem 48486, .hpc_price;
+	
+	// Give random reward / 랜덤 보상 지급
+	.@rand = rand(getarraysize(.reward_items));
+	getitem .reward_items[.@rand], 1;
+	
+	mes "[Item Exchanger]";
+	mes "Here is your item:";
+	// mes "아이템입니다:";
+	mes "^008800" + getitemname(.reward_items[.@rand]) + "^000000!";
+	close;
+
+// ========================================
+// OnInit: Configuration / 초기화: 설정
+// ========================================
+OnInit:
+	// ========================================
+	// Accepted Items Pool / 허용 아이템 풀
+	// ========================================
+	setarray .accepted_items,
+		// Hero's Mark Scroll & Level 200 equipment
+		101194, 15282, 450217, 480174,
+		
+		// Level 205 Furious weapons
+		500101, 510150, 530057, 540088, 540090,
+		550141, 550143, 550145, 550148, 560067,
+		570072, 580072, 600059, 610071, 610072,
+		620040, 640053, 700100, 830038,
+		
+		// Level 205 Wrath weapons & shield
+		500102, 500103, 510151, 510152, 510153,
+		530058, 540086, 540087, 540091, 550144,
+		550146, 550150, 560068, 570073, 580073,
+		590087, 630045, 650049, 700101, 810042,
+		460072,
+		
+		// Level 215 weapon/crown boxes
+		102070, 102071, 102074,
+		
+		// Level 180 helmet box
+		101314,
+		
+		// Level 235 Wrath Crowns
+		400608, 400609, 400610, 400628, 400629,
+		400630, 400650, 400651, 400652, 400661,
+		400662, 400663, 400673, 400674, 400675,
+		400694, 400695, 400696,
+		
+		// Level 220 boots
+		470265;
+	
+	// ========================================
+	// Reward Items Pool / 보상 아이템 풀
+	// ========================================
+	setarray .reward_items,
+		// Hero's Mark Scroll & Level 200 equipment
+		101194, 15282, 450217, 480174,
+		
+		// Level 205 Furious weapons
+		500101, 510150, 530057, 540088, 540090,
+		550141, 550143, 550145, 550148, 560067,
+		570072, 580072, 600059, 610071, 610072,
+		620040, 640053, 700100, 830038,
+		
+		// Level 205 Wrath weapons & shield
+		500102, 500103, 510151, 510152, 510153,
+		530058, 540086, 540087, 540091, 550144,
+		550146, 550150, 560068, 570073, 580073,
+		590087, 630045, 650049, 700101, 810042,
+		460072,
+		
+		// Level 215 weapon/crown boxes
+		102070, 102071, 102074,
+		
+		// Level 180 helmet box
+		101314,
+		
+		// Level 235 Wrath Crowns
+		400608, 400609, 400610, 400628, 400629,
+		400630, 400650, 400651, 400652, 400661,
+		400662, 400663, 400673, 400674, 400675,
+		400694, 400695, 400696,
+		
+		// Level 220 boots
+		470265;
+	
+	// ========================================
+	// Purchase Prices / 구매 가격
+	// ========================================
+	.zeny_price = 100000000; // 100M Zeny
+	.hpc_price = 500; // 500 HPC
+	
+	end;
+}
