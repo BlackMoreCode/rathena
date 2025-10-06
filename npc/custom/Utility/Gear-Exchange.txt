@@ -19,41 +19,31 @@ prontera,160,180,4	script	Item Exchanger	24000,{
 	mes "[Item Exchanger]";
 	mes "Hello! I can exchange certain items";
 	mes "for random rewards from my collection.";
-	// mes "안녕하세요! 특정 아이템을";
-	// mes "랜덤 보상으로 교환해드립니다.";
 	next;
 	
 	mes "[Item Exchanger]";
 	mes "What would you like to do?";
-	// mes "어떻게 하시겠어요?";
 	next;
 	
 	switch(select("Exchange items:Buy with Zeny:Buy with HPC:Check exchangeable items:Check reward pool:Cancel")) {
 	case 1:
-		// Item exchange option / 아이템 교환 옵션
 		callsub S_ItemExchange;
 		break;
 	case 2:
-		// Zeny purchase option / Zeny 구매 옵션
 		callsub S_ZenyPurchase;
 		break;
 	case 3:
-		// HPC purchase option / HPC 구매 옵션
 		callsub S_HPCPurchase;
 		break;
 	case 4:
-		// Check exchangeable items / 교환 가능 아이템 확인
 		callsub S_CheckAcceptedItems;
 		break;
 	case 5:
-		// Check reward pool / 보상 풀 확인
 		callsub S_CheckRewardPool;
 		break;
 	case 6:
-		// Cancel / 취소
 		mes "[Item Exchanger]";
 		mes "Come back anytime!";
-		// mes "언제든 다시 오세요!";
 		close;
 	}
 	end;
@@ -63,79 +53,334 @@ prontera,160,180,4	script	Item Exchanger	24000,{
 // ========================================
 S_ItemExchange:
 	mes "[Item Exchanger]";
-	mes "Checking your inventory...";
-	// mes "인벤토리를 확인하는 중...";
+	mes "I need ^FF00002 items^000000 for one exchange.";
+	mes "Choose your exchange method:";
 	next;
 	
-	// Build dynamic menu based on player's inventory
-	// 플레이어 인벤토리를 기반으로 동적 메뉴 생성
-	.@menu$ = "";
+	switch(select("Same item x2:Different items x1 each:Cancel")) {
+	case 1:
+		callsub S_ExchangeSame;
+		break;
+	case 2:
+		callsub S_ExchangeDifferent;
+		break;
+	case 3:
+		mes "[Item Exchanger]";
+		mes "Maybe next time!";
+		close;
+	}
+	end;
+
+// ========================================
+// Sub: Exchange Same Item x2 / 서브: 같은 아이템 2개 교환
+// ========================================
+S_ExchangeSame:
+	mes "[Item Exchanger]";
+	mes "Checking for items you have at least 2 of...";
+	next;
+	
+	// Build list of available items
+	.@count = 0;
+	
+	for (.@i = 0; .@i < getarraysize(.accepted_items); .@i++) {
+		if (countitem(.accepted_items[.@i]) >= 2) {
+			.@available_items[.@count] = .accepted_items[.@i];
+			.@count++;
+		}
+	}
+	
+	if (.@count == 0) {
+		mes "[Item Exchanger]";
+		mes "You need at least ^FF00002 of the same item^000000.";
+		close;
+	}
+	
+	// Pagination settings
+	.@items_per_page = 15;
+	.@total_pages = (.@count + .@items_per_page - 1) / .@items_per_page;
+	.@current_page = 0;
+	
+	while(1) {
+		.@start_idx = .@current_page * .@items_per_page;
+		.@end_idx = .@start_idx + .@items_per_page;
+		if (.@end_idx > .@count) .@end_idx = .@count;
+		
+		mes "[Item Exchanger]";
+		mes "Which item would you like to exchange?";
+		mes "^FF0000(2 of this item will be consumed)^000000";
+		if (.@total_pages > 1) {
+			mes "^0000FF(Page " + (.@current_page + 1) + "/" + .@total_pages + ")^000000";
+		}
+		next;
+		
+		// Build menu with item names only
+		.@menu$ = "";
+		for (.@i = .@start_idx; .@i < .@end_idx; .@i++) {
+			.@menu$ += getitemname(.@available_items[.@i]) + ":";
+		}
+		
+		// Add navigation options
+		if (.@total_pages > 1) {
+			if (.@current_page > 0) .@menu$ += "Previous Page:";
+			if (.@current_page < .@total_pages - 1) .@menu$ += "Next Page:";
+		}
+		.@menu$ += "Cancel";
+		
+		.@choice = select(.@menu$) - 1;
+		.@page_items = .@end_idx - .@start_idx;
+		
+		// Handle navigation
+		if (.@total_pages > 1) {
+			.@nav_start = .@page_items;
+			if (.@current_page > 0) {
+				if (.@choice == .@nav_start) {
+					.@current_page--;
+					continue;
+				}
+				.@nav_start++;
+			}
+			if (.@current_page < .@total_pages - 1) {
+				if (.@choice == .@nav_start) {
+					.@current_page++;
+					continue;
+				}
+			}
+		}
+		
+		// Check if cancelled
+		if (.@choice >= .@page_items) {
+			mes "[Item Exchanger]";
+			mes "Maybe next time!";
+			close;
+		}
+		
+		.@selected_item = .@available_items[.@start_idx + .@choice];
+		break;
+	}
+	
+	// Double-check player still has at least 2 items
+	if (countitem(.@selected_item) < 2) {
+		mes "[Item Exchanger]";
+		mes "You don't have enough of that item anymore.";
+		close;
+	}
+	
+	// Show confirmation with owned count
+	mes "[Item Exchanger]";
+	mes "Selected: ^0000FF" + getitemname(.@selected_item) + "^000000";
+	mes "You own: ^00FF00" + countitem(.@selected_item) + "^000000";
+	mes " ";
+	mes "Exchange ^FF00002^000000 for a random reward?";
+	next;
+	
+	if (select("Yes:No") == 2) {
+		mes "[Item Exchanger]";
+		mes "Maybe next time!";
+		close;
+	}
+	
+	// Remove 2 of the selected item
+	delitem .@selected_item, 2;
+	
+	// Get random item from reward pool
+	.@rand = rand(getarraysize(.reward_items));
+	getitem .reward_items[.@rand], 1;
+	
+	mes "[Item Exchanger]";
+	mes "Here is your reward:";
+	mes "^008800" + getitemname(.reward_items[.@rand]) + "^000000!";
+	close;
+
+// ========================================
+// Sub: Exchange Different Items / 서브: 다른 아이템 교환
+// ========================================
+S_ExchangeDifferent:
+	mes "[Item Exchanger]";
+	mes "Checking your inventory...";
+	next;
+	
+	// Build list of available items
 	.@count = 0;
 	
 	for (.@i = 0; .@i < getarraysize(.accepted_items); .@i++) {
 		if (countitem(.accepted_items[.@i]) > 0) {
 			.@available_items[.@count] = .accepted_items[.@i];
-			.@menu$ = .@menu$ + getitemname(.accepted_items[.@i]) + ":";
 			.@count++;
 		}
 	}
 	
-	// Check if player has any exchangeable items
-	// 교환 가능한 아이템이 있는지 확인
-	if (.@count == 0) {
+	if (.@count < 2) {
 		mes "[Item Exchanger]";
-		mes "You don't have any items I can exchange.";
-		// mes "교환 가능한 아이템이 없습니다.";
-		mes "Use 'Check exchangeable items' to see the full list.";
-		// mes "'교환 가능 아이템 확인'으로 전체 목록을 확인하세요.";
+		mes "You need at least ^FF00002 different items^000000.";
 		close;
 	}
 	
-	.@menu$ = .@menu$ + "Cancel";
+	// Select first item with pagination
+	.@items_per_page = 15;
+	.@total_pages = (.@count + .@items_per_page - 1) / .@items_per_page;
+	.@current_page = 0;
 	
-	// Player selects which item to exchange
-	// 플레이어가 교환할 아이템 선택
+	while(1) {
+		.@start_idx = .@current_page * .@items_per_page;
+		.@end_idx = .@start_idx + .@items_per_page;
+		if (.@end_idx > .@count) .@end_idx = .@count;
+		
+		mes "[Item Exchanger]";
+		mes "Select the ^0000FFFIRST item^000000:";
+		if (.@total_pages > 1) {
+			mes "^0000FF(Page " + (.@current_page + 1) + "/" + .@total_pages + ")^000000";
+		}
+		next;
+		
+		.@menu$ = "";
+		for (.@i = .@start_idx; .@i < .@end_idx; .@i++) {
+			.@menu$ += getitemname(.@available_items[.@i]) + ":";
+		}
+		
+		if (.@total_pages > 1) {
+			if (.@current_page > 0) .@menu$ += "Previous Page:";
+			if (.@current_page < .@total_pages - 1) .@menu$ += "Next Page:";
+		}
+		.@menu$ += "Cancel";
+		
+		.@choice = select(.@menu$) - 1;
+		.@page_items = .@end_idx - .@start_idx;
+		
+		// Handle navigation
+		if (.@total_pages > 1) {
+			.@nav_start = .@page_items;
+			if (.@current_page > 0) {
+				if (.@choice == .@nav_start) {
+					.@current_page--;
+					continue;
+				}
+				.@nav_start++;
+			}
+			if (.@current_page < .@total_pages - 1) {
+				if (.@choice == .@nav_start) {
+					.@current_page++;
+					continue;
+				}
+			}
+		}
+		
+		if (.@choice >= .@page_items) {
+			mes "[Item Exchanger]";
+			mes "Maybe next time!";
+			close;
+		}
+		
+		.@first_item = .@available_items[.@start_idx + .@choice];
+		break;
+	}
+	
+	// Build second item list (excluding first item)
+	.@count2 = 0;
+	
+	for (.@i = 0; .@i < .@count; .@i++) {
+		if (.@available_items[.@i] == .@first_item) continue;
+		.@available_items2[.@count2] = .@available_items[.@i];
+		.@count2++;
+	}
+	
+	if (.@count2 == 0) {
+		mes "[Item Exchanger]";
+		mes "You need a ^FF0000different item^000000.";
+		close;
+	}
+	
+	// Select second item with pagination
+	.@total_pages2 = (.@count2 + .@items_per_page - 1) / .@items_per_page;
+	.@current_page = 0;
+	
+	while(1) {
+		.@start_idx = .@current_page * .@items_per_page;
+		.@end_idx = .@start_idx + .@items_per_page;
+		if (.@end_idx > .@count2) .@end_idx = .@count2;
+		
+		mes "[Item Exchanger]";
+		mes "First: ^0000FF" + getitemname(.@first_item) + "^000000";
+		mes " ";
+		mes "Select the ^FF0000SECOND item^000000:";
+		if (.@total_pages2 > 1) {
+			mes "^0000FF(Page " + (.@current_page + 1) + "/" + .@total_pages2 + ")^000000";
+		}
+		next;
+		
+		.@menu$ = "";
+		for (.@i = .@start_idx; .@i < .@end_idx; .@i++) {
+			.@menu$ += getitemname(.@available_items2[.@i]) + ":";
+		}
+		
+		if (.@total_pages2 > 1) {
+			if (.@current_page > 0) .@menu$ += "Previous Page:";
+			if (.@current_page < .@total_pages2 - 1) .@menu$ += "Next Page:";
+		}
+		.@menu$ += "Cancel";
+		
+		.@choice = select(.@menu$) - 1;
+		.@page_items = .@end_idx - .@start_idx;
+		
+		// Handle navigation
+		if (.@total_pages2 > 1) {
+			.@nav_start = .@page_items;
+			if (.@current_page > 0) {
+				if (.@choice == .@nav_start) {
+					.@current_page--;
+					continue;
+				}
+				.@nav_start++;
+			}
+			if (.@current_page < .@total_pages2 - 1) {
+				if (.@choice == .@nav_start) {
+					.@current_page++;
+					continue;
+				}
+			}
+		}
+		
+		if (.@choice >= .@page_items) {
+			mes "[Item Exchanger]";
+			mes "Maybe next time!";
+			close;
+		}
+		
+		.@second_item = .@available_items2[.@start_idx + .@choice];
+		break;
+	}
+	
+	// Double-check player still has both items
+	if (countitem(.@first_item) < 1 || countitem(.@second_item) < 1) {
+		mes "[Item Exchanger]";
+		mes "You don't have the required items anymore.";
+		close;
+	}
+	
+	// Confirmation
 	mes "[Item Exchanger]";
-	mes "Which item would you like to exchange?";
-	// mes "어떤 아이템을 교환하시겠어요?";
+	mes "You will exchange:";
+	mes "^FF0000" + getitemname(.@first_item) + " x1^000000";
+	mes "^FF0000" + getitemname(.@second_item) + " x1^000000";
+	mes " ";
+	mes "For a random reward. Continue?";
 	next;
 	
-	.@choice = select(.@menu$) - 1;
-	
-	// Check if player cancelled / 플레이어가 취소했는지 확인
-	if (.@choice >= .@count) {
+	if (select("Yes:No") == 2) {
 		mes "[Item Exchanger]";
 		mes "Maybe next time!";
-		// mes "다음에 또 오세요!";
 		close;
 	}
 	
-	.@selected_item = .@available_items[.@choice];
-	
-	// Double-check player still has the item (safety check)
-	// 플레이어가 여전히 아이템을 가지고 있는지 재확인 (안전 체크)
-	if (!countitem(.@selected_item)) {
-		mes "[Item Exchanger]";
-		mes "You don't have that item anymore.";
-		// mes "해당 아이템이 더 이상 없습니다.";
-		close;
-	}
-	
-	// Remove one of the selected item from player's inventory
-	// 플레이어 인벤토리에서 선택한 아이템 1개 제거
-	delitem .@selected_item, 1;
+	// Remove both items
+	delitem .@first_item, 1;
+	delitem .@second_item, 1;
 	
 	// Get random item from reward pool
-	// 보상 풀에서 랜덤 아이템 선택
 	.@rand = rand(getarraysize(.reward_items));
-	
-	// Give the random reward item to player
-	// 플레이어에게 랜덤 보상 아이템 지급
 	getitem .reward_items[.@rand], 1;
 	
 	mes "[Item Exchanger]";
 	mes "Here is your reward:";
-	// mes "보상입니다:";
 	mes "^008800" + getitemname(.reward_items[.@rand]) + "^000000!";
 	close;
 
@@ -146,41 +391,31 @@ S_ZenyPurchase:
 	mes "[Item Exchanger]";
 	mes "I can sell you a random item";
 	mes "for ^FF0000" + .zeny_price + " Zeny^000000.";
-	// mes "랜덤 아이템을";
-	// mes "^FF0000" + .zeny_price + " Zeny^000000에 판매합니다.";
 	next;
 	
 	mes "[Item Exchanger]";
 	mes "Would you like to purchase?";
-	// mes "구매하시겠어요?";
 	next;
 	
 	if (select("Yes:No") == 2) {
 		mes "[Item Exchanger]";
 		mes "Maybe next time!";
-		// mes "다음에 또 오세요!";
 		close;
 	}
 	
-	// Check if player has enough Zeny
-	// 플레이어가 충분한 Zeny를 가지고 있는지 확인
 	if (Zeny < .zeny_price) {
 		mes "[Item Exchanger]";
 		mes "You don't have enough Zeny.";
-		// mes "Zeny가 부족합니다.";
 		close;
 	}
 	
-	// Deduct Zeny / Zeny 차감
 	Zeny -= .zeny_price;
 	
-	// Give random reward / 랜덤 보상 지급
 	.@rand = rand(getarraysize(.reward_items));
 	getitem .reward_items[.@rand], 1;
 	
 	mes "[Item Exchanger]";
 	mes "Here is your item:";
-	// mes "아이템입니다:";
 	mes "^008800" + getitemname(.reward_items[.@rand]) + "^000000!";
 	close;
 
@@ -191,41 +426,31 @@ S_HPCPurchase:
 	mes "[Item Exchanger]";
 	mes "I can sell you a random item";
 	mes "for ^FF0000" + .hpc_price + " HPC^000000.";
-	// mes "랜덤 아이템을";
-	// mes "^FF0000" + .hpc_price + " HPC^000000에 판매합니다.";
 	next;
 	
 	mes "[Item Exchanger]";
 	mes "Would you like to purchase?";
-	// mes "구매하시겠어요?";
 	next;
 	
 	if (select("Yes:No") == 2) {
 		mes "[Item Exchanger]";
 		mes "Maybe next time!";
-		// mes "다음에 또 오세요!";
 		close;
 	}
 	
-	// Check if player has enough HPC (Item ID: 48486)
-	// 플레이어가 충분한 HPC를 가지고 있는지 확인 (아이템 코드: 48486)
 	if (countitem(48486) < .hpc_price) {
 		mes "[Item Exchanger]";
 		mes "You don't have enough HPC.";
-		// mes "HPC가 부족합니다.";
 		close;
 	}
 	
-	// Deduct HPC / HPC 차감
 	delitem 48486, .hpc_price;
 	
-	// Give random reward / 랜덤 보상 지급
 	.@rand = rand(getarraysize(.reward_items));
 	getitem .reward_items[.@rand], 1;
 	
 	mes "[Item Exchanger]";
 	mes "Here is your item:";
-	// mes "아이템입니다:";
 	mes "^008800" + getitemname(.reward_items[.@rand]) + "^000000!";
 	close;
 
@@ -235,9 +460,7 @@ S_HPCPurchase:
 S_CheckAcceptedItems:
 	mes "[Item Exchanger]";
 	mes "Here are all the items I can accept for exchange:";
-	// mes "교환 가능한 모든 아이템 목록입니다:";
 	mes "^0000FF(Total: " + getarraysize(.accepted_items) + " items)^000000";
-	// mes "^0000FF(총 " + getarraysize(.accepted_items) + "개 아이템)^000000";
 	next;
 	
 	.@total = getarraysize(.accepted_items);
@@ -247,7 +470,6 @@ S_CheckAcceptedItems:
 	while (.@page * .@items_per_page < .@total) {
 		mes "[Item Exchanger]";
 		mes "Page " + (.@page + 1) + " / " + ((.@total + .@items_per_page - 1) / .@items_per_page);
-		// mes "페이지 " + (.@page + 1) + " / " + ((.@total + .@items_per_page - 1) / .@items_per_page);
 		
 		.@start = .@page * .@items_per_page;
 		.@end = .@start + .@items_per_page;
@@ -258,7 +480,7 @@ S_CheckAcceptedItems:
 			if (.@has_item > 0) {
 				mes "^00FF00[O]^000000 " + getitemname(.accepted_items[.@i]) + " ^999999(Own: " + .@has_item + ")^000000";
 			} else {
-				mes "   " + getitemname(.accepted_items[.@i]);
+				mes "    " + getitemname(.accepted_items[.@i]);
 			}
 		}
 		
@@ -268,7 +490,6 @@ S_CheckAcceptedItems:
 	
 	mes "[Item Exchanger]";
 	mes "That's all the items I accept!";
-	// mes "이상입니다!";
 	close;
 
 // ========================================
@@ -277,9 +498,7 @@ S_CheckAcceptedItems:
 S_CheckRewardPool:
 	mes "[Item Exchanger]";
 	mes "Here are all possible rewards:";
-	// mes "가능한 모든 보상 목록입니다:";
 	mes "^0000FF(Total: " + getarraysize(.reward_items) + " items)^000000";
-	// mes "^0000FF(총 " + getarraysize(.reward_items) + "개 아이템)^000000";
 	next;
 	
 	.@total = getarraysize(.reward_items);
@@ -289,7 +508,6 @@ S_CheckRewardPool:
 	while (.@page * .@items_per_page < .@total) {
 		mes "[Item Exchanger]";
 		mes "Page " + (.@page + 1) + " / " + ((.@total + .@items_per_page - 1) / .@items_per_page);
-		// mes "페이지 " + (.@page + 1) + " / " + ((.@total + .@items_per_page - 1) / .@items_per_page);
 		
 		.@start = .@page * .@items_per_page;
 		.@end = .@start + .@items_per_page;
@@ -305,88 +523,52 @@ S_CheckRewardPool:
 	
 	mes "[Item Exchanger]";
 	mes "All items have equal chance!";
-	// mes "모든 아이템의 확률은 동일합니다!";
 	close;
 
 // ========================================
 // OnInit: Configuration / 초기화: 설정
 // ========================================
 OnInit:
-	// ========================================
-	// Accepted Items Pool / 허용 아이템 풀
-	// ========================================
 	setarray .accepted_items,
-		// Hero's Mark Scroll & Level 200 equipment
 		101194, 15282, 450217, 480174,
-		
-		// Level 205 Furious weapons
 		500101, 510150, 530057, 540088, 540090,
 		550141, 550143, 550145, 550148, 560067,
 		570072, 580072, 600059, 610071, 610072,
 		620040, 640053, 700100, 830038,
-		
-		// Level 205 Wrath weapons & shield
 		500102, 500103, 510151, 510152, 510153,
 		530058, 540086, 540087, 540091, 550144,
 		550146, 550150, 560068, 570073, 580073,
 		590087, 630045, 650049, 700101, 810042,
 		460072,
-		
-		// Level 215 weapon/crown boxes
 		102070, 102071, 102074,
-		
-		// Level 180 helmet box
 		101314,
-		
-		// Level 235 Wrath Crowns
 		400608, 400609, 400610, 400628, 400629,
 		400630, 400650, 400651, 400652, 400661,
 		400662, 400663, 400673, 400674, 400675,
 		400694, 400695, 400696,
-		
-		// Level 220 boots
 		470265;
 	
-	// ========================================
-	// Reward Items Pool / 보상 아이템 풀
-	// ========================================
 	setarray .reward_items,
-		// Hero's Mark Scroll & Level 200 equipment
 		101194, 15282, 450217, 480174,
-		
-		// Level 205 Furious weapons
 		500101, 510150, 530057, 540088, 540090,
 		550141, 550143, 550145, 550148, 560067,
 		570072, 580072, 600059, 610071, 610072,
 		620040, 640053, 700100, 830038,
-		
-		// Level 205 Wrath weapons & shield
 		500102, 500103, 510151, 510152, 510153,
 		530058, 540086, 540087, 540091, 550144,
 		550146, 550150, 560068, 570073, 580073,
 		590087, 630045, 650049, 700101, 810042,
 		460072,
-		
-		// Level 215 weapon/crown boxes
 		102070, 102071, 102074,
-		
-		// Level 180 helmet box
 		101314,
-		
-		// Level 235 Wrath Crowns
 		400608, 400609, 400610, 400628, 400629,
 		400630, 400650, 400651, 400652, 400661,
 		400662, 400663, 400673, 400674, 400675,
 		400694, 400695, 400696,
-		
-		// Level 220 boots
 		470265;
 	
-	// ========================================
-	// Purchase Prices / 구매 가격
-	// ========================================
-	.zeny_price = 100000000; // 100M Zeny
-	.hpc_price = 500; // 500 HPC
+	.zeny_price = 100000000;
+	.hpc_price = 500;
 	
 	end;
 }
