@@ -1,3 +1,4 @@
+//===== rAthena Script =======================================
 //==================================================
 // odin_past - Ancient Odin's Temple
 //==================================================
@@ -225,100 +226,100 @@ abyss_04,169,162,0	warp	abysslakedunwarp007	1,1,abyss_03,98,105
 //==================================================
 // Illusion of Teddy Bear
 //==================================================
-//ein_d02_i	monster	Blue Teddybear	20259,25,5000,0,"illusion_teddybear_boss::OnEvent"
-//ein_d02_i	monster	Piece of Spirit	20262,20,5000,0,"illusion_teddybear_boss::OnEvent"
-//ein_d02_i	monster	Pitman Labor Type	20261,30,5000,0,"illusion_teddybear_boss::OnEvent"
-//ein_d02_i	monster	Red Teddybear	20255,50,5000,0,"illusion_teddybear_boss::OnEvent"
-//ein_d02_i	monster	Yellow Teddybear	20256,50,5000,0,"illusion_teddybear_boss::OnEvent"
-//ein_d02_i	monster	White Teddybear	20258,25,5000,0,"illusion_teddybear_boss::OnEvent"
-//ein_d02_i	monster	Spirit Dwelling Obsidia	20263,20,5000,0,"illusion_teddybear_boss::OnEvent"
-//ein_d02_i	monster	Green Teddybear	20257,50,5000,0,"illusion_teddybear_boss::OnEvent"
-//
-//// boss spawn
-//-	script	illusion_teddybear_boss	-1,{
-	//end;
-//OnEvent:
-	//if (playerattached() == 0 || .boss_spawn || .cooldown)
-		//end;
-	//if (.mob_count[killedrid] >= 2500)
-		//end;
-	//.mob_count[killedrid]++;
-	//if (.mob_count[3] < 2500 || .mob_count[20259] < 2500 || .mob_count[20262] < 2500 || .mob_count[20261] < 2500 || .mob_count[20255] < 2500 || .mob_count[20256] < 2500 || .mob_count[20258] < 2500 || .mob_count[20263] < 2500 || .mob_count[20257] < 2500)
-		//end;
-	//.boss_spawn = true;
-	//.mob_count[20259] = 0;
-	//.mob_count[20262] = 0;
-	//.mob_count[20261] = 0;
-	//.mob_count[20255] = 0;
-	//.mob_count[20256] = 0;
-	//.mob_count[20258] = 0;
-	//.mob_count[20263] = 0;
-	//.mob_count[20257] = 0;
-	//mapannounce "ein_d02_i", "Ominous Turtle General : Who interferes with my authority!!!", bc_map, "0x70dbdb";
-	//getunitdata( killedgid, .@data );
-	//monster "ein_d02_i",.@data[UMOB_X],.@data[UMOB_Y],"Shining Teddy Bear",20260,1, "illusion_teddybear_boss::OnBoss";
-	//end;
-//OnBoss:
-	//killmonster "ein_d02_i", "illusion_teddybear_boss::OnBoss";
-	//.boss_spawn = false;
-	//.cooldown = true;
-	//initnpctimer;
-	//end;
-//
-//OnTimer7200000:
-	//.cooldown = false;
-	//stopnpctimer;
-	//end;
-//}
-//
-//
-//
-//
-////==================================================
-//// Illusion of Labyrinth
-////==================================================0
-//prt_mz03_i	monster	Blue Chaotic Stem Worm	20532,12,5000,0,"illusion_labyrinth_boss::OnEvent"
-//prt_mz03_i	monster	Chaos Ghostring	20529,12,5000,0,"illusion_labyrinth_boss::OnEvent"
-//prt_mz03_i	monster	Chaos Poporing	20531,32,5000,0,"illusion_labyrinth_boss::OnEvent"
-//prt_mz03_i	monster	Chaos Mantis	20528,32,5000,0,"illusion_labyrinth_boss::OnEvent"
-//prt_mz03_i	monster	Chaos Hunter Fly	20527,32,5000,0,"illusion_labyrinth_boss::OnEvent"
-//prt_mz03_i	monster	Chaos Side Winder	20526,32,5000,0,"illusion_labyrinth_boss::OnEvent"
-//prt_mz03_i	monster	Chaos Baphomet Jr.	 20525,35,5000,0,"illusion_labyrinth_boss::OnEvent"
-//prt_mz03_i	monster	Green Chaos Killer Mantis	20530,32,5000,0,"illusion_labyrinth_boss::OnEvent"
-//
-//// boss spawn
-//-	script	illusion_labyrinth_boss	-1,{
-	//end;
-//OnEvent:
-	//if (playerattached() == 0 || .boss_spawn || .cooldown)
-		//end;
-	//if (.mob_count[killedrid] >= 2500)
-		//end;
-	//.mob_count[killedrid]++;
-	//if (.mob_count[3] < 2500 || .mob_count[20532] < 2500 || .mob_count[20529] < 2500 || .mob_count[20531] < 2500 || .mob_count[20528] < 2500 || .mob_count[20527] < 2500 || .mob_count[20526] < 2500 || .mob_count[20525] < 2500 || .mob_count[20530] < 2500)
-		//end;
-	//.boss_spawn = true;
-	//.mob_count[20532] = 0;
-	//.mob_count[20529] = 0;
-	//.mob_count[20531] = 0;
-	//.mob_count[20528] = 0;
-	//.mob_count[20527] = 0;
-	//.mob_count[20526] = 0;
-	//.mob_count[20525] = 0;
-	//.mob_count[20530] = 0;
-	//mapannounce "prt_mz03_i", "Ominous Turtle General : Who interferes with my authority!!!", bc_map, "0x70dbdb";
-	//getunitdata( killedgid, .@data );
-	//monster "prt_mz03_i",.@data[UMOB_X],.@data[UMOB_Y],"Chaos Baphomet",20520,1, "illusion_labyrinth_boss::OnBoss";
-	//end;
-//OnBoss:
-	//killmonster "prt_mz03_i", "illusion_labyrinth_boss::OnBoss";
-	//.boss_spawn = false;
-	//.cooldown = true;
-	//initnpctimer;
-	//end;
-//
-//OnTimer7200000:
-	//.cooldown = false;
-	//stopnpctimer;
-	//end;
-//}
+// ein_d02_i	monster	Blue Teddybear	20259,25,5000,0,"illusion_teddybear_boss::OnEvent"
+// ein_d02_i	monster	Piece of Spirit	20262,20,5000,0,"illusion_teddybear_boss::OnEvent"
+// ein_d02_i	monster	Pitman Labor Type	20261,30,5000,0,"illusion_teddybear_boss::OnEvent"
+// ein_d02_i	monster	Red Teddybear	20255,50,5000,0,"illusion_teddybear_boss::OnEvent"
+// ein_d02_i	monster	Yellow Teddybear	20256,50,5000,0,"illusion_teddybear_boss::OnEvent"
+// ein_d02_i	monster	White Teddybear	20258,25,5000,0,"illusion_teddybear_boss::OnEvent"
+// ein_d02_i	monster	Spirit Dwelling Obsidia	20263,20,5000,0,"illusion_teddybear_boss::OnEvent"
+// ein_d02_i	monster	Green Teddybear	20257,50,5000,0,"illusion_teddybear_boss::OnEvent"
+
+// // boss spawn
+// -	script	illusion_teddybear_boss	-1,{
+// 	end;
+// OnEvent:
+// 	if (playerattached() == 0 || .boss_spawn || .cooldown)
+// 		end;
+// 	if (.mob_count[killedrid] >= 2500)
+// 		end;
+// 	.mob_count[killedrid]++;
+// 	if (.mob_count[3] < 2500 || .mob_count[20259] < 2500 || .mob_count[20262] < 2500 || .mob_count[20261] < 2500 || .mob_count[20255] < 2500 || .mob_count[20256] < 2500 || .mob_count[20258] < 2500 || .mob_count[20263] < 2500 || .mob_count[20257] < 2500)
+// 		end;
+// 	.boss_spawn = true;
+// 	.mob_count[20259] = 0;
+// 	.mob_count[20262] = 0;
+// 	.mob_count[20261] = 0;
+// 	.mob_count[20255] = 0;
+// 	.mob_count[20256] = 0;
+// 	.mob_count[20258] = 0;
+// 	.mob_count[20263] = 0;
+// 	.mob_count[20257] = 0;
+// 	mapannounce "ein_d02_i", "Ominous Turtle General : Who interferes with my authority!!!", bc_map, "0x70dbdb";
+// 	getunitdata( killedgid, .@data );
+// 	monster "ein_d02_i",.@data[UMOB_X],.@data[UMOB_Y],"Shining Teddy Bear",20260,1, "illusion_teddybear_boss::OnBoss";
+// 	end;
+// OnBoss:
+// 	killmonster "ein_d02_i", "illusion_teddybear_boss::OnBoss";
+// 	.boss_spawn = false;
+// 	.cooldown = true;
+// 	initnpctimer;
+// 	end;
+
+// OnTimer7200000:
+// 	.cooldown = false;
+// 	stopnpctimer;
+// 	end;
+// }
+
+
+
+
+// //==================================================
+// // Illusion of Labyrinth
+// //==================================================0
+// prt_mz03_i	monster	Blue Chaotic Stem Worm	20532,12,5000,0,"illusion_labyrinth_boss::OnEvent"
+// prt_mz03_i	monster	Chaos Ghostring	20529,12,5000,0,"illusion_labyrinth_boss::OnEvent"
+// prt_mz03_i	monster	Chaos Poporing	20531,32,5000,0,"illusion_labyrinth_boss::OnEvent"
+// prt_mz03_i	monster	Chaos Mantis	20528,32,5000,0,"illusion_labyrinth_boss::OnEvent"
+// prt_mz03_i	monster	Chaos Hunter Fly	20527,32,5000,0,"illusion_labyrinth_boss::OnEvent"
+// prt_mz03_i	monster	Chaos Side Winder	20526,32,5000,0,"illusion_labyrinth_boss::OnEvent"
+// prt_mz03_i	monster	Chaos Baphomet Jr.	 20525,35,5000,0,"illusion_labyrinth_boss::OnEvent"
+// prt_mz03_i	monster	Green Chaos Killer Mantis	20530,32,5000,0,"illusion_labyrinth_boss::OnEvent"
+
+// // boss spawn
+// -	script	illusion_labyrinth_boss	-1,{
+// 	end;
+// OnEvent:
+// 	if (playerattached() == 0 || .boss_spawn || .cooldown)
+// 		end;
+// 	if (.mob_count[killedrid] >= 2500)
+// 		end;
+// 	.mob_count[killedrid]++;
+// 	if (.mob_count[3] < 2500 || .mob_count[20532] < 2500 || .mob_count[20529] < 2500 || .mob_count[20531] < 2500 || .mob_count[20528] < 2500 || .mob_count[20527] < 2500 || .mob_count[20526] < 2500 || .mob_count[20525] < 2500 || .mob_count[20530] < 2500)
+// 		end;
+// 	.boss_spawn = true;
+// 	.mob_count[20532] = 0;
+// 	.mob_count[20529] = 0;
+// 	.mob_count[20531] = 0;
+// 	.mob_count[20528] = 0;
+// 	.mob_count[20527] = 0;
+// 	.mob_count[20526] = 0;
+// 	.mob_count[20525] = 0;
+// 	.mob_count[20530] = 0;
+// 	mapannounce "prt_mz03_i", "Ominous Turtle General : Who interferes with my authority!!!", bc_map, "0x70dbdb";
+// 	getunitdata( killedgid, .@data );
+// 	monster "prt_mz03_i",.@data[UMOB_X],.@data[UMOB_Y],"Chaos Baphomet",20520,1, "illusion_labyrinth_boss::OnBoss";
+// 	end;
+// OnBoss:
+// 	killmonster "prt_mz03_i", "illusion_labyrinth_boss::OnBoss";
+// 	.boss_spawn = false;
+// 	.cooldown = true;
+// 	initnpctimer;
+// 	end;
+
+// OnTimer7200000:
+// 	.cooldown = false;
+// 	stopnpctimer;
+// 	end;
+// }
