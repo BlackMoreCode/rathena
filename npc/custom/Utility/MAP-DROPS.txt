@@ -84,6 +84,15 @@ OnNPCKillEvent:
 			}
 		}
 	}
+
+	else if (.@map$ == "sp_rudus4") {
+		.@drop_count = getarraysize(.sp_rudus4_items);
+		for (.@i = 0; .@i < .@drop_count; .@i++) {
+			if (rand(10000) < .sp_rudus4_rates[.@i]) {
+				getitem .sp_rudus4_items[.@i],1;
+			}
+		}
+	}
 	
 	// ========================================
 	// HOW TO ADD NEW MAPS / 새 맵 추가 방법:
@@ -204,6 +213,15 @@ OnInit:
 	setarray .mag_dun03_rates,
 		100; // 1%
 	
+	// ========================================
+	// sp_rudus4 drop table / sp_rudus4 드롭 테이블
+	// ========================================
+	setarray .sp_rudus4_items,
+		470122; // 야수의 가죽 신발[1]			[200제 신발]	
+	setarray .sp_rudus4_rates,
+		20; // 0.2%
+
+
 	// ========================================
 	// HOW TO ADD A NEW MAP / 새 맵 추가 방법:
 	// ========================================
