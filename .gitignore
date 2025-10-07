@@ -64,7 +64,8 @@ Thumbs.db
 /3rdparty/httplib/obj
 
 # /db/
-/db/import
+# 일단 import 폴더 나는 쓸거니 처리
+# /db/import
 
 # /conf/
 /conf/import

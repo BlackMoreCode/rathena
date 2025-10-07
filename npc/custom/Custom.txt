@@ -1,0 +1,324 @@
+//==================================================
+// odin_past - Ancient Odin's Temple
+//==================================================
+odin_past,0,0	monster	Blue Plant	1079,5,5000
+odin_past,0,0	monster	Shining Plant	1083,2,5000
+odin_past,0,0	monster	Angelgolt	20604,40,5000
+odin_past,0,0	monster	Angelgolt	20605,60,5000
+odin_past,0,0	monster	Plasma Spectrum	20609,5,5000
+odin_past,0,0	monster	Arch Plasma	20608,5,5000
+odin_past,0,0	monster	Holy Frus	20606,45,5000
+odin_past,0,0	monster	Holy Skogul	20607,45,5000
+odin_past,0,0	boss_monster	Valkyrie Reginleif	21599,1,10800000,600000,0
+odin_past,0,0	boss_monster	Valkyrie Ingrid	21599,1,10800000,600000,0
+
+odin_tem03,276,236,108,0	warp	atemplewarp001	1,1,odin_past,291,230
+odin_past,291,234,108,0	warp	atemplewarp002	1,1,odin_tem03,276,230
+
+
+//==================================================
+// jor_tail - Frozen Tail
+//==================================================
+jor_tail,0,0	monster	Shining Seaweed	21524,80,5000
+jor_tail,0,0	monster	Ice Gangu	21525,90,5000
+
+jor_tail,98,288,108,0	warp	frozentailwarp001	1,1,jor_back1,98,11
+jor_tail,132,284,108,0	warp	frozentailwarp002	1,1,jor_back1,132,11
+jor_tail,220,293,108,0	warp	frozentailwarp003	1,1,jor_back1,222,20
+
+
+//==================================================
+// jor_back1  -  Frozen Scale Hills
+//==================================================
+jor_back1,0,0	monster	Shining Seaweed	21524,60,5000
+jor_back1,0,0	monster	Ice Gangu	21525,60,5000
+jor_back1,0,0	monster	Ice Straw	21523,80,5000
+
+jor_back1,98,9,108,0	warp	frozenHillswarp001	1,1,jor_tail,98,285
+jor_back1,132,9,108,0	warp	frozenHillswarp002	1,1,jor_tail,134,282
+jor_back1,222,18,108,0	warp	frozenHillswarp003	1,1,jor_tail,220,290
+jor_back1,387,232,108,0	warp	frozenHillswarp004	1,1,icecastle,12,128
+jor_back1,228,391,108,0	warp	frozenHillswarp005	1,1,jor_back2,229,14
+icecastle,10,128,108,0	warp	frozenHillswarp006	1,1,jor_back1,385,232
+
+//==================================================
+// jor_back2    Frozen Scale Plains
+//==================================================
+jor_back2,0,0	monster	Ice Gangu	21525,25,5000
+jor_back2,0,0	monster	Ice Straw	21523,35,5000
+jor_back2,0,0	monster	Unfrost Flower	21521,70,5000
+jor_back2,0,0	monster	Limacina	21520,70,5000
+
+jor_back2,230,12,108,0	warp	frozenplainswarp001	1,1,jor_back1,228,388
+jor_back2,12,249,108,0	warp	frozenplainswarp002	1,1,jor_back3,367,246
+jor_back2,261,316,108,0	warp	frozenplainswarp003	1,1,jor_dun01,112,12
+
+//==================================================
+// jor_back3    Frozen Scale Glaciers
+//==================================================
+jor_back3,0,0	monster	Ice Gangu	21525,20,5000
+jor_back3,0,0	monster	Calmaring	21522,70,5000
+jor_back3,0,0	monster	Primitive Rgan	21526,30,5000
+jor_back3,0,0	monster	Lowest Rgan	21527,15,5000
+jor_back3,0,0	monster	Limacina	21520,70,5000
+jor_back3,0,0	boss_monster	Ultra Limacina	21537,1,10800000,600000,0
+
+jor_back3,369,246,108,0	warp	frozenGlacierswarp001	1,1,jor_back2,14,249
+jor_back3,65,326,108,0	warp	frozenGlacierswarp002	1,1,jor_ab01,112,15
+jor_back3,161,362,108,0	warp	frozenGlacierswarp003	1,1,jor_back4,268,20
+
+
+//==================================================
+// jor_back4    Frozen Scale Beach
+//==================================================
+jor_back4,0,0	monster	Calmaring	21522,10,5000
+jor_back4,0,0	monster	Ice Straw	21523,10,5000
+jor_back4,0,0	monster	Snow Rabbit Slug	21969,50,5000
+jor_back4,0,0	monster	Angel Iceslug	21983,50,5000
+jor_back4,0,0	monster	Suspicious Iwin Soldier	21976,30,5000
+jor_back4,0,0	monster	Suspicious Iwin Corporal	21977,30,5000
+jor_back4,0,0	monster	Suspicious Iwin Manic	21978,20,5000
+jor_back4,0,0	boss_monster	Snowstorm Ange	21996,1,10800000,600000,0
+
+jor_back4,271,20,108,0	warp	frozenBeachwarp001	1,1,jor_back3,161,359
+jor_back4,14,374,108,0	warp	frozenBeachwarp002	1,1,jor_back5,335,21
+//==================================================
+// jor_back5    Ancient Ice Canyon East
+//==================================================
+jor_back5,0,0	monster	Shining Seaweed	21524,10,5000
+jor_back5,0,0	monster	Icewind Egg	21984,10,5000
+jor_back5,0,0	monster	Copo	21965,40,5000
+jor_back5,0,0	monster	Grey Icewind	21966,60,5000
+jor_back5,0,0	monster	Suspicious Trainee Iwin	21974,20,5000
+jor_back5,0,0	monster	Suspicious Private Iwin	21975,20,5000
+jor_back5,0,0	monster	Icewind Egg	21968,40,5000
+
+jor_back5,335,18,108,0	warp	IceCanyonEast001	1,1,jor_back4,17,374
+jor_back5,18,241,108,0	warp	IceCanyonEast002	1,1,jor_back6,380,256
+//==================================================
+// jor_back6    Ancient Ice Canyon West
+//==================================================
+jor_back6,0,0	monster	Shining Seaweed	21524,10,5000
+jor_back6,0,0	monster	Suspicious Iwin Manic	21978,20,5000
+jor_back6,0,0	monster	Bear Bug	21971,75,5000
+jor_back6,0,0	monster	Armoerd Copo	23060,55,5000
+jor_back6,0,0	monster	Icewind	21967,100,5000
+
+jor_back6,385,256,108,0	warp	IceCanyonWest001	1,1,jor_back5,22,241
+jor_back6,37,144,108,0	warp	IceCanyonWest002	1,1,jor_twice,44,58
+
+//==================================================
+// jor_twice    Drift Ice Zone
+//==================================================
+jor_twice,0,0	monster	Snow Rabbit Slug	21969,60,5000
+jor_twice,0,0	monster	Jormungandr Guardian-P	21972,20,5000
+jor_twice,0,0	monster	Jormungandr Guardian-Y	21973,20,5000
+jor_twice,0,0	monster	Angel Iceslug	21983,60,5000
+jor_twice,0,0	monster	Jormungandr Cult Warlock	21987,40,5000
+
+jor_twice,236,109,108,0	warp	DriftIceZonewarp001	1,1,jor_twig,211,116
+jor_twice,44,55,108,0	warp	DriftIceZonewarp002	1,1,jor_back6,40,144
+//==================================================
+// jor_twig    Twig's Nest
+//==================================================
+jor_twig,0,0	monster	Jormungandr Guardian-P	21972,20,5000
+jor_twig,0,0	monster	Jormungandr Guardian-Y	21973,20,5000
+
+jor_twig,211,112,108,0	warp	TwigNestwarp001	1,1,jor_twice,232,108
+//==================================================
+// jor_ab01    Abandoned Pit Fl 1
+//==================================================
+jor_ab01,0,0	monster	Cave Calmaring	21540,70,5000
+jor_ab01,0,0	monster	Cave Flower	21541,60,5000
+jor_ab01,0,0	monster	Discarded Primitive Rgan	21538,70,5000
+jor_ab01,0,0	monster	Hallucigenia Baby	21543,60,5000
+jor_ab01,0,0	monster	Renovated Superior Rgan	21600,10,5000
+
+jor_ab01,112,12,108,0	warp	AbandonedPitwarp001	1,1,jor_back3,65,322
+jor_ab01,7,237,108,0	warp	AbandonedPitwarp002	1,1,jor_ab02,280,87
+
+//==================================================
+// jor_ab02    Abandoned Pit Fl 2
+//==================================================
+jor_ab02,0,0	monster	One Eye Dollocaris	21544,60,5000
+jor_ab02,0,0	monster	Hallucigenia	21542,70,5000
+jor_ab02,0,0	monster	Entangled Intermediate Rgan	21601,10,5000
+jor_ab02,0,0	monster	Discarded Intermediate Rgan	21539,70,5000
+jor_ab02,0,0	monster	Two Eyes Dollocaris	21545,60,5000
+
+jor_ab02,283,87,108,0	warp	AbandonedPitswarp001	1,1,jor_ab01,10,237
+
+//==================================================
+// jor_dun01   Snake God's Warmth Fl 1
+//==================================================
+jor_dun01,0,0	monster	Cave Calmaring	21540,70,5000
+jor_dun01,0,0	monster	Cave Flower	21541,60,5000
+jor_dun01,0,0	monster	Discarded Primitive Rgan	21538,70,5000
+jor_dun01,0,0	monster	Hallucigenia Baby	21543,60,5000
+jor_dun01,0,0	monster	Renovated Superior Rgan	21600,10,5000
+
+jor_dun01,112,10,108,0	warp	SnakeGodf1swarp001	1,1,jor_back2,261,314
+jor_dun01,11,237,108,0	warp	SnakeGodf1swarp002	1,1,jor_dun02,274,85
+
+
+//==================================================
+// jor_dun02   Snake God's Warmth Fl 2
+//==================================================
+jor_dun02,0,0	monster	Heart Hunter AT	21599,10,5000
+jor_dun02,0,0	monster	Lowest Rgan	21527,90,5000
+jor_dun02,0,0	monster	Junior Rgan	21528,80,5000
+jor_dun02,0,0	monster	Intermediate Rgan	21529,20,5000
+
+jor_dun02,282,86,108,0	warp	SnakeGodf2warp001	1,1,jor_dun01,14,237
+jor_dun02,19,32,108,0	warp	SnakeGodf2warp002	1,1,jor_nest,273,19
+jor_nest,279,18,108,0	warp	SnakeGodf2warp003	1,1,jor_dun02,22,32
+
+
+//==================================================
+// jor_root1   Snake God's Root 1F
+//==================================================
+jor_root1,0,0	monster	Jormungandr Guardian-P	21972,20,5000
+jor_root1,0,0	monster	Jormungandr Guardian-Y	21973,10,5000
+jor_root1,0,0	monster	Senior Rgan Warlock	21985,80,5000
+jor_root1,0,0	monster	Senior Rgan Healer	21986,70,5000
+jor_root1,0,0	monster	Jormungandr Guardian	21989,20,5000
+
+jor_root1,32,15,108,0	warp	jorroot1warp001	1,1,jor_nest,38,268
+jor_root1,62,295,108,0	warp	jorroot1warp002	1,1,jor_root2,21,13
+
+//==================================================
+// jor_root2   Snake God's Root 2F
+//==================================================
+jor_root2,0,0	monster	Jormungandr Guardian-P	21972,5,5000
+jor_root2,0,0	monster	Jormungandr Guardian-Y	21973,15,5000
+jor_root2,0,0	monster	Jormungandr Guardian	21989,60,5000
+jor_root2,0,0	monster	Jormungandr Senior Warlock	21987,40,5000
+jor_root2,0,0	monster	Jormungandr Cult Bishop	21988,30,5000
+
+jor_root2,21,10,108,0	warp	jorroot2warp001	1,1,jor_root1,62,289
+jor_root2,26,288,108,0	warp	jorroot2warp002	1,1,jor_root3,362,129
+
+//==================================================
+// jor_root3   Deep Root Cave
+//==================================================
+jor_root3,0,0	monster	Bear Bug	21971,75,5000
+jor_root3,0,0	monster	Melibe Slug	21970,75,5000
+jor_root3,0,0	monster	Jormungandr Cleaner	21990,75,5000
+jor_root3,0,0,0,0	boss_monster	Sanctuary Cleaner Chief	21980,1,10800000,600000,0
+
+jor_root3,368,129,108,0	warp	jorroot3warp001	1,1,jor_root2,25,284
+//==================================================
+// abyss_04 - Abyss Lake Underground Cave
+//==================================================
+abyss_04,0,0	monster	Purple Ferus	20612,25,5000
+abyss_04,0,0	monster	Treasure Mimic	20613,15,5000
+abyss_04,0,0	monster	Black Acidus	20614,35,5000
+abyss_04,0,0	monster	Silver Acidus	20615,35,5000
+abyss_04,0,0	monster	Bone Ferus	20616,50,5000
+abyss_04,0,0	monster	Bone Acidus	20617,50,5000
+abyss_04,0,0,0,0	boss_monster	Bone Detardeurus	20618,1,10800000,600000,0
+
+abyss_03,91,108,0	warp	abysslakedunwarp006	1,1,abyss_04,169,159
+abyss_04,169,162,0	warp	abysslakedunwarp007	1,1,abyss_03,98,105
+
+
+//==================================================
+// Illusion of Teddy Bear
+//==================================================
+//ein_d02_i	monster	Blue Teddybear	20259,25,5000,0,"illusion_teddybear_boss::OnEvent"
+//ein_d02_i	monster	Piece of Spirit	20262,20,5000,0,"illusion_teddybear_boss::OnEvent"
+//ein_d02_i	monster	Pitman Labor Type	20261,30,5000,0,"illusion_teddybear_boss::OnEvent"
+//ein_d02_i	monster	Red Teddybear	20255,50,5000,0,"illusion_teddybear_boss::OnEvent"
+//ein_d02_i	monster	Yellow Teddybear	20256,50,5000,0,"illusion_teddybear_boss::OnEvent"
+//ein_d02_i	monster	White Teddybear	20258,25,5000,0,"illusion_teddybear_boss::OnEvent"
+//ein_d02_i	monster	Spirit Dwelling Obsidia	20263,20,5000,0,"illusion_teddybear_boss::OnEvent"
+//ein_d02_i	monster	Green Teddybear	20257,50,5000,0,"illusion_teddybear_boss::OnEvent"
+//
+//// boss spawn
+//-	script	illusion_teddybear_boss	-1,{
+	//end;
+//OnEvent:
+	//if (playerattached() == 0 || .boss_spawn || .cooldown)
+		//end;
+	//if (.mob_count[killedrid] >= 2500)
+		//end;
+	//.mob_count[killedrid]++;
+	//if (.mob_count[3] < 2500 || .mob_count[20259] < 2500 || .mob_count[20262] < 2500 || .mob_count[20261] < 2500 || .mob_count[20255] < 2500 || .mob_count[20256] < 2500 || .mob_count[20258] < 2500 || .mob_count[20263] < 2500 || .mob_count[20257] < 2500)
+		//end;
+	//.boss_spawn = true;
+	//.mob_count[20259] = 0;
+	//.mob_count[20262] = 0;
+	//.mob_count[20261] = 0;
+	//.mob_count[20255] = 0;
+	//.mob_count[20256] = 0;
+	//.mob_count[20258] = 0;
+	//.mob_count[20263] = 0;
+	//.mob_count[20257] = 0;
+	//mapannounce "ein_d02_i", "Ominous Turtle General : Who interferes with my authority!!!", bc_map, "0x70dbdb";
+	//getunitdata( killedgid, .@data );
+	//monster "ein_d02_i",.@data[UMOB_X],.@data[UMOB_Y],"Shining Teddy Bear",20260,1, "illusion_teddybear_boss::OnBoss";
+	//end;
+//OnBoss:
+	//killmonster "ein_d02_i", "illusion_teddybear_boss::OnBoss";
+	//.boss_spawn = false;
+	//.cooldown = true;
+	//initnpctimer;
+	//end;
+//
+//OnTimer7200000:
+	//.cooldown = false;
+	//stopnpctimer;
+	//end;
+//}
+//
+//
+//
+//
+////==================================================
+//// Illusion of Labyrinth
+////==================================================0
+//prt_mz03_i	monster	Blue Chaotic Stem Worm	20532,12,5000,0,"illusion_labyrinth_boss::OnEvent"
+//prt_mz03_i	monster	Chaos Ghostring	20529,12,5000,0,"illusion_labyrinth_boss::OnEvent"
+//prt_mz03_i	monster	Chaos Poporing	20531,32,5000,0,"illusion_labyrinth_boss::OnEvent"
+//prt_mz03_i	monster	Chaos Mantis	20528,32,5000,0,"illusion_labyrinth_boss::OnEvent"
+//prt_mz03_i	monster	Chaos Hunter Fly	20527,32,5000,0,"illusion_labyrinth_boss::OnEvent"
+//prt_mz03_i	monster	Chaos Side Winder	20526,32,5000,0,"illusion_labyrinth_boss::OnEvent"
+//prt_mz03_i	monster	Chaos Baphomet Jr.	 20525,35,5000,0,"illusion_labyrinth_boss::OnEvent"
+//prt_mz03_i	monster	Green Chaos Killer Mantis	20530,32,5000,0,"illusion_labyrinth_boss::OnEvent"
+//
+//// boss spawn
+//-	script	illusion_labyrinth_boss	-1,{
+	//end;
+//OnEvent:
+	//if (playerattached() == 0 || .boss_spawn || .cooldown)
+		//end;
+	//if (.mob_count[killedrid] >= 2500)
+		//end;
+	//.mob_count[killedrid]++;
+	//if (.mob_count[3] < 2500 || .mob_count[20532] < 2500 || .mob_count[20529] < 2500 || .mob_count[20531] < 2500 || .mob_count[20528] < 2500 || .mob_count[20527] < 2500 || .mob_count[20526] < 2500 || .mob_count[20525] < 2500 || .mob_count[20530] < 2500)
+		//end;
+	//.boss_spawn = true;
+	//.mob_count[20532] = 0;
+	//.mob_count[20529] = 0;
+	//.mob_count[20531] = 0;
+	//.mob_count[20528] = 0;
+	//.mob_count[20527] = 0;
+	//.mob_count[20526] = 0;
+	//.mob_count[20525] = 0;
+	//.mob_count[20530] = 0;
+	//mapannounce "prt_mz03_i", "Ominous Turtle General : Who interferes with my authority!!!", bc_map, "0x70dbdb";
+	//getunitdata( killedgid, .@data );
+	//monster "prt_mz03_i",.@data[UMOB_X],.@data[UMOB_Y],"Chaos Baphomet",20520,1, "illusion_labyrinth_boss::OnBoss";
+	//end;
+//OnBoss:
+	//killmonster "prt_mz03_i", "illusion_labyrinth_boss::OnBoss";
+	//.boss_spawn = false;
+	//.cooldown = true;
+	//initnpctimer;
+	//end;
+//
+//OnTimer7200000:
+	//.cooldown = false;
+	//stopnpctimer;
+	//end;
+//}

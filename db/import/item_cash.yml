@@ -1,0 +1,201 @@
+# This file is a part of rAthena.
+#   Copyright(C) 2022 rAthena Development Team
+#   https://rathena.org - https://github.com/rathena
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+###########################################################################
+# Item Cash Database
+###########################################################################
+#
+# Item Cash Settings
+#
+###########################################################################
+# - Tab                     Cash shop tab. Available tabs are New, Hot, Limited, Rental, Permanent, Scrolls, Consumables, Other, Sale.
+#   Items:                  List of possible items.
+#     - Item                Item name.
+#       Price               Item cost in cash points (#CASHPOINTS).
+###########################################################################
+
+Header:
+  Type: ITEM_CASH_DB
+  Version: 1
+
+Body:
+  - Tab: New
+    Items:
+      - Item: Bloody_Dead_Branch
+        Price: 2000
+      # - Item: Boarding_Halter
+      #   Price: 35000
+      - Item: Max_Weight_Up_Box
+        Price: 20000
+      - Item: Battle_Manual_X3
+        Price: 5000
+  - Tab: Hot
+    Items:
+
+  - Tab: Limited
+    Items:
+      - Item: Accessory_Box
+        Price: 500
+      - Item: Enriched_Elunium_Box
+        Price: 20000
+      - Item: Enriched_Oridecon_Box
+        Price: 20000
+      - Item: Enriched_Elunium
+        Price: 2500
+      - Item: Enriched_Oridecon
+        Price: 2500
+
+  - Tab: Rental
+    Items:
+      - Item: Light_Center_Pot_Box
+        Price: 1000
+      - Item: Light_Awakening_Pot_Box
+        Price: 1000
+      - Item: Light_Berserk_Pot_Box
+        Price: 1000
+      - Item: Abrasive_Box10
+        Price: 1000
+
+  - Tab: Permanent
+    Items:
+      - Item: Skeleton's_Cape
+        Price: 15000
+      - Item: Marcher_Hat
+        Price: 15000
+      - Item: Ramen_Hat
+        Price: 15000
+      - Item: Hockey_Mask
+        Price: 15000
+      - Item: Robo_Eye
+        Price: 15000
+      - Item: Helm_Of_Sun_
+        Price: 15000
+      - Item: Gang_Scarf
+        Price: 15000
+      - Item: Darkness_Helm
+        Price: 15000
+      - Item: L_Magestic_Goat
+        Price: 15000
+      - Item: Satanic_Chain_P
+        Price: 15000
+      - Item: Antique_Pipe
+        Price: 15000
+      - Item: Angel_Spirit
+        Price: 15000
+      - Item: Lovecap_China
+        Price: 15000
+      - Item: Dragonhelm_Gold
+        Price: 15000
+      - Item: Dragonhelm_Silver
+        Price: 15000
+      - Item: Spiked_Scarf
+        Price: 15000
+      - Item: Rainbow_Scarf
+        Price: 15000
+      - Item: L_Magestic_Goat2
+        Price: 15000
+      - Item: Blush_Of_Groom
+        Price: 15000
+      - Item: Ribbon_Of_Bride
+        Price: 15000
+  
+  - Tab: Scrolls
+    Items:
+      - Item: Light_Center_Pot_Box
+        Price: 1000
+      - Item: Light_Awakening_Pot_Box
+        Price: 1000
+      - Item: Light_Berserk_Pot_Box
+        Price: 1000
+      - Item: Abrasive_Box10
+        Price: 1000
+
+  - Tab: Consumables
+    Items:
+      - Item: Str_Dish10_
+        Price: 500
+      - Item: Agi_Dish10_
+        Price: 500
+      - Item: Vit_Dish10_
+        Price: 500
+      - Item: Int_Dish10_
+        Price: 500
+      - Item: Dex_Dish10_
+        Price: 500
+      - Item: Luk_Dish10_
+        Price: 500
+      - Item: Token_Of_Siegfried_Box
+        Price: 10000
+      - Item: CP_Helm_Scroll_Box
+        Price: 1000
+      - Item: CP_Shield_Scroll_Box
+        Price: 1000
+      - Item: CP_Armor_Scroll_Box
+        Price: 1000
+      - Item: CP_Weapon_Scroll_Box
+        Price: 1000
+      - Item: Inc_Agi_10_Box50
+        Price: 5000
+      - Item: Adrenaline10_Box50
+        Price: 5000
+      - Item: Aspersio_5_Box50
+        Price: 5000
+      - Item: Wind_Walk10_Box50
+        Price: 5000
+      - Item: F_Blessing10_Box50
+        Price: 5000
+      - Item: Battle_Manual100_Box
+        Price: 20000
+      - Item: Battle_Manual25
+        Price: 1000
+      - Item: F_Convex_Mirror_Box30
+        Price: 15000
+      - Item: Bubble_Gum
+        Price: 2500
+      - Item: F_Bubble_Gum_Box
+        Price: 20000
+  - Tab: Consumables
+    Items:
+      - Item: Battle_Manual
+        Price: 10000
+      - Item: Inventory_Ex
+        Price: 10000
+      - Item: Max_Weight_Up_Scroll
+        Price: 10000
+      - Item: Thick_Manual50
+        Price: 1500
+      - Item: HE_Battle_Manual
+        Price: 1000
+      - Item: Bubble_Gum_Plus
+        Price: 1500
+      - Item: HE_Bubble_Gum
+        Price: 1000
+      - Item: Old_C_Album_Weapon
+        Price: 3000
+
+  # - Tab: Rental
+  #   Items:
+  #     - Item: Flaming_Death_Valk
+  #       Price: 5
+  #     - Item: Flaming_Death_Wings
+  #       Price: 5
+  #     - Item: Flaming_Death
+  #       Price: 5
+  # - Tab: Sale
+  #   Items:
+  #     - Item: Phoenix_Sword
+  #       Price: 100
