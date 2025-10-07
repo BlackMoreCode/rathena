@@ -1769,10 +1769,16 @@ Body:
       Sp: 0
       BaseExp: 389452
       JobExp: 336951
-      Attack: 6000
-      Attack2: 1000
-      Defense: 204
-      MagicDefense: 143
+      # Attack: 6000
+      # Attack2: 1000
+      # Defense: 204
+      # MagicDefense: 143
+      Attack: 6375
+      Attack2: 1542
+      Defense: 323
+      MagicDefense: 139
+      Resistance: 240
+      MagicResistance: 142
       Str: 120
       Agi: 225
       Vit: 15
@@ -1860,18 +1866,18 @@ Body:
       Sp: 0
       BaseExp: 668952
       JobExp: 457259
-      Attack: 6000
-      Attack2: 1000
-      Defense: 287
-      MagicDefense: 190
+      Attack: 11215
+      Attack2: 2081
+      Defense: 401
+      MagicDefense: 153
+      Resistance: 350
+      MagicResistance: 164
       Str: 185
-      Agi: 63
-      Vit: 268
-      Int: 230
-      Dex: 150
-      Luk: 40
-      Resistance: 192
-      MagicResistance: 160
+      Agi: 155
+      Vit: 146
+      Int: 118
+      Dex: 159
+      Luk: 154
       AttackRange: 1
       SkillRange: 10
       ChaseRange: 12
@@ -1906,18 +1912,18 @@ Body:
       Sp: 0
       BaseExp: 667521
       JobExp: 457259
-      Attack: 6000
-      Attack2: 1000
-      Defense: 219
-      MagicDefense: 150
-      Str: 111
-      Agi: 193
-      Vit: 36
-      Int: 150
-      Dex: 259
-      Luk: 99
-      Resistance: 189
-      MagicResistance: 155
+      Attack: 7419
+      Attack2: 1920
+      Defense: 458
+      MagicDefense: 199
+      Resistance: 370
+      MagicResistance: 218
+      Str: 104
+      Agi: 100
+      Vit: 141
+      Int: 122
+      Dex: 125
+      Luk: 116
       AttackRange: 1
       SkillRange: 10
       ChaseRange: 12
@@ -1954,18 +1960,18 @@ Body:
       Sp: 0
       BaseExp: 667512
       JobExp: 457259
-      Attack: 6000
-      Attack2: 1000
-      Defense: 214
-      MagicDefense: 147
+      Attack: 9380
+      Attack2: 2486
+      Defense: 468
+      MagicDefense: 203
       Str: 115
       Agi: 251
       Vit: 152
       Int: 60
       Dex: 263
       Luk: 112
-      Resistance: 199
-      MagicResistance: 159
+      Resistance: 388
+      MagicResistance: 229
       AttackRange: 1
       SkillRange: 10
       ChaseRange: 12
@@ -2046,21 +2052,21 @@ Body:
       AegisName: EP19_RE_RGAN_E
       Name: Renovated Superior Rgan
       Level: 234
-      Hp: 28141660
-      BaseExp: 667512
-      JobExp: 457259
-      Attack: 6000
-      Attack2: 1000
+      Hp: 28145720
+      BaseExp: 518457
+      JobExp: 361105
+      Attack: 12147
+      Attack2: 2211
       Defense: 395
-      MagicDefense: 155
-      Str: 125
-      Agi: 99
-      Vit: 150
-      Int: 90
-      Dex: 260
-      Luk: 40
-      Resistance: 190
-      MagicResistance: 140
+      MagicDefense: 151
+      Resistance: 336
+      MagicResistance: 158
+      Str: 174
+      Agi: 145
+      Vit: 138
+      Int: 111
+      Dex: 150
+      Luk: 145
       AttackRange: 1
       SkillRange: 10
       ChaseRange: 12
@@ -2068,12 +2074,14 @@ Body:
       Race: Formless
       Element: Earth
       ElementLevel: 3
-      WalkSpeed: 150
-      AttackDelay: 191
+      WalkSpeed: 175
+      AttackDelay: 504
       AttackMotion: 1008
-      DamageMotion: 0
-      Ai: 09
+      DamageMotion: 576
+      Ai: 04
       Drops:
+          - Item: Ep19_Rgan_Core_F
+            Rate: 750
           - Item: EP19_Shell_Of_Rgan
             Rate: 7000
           - Item: EP19_Unknown_Cell
@@ -2089,25 +2097,55 @@ Body:
     #######################  Abandoned Pit Fl 2  ###############################
     ############################################################################
     - Id: 21544
+      # AegisName: EP19_ONE_EYE_DOLLOCARIS
+      # Name: One Eye Dollocaris
+      # Level: 251
+      # Hp: 41093250
+      # Sp: 0
+      # BaseExp: 1223651
+      # JobExp: 1054215
+      # Attack: 8000
+      # Attack2: 1000
+      # Defense: 432
+      # MagicDefense: 167
+      # Str: 252
+      # Agi: 203
+      # Vit: 197
+      # Int: 99
+      # Dex: 240
+      # Luk: 60
+      # Resistance: 211
+      # MagicResistance: 191
+      # AttackRange: 1
+      # SkillRange: 10
+      # ChaseRange: 12
+      # Size: Medium
+      # Race: Fish
+      # Element: Dark
+      # ElementLevel: 3
+      # WalkSpeed: 150
+      # AttackDelay: 436
+      # AttackMotion: 1056
+      # DamageMotion: 478
+      # Ai: 09
       AegisName: EP19_ONE_EYE_DOLLOCARIS
       Name: One Eye Dollocaris
       Level: 251
-      Hp: 41093250
-      Sp: 0
-      BaseExp: 1223651
-      JobExp: 1054215
-      Attack: 8000
-      Attack2: 1000
+      Hp: 41093320
+      BaseExp: 707510
+      JobExp: 492781
+      Attack: 16339
+      Attack2: 3063
       Defense: 432
       MagicDefense: 167
-      Str: 252
-      Agi: 203
-      Vit: 197
-      Int: 99
-      Dex: 240
-      Luk: 60
-      Resistance: 211
-      MagicResistance: 191
+      Resistance: 386
+      MagicResistance: 181
+      Str: 207
+      Agi: 174
+      Vit: 164
+      Int: 133
+      Dex: 179
+      Luk: 172
       AttackRange: 1
       SkillRange: 10
       ChaseRange: 12
@@ -2116,10 +2154,10 @@ Body:
       Element: Dark
       ElementLevel: 3
       WalkSpeed: 150
-      AttackDelay: 436
+      AttackDelay: 352
       AttackMotion: 1056
-      DamageMotion: 478
-      Ai: 09
+      DamageMotion: 576
+      Ai: 04
       Drops:
           - Item: Solid_Shell
             Rate: 7000
@@ -2144,18 +2182,18 @@ Body:
       Sp: 0
       BaseExp: 1223651
       JobExp: 1054215
-      Attack: 8000
-      Attack2: 1000
-      Defense: 229
+      Attack: 12303
+      Attack2: 3105
+      Defense: 284
       MagicDefense: 155
-      Str: 190
-      Agi: 306
-      Vit: 22
-      Int: 369
-      Dex: 145
-      Luk: 55
-      Resistance: 180
-      MagicResistance: 187
+      Resistance: 234
+      MagicResistance: 194
+      Str: 208
+      Agi: 245
+      Vit: 136
+      Int: 175
+      Dex: 224
+      Luk: 215
       AttackRange: 1
       SkillRange: 10
       ChaseRange: 12
@@ -2226,6 +2264,8 @@ Body:
             Rate: 380
           - Item: Ep19_Snow_Flower
             Rate: 150
+          - Item: Ep19_Rgan_Core_F
+            Rate: 750
           - Item: E_Inter_Rgan_Card
             Rate: 1
             StealProtected: true
@@ -2237,18 +2277,18 @@ Body:
       Sp: 0
       BaseExp: 1223651
       JobExp: 1054215
-      Attack: 8000
-      Attack2: 1000
+      Attack: 11168
+      Attack2: 3438
       Defense: 585
       MagicDefense: 256
-      Str: 80
-      Agi: 230
-      Vit: 60
-      Int: 180
-      Dex: 380
-      Luk: 106
-      Resistance: 207
-      MagicResistance: 189
+      Resistance: 578
+      MagicResistance: 341
+      Str: 185
+      Agi: 179
+      Vit: 252
+      Int: 218
+      Dex: 224
+      Luk: 207
       AttackRange: 1
       SkillRange: 10
       ChaseRange: 12
@@ -2276,25 +2316,55 @@ Body:
             Rate: 1
             StealProtected: true
     - Id: 21545
+      # AegisName: EP19_DOLLOCARIS
+      # Name: Two Eyes Dollocaris
+      # Level: 253
+      # Hp: 50719570
+      # Sp: 0
+      # BaseExp: 1223651
+      # JobExp: 1054215
+      # Attack: 8000
+      # Attack2: 1000
+      # Defense: 600
+      # MagicDefense: 250
+      # Str: 180
+      # Agi: 280
+      # Vit: 40
+      # Int: 155
+      # Dex: 229
+      # Luk: 40
+      # Resistance: 209
+      # MagicResistance: 182
+      # AttackRange: 1
+      # SkillRange: 10
+      # ChaseRange: 12
+      # Size: Medium
+      # Race: Fish
+      # Element: Earth
+      # ElementLevel: 3
+      # WalkSpeed: 150
+      # AttackDelay: 41
+      # AttackMotion: 576
+      # DamageMotion: 478
+      # Ai: 09
       AegisName: EP19_DOLLOCARIS
       Name: Two Eyes Dollocaris
       Level: 253
-      Hp: 50719570
-      Sp: 0
-      BaseExp: 1223651
-      JobExp: 1054215
-      Attack: 8000
-      Attack2: 1000
-      Defense: 600
-      MagicDefense: 250
-      Str: 180
-      Agi: 280
-      Vit: 40
-      Int: 155
-      Dex: 229
-      Luk: 40
-      Resistance: 209
-      MagicResistance: 182
+      Hp: 49197540
+      BaseExp: 729743
+      JobExp: 507770
+      Attack: 9791
+      Attack2: 2771
+      Defense: 531
+      MagicDefense: 232
+      Resistance: 476
+      MagicResistance: 282
+      Str: 144
+      Agi: 139
+      Vit: 196
+      Int: 169
+      Dex: 174
+      Luk: 161
       AttackRange: 1
       SkillRange: 10
       ChaseRange: 12
@@ -2302,11 +2372,11 @@ Body:
       Race: Fish
       Element: Earth
       ElementLevel: 3
-      WalkSpeed: 150
-      AttackDelay: 41
+      WalkSpeed: 125
+      AttackDelay: 576
       AttackMotion: 576
       DamageMotion: 478
-      Ai: 09
+      Ai: 04
       Drops:
           - Item: Solid_Shell
             Rate: 7000
@@ -2332,21 +2402,21 @@ Body:
       AegisName: EP19_HEARTHUNTER_AT
       Name: Heart Hunter AT
       Level: 210
-      Hp: 11106770
-      BaseExp: 367512
-      JobExp: 257259
-      Attack: 6000
-      Attack2: 1000
-      Defense: 216
-      MagicDefense: 119
-      Str: 256
-      Agi: 139
-      Vit: 139
-      Int: 105
-      Dex: 100
-      Luk: 53
-      Resistance: 186
-      MagicResistance: 141
+      Hp: 11510680
+      BaseExp: 319499
+      JobExp: 223091
+      Attack: 8432
+      Attack2: 1689
+      Defense: 171
+      MagicDefense: 86
+      Resistance: 106
+      MagicResistance: 80
+      Str: 86
+      Agi: 100
+      Vit: 56
+      Int: 72
+      Dex: 91
+      Luk: 88
       AttackRange: 1
       SkillRange: 10
       ChaseRange: 12
@@ -2354,21 +2424,29 @@ Body:
       Race: Demihuman
       Element: Neutral
       ElementLevel: 1
-      WalkSpeed: 150
-      AttackDelay: 334
+      WalkSpeed: 200
+      AttackDelay: 324
       AttackMotion: 1080
-      DamageMotion: 0
-      Ai: 09
+      DamageMotion: 576
+      Ai: 04
       Drops:
-          - Item: Vroken_Sword
-            Rate: 7000
           - Item: Heart_Hunter_Seal
-            Rate: 7000
-          - Item: Etel_Dust
-            Rate: 380
-          - Item: Ep19_Snow_Flower
-            Rate: 150
+            Index: 0
+            Rate: 2625
+          - Item: Heart_Hunter_Seal
+            Index: 1
+            Rate: 1500
+          - Item: Heart_Hunter_Seal
+            Index: 2
+            Rate: 375
+          - Item: Vroken_Sword
+            Index: 3
+            Rate: 3750
+          - Item: Vroken_Sword
+            Index: 4
+            Rate: 2250
           - Item: Heart_Hunter_AT_Card
+            Index: 5
             Rate: 1
             StealProtected: true
     - Id: 21528
@@ -2379,10 +2457,16 @@ Body:
       Sp: 0
       BaseExp: 367512
       JobExp: 257259
-      Attack: 6000
-      Attack2: 1000
+      # Attack: 6000
+      # Attack2: 1000
+      # Defense: 278
+      # MagicDefense: 105
+      Attack: 10168
+      Attack2: 1736
       Defense: 278
       MagicDefense: 105
+      Resistance: 215
+      MagicResistance: 100
       Str: 241
       Agi: 222
       Vit: 36
@@ -2666,8 +2750,8 @@ Body:
             Rate: 150
           - Item: Round_Feather
             Rate: 150
-          - Item: aegis_1001242
-            Rate: 150
+          # - Item: aegis_1001242
+          #   Rate: 150
           - Item: Etel_Dust
             Rate: 380
           - Item: Ep19_Snow_Flower
@@ -2764,9 +2848,9 @@ Body:
       Ai: 21
       Class: Boss
       Drops:
-          - Item: aegis_300473
-            Rate: 1
-            StealProtected: true
+          # - Item: aegis_300473
+          #   Rate: 1
+          #   StealProtected: true
     ############################################################################
     #######################   Ancient Ice Canyon East  #########################
     ############################################################################
@@ -2800,9 +2884,9 @@ Body:
             Rate: 150
           - Item: Ep20_Copo_Egg_Shell
             Rate: 150
-          - Item: aegis_300456
-            Rate: 1
-            StealProtected: true
+          # - Item: aegis_300456
+          #   Rate: 1
+          #   StealProtected: true
     - Id: 21965
       AegisName: EP20_COPO
       Name: Copo
@@ -2848,9 +2932,9 @@ Body:
             Rate: 380
           - Item: Snow_F_Ore
             Rate: 150
-          - Item: aegis_300455
-            Rate: 1
-            StealProtected: true
+          # - Item: aegis_300455
+          #   Rate: 1
+          #   StealProtected: true
     - Id: 21966
       AegisName: EP20_ICEWIND1
       Name: Grey Icewind
@@ -2947,9 +3031,9 @@ Body:
             Rate: 380
           - Item: Snow_F_Ore
             Rate: 150
-          - Item: aegis_300455
-            Rate: 1
-            StealProtected: true
+          # - Item: aegis_300455
+          #   Rate: 1
+          #   StealProtected: true
     - Id: 21974
       AegisName: EP20_FAKE_IWIN_SN
       Name: Suspicious Trainee Iwin
@@ -3033,10 +3117,10 @@ Body:
       DamageMotion: 576
       Ai: 09
       Drops:
-          - Item: aegis_1001240
-            Rate: 150
-          - Item: aegis_1001239
-            Rate: 150
+          # - Item: aegis_1001240
+          #   Rate: 150
+          # - Item: aegis_1001239
+          #   Rate: 150
           - Item: Etel_Dust
             Rate: 380
           - Item: Ep19_Snow_Flower
@@ -3045,9 +3129,9 @@ Body:
             Rate: 380
           - Item: Snow_F_Ore
             Rate: 150
-          - Item: aegis_300461
-            Rate: 1
-            StealProtected: true
+          # - Item: aegis_300461
+          #   Rate: 1
+          #   StealProtected: true
     ############################################################################
     #######################   Ancient Ice Canyon West  #########################
     ############################################################################
@@ -3703,3 +3787,680 @@ Body:
           # - Item: aegis_300474
           #   Rate: 1
           #   StealProtected: true
+
+    ############################
+    ##### EP 19 stuff ##########
+    ############################
+    - Id: 21513
+      AegisName: EP19_NPC_IWIN
+      Name: Dummy
+      Level: 200
+      Hp: 10
+      Attack: 2000
+      Attack2: 250
+      Str: 80
+      Agi: 80
+      Vit: 80
+      Int: 80
+      Dex: 80
+      Luk: 80
+      AttackRange: 1
+      SkillRange: 0
+      ChaseRange: 0
+      Size: Medium
+      Race: Brute
+      Element: Neutral
+      ElementLevel: 1
+      WalkSpeed: 150
+      #Ai:
+    - Id: 21514
+      AegisName: EP19_NPC_IWIN_SN
+      Name: Dummy
+      Level: 200
+      Hp: 10
+      Attack: 2000
+      Attack2: 150
+      Str: 80
+      Agi: 80
+      Vit: 80
+      Int: 80
+      Dex: 80
+      Luk: 80
+      AttackRange: 1
+      SkillRange: 0
+      ChaseRange: 0
+      Size: Medium
+      Race: Brute
+      Element: Neutral
+      ElementLevel: 1
+      WalkSpeed: 150
+      #Ai:
+    - Id: 21515
+      AegisName: EP19_NPC_IWIN_SY
+      Name: Dummy
+      Level: 200
+      Hp: 10
+      Attack: 2000
+      Attack2: 150
+      Str: 80
+      Agi: 80
+      Vit: 80
+      Int: 80
+      Dex: 80
+      Luk: 80
+      AttackRange: 1
+      SkillRange: 0
+      ChaseRange: 0
+      Size: Medium
+      Race: Brute
+      Element: Neutral
+      ElementLevel: 1
+      WalkSpeed: 150
+      #Ai:
+    - Id: 21516
+      AegisName: EP19_NPC_IWIN_SB
+      Name: Dummy
+      Level: 200
+      Hp: 10
+      Attack: 2000
+      Attack2: 150
+      Str: 80
+      Agi: 80
+      Vit: 80
+      Int: 80
+      Dex: 80
+      Luk: 80
+      AttackRange: 1
+      SkillRange: 0
+      ChaseRange: 0
+      Size: Medium
+      Race: Brute
+      Element: Neutral
+      ElementLevel: 1
+      WalkSpeed: 150
+      #Ai:
+    - Id: 21517
+      AegisName: EP19_NPC_IWIN_SG
+      Name: Dummy
+      Level: 200
+      Hp: 10
+      Attack: 2000
+      Attack2: 150
+      Str: 80
+      Agi: 80
+      Vit: 80
+      Int: 80
+      Dex: 80
+      Luk: 80
+      AttackRange: 1
+      SkillRange: 0
+      ChaseRange: 0
+      Size: Medium
+      Race: Brute
+      Element: Neutral
+      ElementLevel: 1
+      WalkSpeed: 150
+      #Ai:
+    - Id: 21518
+      AegisName: EP19_NPC_IWIN_SR
+      Name: Dummy
+      Level: 200
+      Hp: 10
+      Attack: 2000
+      Attack2: 150
+      Str: 80
+      Agi: 80
+      Vit: 80
+      Int: 80
+      Dex: 80
+      Luk: 80
+      AttackRange: 1
+      SkillRange: 0
+      ChaseRange: 0
+      Size: Medium
+      Race: Brute
+      Element: Neutral
+      ElementLevel: 1
+      WalkSpeed: 150
+      #Ai:
+    - Id: 21519
+      AegisName: EP19_NPC_LEHAR
+      Name: Dummy
+      Level: 200
+      Hp: 10
+      Attack: 2000
+      Attack2: 150
+      Str: 80
+      Agi: 80
+      Vit: 80
+      Int: 80
+      Dex: 80
+      Luk: 80
+      AttackRange: 1
+      SkillRange: 0
+      ChaseRange: 0
+      Size: Medium
+      Race: Brute
+      Element: Neutral
+      ElementLevel: 1
+      WalkSpeed: 150
+      #Ai:
+    - Id: 21520
+      AegisName: EP19_LIMACINA
+      Name: Limacina
+      Level: 213
+      Hp: 9055500
+      BaseExp: 302265
+      JobExp: 208385
+      Attack: 4792
+      Attack2: 1079
+      Defense: 225
+      MagicDefense: 78
+      Resistance: 226
+      MagicResistance: 119
+      Str: 61
+      Agi: 50
+      Vit: 58
+      Int: 61
+      Dex: 75
+      Luk: 58
+      AttackRange: 7
+      SkillRange: 10
+      ChaseRange: 12
+      Size: Large
+      Race: Fish
+      Element: Water
+      ElementLevel: 2
+      WalkSpeed: 175
+      AttackDelay: 384
+      AttackMotion: 768
+      DamageMotion: 576
+      Ai: 04
+      Drops:
+          - Item: Fluorescent_Liquid
+            Rate: 5000
+          - Item: EP19_Transparency_Shell
+            Rate: 2500
+          - Item: Ice_Piece
+            Rate: 1500
+          - Item: Limacina_Card
+            Rate: 1
+            StealProtected: true
+    - Id: 21521
+      AegisName: EP19_UNFROST_FLOWER
+      Name: Unfrost Flower
+      Level: 212
+      Hp: 9303920
+      BaseExp: 295309
+      JobExp: 200657
+      Attack: 4715
+      Attack2: 1008
+      Defense: 298
+      MagicDefense: 128
+      Resistance: 197
+      MagicResistance: 116
+      Str: 57
+      Agi: 54
+      Vit: 77
+      Int: 67
+      Dex: 68
+      Luk: 64
+      AttackRange: 1
+      SkillRange: 10
+      ChaseRange: 12
+      Size: Medium
+      Race: Fish
+      Element: Water
+      ElementLevel: 3
+      WalkSpeed: 200
+      AttackDelay: 288
+      AttackMotion: 864
+      DamageMotion: 576
+      Ai: 04
+      Drops:
+          - Item: Scales_Shell
+            Rate: 5000
+          - Item: EP19_Bell_Flower
+            Rate: 2700
+          - Item: Round_Shell
+            Rate: 2500
+          - Item: Unfrost_Flower_card
+            Rate: 1
+            StealProtected: true
+    - Id: 21530
+      AegisName: EP19_RGAN_E
+      Name: Rgan
+      Level: 215
+      Hp: 5070800
+      BaseExp: 259786
+      JobExp: 196587
+      Attack: 7460
+      Attack2: 1170
+      Defense: 149
+      MagicDefense: 290
+      Resistance: 117
+      MagicResistance: 267
+      Str: 56
+      Agi: 144
+      Vit: 144
+      Int: 192
+      Dex: 278
+      Luk: 84
+      AttackRange: 1
+      SkillRange: 10
+      ChaseRange: 12
+      Size: Medium
+      Race: Formless
+      Element: Wind
+      ElementLevel: 2
+      WalkSpeed: 150
+      AttackDelay: 384
+      AttackMotion: 768
+      DamageMotion: 576
+      Ai: 04
+    - Id: 21531
+      AegisName: EP19_MD_AQUILA
+      Name: Aquila
+      Level: 210
+      Hp: 500000000
+      #MvpExp:
+      Attack: 6000
+      Attack2: 1000
+      Defense: 456
+      MagicDefense: 112
+      Str: 0
+      Agi: 0
+      Vit: 0
+      Int: 0
+      Dex: 0
+      Luk: 0
+      AttackRange: 1
+      SkillRange: 10
+      ChaseRange: 12
+      Size: Large
+      Race: Formless
+      Element: Neutral
+      ElementLevel: 3
+      WalkSpeed: 150
+      AttackDelay: 396
+      AttackMotion: 1584
+      DamageMotion: 480
+      Ai: 21
+      Class: Boss
+      MvpDrops:
+          - Item: Snow_F_Stone1
+            Rate: 7000
+          - Item: Snow_F_Stone2
+            Rate: 2000
+          - Item: Snow_F_Stone3
+            Rate: 1000
+      Drops:
+    - Id: 21532
+      AegisName: EP19_MD_JUNCEA
+      Name: Simulation Juncea
+      Level: 215
+      Hp: 72847380
+      Attack: 8590
+      Attack2: 950
+      Defense: 339
+      MagicDefense: 196
+      Resistance: 376
+      MagicResistance: 131
+      Str: 159
+      Agi: 91
+      Vit: 276
+      Int: 101
+      Dex: 377
+      Luk: 110
+      AttackRange: 2
+      SkillRange: 10
+      ChaseRange: 12
+      Size: Large
+      Race: Demihuman
+      Element: Poison
+      ElementLevel: 4
+      WalkSpeed: 150
+      AttackDelay: 1209
+      AttackMotion: 2016
+      DamageMotion: 576
+      Ai: 21
+      Class: Boss
+      Modes:
+          Mvp: true
+    - Id: 21533
+      AegisName: EP19_MD_JUNCEA_S
+      Name: Simulation Juncea
+      Level: 215
+      Hp: 225503800
+      BaseExp: 7798710
+      JobExp: 5430080
+      #MvpExp:
+      Attack: 15250
+      Attack2: 2280
+      Defense: 575
+      MagicDefense: 100
+      Resistance: 376
+      MagicResistance: 131
+      Str: 159
+      Agi: 91
+      Vit: 276
+      Int: 101
+      Dex: 377
+      Luk: 110
+      AttackRange: 2
+      SkillRange: 10
+      ChaseRange: 12
+      Size: Large
+      Race: Formless
+      Element: Poison
+      ElementLevel: 4
+      WalkSpeed: 150
+      AttackDelay: 403
+      AttackMotion: 1008
+      DamageMotion: 576
+      DamageTaken: 10
+      Ai: 21
+      Class: Boss
+      Modes:
+          Mvp: true
+      MvpDrops:
+          - Item: Snow_F_Stone1
+            Rate: 7000
+          - Item: Snow_F_Stone2
+            Rate: 2000
+          - Item: Snow_F_Stone3
+            Rate: 1000
+      Drops:
+          - Item: EP19_Sharp_Bone
+            Index: 0
+            Rate: 7000
+          - Item: Snow_F_Stone3
+            Index: 1
+            Rate: 500
+          - Item: Snow_F_Stone2
+            Index: 2
+            Rate: 1000
+          - Item: Snow_F_Stone1
+            Index: 3
+            Rate: 2500
+          - Item: Snow_F_Ore
+            Index: 4
+            Rate: 3500
+          - Item: Snow_F_Ore
+            Index: 5
+            Rate: 1500
+          - Item: Simulation_Juncea_Card
+            Index: 6
+            Rate: 1
+            StealProtected: true
+    - Id: 21534
+      AegisName: EP19_MD_RGAN_E
+      Name: Frightened Rgan
+      Level: 213
+      Hp: 5305150
+      Attack: 7678
+      Attack2: 955
+      Defense: 200
+      MagicDefense: 191
+      Resistance: 162
+      MagicResistance: 135
+      Str: 100
+      Agi: 92
+      Vit: 147
+      Int: 114
+      Dex: 223
+      Luk: 66
+      AttackRange: 1
+      SkillRange: 10
+      ChaseRange: 12
+      Size: Medium
+      Race: Formless
+      Element: Earth
+      ElementLevel: 1
+      WalkSpeed: 150
+      AttackDelay: 504
+      AttackMotion: 1008
+      DamageMotion: 576
+      Ai: 04
+    - Id: 21535
+      AegisName: EP19_MD_RGAN_D
+      Name: Split Rgan
+      Level: 211
+      Hp: 4815450
+      Attack: 8257
+      Attack2: 965
+      Defense: 195
+      MagicDefense: 186
+      Resistance: 152
+      MagicResistance: 127
+      Str: 92
+      Agi: 85
+      Vit: 136
+      Int: 105
+      Dex: 208
+      Luk: 62
+      AttackRange: 1
+      SkillRange: 10
+      ChaseRange: 12
+      Size: Medium
+      Race: Formless
+      Element: Poison
+      ElementLevel: 2
+      WalkSpeed: 150
+      AttackDelay: 316
+      AttackMotion: 792
+      DamageMotion: 576
+      Ai: 04
+    - Id: 21536
+      AegisName: EP19_MD_HEARTHUNTER_AT
+      Name: Modified Heart Hunter
+      Level: 210
+      Hp: 4807050
+      Attack: 9877
+      Attack2: 904
+      Defense: 216
+      MagicDefense: 149
+      Resistance: 173
+      MagicResistance: 101
+      Str: 265
+      Agi: 139
+      Vit: 139
+      Int: 105
+      Dex: 284
+      Luk: 83
+      AttackRange: 1
+      SkillRange: 10
+      ChaseRange: 12
+      Size: Medium
+      Race: Demihuman
+      Element: Neutral
+      ElementLevel: 1
+      WalkSpeed: 150
+      AttackDelay: 324
+      AttackMotion: 1080
+      DamageMotion: 576
+      Ai: 04
+    - Id: 21537
+      AegisName: EP19_LIMACINA_BOSS
+      Name: Ultra Limacina
+      Level: 245
+      Hp: 374848589
+      BaseExp: 8685807
+      JobExp: 6417846
+      #MvpExp:
+      Attack: 13029
+      Attack2: 2614
+      Defense: 529
+      MagicDefense: 509
+      Resistance: 321
+      MagicResistance: 290
+      Str: 198
+      Agi: 174
+      Vit: 253
+      Int: 215
+      Dex: 351
+      Luk: 83
+      AttackRange: 1
+      SkillRange: 10
+      ChaseRange: 12
+      Size: Large
+      Race: Fish
+      Element: Water
+      ElementLevel: 3
+      WalkSpeed: 150
+      AttackDelay: 312
+      AttackMotion: 780
+      DamageMotion: 576
+      DamageTaken: 10
+      Ai: 21
+      Class: Boss
+      Modes:
+          Mvp: true
+      MvpDrops:
+          - Item: Old_Card_Album
+            Rate: 4000
+          - Item: Yggdrasilberry
+            Rate: 4000
+          - Item: Snow_F_Stone3
+            Rate: 2000
+      Drops:
+          - Item: EP19_Unknown_Cell
+            Rate: 4000
+          - Item: EP19_Luminant
+            Rate: 5000
+          - Item: EP19_Transparency_Shell
+            Rate: 4000
+          - Item: Snow_F_Stone3
+            Rate: 1000
+          - Item: Snow_F_Stone2
+            Rate: 3000
+          - Item: Snow_F_Stone1
+            Rate: 5000
+          - Item: Ultra_Limacina_Card
+            Rate: 1
+            StealProtected: true
+    - Id: 21588
+      AegisName: EP19_MD_AQUILA_B
+      Name: Aquila
+      Level: 210
+      Hp: 500000000
+      Attack: 6000
+      Attack2: 1000
+      Defense: 456
+      MagicDefense: 112
+      Str: 0
+      Agi: 0
+      Vit: 0
+      Int: 0
+      Dex: 0
+      Luk: 0
+      AttackRange: 1
+      SkillRange: 10
+      ChaseRange: 12
+      Size: Small
+      Race: Formless
+      Element: Neutral
+      ElementLevel: 1
+      WalkSpeed: 150
+      AttackDelay: 396
+      AttackMotion: 1584
+      DamageMotion: 480
+      DamageTaken: 10
+      Ai: 21
+      Class: Boss
+      Modes:
+          Mvp: true
+    - Id: 21589
+      AegisName: G_EP19_LIMACINA
+      Name: Limacina
+      Level: 213
+      Hp: 9055500
+      Attack: 4792
+      Attack2: 1079
+      Defense: 225
+      MagicDefense: 78
+      Str: 0
+      Agi: 0
+      Vit: 0
+      Int: 0
+      Dex: 0
+      Luk: 0
+      AttackRange: 7
+      SkillRange: 10
+      ChaseRange: 12
+      Size: Large
+      Race: Fish
+      Element: Water
+      ElementLevel: 2
+      WalkSpeed: 175
+      AttackDelay: 384
+      AttackMotion: 768
+      DamageMotion: 576
+      Ai: 04
+    - Id: 21590
+      AegisName: EP19_MD_RGAN_ES
+      Name: Rgan the furious
+      Level: 213
+      Hp: 6896695
+      Attack: 9981
+      Attack2: 1241
+      Defense: 260
+      MagicDefense: 248
+      Str: 0
+      Agi: 0
+      Vit: 0
+      Int: 0
+      Dex: 0
+      Luk: 0
+      AttackRange: 1
+      SkillRange: 10
+      ChaseRange: 12
+      Size: Medium
+      Race: Formless
+      Element: Earth
+      ElementLevel: 2
+      WalkSpeed: 150
+      AttackDelay: 302
+      AttackMotion: 1008
+      DamageMotion: 576
+      Ai: 04
+    - Id: 21853
+      AegisName: EP19_MD_BOX1
+      Name: Suspicious Storage Stone
+      Level: 230
+      Attack: 0
+      Attack2: 0
+      Str: 0
+      Agi: 0
+      Vit: 0
+      Int: 0
+      Dex: 0
+      Luk: 0
+      AttackRange: 1
+      SkillRange: 0
+      ChaseRange: 0
+      Size: Small
+      Race: Formless
+      Element: Neutral
+      ElementLevel: 1
+      Class: Boss
+    - Id: 21854
+      AegisName: EP19_MD_BOX2
+      Name: Suspicious Storage Stone
+      Level: 230
+      Attack: 0
+      Attack2: 0
+      Str: 0
+      Agi: 0
+      Vit: 0
+      Int: 0
+      Dex: 0
+      Luk: 0
+      AttackRange: 1
+      SkillRange: 0
+      ChaseRange: 0
+      Size: Small
+      Race: Formless
+      Element: Neutral
+      ElementLevel: 1
+      Class: Boss

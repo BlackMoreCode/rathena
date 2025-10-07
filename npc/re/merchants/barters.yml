@@ -67,3 +67,4 @@ Footer:
         - Path: npc/re/merchants/barters/customcraft_headgear.yml
         - Path: npc/re/merchants/barters/midgame_items.yml
         - Path: npc/re/merchants/barters/early_midgame.yml
+        - Path: npc/re/merchants/barters/quests_19.yml

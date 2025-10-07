@@ -31,5 +31,9 @@
 ###########################################################################
 
 Header:
-  Type: CONSTANT_DB
-  Version: 1
+    Type: CONSTANT_DB
+    Version: 1
+
+Body:
+    - Name: REPUTATION_EP19
+      Value: 4

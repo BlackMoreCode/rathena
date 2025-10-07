@@ -522,6 +522,8 @@
 	export_constant(MF_NOBANK);
 	export_constant(MF_SPECIALPOPUP);
 	export_constant(MF_NOMACROCHECKER);
+	export_constant(MF_NOLOOTNORMALMOB);
+	export_constant(MF_NO_NPC_SELFDESTRUCTION_ON_ALL);
 	export_constant(MF_INVINCIBLE_TIME);
 
 	/* setcell types */
@@ -1973,6 +1975,7 @@
 	export_constant(SC_SBUNSHIN);
 	export_constant(SC_CONTENTS_34);
 	export_constant(SC_CONTENTS_35);
+	export_constant(SC_MTP_W_POTION_100);
 	export_constant(SC_NOACTION);
 	export_constant(SC_C_BUFF_3);
 	export_constant(SC_C_BUFF_4);
@@ -7181,6 +7184,7 @@
 	export_constant(IG_LI_NYANGVINE_BOX1_38);
 	export_constant(IG_LI_NYANGVINE_BOX2_38);
 	export_constant(IG_LI_NYANGVINE_BOX3_38);
+	export_constant(IG_D_GW_EXTRACTOR);
 	export_constant(IG_MD_FRAGMENT_BOX_BL);
 	export_constant(IG_MD_FRAGMENT_BOX_YL);
 	export_constant(IG_MD_FRAGMENT_BOX_GR);
