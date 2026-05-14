@@ -1,0 +1,29 @@
+[33mf8a99e38c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: commit (merge): Fix merge conflicts
+[33m9e6a811f1[m HEAD@{1}: commit: shops updated
+[33m7727baccb[m HEAD@{2}: commit: ep19 applied
+[33m00feffd79[m HEAD@{3}: commit: convention fix
+[33m693a4f2c0[m HEAD@{4}: commit: db/import 폴더 gitignore에서 제외
+[33m1f16667df[m HEAD@{5}: commit: Exchange logic implemented
+[33m95c08287e[m HEAD@{6}: commit: Early midgame + exchange NPC
+[33m60438b491[m HEAD@{7}: commit: New item exchange
+[33m6ac4a916d[m HEAD@{8}: commit: map drop test
+[33m414756824[m HEAD@{9}: pull: Merge made by the 'ort' strategy.
+[33mc02a12eb2[m HEAD@{10}: commit: job master changed + rolled back some stuff
+[33mfbc9b29fb[m HEAD@{11}: commit: renewal BASE/JOB LEVEL CHANGE
+[33mf55a0c619[m HEAD@{12}: pull: Fast-forward
+[33mf195b47e2[m HEAD@{13}: commit: poring slot changed
+[33m5f3841ab8[m HEAD@{14}: pull: Fast-forward
+[33med5d52e0e[m HEAD@{15}: commit: mid game items added
+[33m3c3b1ad7f[m HEAD@{16}: commit: barter shadow exchange added
+[33macf1a8f41[m HEAD@{17}: commit: Illusion of labyrinth
+[33m53170b68d[m HEAD@{18}: commit: gears fixed, barter updated
+[33ma3c497383[m HEAD@{19}: pull --tags origin master: Merge made by the 'ort' strategy.
+[33mf8ff40242[m HEAD@{20}: commit: mid game gears
+[33m7a50f1245[m HEAD@{21}: commit: malangdo custom addition + gear shop update
+[33m8aefb7dcd[m HEAD@{22}: commit: kafra moved
+[33mfe7d7988d[m HEAD@{23}: pull: Fast-forward
+[33md84ce4c45[m HEAD@{24}: pull: Fast-forward
+[33m3fb5dface[m HEAD@{25}: commit: copeRO 09-16
+[33mc76d0aab9[m HEAD@{26}: pull: Fast-forward
+[33mf32bf7402[m HEAD@{27}: commit: copeRO after updates
+[33m1c06ebcbb[m HEAD@{28}: clone: from https://github.com/BlackMoreCode/rathena.git
