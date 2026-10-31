@@ -1,6 +1,11 @@
 [CmdletBinding()]
-param([string]$ServerRoot = (Split-Path $PSScriptRoot -Parent))
+param([string]$ServerRoot)
 $ErrorActionPreference = 'Stop'
+if ([string]::IsNullOrWhiteSpace($ServerRoot)) {
+    $scriptPath = $MyInvocation.MyCommand.Path
+    if ([string]::IsNullOrWhiteSpace($scriptPath)) { throw 'Specify -ServerRoot explicitly.' }
+    $ServerRoot = Split-Path -Parent (Split-Path -Parent $scriptPath)
+}
 $ServerRoot = (Resolve-Path -LiteralPath $ServerRoot).Path
 foreach ($name in @('login-server.exe','char-server.exe','web-server.exe','map-server.exe')) {
     if (-not (Test-Path -LiteralPath (Join-Path $ServerRoot $name))) { throw "Missing $name. Build Release x64 first." }

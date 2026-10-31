@@ -3,9 +3,16 @@ param(
     [Parameter(Mandatory=$true)]
     [ValidateSet('Local','Production')][string]$Profile,
     [string]$PublicAddress,
-    [string]$ServerRoot = (Split-Path $PSScriptRoot -Parent)
+    [string]$ServerRoot
 )
 $ErrorActionPreference = 'Stop'
+if ([string]::IsNullOrWhiteSpace($ServerRoot)) {
+    # Resolve after parameter binding: Windows PowerShell 5.1 can expose an
+    # empty PSScriptRoot while evaluating a parameter's default expression.
+    $scriptPath = $MyInvocation.MyCommand.Path
+    if ([string]::IsNullOrWhiteSpace($scriptPath)) { throw 'Specify -ServerRoot explicitly.' }
+    $ServerRoot = Split-Path -Parent (Split-Path -Parent $scriptPath)
+}
 $ServerRoot = (Resolve-Path -LiteralPath $ServerRoot).Path
 if (-not (Test-Path -LiteralPath (Join-Path $ServerRoot 'conf/map_athena.conf'))) {
     throw 'ServerRoot must contain the rAthena conf directory.'
