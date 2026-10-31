@@ -2833,4 +2833,3 @@ Body:
     # Points: 102545 #default (only for 2 stats max)
     TraitPoints: 2401
     Points: 100000 #modified for 1k levels only, for max 2 stats + 25% for 3rd stat (like 999 str, 999 agi, 250 vit)
-    TraitPoints: 2404

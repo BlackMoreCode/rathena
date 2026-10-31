@@ -386,7 +386,7 @@ Body:
                 - Index: 2
                   Item: Shadowdecon
                   Amount: 50
-            - Index: 26
+          - Index: 26
             Item: Wicked_Axe
             Zeny: 5000000
             RequiredItems:

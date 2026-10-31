@@ -244,6 +244,13 @@ static const char* atcommand_help_string( const char* command ){
 	return info->help.c_str();
 }
 
+/// Normalize path separators so Windows-style paths work on all platforms.
+static void atcommand_normalize_npc_path(char* dst, const char* src, size_t size) {
+	safestrncpy(dst, src, size);
+	for (char* p = dst; *p; ++p)
+		if (*p == '\\')
+			*p = '/';
+}
 
 /*==========================================
  * @send (used for testing packet sends from the client)
@@ -1955,32 +1962,56 @@ ACMD_FUNC(model)
 }
 
 /*==========================================
- * @bodystyle [Rytech]
+ * @bodystyle
  *------------------------------------------*/
-ACMD_FUNC(bodystyle)
-{
-	int32 body_style = 0;
+ACMD_FUNC(bodystyle){
 	nullpo_retr(-1, sd);
 
-	memset(atcmd_output, '\0', sizeof(atcmd_output));
+	std::shared_ptr<s_job_info> job = job_db.find( sd->status.class_ );
 
-	if ( (sd->class_ & JOBL_FOURTH) || !(sd->class_ & JOBL_THIRD) || (sd->class_ & MAPID_THIRDMASK) == MAPID_SUPER_NOVICE_E || (sd->class_ & MAPID_THIRDMASK) == MAPID_STAR_EMPEROR || (sd->class_ & MAPID_THIRDMASK) == MAPID_SOUL_REAPER) {
-		clif_displaymessage(fd, msg_txt(sd,740));	// This job has no alternate body styles.
+	if( job == nullptr || job->alternate_outfits.empty() ){
+		clif_displaymessage( fd, msg_txt( sd, 740 ) ); // This job has no alternate body styles.
 		return -1;
 	}
 
-	if (!message || !*message || sscanf(message, "%d", &body_style) < 1) {
-		sprintf(atcmd_output, msg_txt(sd,739), MIN_BODY_STYLE, MAX_BODY_STYLE);		// Please enter a body style (usage: @bodystyle <body ID: %d-%d>).
-		clif_displaymessage(fd, atcmd_output);
+	if( message == nullptr || !*message ){
+		if( const char* help = atcommand_help_string( command ); help != nullptr ){
+			clif_displaymessage( fd, help );
+		}
+
 		return -1;
 	}
 
-	if (body_style >= MIN_BODY_STYLE && body_style <= MAX_BODY_STYLE) {
-		pc_changelook(sd, LOOK_BODY2, body_style);
-		clif_displaymessage(fd, msg_txt(sd,36)); // Appearence changed.
-	} else {
-		clif_displaymessage(fd, msg_txt(sd,37)); // An invalid number was specified.
+	// Handle the 'off' alias to revert to the default bodystyle
+	if (!strcasecmp(message, "off")) {
+		if (sd->vd.look[LOOK_BODY2] != sd->status.class_) {
+			pc_changelook(sd, LOOK_BODY2, sd->status.class_);
+			clif_displaymessage( fd, msg_txt( sd, 1539 ) ); // Appearance changed to default.
+		} else {
+			clif_displaymessage( fd, msg_txt( sd, 1540 ) ); // Appearance is already set to default.
+		}
+
+		return 0;
+	}
+
+	uint16 body_style = 0;
+
+	if( sscanf( message, "%hu", &body_style ) < 1 ){
+		if( const char* help = atcommand_help_string( command ); help != nullptr ){
+			clif_displaymessage( fd, help );
+		}
+
 		return -1;
+	}
+
+	if( body_style != sd->status.class_ && !util::vector_exists( job->alternate_outfits, body_style ) ){
+		clif_displaymessage( fd, msg_txt( sd, 37 ) ); // An invalid number was specified.
+		return -1;
+	}
+
+	if( body_style != sd->vd.look[LOOK_BODY2] ){
+		pc_changelook( sd, LOOK_BODY2, body_style );
+		clif_displaymessage( fd, msg_txt( sd, 36 ) ); // Appearance changed.
 	}
 
 	return 0;
@@ -2939,7 +2970,7 @@ ACMD_FUNC(param)
 	if( stat < PARAM_POW ){
 		status = pc_getstat( sd, SP_STR + stat - PARAM_STR );
 	}else{
-		if( !( sd->class_ & JOBL_FOURTH ) ){
+		if( !pc_is_trait_job(sd->class_) ){
 			clif_displaymessage(fd, msg_txt(sd, 797)); // This command is unavailable to non - 4th class.
 			return -1;
 		}
@@ -3065,7 +3096,7 @@ ACMD_FUNC(trait_all) {
 	return -1;
 #endif
 
-	if( !( sd->class_ & JOBL_FOURTH ) ){
+	if( !pc_is_trait_job(sd->class_) ){
 		clif_displaymessage(fd, msg_txt(sd, 797)); // This command is unavailable to non - 4th class.
 		return -1;
 	}
@@ -4315,6 +4346,7 @@ ACMD_FUNC(partyrecall)
  *
  *------------------------------------------*/
 void atcommand_doload();
+
 ACMD_FUNC(reloadcashdb){
 	nullpo_retr(-1, sd);
 
@@ -4541,6 +4573,69 @@ ACMD_FUNC(reloadlogconf){
 	clif_displaymessage(fd, msg_txt(sd,1536)); // Log configuration has been reloaded.
 
 	return 0;
+}
+
+ACMD_FUNC( reload ){
+	static const struct{
+		const char* type;
+		int32 (*func)( const int32 fd, map_session_data* sd, const char* command, const char* message );
+	} types[] = {
+		{ "achievementdb", atcommand_reloadachievementdb },
+		{ "atcommand", atcommand_reloadatcommand },
+		{ "attendancedb", atcommand_reloadattendancedb },
+		{ "barterdb", atcommand_reloadbarterdb },
+		{ "battleconf", atcommand_reloadbattleconf },
+		{ "cashdb", atcommand_reloadcashdb },
+		{ "instancedb", atcommand_reloadinstancedb },
+		{ "itemdb", atcommand_reloaditemdb },
+		{ "logconf", atcommand_reloadlogconf },
+		{ "mobdb", atcommand_reloadmobdb },
+		{ "motd", atcommand_reloadmotd },
+		{ "msgconf", atcommand_reloadmsgconf },
+		{ "pcdb", atcommand_reloadpcdb },
+		{ "script", atcommand_reloadscript },
+		{ "skilldb", atcommand_reloadskilldb },
+		{ "statusdb", atcommand_reloadstatusdb },
+		{ "questdb", atcommand_reloadquestdb },
+	};
+
+	nullpo_retr(-1, sd);
+
+	if (!message || !*message) {
+		if (const char* help = atcommand_help_string(command); help != nullptr) {
+			clif_displaymessage(fd, help);
+		}
+		return -1;
+	}
+
+	// Case insensitive full string search
+	for( const auto& type : types ){
+		if( strcasecmp( type.type, message ) == 0 ){
+			if( pc_can_use_command( sd, type.type, COMMAND_ATCOMMAND ) ){
+				return type.func( fd, sd, type.type, "" );
+			}else{
+				return -1;
+			}
+		}
+	}
+
+	// Case sensitive partial string search
+	for( const auto& type : types ){
+		if( strstr( type.type, message ) != nullptr ){
+			if( pc_can_use_command( sd, type.type, COMMAND_ATCOMMAND ) ){
+				return type.func( fd, sd, type.type, "" );
+			}else{
+				return -1;
+			}
+		}
+	}
+
+	// No valid type specified
+	if( const char* help = atcommand_help_string( command ); help != nullptr ){
+		clif_displaymessage( fd, help );
+	}
+
+	return -1;
 }
 
 /*==========================================
@@ -5262,16 +5357,19 @@ ACMD_FUNC(loadnpc)
 		clif_displaymessage(fd, msg_txt(sd,1132)); // Please enter a script file name (usage: @loadnpc <file name>).
 		return -1;
 	}
-	
-	if (!npc_addsrcfile(message, true)) {
+
+	char path[1024];
+	atcommand_normalize_npc_path(path, message, sizeof(path));
+
+	if (!npc_addsrcfile(path, true)) {
 		clif_displaymessage(fd, msg_txt(sd,261)); // Script could not be loaded.
 		return -1;
 	}
 
 	npc_read_event_script();
 
-	ShowStatus( "NPC file '" CL_WHITE "%s" CL_RESET "' was loaded.\n", message );
-	npc_event_doall_path( script_config.init_event_name, message );
+	ShowStatus( "NPC file '" CL_WHITE "%s" CL_RESET "' was loaded.\n", path );
+	npc_event_doall_path( script_config.init_event_name, path );
 
 	clif_displaymessage(fd, msg_txt(sd,262)); // Script loaded.
 	return 0;
@@ -5308,18 +5406,21 @@ ACMD_FUNC(reloadnpcfile) {
 		return -1;
 	}
 
-	if (npc_unloadfile(message))
+	char path[1024];
+	atcommand_normalize_npc_path(path, message, sizeof(path));
+
+	if (npc_unloadfile(path))
 		clif_displaymessage(fd, msg_txt(sd,1386)); // File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
 
-	if (!npc_addsrcfile(message, true)) {
+	if (!npc_addsrcfile(path, true)) {
 		clif_displaymessage(fd, msg_txt(sd,261)); // Script could not be loaded.
 		return -1;
 	}
 
 	npc_read_event_script();
 
-	ShowStatus( "NPC file '" CL_WHITE "%s" CL_RESET "' was reloaded.\n", message );
-	npc_event_doall_path( script_config.init_event_name, message );
+	ShowStatus( "NPC file '" CL_WHITE "%s" CL_RESET "' was reloaded.\n", path );
+	npc_event_doall_path( script_config.init_event_name, path );
 
 	clif_displaymessage(fd, msg_txt(sd,262)); // Script loaded.
 	return 0;
@@ -9450,7 +9551,7 @@ ACMD_FUNC(request)
  *------------------------------------------*/
 ACMD_FUNC(feelreset)
 {
-	if ((sd->class_&MAPID_UPPERMASK) != MAPID_STAR_GLADIATOR) {
+	if ((sd->class_&MAPID_SECONDMASK) != MAPID_STAR_GLADIATOR) {
 		clif_displaymessage(sd->fd,msg_txt(sd,35));	// You can't use this command with this class.
 		return -1;
 	}
@@ -9466,7 +9567,7 @@ ACMD_FUNC(feelreset)
  *------------------------------------------*/
 ACMD_FUNC(hatereset)
 {
-	if ((sd->class_&MAPID_UPPERMASK) != MAPID_STAR_GLADIATOR) {
+	if ((sd->class_&MAPID_SECONDMASK) != MAPID_STAR_GLADIATOR) {
 		clif_displaymessage(sd->fd,msg_txt(sd,35));	// You can't use this command with this class.
 		return -1;
 	}
@@ -10270,12 +10371,18 @@ ACMD_FUNC(unloadnpcfile) {
 		return -1;
 	}
 
-	if( npc_unloadfile(message) )
+	char path[1024];
+	atcommand_normalize_npc_path(path, message, sizeof(path));
+
+	if( npc_unloadfile(path) ) {
 		clif_displaymessage(fd, msg_txt(sd,1386)); // File unloaded. Be aware that mapflags and monsters spawned directly are not removed.
+		ShowStatus( "NPC file '" CL_WHITE "%s" CL_RESET "' was unloaded.\n", path );
+	}
 	else {
 		clif_displaymessage(fd, msg_txt(sd,1387)); // File not found.
 		return -1;
 	}
+
 	return 0;
 }
 ACMD_FUNC(cart) {
@@ -10858,13 +10965,13 @@ ACMD_FUNC(clonestat) {
 		pc_resetstate(sd);
 		if (pc_has_permission(sd, PC_PERM_BYPASS_STAT_ONCLONE)) {
 			for (i = PARAM_STR; i < PARAM_MAX; i++) {
-				if (i >= PARAM_POW && !(sd->class_ & JOBL_FOURTH))
+				if (i >= PARAM_POW && !pc_is_trait_job(sd->class_))
 					continue;
 				max_status[i] = SHRT_MAX;
 			}
 		} else {
 			for (i = PARAM_STR; i < PARAM_MAX; i++) {
-				if (i >= PARAM_POW && sd->class_ & JOBL_FOURTH)
+				if (i >= PARAM_POW && pc_is_trait_job(sd->class_))
 					continue;
 				max_status[i] = pc_maxparameter(sd, static_cast<e_params>(i));
 			}
@@ -10894,7 +11001,7 @@ ACMD_FUNC(clonestat) {
 			clif_updatestatus(*sd, static_cast<_sp>( SP_USTR + i ) );
 		}
 
-		if (sd->class_ & JOBL_FOURTH) {
+		if (pc_is_trait_job(sd->class_)) {
 			clonestat_check(pow, PARAM_POW);
 			clonestat_check(sta, PARAM_STA);
 			clonestat_check(wis, PARAM_WIS);
@@ -11495,6 +11602,7 @@ void atcommand_basecommands(void) {
 		ACMD_DEF(broadcast), // + /b and /nb
 		ACMD_DEF(localbroadcast), // + /lb and /nlb
 		ACMD_DEF(recallall),
+		ACMD_DEFR(reload,ATCMD_NOSCRIPT),
 		ACMD_DEF(reloaditemdb),
 		ACMD_DEF(reloadcashdb),
 		ACMD_DEF(reloadmobdb),

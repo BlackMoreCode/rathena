@@ -46,7 +46,7 @@
 
 Header:
     Type: ITEM_GROUP_DB
-    Version: 4
+    Version: 5
 
 Body:
     # custom rates

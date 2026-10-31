@@ -1785,8 +1785,6 @@ Body:
       Int: 190
       Dex: 154
       Luk: 40
-      Resistance: 169
-      MagicResistance: 130
       AttackRange: 1
       SkillRange: 10
       ChaseRange: 12
@@ -2470,8 +2468,6 @@ Body:
       Int: 198
       Dex: 241
       Luk: 33
-      Resistance: 166
-      MagicResistance: 170
       AttackRange: 1
       SkillRange: 10
       ChaseRange: 12

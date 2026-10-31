@@ -1775,6 +1775,8 @@ Body:
     DurationLookup: BD_ENCORE
     States:
       NoMoveCond: true
+      NoAttack: true
+      NoCast: true
     CalcFlags:
       Speed: true
       Regen: true
@@ -2532,7 +2534,6 @@ Body:
       NoSave: true
       NoClearance: true
       NoBanishingBuster: true
-      NoDispell: true
       RemoveOnHermode: true
   - Status: Bunsinjyutsu
     Icon: EFST_NJ_BUNSINJYUTSU
@@ -7156,19 +7157,19 @@ Body:
   - Status: Lightofmoon
     Icon: EFST_LIGHTOFMOON
     DurationLookup: SJ_LIGHTOFMOON
-    EndOnStart:
+    EndOnStart: # TODO: list of status for EndOnStart is incorrect
       Lunarstance: true
       Universestance: true
   - Status: Lightofsun
     Icon: EFST_LIGHTOFSUN
     DurationLookup: SJ_LIGHTOFSUN
-    EndOnStart:
+    EndOnStart: # TODO: list of status for EndOnStart is incorrect
       Lightofsun: true
       Universestance: true
   - Status: Lightofstar
     Icon: EFST_LIGHTOFSTAR
     DurationLookup: SJ_LIGHTOFSTAR
-    EndOnStart:
+    EndOnStart: # TODO: list of status for EndOnStart is incorrect
       Starstance: true
       Universestance: true
   - Status: Lunarstance
@@ -7948,12 +7949,6 @@ Body:
   - Status: Axe_Stomp
     Icon: EFST_AXE_STOMP
     DurationLookup: MT_AXE_STOMP
-  - Status: A_Machine
-    Icon: EFST_A_MACHINE
-    DurationLookup: MT_A_MACHINE
-    Flags:
-      BlEffect: true
-      DisplayPc: true
   - Status: D_Machine
     Icon: EFST_D_MACHINE
     DurationLookup: MT_D_MACHINE
@@ -9920,6 +9915,38 @@ Body:
   - Status: Chasing
     Icon: EFST_CHASING
     DurationLookup: ABC_HIT_AND_SLIDING
+    Flags:
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+  - Status: Fire_Charm_Power
+    Icon: EFST_FIRE_CHARM_POWER
+    DurationLookup: SS_FOUR_CHARM
+    Flags:
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+  - Status: Water_Charm_Power
+    Icon: EFST_WATER_CHARM_POWER
+    DurationLookup: SS_FOUR_CHARM
+    Flags:
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+  - Status: Wind_Charm_Power
+    Icon: EFST_WIND_CHARM_POWER
+    DurationLookup: SS_FOUR_CHARM
+    Flags:
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+  - Status: Ground_Charm_Power
+    Icon: EFST_GROUND_CHARM_POWER
+    DurationLookup: SS_FOUR_CHARM
     Flags:
       NoClearbuff: true
       NoDispell: true

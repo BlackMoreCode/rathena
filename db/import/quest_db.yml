@@ -143,7 +143,6 @@ Body:
       Title: Guest Guild Member
     - Id: 12490
       Title: Receive today's mission
-      Title: "[Cooldown] Daily Mission"
       TimeLimit: 4h
     - Id: 12491
       Title: "[Cooldown] Weekly Mission"
@@ -611,7 +610,7 @@ Body:
       Title: Crunchy Tools - Standby
       TimeLimit: 4h
     - Id: 12560
-      Title: Standby: Neutralizing Aircraft
+      Title: "Standby: Neutralizing Aircraft"
       TimeLimit: 4h
     - Id: 12561
       Title: Disable the Core
@@ -766,10 +765,10 @@ Body:
     - Id: 17660
       Title: Finding an underground hideout on the ground
     - Id: 17661
-      Title: Standby: Finding an Underground Hideout on the Ground
+      Title: "Standby: Finding an Underground Hideout on the Ground"
       TimeLimit: 4h
     - Id: 17662
-      Title: Standby: Finding an Underground Hideout on the Ground
+      Title: "Standby: Finding an Underground Hideout on the Ground"
       TimeLimit: 4h
     - Id: 18121
       Title: Guardian's Chest and Invitation 1

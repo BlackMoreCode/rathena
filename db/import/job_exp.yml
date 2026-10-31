@@ -81,7 +81,7 @@
 
 Header:
   Type: JOB_STATS
-  Version: 3
+  Version: 4
 
 Body:
 
@@ -109,7 +109,6 @@ Body:
       Dancer: true
       Crusader2: true
       Wedding: true
-      Super_Novice: true
       Super_Novice: true
       Gunslinger: true
       Ninja: true
@@ -13083,6 +13082,7 @@ Body:
       Night_Watch: true
       Hyper_Novice: true
       Spirit_Handler: true
+      Sky_Emperor2: true
     MaxBaseLevel: 1000
     BaseExp:
       - Level: 1
@@ -15110,6 +15110,7 @@ Body:
       Night_Watch: true
       Hyper_Novice: true
       Spirit_Handler: true
+      Sky_Emperor2: true
     MaxJobLevel: 120
     JobExp:
       - Level: 1

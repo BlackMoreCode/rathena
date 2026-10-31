@@ -81,7 +81,7 @@
 
 Header:
   Type: JOB_STATS
-  Version: 3
+  Version: 4
 
 Body:
 
@@ -109,7 +109,6 @@ Body:
       Dancer: true
       Crusader2: true
       Wedding: true
-      Super_Novice: true
       Super_Novice: true
       Gunslinger: true
       Ninja: true

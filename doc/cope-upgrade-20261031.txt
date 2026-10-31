@@ -1,0 +1,89 @@
+CopeRO rAthena 업데이트 결과 (2026-10-31)
+
+적용 위치: E:\CopeROv2\LocalHostServer\Latest\rathena
+순정 기준: E:\CopeROv2\rAthena순정\rathena
+순정 커밋: d4b8e7b8f16061cc2496d377ac8f777ce72a4f39
+기존 커밋: 6308bca502295377e2046f4b1aa96d72363ea60e
+작업 브랜치: codex/rathena-update-20261031
+작업 전 로컬 수정 보존: backup/cope-before-update-20261031 태그 (e52d419df)
+기존 master와 원격 저장소는 변경하지 않았으며 push하지 않았다.
+지정한 순정 폴더를 기준으로 기존 브랜치에 없던 순정 커밋 321개를 병합했다.
+
+백업과 복구
+E:\CopeROv2\backups\rathena-before-update-20261031
+- workspace: 작업 전 파일, .git, 기존 실행 파일, 무시된 conf/import 설정 포함.
+  재생성 가능한 .vs와 generated 폴더만 제외했다. 복사 실패 0건.
+- ragnarok-before-update.sql: 기존 ragnarok DB 73개 테이블의 구조와 데이터.
+- database-upgrade-plan.sql: 이번 환경에서 필요한 SQL만 추린 실제 적용 내용.
+- database-upgrade-skipped.txt: 이미 적용됐거나 설치되지 않은 테이블의 처리 내역.
+- build.log, map-validation-final.log, web-validation-final.log: 검증 로그.
+복구 시 서버를 종료한 상태에서 workspace 파일과 위 SQL 백업을 함께 사용한다.
+DB 변경까지 있으므로 소스 브랜치만 되돌리면 완전한 복구가 되지 않는다.
+백업에는 접속 설정과 계정 데이터가 있으므로 외부 저장소에 올리지 않는다.
+
+충돌 해결과 커스텀 콘텐츠
+- 직접 충돌: db/re/job_exp.yml, src/map/script.cpp, src/map/skill.cpp.
+- 기존 181개 클래스의 설정과 경험치 항목을 값 단위로 비교해 유지했다.
+  MAX_LEVEL 1000, 기존 직업별 잡 레벨 상한, 커스텀 스탯 설정을 보존했다.
+  새 순정의 Sky_Emperor2에는 대응하는 커스텀 경험치/상한을 연결했다.
+  새로 기본 경험치가 지원된 Gangsi/Death_Knight/Dark_Collector도 반영했다.
+- 순정 스킬 분리 구조를 채택하고 커스텀 자폭 타깃 제한을
+  src/map/skills/npc/suicidebombing.cpp로 옮겼다.
+- DE_BERSERKAIZER의 연출, unitisforcewalk 명령, 커스텀 맵 플래그,
+  JT_JOAN, D_GW_EXTRACTOR, SC_MTP_W_POTION_100을 유지했다.
+- mesitemicon 중복 등록을 제거하고 순정의 v?? 등록을 사용한다.
+- 에피소드 19, 일루전 콘텐츠, CopeRO 상점/교환/드롭/NPC 로딩을 유지했다.
+  순정 TrainingZone -> TrainingZone123 교체도 적용했다.
+
+DB/설정 호환성 정리
+- 커스텀 퀘스트 제목의 따옴표 누락과 CopeSolace 교환 목록 들여쓰기를 수정했다.
+- YAML 중복 키는 기존 로더가 참조하던 첫 값을 유지했다. 몬스터 저항 값,
+  1000레벨 TraitPoints, 퀘스트 제목도 해당한다. 상세: yaml-cleanup.txt.
+- JOB_STATS/ITEM_GROUP_DB/ITEM_PACKAGE_DB/ELEMENTAL_DB/BARTER_DB의
+  사용 중인 필드가 새 형식과 호환됨을 확인하고 버전 헤더를 갱신했다.
+- conf/import/battle_conf.txt의 잘못된 위치에 있던 party_share_level 줄은
+  주석으로 바꿨다. conf/inter_athena.conf의 기존 값 200이 계속 적용된다.
+  conf/import는 원래 Git 제외 대상이며 이 로컬 설정 수정도 커밋에 포함되지 않는다.
+- db/import/job_exp.yml은 현재 db/job_stats.yml에서 불러오지 않는 파일이다.
+  이를 새로 활성화하지 않고 기존의 실제 경험치/잡 상한 동작을 유지했다.
+
+SQL 업데이트
+- 전체 백업 후 별도 복제 DB에서 먼저 검증하고 기존 DB에 적용했다.
+- 아이템 테이블 3개의 착용 레벨 필드를 smallint unsigned로 확장했다.
+- 몬스터 테이블 2개의 AI 필드를 varchar(50)으로 확장했다.
+- 순정 upgrade_20251031.sql의 캐릭터 body 변환을 적용했다.
+  기존 캐릭터 수는 유지됐다. Novice(class 0)의 body 0은 정상이다.
+- upgrade_20251030.sql의 unsigned 변경과 upgrade_20260225.sql의
+  메일 InnoDB/외래 키는 이미 적용돼 있어 중복 적용하지 않았다.
+  메일 첨부 삭제 쿼리도 실행하지 않았다.
+
+검증
+- Visual Studio 2022, Release x64: 전체 솔루션 빌드 성공.
+  로그인/캐릭터/맵/웹 서버와 유틸리티 실행 파일을 갱신했다.
+  순정 rapidyaml 헤더에서 한국어 코드 페이지 관련 C4819 경고가 있다.
+- YAML 271개: 문법 및 중복 키 검사 통과.
+- 기존 클래스 설정/경험치 및 커스텀 NPC include 비교 통과.
+- 최종 map-server --run-once: 종료 코드 0, 맵 1265개 로딩,
+  NPC 3380개 OnInit 실행, 오류 및 메모리 누수 없음.
+  NPC 초기화가 운영 데이터에 쓰지 않도록 복제 DB와 별도 포트를 사용했다.
+- login-server/char-server --version: 정상 종료.
+- 웹 서버: 복제 DB와 로컬 포트 58888에서 기동 및 HTTP 응답 확인.
+- 실제 클라이언트 로그인, 전투/스킬 밸런스, 모든 퀘스트 진행은 미검증이다.
+
+남은 확인 사항
+1. 운영 웹 포트 8888은 기존 Windows 시스템 프로세스(PID 4)가 점유 중이다.
+   현재 설정으로 web-server를 시작하면 포트 충돌로 기동하지 못한다.
+   기존 포트 설정은 유지했다. 클라이언트 점검 때 서버/클라이언트 웹 주소를
+   함께 맞추거나 기존 포트 점유 서비스를 확인해야 한다.
+2. PACKETVER는 기존 20211103을 유지했다. 새 mesitemicon 기능은
+   2023-03-02 이상 클라이언트가 필요해 서버에서 자동 비활성화된다.
+3. 기존 tool_dealer 가격에는 할인 구매 후 오버차지 판매 차익이 있다.
+   Skyblue_Jewel(720): 750 구매 / 3720 판매
+   Yummy_Meat(11616): 750 구매 / 868 판매
+   High_Class_Pet_food(25377): 750 구매 / 6200 판매
+   의도한 상점 밸런스를 임의로 바꾸지 않았으므로 운영 전에 확인이 필요하다.
+4. 서버 시작 화면의 Git Hash는 순정 구현이 origin/master를 읽으므로
+   예전 6308bca...로 나올 수 있다. 실제 적용 버전은 현재 작업 브랜치의
+   git log 및 위 순정 커밋으로 확인한다.
+
+런처와 클라이언트 파일은 이번 작업에서 수정하지 않았다.
