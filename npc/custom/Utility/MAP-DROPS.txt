@@ -3,7 +3,7 @@
 //= Map-Specific Drop System
 //= 맵별 드롭 시스템
 //===== Current Version: =====================================
-//= 1.1
+//= 1.2
 //===== Description: =========================================
 //= Allows different items to drop on different maps
 //= with configurable drop rates per map
@@ -13,6 +13,10 @@
 //=       초기 공통 드롭 시스템
 //= 1.1 - Added map-specific drop tables with individual rates
 //=       맵별 개별 드롭 테이블 및 확률 시스템 추가
+//= 1.2 - Added Ep18_Amethyst_Fragment (1000405) as common drop (5%)
+//=       Added oz_dun02 (Oz Labyrinth 2F) to map list
+//=       Ep18_Amethyst_Fragment (1000405) 공통 드롭 추가 (5%)
+//=       oz_dun02 (오즈 미궁 2층) 맵 추가
 //============================================================
 
 -	script	Cope_Drop_Maps	FAKE_NPC,{
@@ -36,6 +40,16 @@ OnNPCKillEvent:
 		// HPC - 15% drop rate / 15% 드롭 확률
 		if (rand(10000) < 1500) {
 			getitem 48486,1;
+		}
+		
+		// Ep18_Amethyst_Fragment - 2% drop rate / 2% 드롭 확률
+		if (rand(10000) < 200) {
+			getitem 1000405,1;
+		}
+
+		// 25375 Mightysoul_Essence 강력한영혼의정수- 2% drop rate / 2% 드롭 확률
+		if (rand(10000) < 200) {
+			getitem 25375,1;
 		}
 	}
 	
@@ -93,6 +107,14 @@ OnNPCKillEvent:
 			}
 		}
 	}
+	else if (.@map$ == "oz_dun02") {
+		.@drop_count = getarraysize(.oz_dun02_items);
+		for (.@i = 0; .@i < .@drop_count; .@i++) {
+			if (rand(10000) < .oz_dun02_rates[.@i]) {
+				getitem .oz_dun02_items[.@i],1;
+			}
+		}
+	}
 	
 	// ========================================
 	// HOW TO ADD NEW MAPS / 새 맵 추가 방법:
@@ -127,7 +149,8 @@ OnInit:
 		"sp_rudus4",
 		"amicitia1",
 		"amicitia2",
-		"nif_dun02";
+		"nif_dun02",
+		"oz_dun02";
 	
 	// ========================================
 	// Map-Specific Drop Tables / 맵별 드롭 테이블
@@ -220,6 +243,15 @@ OnInit:
 		470122; // 야수의 가죽 신발[1]			[200제 신발]	
 	setarray .sp_rudus4_rates,
 		20; // 0.2%
+
+	// ========================================
+	// oz_dun02 drop table / oz_dun02 드롭 테이블
+	// ========================================
+	// Oz Labyrinth, 2nd Floor / 오즈 미궁 2층
+	setarray .oz_dun02_items,
+		1000405; // Ep18_Amethyst_Fragment / 에메랄드 조각
+	setarray .oz_dun02_rates,
+		1000; // 10%
 
 
 	// ========================================

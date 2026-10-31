@@ -2226,23 +2226,24 @@ Body:
             StealProtected: true
     - Id: 21601
       AegisName: EP19_ET_RGAN_D
-      Name: Entangled Medium Rgan
+      # Name: Entangled Intermediate Rgan
+      Name: Intermediate Rgan
       Level: 252
-      Hp: 424257900
-      BaseExp: 1223651
-      JobExp: 1054215
-      Attack: 8000
-      Attack2: 1000
+      Hp: 42579000
+      BaseExp: 723723
+      JobExp: 503581
+      Attack: 11444
+      Attack2: 3284
       Defense: 537
       MagicDefense: 235
-      Str: 253
-      Agi: 119
-      Vit: 222
-      Int: 36
-      Dex: 297
-      Luk: 74
-      Resistance: 201
-      MagicResistance: 178
+      Resistance: 489
+      MagicResistance: 289
+      Str: 149
+      Agi: 144
+      Vit: 203
+      Int: 175
+      Dex: 180
+      Luk: 167
       AttackRange: 1
       SkillRange: 10
       ChaseRange: 12
@@ -2250,25 +2251,21 @@ Body:
       Race: Formless
       Element: Poison
       ElementLevel: 2
-      WalkSpeed: 150
-      AttackDelay: 481
+      WalkSpeed: 175
+      AttackDelay: 316
       AttackMotion: 792
-      DamageMotion: 0
-      Ai: 09
+      DamageMotion: 576
+      Ai: 04
       Drops:
-          - Item: EP19_Shell_Of_Rgan
-            Rate: 7000
-          - Item: EP19_Unknown_Cell
-            Rate: 7000
-          - Item: Etel_Dust
-            Rate: 380
-          - Item: Ep19_Snow_Flower
-            Rate: 150
-          - Item: Ep19_Rgan_Core_F
-            Rate: 750
-          - Item: E_Inter_Rgan_Card
-            Rate: 1
-            StealProtected: true
+        - Item: Ep19_Rgan_Core_F
+          Rate: 750
+        - Item: EP19_Shell_Of_Rgan
+          Rate: 2625
+        - Item: EP19_Unknown_Cell
+          Rate: 1500
+        - Item: E_Inter_Rgan_Card
+          Rate: 1
+          StealProtected: true
     - Id: 21539
       AegisName: EP19_WASTED_RGAN_C
       Name: Wasted Intermediate Rgan

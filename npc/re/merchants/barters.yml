@@ -64,8 +64,10 @@ Footer:
         - Path: npc/re/merchants/barters/refine.yml
         - Path: npc/re/merchants/barters/rgsr_in.yml
         - Path: npc/re/merchants/barters/Pet_Groomer.yml
+        - Path: npc/re/merchants/barters/quests_19.yml
+        #  CopeRO related NPCs
+        - Path: npc/re/merchants/barters/CopeSolace.yml
         - Path: npc/re/merchants/barters/customcraft_headgear.yml
         - Path: npc/re/merchants/barters/midgame_items.yml
         - Path: npc/re/merchants/barters/early_midgame.yml
         - Path: npc/re/merchants/barters/lategame.yml
-        - Path: npc/re/merchants/barters/quests_19.yml

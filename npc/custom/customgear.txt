@@ -5,7 +5,7 @@ prontera,163,187,3	script	CopeRO_Headgear_Crafter	4_M_02,{
 	mes "Craft exclusive headgear using your coins and materials!";
 	next;
 
-	switch( select("Craft CopeRO headgears", "CopeRO Mid-game gears", "CopeRO Early-mid game gears", "CopeRO Late-game gears", "Leave") ) {
+	switch( select("Craft CopeRO headgears", "CopeRO Mid-game gears", "CopeRO Early-mid game gears", "CopeRO Late-game gears", "CopeRO Solace List", "Leave") ) {
 	case 1:
 		mes "[CopeRO Headgear Crafter]";
 		mes "Select the headgear you want to craft:";
@@ -31,6 +31,12 @@ prontera,163,187,3	script	CopeRO_Headgear_Crafter	4_M_02,{
 		callshop "barter_copero_lategame";
 		end;
 	case 5:
+		mes "[CopeRO Solace list]";
+		mes "Select what you need:";
+		close2;
+		callshop "barter_copero_solace";
+		end;
+	case 6:
 		close;
 	}
 	end;
