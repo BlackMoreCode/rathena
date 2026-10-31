@@ -4,6 +4,9 @@
 #ifndef CONFIG_CUSTOM_DEFINES_PRE_HPP
 #define CONFIG_CUSTOM_DEFINES_PRE_HPP
 
+// CopeRO Warpgate/WARP0716 main Ragexe client (build 175220998).
+#define PACKETVER 20250716
+
 /**
  * rAthena configuration file (http://rathena.org)
  * For detailed guidance on these check http://rathena.org/wiki/SRC/config/

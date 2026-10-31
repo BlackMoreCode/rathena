@@ -1,0 +1,88 @@
+CopeRO Warpgate 2025-07-16 클라이언트 이관 (2026-10-31)
+
+대상: E:\CopeROv2\NewCopeClient
+이전 기준: E:\CopeROv2\CopeClient (수정하지 않음)
+새 게임 EXE: CopeRO.exe
+원본 EXE: 2025-07-16_Ragexe_175220998_clientinfo.exe
+서버 설정: src/custom/defines_pre.hpp의 PACKETVER 20250716
+새 EXE는 MAIN 계열이며 게임 규칙은 기존 Renewal 설정을 유지한다.
+
+읽은 문서
+https://warp.legacygamers.net/#how
+https://warp.legacygamers.net/faq
+https://warp.legacygamers.net/warp0716/
+설치된 README.md, README_WARP.md, profiles/community_recommended.yml,
+패치 정의 및 구현 스크립트. GRF v3 구조는 GRFEditor 공식 소스도 참조했다.
+다운로드 설치 정보: full client 1.0.1, Ragexe release 2026-07-29,
+Renewal English translation 2026-10-23, WARP e8a8103.
+이는 도구/배포 릴리스 날짜이며 서버 PACKETVER는 실제 EXE 날짜 20250716이다.
+
+백업
+E:\CopeROv2\backups\client-migration-20250716-20261031
+- NewCopeClient-before: 변경 전 파일 전체. 수정하지 않는 대형 data.grf 제외.
+- server-before: 이전 서버 실행 파일 4개와 defines_pre/post.hpp.
+- overwritten: 새 클라이언트에서 덮어쓴 파일의 원래 내용.
+- server-build-20250716.log / warp-apply-final.log: 빌드 및 패치 로그.
+새 data.grf의 SHA256은 이관 전후 동일함을 확인했다:
+7ca2e704e249cf4525da309feffeb44bf3a701a429398bf091718f1dbcc50b55
+
+적용 내용
+- 최신 기본 data.grf (Event Horizon / GRF v3)는 보존했다.
+- data_Kamishi_sprite.grf, data_Kamishi.grf, official_data.grf를 이관했다.
+- cope2.grf는 원본 압축 리소스를 유지하고 오래된 Lua 36개 및 예전 접속 XML
+  2개를 인덱스에서 제외했다. 자산 173,647개가 남는다. 원본은 이전 폴더에 있다.
+- DATA.INI는 Kamishi sprite -> Kamishi -> cope2 -> official_data -> data 순서다.
+- data의 accessoryid/accname/jobidentity/npcidentity/jobname은 새 기본 데이터를
+  로딩한 뒤 기존에만 있는 키와 커스텀 항목을 추가한다. 모든 새 공식 키/값이
+  손실 없이 유지됨을 Lua 런타임에서 비교했다.
+  베이스 Lua는 SystemEN/CopeBase에 게임 원본 바이트로 보존했다.
+- 모자 View 5500~5504와 Joan 24000의 매핑을 확인했다.
+- 새 SystemEN/itemInfo.lua와 함수/기본 테이블은 유지하고 기존 itemInfo_C.lua를
+  연결했다. 실제 로더 실행 후 커스텀 아이템들이 최종 tbl에 있음을 검증했다.
+- 최신 OngoingQuests.lub에 서버 import 퀘스트 233개를 별도 확장으로 병합했다.
+- 기존에만 있던 이미지/지도 보조 파일/음원/스킨 252개를 선별 보충했다.
+  구형 DLL, 기본 GRF, 구형 전체 System/Lua/AI를 통째로 덮어쓰지 않았다.
+- data/clientinfo.xml과 sclientinfo.xml은 로컬 테스트 항목만 제공한다.
+  접속 버전 55와 langtype 1을 사용하며, 실제 공개 IP 전환은 별도 작업이다.
+- ExternalSettings_kr 및 _sak의 HTTP API를 127.0.0.1:8889로 맞췄다.
+  플레이어 BaseLevel 계열은 1000, 슈퍼노비스 잡 표시는 120으로 설정했다.
+  직업별 정확한 상한은 서버의 실제 로딩 DB/enum에서 생성한 ExpSpec을 사용한다.
+- WARP 권장 37개에 CustomBarLimits, Allow65kHairs, IncrViewID를 더한
+  profiles/cope_local.yml을 적용했다. 총 40개, SkippedPatches.log 0바이트.
+  커스텀 모자가 3000 기본 제한에 걸리지 않도록 View ID 상한은 32000이다.
+  입력 EXE는 수정하지 않았고 출력은 CopeRO.exe다.
+- GameLauncher.exe 연동은 사용자가 예정한 후속 작업이다. 구형 암호화
+  launcher.ini를 새 클라이언트에 임의로 이식하지 않았다.
+
+검증 결과
+- Visual Studio 2022, Release x64 전체 솔루션 빌드 성공.
+- 로그인/캐릭터/맵/웹 서버를 동시에 실행해 서버 간 인증/맵 등록 완료 확인.
+  서버 시작 오류 0건. 기존 상점 3개 품목의 재판매 차익 경고는 남아 있다.
+- 분리된 일회성 계정으로 실제 TCP 프로토콜 테스트:
+  로그인 0x0064 -> 0x0AC4, 캐릭터 인증 0x0065,
+  캐릭터 생성 0x0A39 -> 0x0B6F, 선택 0x0066 -> 0x0AC5,
+  맵 접속 0x0436 (23바이트) -> 0x0283, 맵 로딩 0x007D 통과.
+  iz_int03 진입/맵 데이터 2417바이트 수신 및 서버 접속/종료 로그 확인.
+  테스트용 계정/캐릭터와 관련 레코드는 테스트 후 삭제했다.
+- 모든 병합 Lua를 Lua 5.1에서 로딩해 문법/의존성/키를 검사했다.
+  검사 시에만 게임의 32비트 bytecode size_t를 검사기용으로 변환했으며
+  실제 클라이언트에는 게임 원본 bytecode를 그대로 사용한다.
+- 커스텀 몬스터 98종의 스프라이트 이름과 실제 SPR 파일을 모두 찾았다.
+- 서버 선언 맵 1265개에서 기본 맵 파일 부족 항목은 이전 74개 -> 새 자료 26개.
+  그중 8개는 PVP 별칭 맵의 GAT만 없고 GND/RSW는 있다.
+  나머지 18개는 2009/2012 RWC 맵 17개와 sch_lab이다. 기존에도 없던 자료이며
+  현재 조사한 커스텀/NPC에는 직접 참조가 없었다. 임의의 다른 맵으로 대체하지 않았다.
+- 실제 게임 화면 및 실제 사용자의 로그인/이동은 UAC 승인 이후 별도 확인한다.
+  프로토콜 성공은 모든 게임 UI/스킬/이펙트/퀘스트 완주를 증명하지 않는다.
+
+상세 산출물
+E:\CopeROv2\migration-audit\20250716-migration
+protocol-test.json, lua-validation.txt, official-table-preservation.csv,
+custom-mob-resource-validation.csv, all-server-map-assets.csv,
+unresolved-map-assets.csv, excluded-old-lua.txt, migration-result.json 등.
+
+다음 확인
+- CopeRO.exe에서 실제 사용자 로그인, 기존 캐릭터/장비, EP19 및 일루전,
+  바터/커스텀 모자/Joan/1000레벨 스탯과 경험치 UI, 웹 엠블럼/설정 기능.
+- 이후 런처 실행 대상/인수/패치 URL을 갱신하고 GameLauncher.exe로 재검증.
+- 운영 서버 배포는 이 로컬 검증 후 실제 IP/포트/웹 주소에 맞춰 진행한다.
