@@ -4,6 +4,7 @@ param(
     [ValidateSet('Local','Production')][string]$Profile,
     [string]$PublicAddress,
     [ValidateRange(1,65535)][int]$WebPort = 8889,
+    [ValidateSet('127.0.0.1','0.0.0.0')][string]$WebBindAddress,
     [string]$ServerRoot
 )
 $ErrorActionPreference = 'Stop'
@@ -24,12 +25,13 @@ if ($Profile -eq 'Production' -and
     throw 'Production requires -PublicAddress with an IP address or host name.'
 }
 $bindAddress = if ($Profile -eq 'Local') { '127.0.0.1' } else { '0.0.0.0' }
+if ([string]::IsNullOrWhiteSpace($WebBindAddress)) { $WebBindAddress = $bindAddress }
 $advertisedAddress = if ($Profile -eq 'Local') { '127.0.0.1' } else { $PublicAddress }
 $settings = [ordered]@{
     login = "bind_ip: $bindAddress`nlogin_port: 6900`n"
     char = "login_ip: 127.0.0.1`nlogin_port: 6900`nbind_ip: $bindAddress`nchar_ip: $advertisedAddress`nchar_port: 6121`n"
     map = "char_ip: 127.0.0.1`nchar_port: 6121`nbind_ip: $bindAddress`nmap_ip: $advertisedAddress`nmap_port: 5121`n"
-    web = "bind_ip: $bindAddress`nweb_port: $WebPort`n"
+    web = "bind_ip: $WebBindAddress`nweb_port: $WebPort`n"
 }
 if (-not $PSCmdlet.ShouldProcess($ServerRoot, "Set $Profile machine network overrides (no DB or credentials changes)")) { return }
 $importRoot = Join-Path $ServerRoot 'conf/import'

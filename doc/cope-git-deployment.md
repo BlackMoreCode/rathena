@@ -43,6 +43,12 @@ was subsequently confirmed to occupy 8889; use a separately verified free port
 for rAthena (8890 is the candidate), and update the client GameWebUrl and router
 forwarding together. Do not stop the existing nginx to free its port.
 Configure the real server LAN target in the router.
+The latest deployment plan uses the existing nginx port 12000 and `/api/`:
+run the API on a verified-free `127.0.0.1:8893` with
+`-WebPort 8893 -WebBindAddress 127.0.0.1`, and proxy `/api/` to it.
+The production client GameWebUrl is then `http://213.243.188.36:12000/api/`.
+Neither 8889 nor 8890 is free on production; both are occupied by nginx.
+Do not forward 8893 publicly when using this loopback backend.
 An existing DB audit/backup/migration remains required before first startup.
 
 ## Subsequent updates
