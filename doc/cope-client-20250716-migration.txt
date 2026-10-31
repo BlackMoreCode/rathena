@@ -96,3 +96,20 @@ unresolved-map-assets.csv, excluded-old-lua.txt, migration-result.json 등.
   바터/커스텀 모자/Joan/1000레벨 스탯과 경험치 UI, 웹 엠블럼/설정 기능.
 - 이후 런처 실행 대상/인수/패치 URL을 갱신하고 GameLauncher.exe로 재검증.
 - 운영 서버 배포는 이 로컬 검증 후 실제 IP/포트/웹 주소에 맞춰 진행한다.
+
+Prontera map-cache alignment (2026-10-31)
+- Current NewCopeClient DATA.INI priority was checked; prontera.gat/.rsw/.gnd
+  resolve to data.grf (no loose or custom GRF override).
+- Native mapcache.exe regenerated the cells from the effective client GAT/RSW.
+- Old db/re/map_cache.dat: same 312 x 392 dimensions, but 1,246 cells had
+  different walkability. This can cause movement corrections; subjective lag
+  still requires an in-game comparison after the change.
+- Added only prontera to db/import/map_cache.dat, which takes precedence.
+  All other maps and the renewal/base cache files remain unchanged.
+- Verified effective imported cells exactly match regenerated client cells.
+- Backup: E:\CopeROv2\backups\mapcache-before-prontera-20261031
+- Audit: E:\CopeROv2\migration-audit\mapcache-20261031
+- Restarted the local map server in a visible console; 127.0.0.1:5121 listens.
+- Include db/import/map_cache.dat in the eventual production server copy.
+- On future Prontera terrain updates, regenerate this override from the final
+  client asset priority. Changing only decorative textures does not require it.
