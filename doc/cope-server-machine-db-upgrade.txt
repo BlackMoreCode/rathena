@@ -1,0 +1,54 @@
+CopeRO 서버 머신 DB 이관/업데이트 확인표 (2026-10-31)
+
+DB 엔진(MySQL/MariaDB)을 재설치할 필요는 없다.
+현재 로컬 DB에는 아래 변경을 이미 적용했다. 다른 머신이 같은 DB를 접속한다면
+다시 적용하지 않는다. 다른 DB 사본을 사용한다면 그 DB의 실제 스키마를 비교한다.
+
+로컬에 적용한 변경
+1. item_db / item_db_re / item_db2_re의 equip_level_min, equip_level_max를
+   tinyint unsigned -> smallint unsigned로 확장했다.
+2. mob_db_re / mob_db2_re의 ai를 varchar(2) -> varchar(50)으로 확장했다.
+3. upgrade_20251031.sql의 char.body 변환을 적용했다.
+4. sql-files/web.sql로 guild_emblems, user_configs, char_configs,
+   merchant_configs 테이블을 생성했다. 모두 로컬에는 없던 테이블이었다.
+
+관련 순정 SQL
+- sql-files/upgrades/upgrade_20250915.sql: SQL item/mob 테이블 필드 확장.
+- sql-files/upgrades/upgrade_20251030.sql: unsigned 캐릭터/계정 ID 필드 정리.
+  로컬에는 이미 반영돼 있어 다시 적용하지 않았다.
+- sql-files/upgrades/upgrade_20251031.sql: 캐릭터 body 표시 방식 변환.
+- sql-files/upgrades/upgrade_20260225.sql: 메일 InnoDB/외래 키 적용.
+  로컬에는 이미 반영돼 있었다. 이 파일에는 고아 첨부 삭제도 있으므로
+  운영 DB에서 확인 없이 반복 실행하지 않는다.
+- sql-files/web.sql: 웹 API 테이블. conf/inter_athena.conf 및 import에서
+  최종 지정된 web_server_db에 적용한다. 별도 웹 DB라면 main DB와 구분한다.
+
+운영 머신 작업 순서
+1. 운영 DB와 서버 파일을 백업한다.
+2. 운영 계정/캐릭터를 계속 쓸지, 현재 로컬 DB를 그대로 이관할지 결정한다.
+   기존 운영 DB를 유지할 때에는 현재 로컬 DB로 덮어쓰지 않고 필요한 변경만 한다.
+3. 위 SQL과 실제 테이블/컬럼/엔진/외래 키 상태를 비교해 미적용 부분만 반영한다.
+4. 서버 소스/DB 폴더/NPC 및 실행 파일을 이관한다. PACKETVER 20250716을 유지한다.
+5. 머신별 DB 접속 정보, 공개 char_ip/map_ip, 바인딩, 웹 API 주소를 맞춘다.
+6. 별도 검증 후 운영으로 전환한다. 현재 로컬 설정은 127.0.0.1 전용이다.
+
+커스텀 콘텐츠와 SQL의 차이
+현재 use_sql_db는 no이므로 item/mob 등 게임 데이터는 YAML 파일을 사용한다.
+db/import, db/re, npc 및 소스의 커스텀 내용은 서버 파일 이관 대상이다.
+계정/캐릭터/인벤토리/퀘스트 진행 상태/웹 설정은 SQL DB 이관 대상이다.
+새 클라이언트 설치만으로 기존 SQL 데이터가 자동 이관되는 것은 아니다.
+
+이미 저장된 로컬 백업과 적용 기록
+E:\CopeROv2\backups\rathena-before-update-20261031\ragnarok-before-update.sql
+E:\CopeROv2\backups\rathena-before-update-20261031\database-upgrade-plan.sql
+E:\CopeROv2\backups\rathena-before-update-20261031\database-upgrade-skipped.txt
+로컬용 plan은 설치되지 않은 테이블을 제외한 결과이므로 다른 운영 DB에
+그대로 적용하면 모든 변경을 포괄한다고 가정하지 않는다.
+
+걷기 지연 조정
+WARP profiles/cope_local.yml에 CustomWalkDelay 20ms를 추가했다.
+CopeRO.exe를 원본 EXE에서 재생성했고 실제 walk guard의 600ms 상수가
+20ms(0x14)로 바뀐 것을 확인했다. 350ms의 별도 액션 반복 제한은 건드리지 않았다.
+기존 패치 파일 백업:
+E:\CopeROv2\backups\client-migration-20250716-20261031\CopeRO-before-walk-delay.exe
+이 설정은 클릭 입력 간 제한이며 실제 네트워크/서버 지연이나 이동 속도는 아니다.
