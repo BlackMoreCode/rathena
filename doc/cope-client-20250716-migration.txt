@@ -72,8 +72,16 @@ E:\CopeROv2\backups\client-migration-20250716-20261031
   그중 8개는 PVP 별칭 맵의 GAT만 없고 GND/RSW는 있다.
   나머지 18개는 2009/2012 RWC 맵 17개와 sch_lab이다. 기존에도 없던 자료이며
   현재 조사한 커스텀/NPC에는 직접 참조가 없었다. 임의의 다른 맵으로 대체하지 않았다.
-- 실제 게임 화면 및 실제 사용자의 로그인/이동은 UAC 승인 이후 별도 확인한다.
-  프로토콜 성공은 모든 게임 UI/스킬/이펙트/퀘스트 완주를 증명하지 않는다.
+- UAC 승인 후 최종 CopeRO.exe의 Ragnarok 창에서 실제 사용자의
+  프론테라 접속과 영문 UI/캐릭터/NPC/지도 표시를 확인했다.
+  모든 스킬/이펙트/퀘스트 완주까지 검증한 것은 아니다.
+- 첫 접속 시 계정 설정 로딩 오류를 발견했다. HTTP 포트 연결은 정상이나
+  DB에 user_configs/char_configs/guild_emblems/merchant_configs가 없었다.
+  순정 sql-files/web.sql의 CREATE TABLE IF NOT EXISTS로 네 테이블을 추가했다.
+  분리된 테스트 키로 /userconfig/load 및 /charconfig/load를 호출해
+  HTTP 200 및 JSON Type=1 응답을 확인했고 테스트 행은 정리했다.
+  기존 게임 세션의 오류 알림은 과거 요청 결과이므로 재접속 후 확인한다.
+  서버 재시작이나 재컴파일은 필요 없다.
 
 상세 산출물
 E:\CopeROv2\migration-audit\20250716-migration
