@@ -72,7 +72,17 @@ or separately deliver binaries built from the same commit. A fresh clone may als
 need the matching x64 runtime DLLs (libmysql/pcre8/zlib), private DB configs and
 Windows C++ runtime. SQL state is separate from Git and is never migrated by pull.
 
-Start visible consoles with the tracked helper:
+For normal daily startup, double-click the tracked `Server-start.bat` in the
+server checkout root. It invokes the helper below with Windows PowerShell and
+the checkout's own absolute path. No compilation or administrator elevation is
+required for this wrapper; existing matching server EXEs and runtime DLLs are
+still required. A shortcut may point to this batch file. Errors keep the wrapper
+window open for inspection. It starts visible consoles, skips processes already
+running at this checkout path, and does not automatically restart crashed servers.
+The invocation's ExecutionPolicy Bypass applies only to that PowerShell process;
+it does not persistently change machine policy.
+
+Alternatively, start visible consoles with the tracked helper:
 
 ```powershell
 .\tools\Start-CopeServer.ps1
