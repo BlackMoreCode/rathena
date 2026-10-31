@@ -26,6 +26,8 @@ Run PowerShell from this repository:
 .\tools\Set-CopeNetwork.ps1 -Profile Local
 # On the production server only:
 .\tools\Set-CopeNetwork.ps1 -Profile Production -PublicAddress 213.243.188.36
+# If another service uses 8889, first verify a free API port and specify it:
+.\tools\Set-CopeNetwork.ps1 -Profile Production -PublicAddress 213.243.188.36 -WebPort 8890
 ```
 
 The helper writes ignored `conf/import/cope-network/{login,char,map,web}.conf`
@@ -36,7 +38,11 @@ network values. Back up existing imports before adopting it on another machine.
 
 Production: bind 0.0.0.0; advertise the supplied address for char/map; keep the
 login-to-char-to-map internal connection on 127.0.0.1. Standard game ports
-6900/6121/5121 and web API 8889. Configure the real server LAN target in the router.
+6900/6121/5121 and web API 8889 unless -WebPort overrides it. Production nginx
+was subsequently confirmed to occupy 8889; use a separately verified free port
+for rAthena (8890 is the candidate), and update the client GameWebUrl and router
+forwarding together. Do not stop the existing nginx to free its port.
+Configure the real server LAN target in the router.
 An existing DB audit/backup/migration remains required before first startup.
 
 ## Subsequent updates
