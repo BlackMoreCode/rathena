@@ -82,6 +82,10 @@ Get-NetTCPConnection -State Listen | Where-Object LocalPort -In 6900,6121,5121,8
 The existing `runserver.bat` is ignored and therefore not supplied by a fresh clone.
 The new Start helper skips already-running EXEs at this exact path; it does not stop
 processes and does not replace a proper shutdown/backup before an update.
+It also fills missing `conf/msg_conf/import` files from tracked `import-tmpl`
+before launching; existing custom message files are preserved. To repair this
+optional import on an already-running server without restarting processes, run
+`tools/Initialize-CopeMessageImports.ps1 -ServerRoot <server checkout>`.
 
 Launcher source, client GRFs, Warpgate, SQL data and the separate RoDocu folder are
 outside this server Git repository. This workflow does not distribute them. Client
