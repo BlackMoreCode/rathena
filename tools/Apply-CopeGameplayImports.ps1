@@ -4,8 +4,8 @@ param(
     [Parameter(Mandatory=$true)][string]$PackageRoot
 )
 $ErrorActionPreference = 'Stop'
-$ServerRoot = (Resolve-Path -LiteralPath $ServerRoot).Path
-$PackageRoot = (Resolve-Path -LiteralPath $PackageRoot).Path
+$ServerRoot = (Resolve-Path -LiteralPath $ServerRoot).ProviderPath
+$PackageRoot = (Resolve-Path -LiteralPath $PackageRoot).ProviderPath
 if (-not (Test-Path -LiteralPath (Join-Path $ServerRoot 'conf/char_athena.conf'))) { throw 'Invalid ServerRoot.' }
 $utf8 = New-Object Text.UTF8Encoding($false, $true)
 $reference = [IO.File]::ReadAllText((Join-Path $PackageRoot 'cope-gameplay-reference.json'), $utf8) | ConvertFrom-Json

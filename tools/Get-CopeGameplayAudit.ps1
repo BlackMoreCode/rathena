@@ -9,7 +9,7 @@ if ([string]::IsNullOrWhiteSpace($ServerRoot)) {
     if ([string]::IsNullOrWhiteSpace($scriptPath)) { throw 'Specify -ServerRoot.' }
     $ServerRoot = Split-Path -Parent (Split-Path -Parent $scriptPath)
 }
-$ServerRoot = (Resolve-Path -LiteralPath $ServerRoot).Path
+$ServerRoot = (Resolve-Path -LiteralPath $ServerRoot).ProviderPath
 $referencePath = Join-Path (Split-Path -Parent $MyInvocation.MyCommand.Path) 'cope-gameplay-reference.json'
 $reference = [IO.File]::ReadAllText($referencePath) | ConvertFrom-Json
 $script:allowed = @{}

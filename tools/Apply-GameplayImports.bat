@@ -2,8 +2,12 @@
 setlocal
 set "copeServer=%USERPROFILE%\Desktop\CopeRO"
 if not "%~1"=="" set "copeServer=%~1"
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0Apply-CopeGameplayImports.ps1" -ServerRoot "%copeServer%" -PackageRoot "%~dp0."
+pushd "%~dp0"
 if errorlevel 1 goto :failed
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%CD%\Apply-CopeGameplayImports.ps1" -ServerRoot "%copeServer%" -PackageRoot "%CD%"
+set "copeApplyResult=%errorlevel%"
+popd
+if not "%copeApplyResult%"=="0" goto :failed
 echo Gameplay settings applied. Review output, then restart the game servers.
 pause
 exit /b 0
