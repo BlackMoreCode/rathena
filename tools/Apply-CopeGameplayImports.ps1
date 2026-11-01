@@ -79,6 +79,16 @@ if (Test-Path -LiteralPath $groupTarget) {
 $changedPlans = @($plans | Where-Object Changed)
 if ($changedPlans.Count -eq 0 -and -not $groupsChanged) { Write-Output 'Gameplay imports already match. No files changed.'; return }
 if (-not $PSCmdlet.ShouldProcess($ServerRoot, 'Apply reviewed gameplay overrides, preserving existing machine settings')) { return }
+# Protect backups even on an older checkout without the new tracked ignore rule.
+$gitInfo = Join-Path $ServerRoot '.git/info'
+if (Test-Path -LiteralPath (Join-Path $ServerRoot '.git') -PathType Container) {
+    New-Item -ItemType Directory -Path $gitInfo -Force | Out-Null
+    $excludePath = Join-Path $gitInfo 'exclude'
+    $excludeText = if (Test-Path -LiteralPath $excludePath) { [IO.File]::ReadAllText($excludePath, $utf8) } else { '' }
+    if (-not [regex]::IsMatch($excludeText, '(?m)^/backup-config/\s*\r?$')) {
+        [IO.File]::WriteAllText($excludePath, $excludeText + "`r`n/backup-config/`r`n", (New-Object Text.UTF8Encoding($false)))
+    }
+}
 $backup = Join-Path $ServerRoot ('backup-config/cope-gameplay-' + [DateTime]::UtcNow.ToString('yyyyMMddTHHmmssfffZ') + '-' + [guid]::NewGuid().ToString('N').Substring(0,8))
 New-Item -ItemType Directory -Path $backup -Force | Out-Null
 foreach ($plan in $changedPlans) {
