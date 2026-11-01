@@ -100,3 +100,30 @@ optional import on an already-running server without restarting processes, run
 Launcher source, client GRFs, Warpgate, SQL data and the separate RoDocu folder are
 outside this server Git repository. This workflow does not distribute them. Client
 updates use the separate hash-manifest patch service.
+
+## Gameplay overrides after a fresh clone
+
+Ignoring conf/import also excludes gameplay settings, not only machine addresses.
+The reviewed local reference in tools/cope-gameplay-reference.json contains only
+gameplay values and player commands; it contains no network/SQL credentials.
+Get-CopeGameplayAudit.ps1 reads the effective text import chains and reports only
+those whitelisted values. It never applies configuration or restarts processes.
+Audit-CopeGameplay.bat is a convenience entry point for a package containing the
+script and reference beside it.
+
+The separately prepared import-gameplay package carries the four reviewed local
+files: battle_conf.txt, char_conf.txt, login_conf.txt and groups.yml. Run its
+Apply-GameplayImports.bat on the production machine while the game servers are
+stopped. Its PowerShell helper appends/replaces a managed block of gameplay keys
+in existing text imports, preserving other text and machine credentials. Existing
+cope-network files and inter_conf.txt are never replaced. Player groups are copied
+only if absent, empty, identical, or still the original empty import template;
+other production group customizations abort preflight before any writes.
+
+This intentionally restores the existing local policies too: immediate character
+deletion (char_del_delay=0), email deletion check (char_del_option=1), and _M/_F
+account creation (new_account=yes). The effective quest_exp_rate is 1000 because
+the earlier 2500 entry is overridden locally. The helper preserves that effective
+value without generating duplicate keys. Originals are saved under ignored
+backup-config/cope-gameplay-<version>. No binaries or SQL are changed. Restart
+the game servers after applying. Inspect the package README before use.

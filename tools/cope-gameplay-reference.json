@@ -1,0 +1,560 @@
+{
+  "Name": "CopeRO local gameplay reference 2026-11-01",
+  "Settings": [
+    {
+      "Scope": "battle",
+      "Key": "base_exp_rate",
+      "Local": "2500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "drops_by_luk",
+      "Local": "0",
+      "Base": "0",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "drops_by_luk2",
+      "Local": "0",
+      "Base": "0",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "feature.barter",
+      "Local": "on",
+      "Base": "on",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "feature.barter_extended",
+      "Local": "on",
+      "Base": "on",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "feature.homunculus_autofeed",
+      "Local": "on",
+      "Base": "on",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "feature.petautofeed",
+      "Local": "on",
+      "Base": "on",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "feature.warp_suggestions",
+      "Local": "on",
+      "Base": "off",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "heal_exp",
+      "Local": "10",
+      "Base": "0",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_add_max",
+      "Local": "10000",
+      "Base": "10000",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_add_min",
+      "Local": "1",
+      "Base": "1",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_card_max",
+      "Local": "10000",
+      "Base": "10000",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_card_min",
+      "Local": "1",
+      "Base": "1",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_common_max",
+      "Local": "10000",
+      "Base": "10000",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_common_min",
+      "Local": "1",
+      "Base": "1",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_equip_max",
+      "Local": "10000",
+      "Base": "10000",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_equip_min",
+      "Local": "1",
+      "Base": "1",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_heal_max",
+      "Local": "10000",
+      "Base": "10000",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_heal_min",
+      "Local": "1",
+      "Base": "1",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_mvp_max",
+      "Local": "10000",
+      "Base": "10000",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_mvp_min",
+      "Local": "1",
+      "Base": "1",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_mvp_mode",
+      "Local": "0",
+      "Base": "0",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_treasure_max",
+      "Local": "10000",
+      "Base": "10000",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_treasure_min",
+      "Local": "1",
+      "Base": "1",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_use_max",
+      "Local": "10000",
+      "Base": "10000",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_drop_use_min",
+      "Local": "1",
+      "Base": "1",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_adddrop",
+      "Local": "1000",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_card",
+      "Local": "2500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_card_boss",
+      "Local": "7500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_card_mvp",
+      "Local": "7500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_common",
+      "Local": "2500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_common_boss",
+      "Local": "7500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_common_mvp",
+      "Local": "7500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_equip",
+      "Local": "2500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_equip_boss",
+      "Local": "7500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_equip_mvp",
+      "Local": "7500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_heal",
+      "Local": "2000",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_heal_boss",
+      "Local": "2000",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_heal_mvp",
+      "Local": "2000",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_mvp",
+      "Local": "7500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_treasure",
+      "Local": "1500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_use",
+      "Local": "2500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_use_boss",
+      "Local": "7500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "item_rate_use_mvp",
+      "Local": "7500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "job_exp_rate",
+      "Local": "2500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_aspd",
+      "Local": "195",
+      "Base": "190",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_baby_parameter",
+      "Local": "1000",
+      "Base": "80",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_baby_third_parameter",
+      "Local": "1000",
+      "Base": "117",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_extended_aspd",
+      "Local": "195",
+      "Base": "193",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_extended_parameter",
+      "Local": "1000",
+      "Base": "130",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_fourth_parameter",
+      "Local": "1000",
+      "Base": "130",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_hp",
+      "Local": "1000000000",
+      "Base": "1100000",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_hp_lv150",
+      "Local": "1000000000",
+      "Base": "660000",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_hp_lv99",
+      "Local": "1000000000",
+      "Base": "330000",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_parameter",
+      "Local": "1000",
+      "Base": "99",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_sp",
+      "Local": "10000000",
+      "Base": "1000000",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_summoner_aspd",
+      "Local": "195",
+      "Base": "193",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_summoner_parameter",
+      "Local": "1000",
+      "Base": "130",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_third_aspd",
+      "Local": "195",
+      "Base": "193",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_third_parameter",
+      "Local": "1000",
+      "Base": "130",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_third_trans_parameter",
+      "Local": "1000",
+      "Base": "130",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_trans_parameter",
+      "Local": "1000",
+      "Base": "99",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "max_walk_speed",
+      "Local": "300",
+      "Base": "300",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "multi_level_up",
+      "Local": "yes",
+      "Base": "no",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "mvp_exp_rate",
+      "Local": "2500",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "party_even_share_bonus",
+      "Local": "0",
+      "Base": "10",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "quest_exp_rate",
+      "Local": "1000",
+      "Base": "100",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "battle",
+      "Key": "transcendent_status_points",
+      "Local": "52",
+      "Base": "52",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "use_statpoint_table",
+      "Local": "yes",
+      "Base": "yes",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "battle",
+      "Key": "use_traitpoint_table",
+      "Local": "yes",
+      "Base": "yes",
+      "Recommendation": "AlreadyDefault"
+    },
+    {
+      "Scope": "char",
+      "Key": "char_del_delay",
+      "Local": "0",
+      "Base": "86400",
+      "Recommendation": "ReviewPolicy"
+    },
+    {
+      "Scope": "char",
+      "Key": "char_del_option",
+      "Local": "1",
+      "Base": "2",
+      "Recommendation": "ReviewPolicy"
+    },
+    {
+      "Scope": "char",
+      "Key": "pincode_enabled",
+      "Local": "no",
+      "Base": "yes",
+      "Recommendation": "RestoreGameplay"
+    },
+    {
+      "Scope": "login",
+      "Key": "new_account",
+      "Local": "yes",
+      "Base": "no",
+      "Recommendation": "ReviewPolicy"
+    },
+    {
+      "Scope": "inter",
+      "Key": "party_share_level",
+      "Local": "200",
+      "Base": "200",
+      "Recommendation": "AlreadyTracked"
+    }
+  ],
+  "GroupsImportSHA256": "a0537394ae605a024c5471728dd26aebf9c8b9a98e7aa6b8ec8580dc0062b60d",
+  "PlayerCommands": [
+    "commands",
+    "help",
+    "rates",
+    "uptime",
+    "showdelay",
+    "exp",
+    "mobinfo",
+    "iteminfo",
+    "whodrops",
+    "time",
+    "jailtime",
+    "hominfo",
+    "homstats",
+    "showexp",
+    "showzeny",
+    "whereis",
+    "refresh",
+    "noask",
+    "noks",
+    "autoloot",
+    "alootid",
+    "autoloottype",
+    "autotrade",
+    "request",
+    "go",
+    "channel"
+  ],
+  "GroupsTemplateSHA256": "ce6d3588b3cee8c7e8f724e318273060ce2e9be5e7fcc48b90bb75cdc036a17c"
+}

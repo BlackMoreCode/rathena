@@ -69,6 +69,7 @@ Thumbs.db
 
 # /conf/
 /conf/import
+/backup-config/
 /conf/msg_conf/import
 
 # /lib
