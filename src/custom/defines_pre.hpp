@@ -7,6 +7,11 @@
 // CopeRO Warpgate/WARP0716 main Ragexe client (build 175220998).
 #define PACKETVER 20250716
 
+// Keep the protocol's base 100 slots; grant 300 on login, allow up to 900.
+// The client expansion count is total slots minus this unchanged base.
+#define INVENTORY_EXPANSION_SIZE 800
+#define COPE_INITIAL_INVENTORY_SLOTS 300
+
 /**
  * rAthena configuration file (http://rathena.org)
  * For detailed guidance on these check http://rathena.org/wiki/SRC/config/

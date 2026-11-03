@@ -570,7 +570,7 @@ bool intif_send_guild_storage(uint32 account_id, struct s_storage *gstor)
 		return false;
 	WFIFOHEAD(inter_fd,sizeof(struct s_storage)+12);
 	WFIFOW(inter_fd,0) = 0x3019;
-	WFIFOW(inter_fd,2) = (uint16)sizeof(struct s_storage)+12;
+	WFIFOW(inter_fd,2) = inter_storage_wire_length(inter_storage_packet_size(0x3019));
 	WFIFOL(inter_fd,4) = account_id;
 	WFIFOL(inter_fd,8) = gstor->id;
 	memcpy( WFIFOP(inter_fd,12),gstor, sizeof(struct s_storage) );
@@ -1494,10 +1494,10 @@ int32 intif_parse_LoadGuildStorage(int32 fd)
 	int32 guild_id, flag;
 
 	guild_id = RFIFOL(fd,8);
-	flag = RFIFOL(fd,12);
-	if (guild_id <= 0)
+	if (guild_id <= 0 || RFIFOW(fd,2) == 12)
 		return 0;
 
+	flag = RFIFOB(fd,12);
 	sd = map_id2sd( RFIFOL(fd,4) );
 	if (flag){ //If flag != 0, we attach a player and open the storage
 		if(sd == nullptr){
@@ -1518,12 +1518,6 @@ int32 intif_parse_LoadGuildStorage(int32 fd)
 		ShowWarning("intif_parse_LoadGuildStorage: received storage for an already modified non-saved storage! (User %d:%d)\n", flag?sd->status.account_id:1, flag?sd->status.char_id:1);
 		return 0;
 	}
-	if (RFIFOW(fd,2)-13 != sizeof(struct s_storage)) {
-		ShowError("intif_parse_LoadGuildStorage: data size error %d %" PRIuPTR "\n",RFIFOW(fd,2)-13 , sizeof(struct s_storage));
-		gstor->status = false;
-		return 0;
-	}
-
 	memcpy(gstor,RFIFOP(fd,13),sizeof(struct s_storage));
 	if( flag )
 		storage_guild_storageopen(sd);
@@ -3469,11 +3463,6 @@ static bool intif_parse_StorageReceived(int32 fd)
 			return false;
 		}
 	}
-	if (RFIFOW(fd,2)-10 != sz_stor) {
-		ShowError("intif_parse_StorageReceived: data size error %d %" PRIuPTR "\n",RFIFOW(fd,2)-10 , sz_stor);
-		stor->status = false;
-		return false;
-	}
 
 	memcpy(stor, p, sz_stor); //copy the items data to correct destination
 
@@ -3661,7 +3650,7 @@ bool intif_storage_save( const map_session_data* sd, const s_storage* stor )
 
 	WFIFOHEAD(inter_fd, stor_size+13);
 	WFIFOW(inter_fd, 0) = 0x308b;
-	WFIFOW(inter_fd, 2) = stor_size+13;
+	WFIFOW(inter_fd, 2) = inter_storage_wire_length(stor_size+13);
 	WFIFOB(inter_fd, 4) = stor->type;
 	WFIFOL(inter_fd, 5) = sd->status.account_id;
 	WFIFOL(inter_fd, 9) = sd->status.char_id;
@@ -3776,6 +3765,14 @@ int32 intif_parse(int32 fd)
 		if(RFIFOREST(fd)<4)
 			return 2;
 		packet_len = RFIFOW(fd,2);
+		if (inter_storage_packet_size(cmd) != 0) {
+			packet_len = static_cast<int32>(inter_storage_read_length(cmd, packet_len));
+			if (packet_len == 0) {
+				ShowError("Invalid inter-server storage packet length for 0x%04x.\n", cmd);
+				set_eof(fd);
+				return 2;
+			}
+		}
 	}
 	if((int32)RFIFOREST(fd)<packet_len){
 		return 2;

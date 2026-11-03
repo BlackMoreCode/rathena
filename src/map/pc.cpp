@@ -2090,6 +2090,21 @@ bool pc_authok(map_session_data *sd, uint32 login_id2, time_t expiration_time, i
 
 	memcpy(&sd->status, st, sizeof(*st));
 
+#ifdef COPE_INITIAL_INVENTORY_SLOTS
+	static_assert(COPE_INITIAL_INVENTORY_SLOTS >= INVENTORY_BASE_SIZE &&
+		COPE_INITIAL_INVENTORY_SLOTS <= MAX_INVENTORY, "Invalid CopeRO initial inventory size");
+	// Preserve previously purchased expansions; only raise characters below 300.
+	// Reject corrupt/unsupported sizes rather than indexing beyond inventory arrays.
+	if (sd->status.inventory_slots > MAX_INVENTORY) {
+		ShowError("pc_authok: character %u inventory slots %u exceed compiled limit %u.\n",
+			sd->status.char_id, sd->status.inventory_slots, MAX_INVENTORY);
+		clif_authfail_fd(sd->fd, 0);
+		return false;
+	}
+	if (sd->status.inventory_slots < COPE_INITIAL_INVENTORY_SLOTS)
+		sd->status.inventory_slots = COPE_INITIAL_INVENTORY_SLOTS;
+#endif
+
 	if (st->sex != sd->status.sex) {
 		clif_authfail_fd(sd->fd, 0);
 		return false;

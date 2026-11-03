@@ -1414,8 +1414,19 @@ int32 inter_parse_frommap(int32 fd)
 	if(cmd < 0x3000 || cmd >= 0x3000 + ARRAYLENGTH(inter_recv_packet_length) || inter_recv_packet_length[cmd - 0x3000] == 0)
 		return 0;
 
-	// Check packet length
-	if((len = inter_check_length(fd, inter_recv_packet_length[cmd - 0x3000])) == 0)
+	// Validate snapshot length before its handler reads the storage payload.
+	if (inter_storage_packet_size(cmd) != 0) {
+		if (RFIFOREST(fd) < 4)
+			return 2;
+		len = static_cast<int32>(inter_storage_read_length(cmd, RFIFOW(fd, 2)));
+		if (len == 0) {
+			ShowError("Invalid inter-server storage packet length for 0x%04x.\n", cmd);
+			set_eof(fd);
+			return 2;
+		}
+	}
+
+	if ((len = inter_check_length(fd, len != 0 ? len : inter_recv_packet_length[cmd - 0x3000])) == 0)
 		return 2;
 
 	switch(cmd) {

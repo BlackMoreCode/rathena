@@ -156,12 +156,12 @@ bool mapif_load_guild_storage(int32 fd,uint32 account_id,int32 guild_id, char fl
 	{// guild exists
 		WFIFOHEAD(fd, sizeof(struct s_storage)+13);
 		WFIFOW(fd,0) = 0x3818;
-		WFIFOW(fd,2) = sizeof(struct s_storage)+13;
+		WFIFOW(fd,2) = inter_storage_wire_length(inter_storage_packet_size(0x3818));
 		WFIFOL(fd,4) = account_id;
 		WFIFOL(fd,8) = guild_id;
 		WFIFOB(fd,12) = flag; //1 open storage, 0 don't open
 		guild_storage_fromsql(guild_id, (struct s_storage*)WFIFOP(fd,13));
-		WFIFOSET(fd, WFIFOW(fd,2));
+		WFIFOSET(fd, inter_storage_packet_size(0x3818));
 		return true;
 	}
 	// guild does not exist
@@ -204,7 +204,7 @@ bool mapif_parse_SaveGuildStorage(int32 fd)
 	int32 len;
 
 	guild_id = RFIFOL(fd,8);
-	len = RFIFOW(fd,2);
+	len = static_cast<int32>(inter_storage_read_length(0x3019, RFIFOW(fd,2)));
 
 	if( sizeof(struct s_storage) != len - 12 )
 	{
@@ -410,11 +410,11 @@ bool mapif_parse_itembound_retrieve(int32 fd)
  * @param result
  */
 void mapif_storage_data_loaded(int32 fd, uint32 account_id, char type, struct s_storage* entries, bool result) {
-	uint16 size = sizeof(struct s_storage) + 10;
+	const size_t size = inter_storage_packet_size(0x388a);
 	
 	WFIFOHEAD(fd, size);
 	WFIFOW(fd, 0) = 0x388a;
-	WFIFOW(fd, 2) = size;
+	WFIFOW(fd, 2) = inter_storage_wire_length(size);
 	WFIFOB(fd, 4) = type;
 	WFIFOL(fd, 5) = account_id;
 	WFIFOB(fd, 9) = result;

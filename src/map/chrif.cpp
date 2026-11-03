@@ -1944,10 +1944,8 @@ void do_init_chrif(void) {
 		exit(EXIT_FAILURE);
 	}
 
-	if (sizeof(struct s_storage) > 0xFFFF) {
-		ShowError("s_storage size = %" PRIuPTR " is too big to be transmitted. (must be below 0xFFFF)\n", sizeof(struct s_storage));
-		exit(EXIT_FAILURE);
-	}
+	static_assert(inter_storage_packet_size(0x3818) <= FIFOSIZE_SERVERLINK,
+		"Storage snapshot exceeds the server link receive buffer");
 
 	if((sizeof(struct bonus_script_data) * MAX_PC_BONUS_SCRIPT) > 0xFFFF){
 		ShowError("bonus_script_data size = %d is too big, please reduce MAX_PC_BONUS_SCRIPT (%d) size. (must be below 0xFFFF).\n",

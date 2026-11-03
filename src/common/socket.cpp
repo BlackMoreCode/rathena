@@ -837,10 +837,10 @@ int32 WFIFOSET(int32 fd, size_t len)
 		exit(EXIT_FAILURE);
 	}
 
-	if( len > 0xFFFF )
+	if( len > UINT16_MAX &&
+		(!s->flag.server || len != inter_storage_packet_size(WFIFOW(fd, 0)) || WFIFOW(fd, 2) != 0) )
 	{
-		// dynamic packets allow up to UINT16_MAX bytes (<packet_id>.W <packet_len>.W ...)
-		// all known fixed-size packets are within this limit, so use the same limit
+		// Only the fixed-size inter-server storage snapshots support extended lengths.
 		ShowFatalError("WFIFOSET: Packet 0x%x is too big. (len=%u, max=%u)\n", (*(uint16*)(s->wdata + s->wdata_size)), (uint32)len, 0xFFFF);
 		exit(EXIT_FAILURE);
 	}

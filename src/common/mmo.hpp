@@ -468,6 +468,29 @@ struct s_storage {
 	} u;
 };
 
+// Storage packets carry a fixed-size snapshot. Keep the legacy length when it
+// fits and use zero as the marker for an oversized server-to-server snapshot.
+constexpr size_t inter_storage_packet_size(uint16 command) {
+	switch (command) {
+		case 0x3019: return sizeof(s_storage) + 12;
+		case 0x308b: return sizeof(s_storage) + 13;
+		case 0x3818: return sizeof(s_storage) + 13;
+		case 0x388a: return sizeof(s_storage) + 10;
+		default: return 0;
+	}
+}
+
+constexpr uint16 inter_storage_wire_length(size_t length) {
+	return length <= UINT16_MAX ? static_cast<uint16>(length) : 0;
+}
+
+constexpr size_t inter_storage_read_length(uint16 command, uint16 length) {
+	const size_t expected = inter_storage_packet_size(command);
+	if (command == 0x3818 && length == 12) // Guild not found.
+		return length;
+	return expected != 0 && length == inter_storage_wire_length(expected) ? expected : 0;
+}
+
 struct s_storage_table {
 	char name[NAME_LENGTH];
 	char table[DB_NAME_LEN];
