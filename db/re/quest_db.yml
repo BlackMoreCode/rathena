@@ -9138,7 +9138,7 @@ Body:
       TimeLimit: 4h
     - Id: 12334
       Title: Trace of Time Travel
-      TimeLimit: 3d 4h
+      TimeLimit: +4h
     - Id: 12335
       Title: Space Distortion
     - Id: 12338
@@ -9333,10 +9333,10 @@ Body:
       TimeLimit: +6h
     - Id: 12460
       Title: Aftereffects of the Fall
-      TimeLimit: 4h
+      TimeLimit: +2h
     - Id: 12461
       Title: The aftereffects of powerful death
-      TimeLimit: 3d 4h
+      TimeLimit: +4h
     - Id: 12490
       Title: Receive today's mission
       TimeLimit: 4h
@@ -12260,7 +12260,7 @@ Body:
       TimeLimit: 4h
     - Id: 18028
       Title: The Memory of Thanatos the Magistrate - Waiting
-      TimeLimit: 4h
+      TimeLimit: +4h
     - Id: 18054
       Title: Nightmare on the clock tower - Standby
       TimeLimit: 4h

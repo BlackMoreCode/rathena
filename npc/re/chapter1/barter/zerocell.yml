@@ -1,0 +1,359 @@
+Header:
+  Type: BARTER_DB
+  Version: 2
+
+Body:
+  - Name: CH1_SCROLLS
+    Items:
+      - Index: 0
+        Item: Physical_TuningScroll
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 30
+          - Index: 1
+            Item: Chaotic_Rune
+            Amount: 5
+          - Index: 2
+            Item: Disparate_Rune
+            Amount: 5
+      - Index: 1
+        Item: Magical_TuningScroll
+        Zeny: 5000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 30
+          - Index: 1
+            Item: Chaotic_Rune
+            Amount: 5
+          - Index: 2
+            Item: Disparate_Rune
+            Amount: 5
+
+  - Name: CH1_CROWN_1
+    Items:
+      - Index: 0
+        Item: Frontier_R_Crown_DK
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+      - Index: 1
+        Item: Frontier_R_Crown_IG
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+
+  - Name: CH1_CROWN_2
+    Items:
+      - Index: 0
+        Item: Frontier_R_Crown_MT
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+      - Index: 1
+        Item: Frontier_R_Crown_BO
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+
+  - Name: CH1_CROWN_3
+    Items:
+      - Index: 0
+        Item: Frontier_R_Crown_SHC
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+      - Index: 1
+        Item: Frontier_R_Crown_ABC
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+
+  - Name: CH1_CROWN_4
+    Items:
+      - Index: 0
+        Item: Frontier_R_Crown_AG
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+      - Index: 1
+        Item: Frontier_R_Crown_EM
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+
+  - Name: CH1_CROWN_5
+    Items:
+      - Index: 0
+        Item: Frontier_R_Crown_CD
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+      - Index: 1
+        Item: Frontier_R_Crown_IQ
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+
+  - Name: CH1_CROWN_6
+    Items:
+      - Index: 0
+        Item: Frontier_R_Crown_WH
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+      - Index: 1
+        Item: Frontier_R_Crown_TR
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+
+  - Name: CH1_CROWN_7
+    Items:
+      - Index: 0
+        Item: Frontier_R_Crown_SS
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+      - Index: 1
+        Item: Frontier_R_Crown_NW
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+      - Index: 2
+        Item: Frontier_R_Crown_SKE
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+      - Index: 3
+        Item: Frontier_R_Crown_SOA
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+      - Index: 4
+        Item: Frontier_R_Crown_HN
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+      - Index: 5
+        Item: Frontier_R_Crown_SH
+        Zeny: 25000000
+        RequiredItems:
+          - Index: 0
+            Item: Ch1_Mana_Ring
+            Amount: 300
+          - Index: 1
+            Item: Frontier_Stone_GR
+            Amount: 15
+          - Index: 2
+            Item: Frontier_Stone_BK
+            Amount: 15
+          - Index: 3
+            Item: Disparate_Rune
+            Amount: 40
+# Enable when you have Alitea
+#      - Index: 6
+#        Item: Frontier_R_Crown_AT
+#        Zeny: 25000000
+#        RequiredItems:
+#          - Index: 0
+#            Item: Ch1_Mana_Ring
+#            Amount: 300
+#          - Index: 1
+#            Item: Frontier_Stone_GR
+#            Amount: 15
+#          - Index: 2
+#            Item: Frontier_Stone_BK
+#            Amount: 15
+#          - Index: 3
+#            Item: Disparate_Rune
+#            Amount: 40

@@ -1,0 +1,436 @@
+ba_maison,242,128,3	script	#ba_d2_chessin	CLEAR_NPC,{
+    mes "There's a strange power coming from the chessboard on the pagoda.";
+    if ( BaseLevel < 250 || isbegin_quest(16778) == 0 ) {
+        close;
+    } else if ( isbegin_quest(16778) == 1) {
+        completequest 16778;
+    }
+    mes "Do you want to move to the Chess Garden?";
+    next;
+    if ( select("Move to the Garden", "Cancel") == 1 )
+        warp "ba_chess", 16, 16;
+    end;
+
+OnInit:
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(16778) == 1";
+end;
+}
+
+ba_chess,13,16,4	script	Exit#ba_d2_chessout	1_SHADOW_RED,1,1,{
+OnTouch:
+    warp "ba_maison",242,122;
+end;
+}
+
+ba_chess,13,36,4	script	Abyss Depth Entrance#ba_d2	GATE_SKYBLUE,{
+    if ( BaseLevel < 250 || isbegin_quest(16778) != 2 ) {
+        end;
+    }
+    mes "Would you like to move to the Biosphere's Abyss Depth?";
+    next;
+    switch ( select("Go to 2 o'clock location", "Go to 4 o'clock location", "Go to 8 o'clock location", "Go to 10 o'clock location", "Don't enter") ) {
+        case 1: warp "bl_depth2", 194, 188; break;
+        case 2: warp "bl_depth2", 190, 64; break;
+        case 3: warp "bl_depth2", 57, 87; break;
+        case 4: warp "bl_depth2", 94, 202; break;
+        case 5: break;
+    }
+    end;
+}
+
+bl_depth2,141,137,4	script	Exit#ba_d2_out	GATE_SKYBLUE,2,2,{
+OnTouch:
+    warp "ba_chess",13,31;
+end;
+}
+
+ba_chess,25,13,3	script	Research Manager#ba_d2	4_EP17_BASIC_B,{
+    if ( BaseLevel < 250 || isbegin_quest(16778) != 2 ) {
+        end;
+    }
+    function quest_display;
+    function accept_quest;
+    function submit_quest;
+    mes "[Research Manager]";
+    mes "Hello Guest, would you like to accept a research commision?";
+    next;
+    .@q1$ = quest_display("Abyss Depth General Research", 16779, 16780);
+    switch ( select(.@q1$, "Accept all individual research commision", "Submit all research commision", "View individual research commision", "Cancel") ) {
+        case 1:
+            if ( isbegin_quest(16779) == 0 ) {
+                accept_quest("Abyss Depth General Research", 16779, 16780);
+                break;
+            }
+            mes "[Research Manager]";
+            submit_quest("Abyss Depth General Research", 16779, 16780, 20, 1001556, 1, 2633960500, 1839006400);
+            break;
+        case 2:
+            mes "[Research Manager]";
+            accept_quest("Abyss Depth Demihuman Research", 16781, 16782);
+            accept_quest("Abyss Depth Brute Research", 16783, 16784);
+            accept_quest("Abyss Depth Plant Research", 16785, 16786);
+            accept_quest("Abyss Depth Fish Research", 16787, 16788);
+            accept_quest("Abyss Depth Demon Research", 16789, 16790);
+            accept_quest("Abyss Depth Undead Research", 16791, 16792);
+            accept_quest("Abyss Depth Dragon Research", 16793, 16794);
+            accept_quest("Abyss Depth Angel Research", 16795, 16796);
+            accept_quest("Abyss Depth Formless Research", 16797, 16798);
+            accept_quest("Abyss Depth Insect Research", 16799, 16800);
+            break;
+        case 3:
+            mes "[Research Manager]";
+            submit_quest("Abyss Depth General Research", 16779, 16780, 20, 1001556, 1, 2633960500, 1839006400);
+            submit_quest("Abyss Depth Demihuman Research", 16781, 16782, 2, 1001554, 1, 165637750, 115384100);
+            submit_quest("Abyss Depth Brute Research", 16783, 16784, 2, 1001554, 1, 165022125, 114937900);
+            submit_quest("Abyss Depth Plant Research", 16785, 16786, 2, 1001554, 1, 162472475, 113162075);
+            submit_quest("Abyss Depth Fish Research", 16787, 16788, 2, 1001554, 1, 163740900, 114045525);
+            submit_quest("Abyss Depth Demon Research", 16789, 16790, 2, 1001554, 1, 164884725, 115131850);
+            submit_quest("Abyss Depth Undead Research", 16791, 16792, 2, 1001554, 1, 164138600, 114839800);
+            submit_quest("Abyss Depth Dragon Research", 16793, 16794, 2, 1001554, 1, 167263625, 116385525);
+            submit_quest("Abyss Depth Angel Research", 16795, 16796, 2, 1001554, 1, 166303350, 115830525);
+            submit_quest("Abyss Depth Formless Research", 16797, 16798, 2, 1001554, 1, 164381525, 114491725);
+            submit_quest("Abyss Depth Insect Research", 16799, 16800, 2, 1001554, 1, 162459675, 113153150);
+            break;
+        case 4:
+            mes "[Research Manager]";
+            mes "These are all the available research commision.";
+            next;
+            setarray .@quests$[0],
+                "Abyss Depth Demihuman Research", 16781, 16782, 2, 1001554, 1, 165637750, 115384100,
+                "Abyss Depth Brute Research", 16783, 16784, 2, 1001554, 1, 165022125, 114937900,
+                "Abyss Depth Plant Research", 16785, 16786, 2, 1001554, 1, 162472475, 113162075,
+                "Abyss Depth Fish Research", 16787, 16788, 2, 1001554, 1, 163740900, 114045525,
+                "Abyss Depth Demon Research", 16789, 16790, 2, 1001554, 1, 164884725, 115131850,
+                "Abyss Depth Undead Research", 16791, 16792, 2, 1001554, 1, 164138600, 114839800,
+                "Abyss Depth Dragon Research", 16793, 16794, 2, 1001554, 1, 167263625, 116385525,
+                "Abyss Depth Angel Research", 16795, 16796, 2, 1001554, 1, 166303350, 115830525,
+                "Abyss Depth Formless Research", 16797, 16798, 2, 1001554, 1, 164381525, 114491725,
+                "Abyss Depth Insect Research", 16799, 16800, 2, 1001554, 1, 162459675, 113153150;
+            for ( .@i = 0; .@i < getarraysize(.@quests$); .@i += 8 ) {
+                .@menu$[.@i/8] = quest_display( .@quests$[.@i], atoi(.@quests$[.@i + 1]), atoi(.@quests$[.@i + 2]) );
+            }
+            .@menu$[10] = "Cancel";
+            .@s = select( create_menu(.@menu$) ) - 1;
+            if ( .@s == 10 ) {
+                mes "[Research Manager]";
+                mes "Thank you for participating in the research, Guest.";
+                close;
+            }
+            .@s *= 8;
+            .@display$ = .@quests$[.@s];
+            .@qid = atoi(.@quests$[.@s + 1]);
+            .@cid = atoi(.@quests$[.@s + 2]);
+            switch( checkquest(.@cid, PLAYTIME) ) {
+                case -1:
+                    break;
+                case 0:
+                case 1:
+                    mes "The " + .@display$ + " commision is already ^0000CDcompleted^0000000.";
+                    close;
+                case 2:
+                    erasequest .@cid;
+                    break;
+            }
+            switch ( checkquest(.@qid, HUNTING) ) {
+                case -1:
+                    accept_quest(.@display$, .@qid, .@cid);
+                    break;
+                case 0:
+                case 1:
+                    submit_quest(.@display$, .@qid, .@cid, atoi(.@quests$[.@s + 3]), atoi(.@quests$[.@s + 4]), atoi(.@quests$[.@s + 5]), atoi(.@quests$[.@s + 6]), atoi(.@quests$[.@s + 7]));
+                    break;
+                case 2:
+                    submit_quest(.@display$, .@qid, .@cid, atoi(.@quests$[.@s + 3]), atoi(.@quests$[.@s + 4]), atoi(.@quests$[.@s + 5]), atoi(.@quests$[.@s + 6]), atoi(.@quests$[.@s + 7]));
+                    break;
+            }
+    }
+    close;
+
+OnInit:
+    setunittitle( getnpcid(0), "<Biosphere Abyss Depth>" );
+
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16779,HUNTING) == -1 && checkquest(16780,PLAYTIME) == -1" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16781,HUNTING) == -1 && checkquest(16782,PLAYTIME) == -1" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16783,HUNTING) == -1 && checkquest(16784,PLAYTIME) == -1" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16785,HUNTING) == -1 && checkquest(16786,PLAYTIME) == -1" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16787,HUNTING) == -1 && checkquest(16788,PLAYTIME) == -1" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16789,HUNTING) == -1 && checkquest(16790,PLAYTIME) == -1" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16791,HUNTING) == -1 && checkquest(16792,PLAYTIME) == -1" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16793,HUNTING) == -1 && checkquest(16794,PLAYTIME) == -1" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16795,HUNTING) == -1 && checkquest(16796,PLAYTIME) == -1" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16797,HUNTING) == -1 && checkquest(16798,PLAYTIME) == -1" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16799,HUNTING) == -1 && checkquest(16800,PLAYTIME) == -1" );
+
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16779,HUNTING) == -1 && checkquest(16780,PLAYTIME) == 2" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16781,HUNTING) == -1 && checkquest(16782,PLAYTIME) == 2" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16783,HUNTING) == -1 && checkquest(16784,PLAYTIME) == 2" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16785,HUNTING) == -1 && checkquest(16786,PLAYTIME) == 2" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16787,HUNTING) == -1 && checkquest(16788,PLAYTIME) == 2" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16789,HUNTING) == -1 && checkquest(16790,PLAYTIME) == 2" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16791,HUNTING) == -1 && checkquest(16792,PLAYTIME) == 2" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16793,HUNTING) == -1 && checkquest(16794,PLAYTIME) == 2" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16795,HUNTING) == -1 && checkquest(16796,PLAYTIME) == 2" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16797,HUNTING) == -1 && checkquest(16798,PLAYTIME) == 2" );
+    questinfo( QTYPE_DAILYQUEST, QMARK_NONE, "isbegin_quest(16778) == 2 && checkquest(16799,HUNTING) == -1 && checkquest(16800,PLAYTIME) == 2" );
+
+    questinfo( QTYPE_QUEST, QMARK_NONE, "checkquest(16779,HUNTING) == 2" );
+    questinfo( QTYPE_QUEST, QMARK_NONE, "checkquest(16781,HUNTING) == 2" );
+    questinfo( QTYPE_QUEST, QMARK_NONE, "checkquest(16783,HUNTING) == 2" );
+    questinfo( QTYPE_QUEST, QMARK_NONE, "checkquest(16785,HUNTING) == 2" );
+    questinfo( QTYPE_QUEST, QMARK_NONE, "checkquest(16787,HUNTING) == 2" );
+    questinfo( QTYPE_QUEST, QMARK_NONE, "checkquest(16789,HUNTING) == 2" );
+    questinfo( QTYPE_QUEST, QMARK_NONE, "checkquest(16791,HUNTING) == 2" );
+    questinfo( QTYPE_QUEST, QMARK_NONE, "checkquest(16793,HUNTING) == 2" );
+    questinfo( QTYPE_QUEST, QMARK_NONE, "checkquest(16795,HUNTING) == 2" );
+    questinfo( QTYPE_QUEST, QMARK_NONE, "checkquest(16797,HUNTING) == 2" );
+    questinfo( QTYPE_QUEST, QMARK_NONE, "checkquest(16799,HUNTING) == 2" );
+end;
+
+function	quest_display	{
+    .@display$ = getarg(0);
+    .@qid = getarg(1);
+    .@cid = getarg(2);
+    switch( checkquest(.@cid, PLAYTIME) ) {
+        case -1:
+            break;
+        case 0:
+        case 1:
+            return "^808080" + .@display$ + " (Cooldown)^000000";
+        case 2:
+            break;
+    }
+    switch( checkquest(.@qid, HUNTING) ) {
+        case -1:
+            return .@display$;
+        case 0:
+        case 1:
+            return "^808080" + .@display$ + " (Insufficient Sample)^000000";
+        case 2:
+            return "^0000CD" + .@display$ + " (Completed)^000000";
+    }
+}
+
+function	accept_quest	{
+    .@display$ = getarg(0);
+    .@qid = getarg(1);
+    .@cid = getarg(2);
+    switch( checkquest(.@cid, PLAYTIME) ) {
+        case -1:
+            break;
+        case 0:
+        case 1:
+            mes "The " + .@display$ + " commision is already ^0000CDcompleted^000000.";
+            return;
+        case 2:
+            erasequest .@cid;
+            break;
+    }
+    switch( checkquest(.@qid, HUNTING) ) {
+        case -1:
+            setquest .@qid;
+            if (!checkweight(getarg(4), getarg(5))) {
+                mes "Make room in your inventory before submitting this commission.";
+                return;
+            }
+            mes "The " + .@display$ + " commision has been accepted.";
+            return;
+        case 0:
+        case 1:
+        case 2:
+            mes "The " + .@display$ + " commision has already been accepted.";
+            return;
+    }
+}
+
+function	submit_quest	{
+    .@display$ = getarg(0);
+    .@qid = getarg(1);
+    .@cid = getarg(2);
+    switch( checkquest(.@cid, PLAYTIME) ) {
+        case -1:
+            break;
+        case 0:
+        case 1:
+            mes "The " + .@display$ + " commision is already ^0000CDcompleted^000000.";
+            return;
+        case 2:
+            erasequest .@cid;
+            break;
+    }
+    switch( checkquest(.@qid, HUNTING) ) {
+        case -1:
+            mes "The " + .@display$ + " commision hasn't been accepted.";
+            return;
+        case 0:
+        case 1:
+            mes "The " + .@display$ + " commision research material is ^FF0000incomplete^000000.";
+            return;
+
+        case 2:
+            if (!checkweight(getarg(4), getarg(5))) {
+                mes "Make room in your inventory before submitting this commission.";
+                return;
+            }
+            mes "The " + .@display$ + " commision has been ^0000CDsubmitted^000000.";
+            erasequest .@qid;
+            setquest .@cid;
+            add_reputation_points(REPU_BIO_ABYSS, getarg(3));
+            getitem getarg(4), getarg(5);
+            getexp getarg(6), getarg(7);
+            if ( .@qid == 16779 && isbegin_quest(16801) == 0 ) {
+                setquest 16801;
+                completequest 16801;
+            }
+            return;
+    }
+}
+
+}
+
+ba_chess,22,16,3	script	Specimen Refine Manager#ba_d2	4_EP17_BASIC_B,{
+    if ( BaseLevel < 250 || isbegin_quest(16778) != 2 ) {
+        end;
+    }
+    if ( isbegin_quest(16801) < 2 ) {
+        mes "[Specimen Refine Manager]";
+        mes "Hello, guest. I'm afraid that you haven't done enough research for me to refine any materials for you.";
+        mes "Please do more research and report your findings.";
+        close;
+    }
+    mes "[Specimen Refine Manager]";
+    mes "If you have any fragments or jewels, come to this Beta! This Beta here will assist you!";
+    mes "You heard it right, I will refine your fragment or jewels into runes!";
+    close2;
+    callshop "abyss_depth_materials";
+    end;
+
+OnInit:
+    setunittitle( getnpcid(0), "<Biosphere Abyss Depth>" );
+end;
+}
+
+ba_chess,25,19,3	script	Rune Crown Manager#ba_d2	4_EP17_BASIC_B,{
+    if ( BaseLevel < 250 || isbegin_quest(16778) != 2 ) {
+        end;
+    }
+    if ( get_reputation_points(9) < 500 ) {
+        mes "[Rune Crown Manager]";
+        mes "The guest have not done sufficient research on the abyss yet, please do more research so we can confidently craft equipments for you.";
+        next;
+        mes "[Instruction]";
+        mes "- Only guests with 500 or more abyss research progress can craft Rune Crowns. -";
+        close;
+    }
+    mes "[Rune Crown Manager]";
+    mes "Ehem, I can craft the Rune Crown for you.";
+    mes "Please specify the class that you want to create it for.";
+    next;
+    switch( select("Swordsman Class", "Merchant Class", "Thief Class", "Mage Class", "Acolyte Class", "Archer Class", "Expanded Classes", "Cancel") ) {
+        case 1:
+            .@shop$ = "abyss_depth_swordsman";
+            mes "[Rune Crown Manager]";
+            mes "Here's the Rune Crowns that you can create for the Swordsman Class.";
+            mes "^i[400529] ^i[400530]";
+            break;
+        case 2:
+            .@shop$ = "abyss_depth_merchant";
+            mes "[Rune Crown Manager]";
+            mes "Here's the Rune Crowns that you can create for the Merchant Class.";
+            mes "^i[400531] ^i[400532]";
+            break;
+        case 3:
+            .@shop$ = "abyss_depth_thief";
+            mes "[Rune Crown Manager]";
+            mes "Here's the Rune Crowns that you can create for the Thief Class.";
+            mes "^i[400533] ^i[400534]";
+            break;
+        case 4:
+            .@shop$ = "abyss_depth_mage";
+            mes "[Rune Crown Manager]";
+            mes "Here's the Rune Crowns that you can create for the Mage Class.";
+            mes "^i[400535] ^i[400536]";
+            break;
+        case 5:
+            .@shop$ = "abyss_depth_acolyte";
+            mes "[Rune Crown Manager]";
+            mes "Here's the Rune Crowns that you can create for the Acolyte Class.";
+            mes "^i[400537] ^i[400538]";
+            break;
+        case 6:
+            .@shop$ = "abyss_depth_archer";
+            mes "[Rune Crown Manager]";
+            mes "Here's the Rune Crowns that you can create for the Archer Class.";
+            mes "^i[400539] ^i[400540]";
+            break;
+        case 7:
+            .@shop$ = "abyss_depth_expanded";
+            mes "[Rune Crown Manager]";
+            mes "Here's the Rune Crowns that you can create for the Expanded Classes.";
+            mes "^i[400541] ^i[400542] ^i[400543] ^i[400544] ^i[400545] ^i[400546]";
+            break;
+        case 8:
+            mes "[Rune Crown Manager]";
+            mes "Don't you want a rune crown now?";
+            mes "Remember, your patronage are always welcome.";
+            mes "Please come back anytime.";
+            close;
+    }
+    callshop .@shop$;
+    end;
+
+OnInit:
+    setunittitle( getnpcid(0), "<Biosphere Abyss Depth>" );
+end;
+}
+
+ba_chess,28,16,3	script	Enchant Manager#ba_d2	4_EP17_BASIC_B,{
+    if ( BaseLevel < 250 || isbegin_quest(16778) != 2 ) {
+        end;
+    }
+    if ( get_reputation_points(9) < 500 ) {
+        mes "[Enchant Manager]";
+        mes "The guest have not done sufficient research on the abyss yet, please do more research so we can confidently enchant your equipments.";
+        next;
+        mes "[Instruction]";
+        mes "- Only guests with 500 or more abyss research progress can enchant equipments. -";
+        close;
+    }
+    mes "[Enchant Manager]";
+    mes "Welcome, Guest. Are you perhaps looking to enchant your Rune Crown? Or maybe your Dimension Weapons?";
+    mes "Please feel free to take a look.";
+    next;
+    .@s = select( "Rune Crown Enchant", "Dimension Weapon Enchant", "Cancel");
+    switch( .@s ) {
+        case 1:
+            .@id = 132;
+            break;
+        case 2:
+            .@id = 133;
+            break;
+        case 3:
+            mes "[Enchant Manager]";
+            mes "This Beta will always be here, come back anytime.";
+            close;
+    }
+    close2;
+    item_enchant(.@id);
+    end;
+
+
+OnInit:
+    setunittitle( getnpcid(0), "<Biosphere Abyss Depth>" );
+end;
+}
+
+bl_depth2,0,0	monster	Abyss Duneyrr	22252,30,5000
+bl_depth2,0,0	monster	Abyss Naga	22253,30,5000
+bl_depth2,0,0	monster	Abyss Ancient Tree	22254,30,5000
+bl_depth2,0,0	monster	Abyss Dollocaris	22255,30,5000
+bl_depth2,0,0	monster	Abyss Ice Gargoyle	22256,30,5000
+bl_depth2,0,0	monster	Abyss Flame Ghost	22257,30,5000
+bl_depth2,0,0	monster	Abyss Acidus	22258,30,5000
+bl_depth2,0,0	monster	Abyss Abyss Incarnation	22259,30,5000
+bl_depth2,0,0	monster	Abyss Salamander	22260,30,5000
+bl_depth2,0,0	monster	Abyss Moskillo	22261,30,5000
+
+bl_depth2	mapflag	noteleport

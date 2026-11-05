@@ -1447,6 +1447,15 @@ enum sc_type : int16 {
 	SC_WIND_CHARM_POWER,
 	SC_GROUND_CHARM_POWER,
 
+	SC_COPE_ZEROCELL_LUX,
+	SC_COPE_ZEROCELL_VITA,
+	// Appended to preserve persisted upstream status numbers.
+	SC_COPE_TARGET_MARKER,
+	SC_COPE_BLOCK_SEAL,
+	SC_COPE_FROST_STORM,
+	SC_COPE_GROGGY,
+	SC_COPE_WARM_SHIELD,
+
 	SC_MAX, //Automatically updated max, used in for's to check we are within bounds.
 };
 

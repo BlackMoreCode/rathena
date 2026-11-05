@@ -1,0 +1,944 @@
+ygg_edge,173,185,4	script	#ch1msz00	HIDDEN_WARP_NPC,5,5,{
+    end;
+OnTouch:
+    if ( CH1_Complete() && isbegin_quest(18379) == 2 ) {
+        cloaknpc( "Robin#ch1msz00", false, getcharid(0) );
+    }
+end;
+}
+
+ygg_edge,173,185,5	script(CLOAKED)	Robin#ch1msz00	4_4JOB_ROBIN,{
+    if ( !CH1_Complete() || isbegin_quest(18379) != 2 ) {
+        end;
+    }
+    if ( BaseLevel < 260 ) {
+        end; // Doesn't appear under 260
+    }
+    if ( isbegin_quest(27089) == 0 ) {
+        npctalk "It seems like an invasion... a thorough investigation is needed.", "Rubiel#ch1p1rubiel01", BC_SELF;
+        sleep2 1000;
+        npctalk "We can't do it alone. But I do have someone in mind.", "", BC_SELF;
+        sleep2 1000;
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "Oh! Perfect timing. Just when we needed you. Are you busy at the moment? Even if you're busy, please hear us out.";
+        next;
+        cutin "ch1_delegacy03.png",2;
+        mes "[Rubiel]";
+        mes "Oh, the adventurer! It's related to a matter that you've helped with before.";
+        next;
+        cutin "",255;
+        if ( select("What matter?", "I'm really busy right now...") == 2 ) {
+            cutin "ch1_delegacy03.png",2;
+            mes "[Rubiel]";
+            mes "Oh~ Is that so? You're busy! Okay, I'll make it quick!";
+            mes "We've come across a stranger place than what we've found before.";
+            next;
+        }
+        cutin "ch1_delegacy03.png",2;
+        mes "[Rubiel]";
+        mes "Do you remember when the dimensional boundary collapsed and this world collided with another one?";
+        mes "We've found an intersection point and it appears to have been invaded.";
+        next;
+        mes "[Rubiel]";
+        mes "In the meantime, we've sent scouts because there might be more places similar to that one.";
+        next;
+        cutin "",255;
+        select("Have you found anything about it?");
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "Yes, that's why I came looking for you. While I was searching through the Land of Darkness, I discovered a place where strange phenomenons occured.";
+        next;
+        mes "[Robin]";
+        mes "The place I discovered was a place full of destroyed buildings, it felt like there was an invasion. Actually, no, I'm certain that there was an invasion.";
+        next;
+        cutin "ch1_delegacy03.png",2;
+        mes "[Rubiel]";
+        mes "From what I've heard, it does sound like an invasion. But if Robin is that confident, then it's certain. In any case, we need to investigate the state of the place.";
+        next;
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "We were lacking manpower. There are a number of aggresive creatures roaming around.";
+        next;
+        mes "[Robin]";
+        mes "The adventurer is the perfect person for this case, but fighting those creatures while gathering information, isn't that too much even for us?";
+        next;
+        mes "[Robin]";
+        mes "Another thing, even if we did investigate individually, we would need to compile the information that we've found.";
+        mes "We need someone who is as good as the adventurer who can respond to unexpected situations.";
+        next;
+        cutin "ch1_delegacy03.png",2;
+        mes "[Rubiel]";
+        mes "Of course I wouldn't just send the two of you. I found someone perfect for the job for that. I already called them in advance. Actually, it seems that he have arrived already.";
+        next;
+        cloaknpc( "Newt#ch1msz00", false, getcharid(0) );
+        cutin "ch1_delegacy02.png",1;
+        mes "[Newt]";
+        mes "I'm here~! What's going on?";
+        mes "The adventurer and Robin is here? Is there something serious going? Do we have to fight?";
+        npctalk "Is your friend always like this? It's not a big deal, but...", "", BC_SELF;
+        next;
+        cutin "ch1_delegacy03.png",2;
+        mes "[Rubiel]";
+        mes "Robin discovered a place to what seems to be an invaded site. I will send the adventurer, Robin, and you. You three will be going to get a detailed information. Newt is good analyzing information, so he'll be a great help.";
+        next;
+        cutin "ch1_delegacy02.png",1;
+        mes "[Newt]";
+        mes "Oh~! I'm confident that I can be of help! Let's go~ Where do we need to go anyways?";
+        next;
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "Let's head to the Land of Darkness first.";
+        setquest 27089;
+        close3;
+    }
+    if ( isbegin_quest(27089) == 1 ) {
+        cutin "ch1_delegacy02.png",1;
+        mes "[Newt]";
+        mes "Oh~! I'm confident that I can be of help! Let's go~ Where do we need to go anyways?";
+        next;
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "Let's head to the Land of Darkness first.";
+        close3;
+    }
+    end;
+
+
+OnInit:
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "CH1_Complete() && isbegin_quest(18379) == 2 && isbegin_quest(27089) == 0 && BaseLevel >= 260";
+end;
+}
+
+ygg_edge,175,172,1	script(CLOAKED)	Newt#ch1msz00	4_CH1_DELEGACY02,{
+    end;
+}
+
+ch1fild1,168,38,0	script	#ch1msz10	HIDDEN_WARP_NPC,5,5,{
+    end;
+
+OnTouch:
+    if ( isbegin_quest(27089) == 1 ) {
+        cloaknpc( "Robin#ch1msz10", false, getcharid(0) );
+        cloaknpc( "Newt#ch1msz10", false, getcharid(0) );
+    }
+end;
+}
+
+ch1fild1,168,38,5	script(CLOAKED)	Newt#ch1msz10	4_CH1_DELEGACY02,{
+    if ( isbegin_quest(27089) < 1 ) {
+        end; // Sanity check
+    }
+    if ( isbegin_quest(27089) == 1 ) {
+    OnEvent:
+        cutin "ch1_delegacy02.png",0;
+        mes "[Newt]";
+        mes "This is indeed an invaded site~! There are still traces of physical residue where the two paralell intersect with each other.";
+        next;
+        mes "[Newt]";
+        mes "There's the typical characteristics, but this place is unique...";
+        mes "It appears to be an advanced civilization combined with untouched natural environments!";
+        mes "It's the collision between two worlds, it's what the World Tree was worried about.";
+        next;
+        mes "[Newt]";
+        mes "While that is true, we still need to investigate this place.";
+        mes "Each invaded site has it's own characteristics, right?";
+        next;
+        mes "[Newt]";
+        mes "If we investigate thoroughly, we might find out where it collided, which side has greater influence, and the possiblity of further expansion.";
+        next;
+        cutin "4job_robin_01.png",2;
+        mes "[Robin]";
+        mes "If we organize the characteristics of what was discovered before, we should be able to find something common between invaded sites.";
+        next;
+        cutin "ch1_delegacy02.png",0;
+        mes "[Newt]";
+        mes "With that, we will be able to prevent invasions, or even if we can't prevent them, we will be able to respond more quickly. That's great~!";
+        next;
+        cutin "4job_robin_01.png",2;
+        mes "[Robin]";
+        mes "Let's go to the place that I've been keeping an eye on. There are strange creatures roaming around here, so be careful.";
+        completequest 27089;
+        setquest 27090;
+        close2;
+        cutin "",255;
+        cloaknpc( "Robin#ch1msz10", true, getcharid(0) );
+        cloaknpc( "Newt#ch1msz10", true, getcharid(0) );
+    }
+    end;
+
+OnInit:
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(27089) == 1";
+end;
+}
+
+ch1fild1,171,40,5	script(CLOAKED)	Robin#ch1msz10	4_4JOB_ROBIN,{
+    if ( isbegin_quest(27089) < 1 ) {
+        end;
+    }
+    if ( isbegin_quest(27089) == 1 ) {
+        cutin "4job_robin_01.png",2;
+        mes "[Robin]";
+        mes "Let's go to the place that I've been keeping an eye on. There are strange creatures roaming around here, so be careful.";
+        close3;
+    }
+    end;
+}
+
+ch1fild1,101,84,0	script	#ch1msz11	HIDDEN_WARP_NPC,5,5,{
+    end;
+
+OnTouch:
+    if ( isbegin_quest(27090) == 1 ) {
+        cloaknpc( "Robin#ch1msz11", false, getcharid(0) );
+        cloaknpc( "Newt#ch1msz11", false, getcharid(0) );
+    }
+    if ( isbegin_quest(27092) == 1 ) {
+        cloaknpc( "Robin#ch1msz11", false, getcharid(0) );
+        cloaknpc( "Newt#ch1msz11", false, getcharid(0) );
+        cloaknpc( "Rubiel#ch1msz10", false, getcharid(0) );
+    }
+end;
+}
+
+ch1fild1,101,84,5	script(CLOAKED)	Robin#ch1msz11	4_4JOB_ROBIN,{
+    if ( isbegin_quest(27090) < 1 ) {
+        end;
+    }
+    if ( isbegin_quest(27090) == 1 ) {
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "This is the place.";
+        next;
+        cutin "ch1_delegacy02.png",2;
+        mes "[Newt]";
+        mes "What a suspicious looking building.";
+        next;
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "This kind of building is all over the place.";
+        next;
+        cutin "",255;
+        select("What kind of place is this?");
+        cutin "ch1_delegacy02.png",2;
+        mes "[Newt]";
+        mes "We won't know that until we go inside and take a look.";
+        next;
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "There's a problem though, there's no way to get inside. That's the reason I asked for help in the first place.";
+        next;
+        cutin "ch1_delegacy02.png",2;
+        mes "[Newt]";
+        mes "I think I know the reason why! It's because of the dimensional magic storm.";
+        next;
+        mes "[Newt]";
+        mes "Adventurer, you have been to the Decayed Valkyrie Realm or maybe the Corrupted Geffenia, right? The dimensional magic is also fierce, that's why you are borrowing the power of the Mana Ring to enter, remember?";
+        next;
+        mes "[Newt]";
+        mes "It's exactly the same here. The dimensional magic is fierce enough to stop you from entering. I will gather information about this separately.";
+        next;
+        mes "[Newt]";
+        mes "In order for you to enter, you will need to use the power of the Mana Ring again, which contains the mana of the World Tree to apply a resistance buff.";
+        next;
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "Can you do it?";
+        next;
+        cutin "ch1_delegacy02.png",2;
+        mes "[Newt]";
+        mes "I can do it! Is what I want to say, but I haven't had the time to learn it since I was called out here suddenly. If I had known it would be like this, I would have learned it in advance.";
+        mes "I'll go learn it from Rubiel~!";
+        next;
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "So the reason he called for you was in case something like this happened.";
+        next;
+        mes "[Robin]";
+        mes "It would have been quicker if you learned it in advance, that's a shame. While you're not around, we will take a closer look around this place.";
+        next;
+        cutin "ch1_delegacy02.png",2;
+        mes "[Newt]";
+        mes "I understand! Then, let's meet here again!";
+        next;
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "Let's split up and look around.";
+        completequest 27090;
+        setquest 27091;
+        close2;
+        cutin "",255;
+        cloaknpc( "Robin#ch1msz11", true, getcharid(0) );
+        cloaknpc( "Newt#ch1msz11", true, getcharid(0) );
+        end;
+    }
+    if ( isbegin_quest(27092) == 1 ) {
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "Oh! Just in time. Have you learned the resistance buff from Rubiel? Oh, you even brough Rubiel.";
+        next;
+        cutin "ch1_delegacy03.png",1;
+        mes "[Rubiel]";
+        mes "Yes, I came to see things for myself. How's your investigation? The buildings here are as impressive from the reports. The plants here is also unusual. I'm glad I came here to see it.";
+        next;
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "I have confirmed my speculations, this place is indeed an invaded site. I found this, it's documents from people who are related to this place.";
+        next;
+        cutin "ch1_delegacy03.png",1;
+        mes "[Rubiel]";
+        mes "A document? What is it about?";
+        next;
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "It seems that they were building a homunculus as a weapon to counter the legion. But it looks like the laboratory was destroyed by a surprise attack from the legion before the research was complete. Here, read it for yourself.";
+        next;
+        cutin "ch1_delegacy03.png",1;
+        mes "[Rubiel]";
+        mes "So, the things that we saw on the way here were homunculus? The ones inside that building too. If they were made as a weapon, they must be quite aggressive.";
+        next;
+        mes "[Rubiel]";
+        mes "There must be researchers who failed to escape... Hmm... If we're going inside, we need to be well-prepared. Who knows what kind of mutation occured, they might have multiplied tons of times already, it won't be easy to clear them out, right?";
+        next;
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "The number that were able to come outside is small, it seems the laboratory hasn't been breached. It's a fortunate situation, but I don't know how long it will last, so we need to go in to investigate and cull their numbers.";
+        next;
+        cutin "ch1_delegacy03.png",1;
+        mes "[Rubiel]";
+        mes "Can I leave this matter to you adventurer?";
+        next;
+        cutin "",255;
+        select("Leave it to me.");
+        cutin "ch1_delegacy03.png",1;
+        mes "[Rubiel]";
+        mes "How reassuring.";
+        next;
+        cutin "ch1_delegacy02.png",2;
+        mes "[Newt]";
+        mes "This invasion won't expand further, right~?";
+        next;
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "We can't say for sure until we investigate it more.";
+        next;
+        cutin "ch1_delegacy03.png",1;
+        mes "[Rubiel]";
+        mes "Invaded sites like this could appear any time. The world is unstable afterall.";
+        next;
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "We can only stay vigilant at watch the sites that already appeared.";
+        mes "We need to make sure the dangers in it won't encroach to our world.";
+        next;
+        cutin "ch1_delegacy02.png",2;
+        mes "[Newt]";
+        mes "Then we need to figure out our next step~ Adventurer, are you ready to go in? I already learned the magic to counter the dimensional magic, as long as you have Mana Rings, I'll be able to do it for you!";
+        next;
+        cutin "ch1_delegacy03.png",1;
+        mes "[Rubiel]";
+        mes "I'm counting on you Newt. I'll take this document and discuss it with the others.";
+        next;
+        mes "[Rubiel]";
+        mes "The laboratory failed because it was attacked, right? There's nothing on the document that said that the Homunculus were a failure. Perhaps we can use them to fight back?";
+        next;
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "If the homunculus were strong enough, couldn't they have just resisted the surprise attack? Instead of closing the doors and running away?";
+        next;
+        cutin "ch1_delegacy03.png",1;
+        mes "[Rubiel]";
+        mes "We can't know that for now. I'll talk to the others and investigate more thoroughly.";
+        next;
+        mes "[Rubiel]";
+        mes "I'll have you keep up the hard work for a while. I'll leave this place to you. Let me know if anything comes up.";
+        next;
+        cutin "ch1_delegacy02.png",2;
+        mes "[Newt]";
+        mes "Okay~ Be careful on your way back!";
+        completequest 27092;
+        setquest 27093;
+        close3;
+    }
+    if ( isbegin_quest(27093) == 1 ) {
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "Do you want to know what has to be done here?";
+        next;
+        cutin "",255;
+        if ( select("Well...", "I'll hear the details later") == 2 ) {
+            cutin "4job_robin_01.png",0;
+            mes "[Robin]";
+            mes "We don't know what kind of danger await inside. So you better prepare.";
+            close3;
+        }
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "As you know, the Homunculus here are made to be weapons to counter the legions, so they're probably strong.";
+        next;
+        mes "[Robin]";
+        mes "If those creatures cross over to our realm, it would cause chaos. That's why we need to take care of them before that happen.";
+        next;
+        mes "[Robin]";
+        mes "I'll stay here to deal with the Homunculus that escaped the laboratory. I want to investigate the laboratory too, but I also need to regularly go back to Prontera and Comodo to check for new sites.";
+        next;
+        mes "[Robin]";
+        mes "I'll need you to put extra effort for this laboratory.";
+        next;
+        cutin "",255;
+        select("No problem");
+        mes "[Robin]";
+        mes "One more thing. The Vita and Arc section have an especially strong dimensional magic, you'll need to build up your strength to get through it. Newt will figure that part for you.";
+        next;
+        mes "[Robin]";
+        mes "Then, come back when you're ready.";
+        completequest 27093;
+        close3;
+    }
+    if ( isbegin_quest(27093) < 2 ) {
+        end;
+    }
+    for ( .@i = 0; .@i < 4; ++.@i ) {
+        if ( checkquest(.qid[.@i], HUNTING) == 2 ) {
+            erasequest .qid[.@i];
+            getitem "Ch1_Root_Coin", .reward[.@i];
+            getitem .bonus[.@i], 1;
+            .@finished++;
+        }
+    }
+    if ( .@finished ) {
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "Good work, I think this is enough for today. Get some good rest and come back.";
+        close3;
+    }
+    cutin "4job_robin_01.png",0;
+    mes "[Robin]";
+    mes "You're back. Are you ready to enter the laboratory? Which one do you want to go to?";
+    next;
+    cutin "",255;
+    .@s = select("Zerocell - Lux", "Zerocell - Nox", "Zerocell - Vita", "Zerocell - Arc") - 1;
+    if ( BaseLevel < .lvl[.@s] ) {
+        cutin "4job_robin_01.png",0;
+        mes "[Robin]";
+        mes "I don't think you've build enough strength to get through this laboratory.";
+        next;
+        cutin "",255;
+        mes "- You need to be atleast level " + .lvl[.@s] + " to do this quest. -";
+        close;
+    }
+    switch ( checkquest(.cid[.@s], PLAYTIME) ) {
+        case -1:
+            break;
+        case 0:
+        case 1:
+            cutin "4job_robin_01.png",0;
+            mes "[Robin]";
+            mes "Even if it's you. Taking a rest is an important part of the operation. Come back again at dawn.";
+            close3;
+        case 2:
+            erasequest .cid[.@s];
+            break;
+    }
+    cutin "4job_robin_01.png",0;
+    mes "[Robin]";
+    mes "^0000CD" + .name$[.@s] + "^000000? If you're going there, you should cull around ^0000CD300^000000 homunculus regardless of what type it is. That should be enough for a while. Don't forget to bring your Mana Rings to Newt.";
+    if ( isbegin_quest(.qid[.@s]) == 0 ) {
+        setquest .qid[.@s];
+    }
+    close3;
+
+OnInit:
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(27090) == 1";
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(27092) == 1";
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(27093) == 1";
+
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(27093) == 2 && isbegin_quest(27094) == 0 && checkquest(27095,PLAYTIME) == -1";
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(27093) == 2 && isbegin_quest(27094) == 0 && checkquest(27095,PLAYTIME) == 2";
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "checkquest(27094, HUNTING) == 2";
+
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(27093) == 2 && isbegin_quest(27096) == 0 && checkquest(27097,PLAYTIME) == -1";
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(27093) == 2 && isbegin_quest(27096) == 0 && checkquest(27097,PLAYTIME) == 2";
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "checkquest(27096, HUNTING) == 2";
+
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(27093) == 2 && isbegin_quest(27098) == 0 && checkquest(27099,PLAYTIME) == -1";
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(27093) == 2 && isbegin_quest(27098) == 0 && checkquest(27099,PLAYTIME) == 2";
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "checkquest(27098, HUNTING) == 2";
+
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(27093) == 2 && isbegin_quest(27100) == 0 && checkquest(27101,PLAYTIME) == -1";
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(27093) == 2 && isbegin_quest(27100) == 0 && checkquest(27101,PLAYTIME) == 2";
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "checkquest(27100, HUNTING) == 2";
+
+    setarray .qid[0], 27094, 27096, 27098, 27100;
+    setarray .cid[0], 27095, 27097, 27099, 27101;
+    setarray .lvl[0], 260, 260, 270, 270;
+    setarray .reward[0], 15, 15, 20, 20;
+    setarray .bonus[0], 105161, 105161, 105162, 105162;
+    setarray .name$[0], "Lux", "Nox", "Vita", "Arc";
+end;
+}
+
+ch1fild1,106,84,3	script(CLOAKED)	Newt#ch1msz11	4_CH1_DELEGACY02,{
+    if ( isbegin_quest(27090) < 1 ) {
+        end;
+    }
+    if ( isbegin_quest(27090) == 1 ) {
+        cutin "ch1_delegacy02.png",0;
+        mes "[Newt]";
+        mes "I can feel a fierce dimensional magic around this place. What an interesting place~!";
+        close3;
+    }
+    if ( isbegin_quest(27092) == 1 ) {
+        cutin "ch1_delegacy02.png",2;
+        mes "[Newt]";
+        mes "I hope this invasion won't expand any further.";
+        close3;
+    }
+    if ( isbegin_quest(27093) == 1 ) {
+        cutin "ch1_delegacy02.png",2;
+        mes "[Newt]";
+        mes "Are you ready to go in? I already learned the magic to counter the dimensional magic, as long as you have Mana Rings, I'll be able to do it for you!";
+        close3;
+    }
+    if ( isbegin_quest(27093) == 2 && isbegin_quest(27102) == 0 ) {
+        cutin "ch1_delegacy02.png",2;
+        mes "[Newt]";
+        mes "Adventurer! Are you going to enter the laboratory~! There's strong dimensional magic in each of the laboratory, right?";
+        next;
+        mes "[Newt]";
+        mes "To break through the dimensional magic and get inside, you'll need ^0000CDMana Ring^000000. They're sold at the shops in the village.";
+        next;
+        mes "[Newt]";
+        mes "I'll use the pure mana that the Mana Rings contain to apply you a resistance buff~!";
+        next;
+        mes "[Newt]";
+        mes "There are 4 total laboratories that you can enter. They're called Lux, Nox, Vita, and Arc.";
+        next;
+        mes "[Newt]";
+        mes "The laboratory varies different level of dimensional magic. So the number of Mana Rings to enter is different.";
+        mes "For Lux and Nox, I need ^0000CD50 Mana Rings^000000 and for Vita and Arc, I need ^0000CD70 Mana Rings^000000";
+        next;
+        mes "[Newt]";
+        mes "Oh, and since you have to enter the laboratory with the magic resistance buff active, I'm the one who will take you in. I'll check your buffs before you enter!";
+        next;
+        mes "[Newt]";
+        mes "Just so you know, ^0000CDLux and Nox share the same level of dimensional magic, the same applies to Vita and Arc also^000000.";
+        mes "What do you think that means~?";
+        next;
+        mes "[Newt]";
+        mes "When you activated the buff for Lux, you'll be able to enter Nox too. You won't need to get another one~!";
+        next;
+        mes "[Newt]";
+        mes "Also~! You need to be atleast ^0000CDLevel 260^000000 to deal with the homunculus inside, and atleast ^0000CDLevel 270 for Vita and Arc^000000.";
+        next;
+        mes "[Newt]";
+        mes "I think I've explained everything you need to know. Come talk to me again when you're ready to enter!";
+        setquest 27102;
+        completequest 27102;
+        close3;
+    }
+    if ( isbegin_quest(27102) < 2 ) {
+        end;
+    }
+    cutin "ch1_delegacy02.png",2;
+    mes "[Newt]";
+    mes "Are you going to the laboratory now? There are 4 laboratories in total. Which one do you want to go to?";
+    next;
+    cutin "",255;
+    .@s = select("Zerocell - Lux", "Zerocell - Nox", "Zerocell - Vita", "Zerocell - Arc");
+
+    switch( .@s ) {
+        case 1:
+        case 2:
+            .@blvl = 260;
+            .@status = SC_COPE_ZEROCELL_LUX;
+            .@req = 50;
+            break;
+
+        case 3:
+        case 4:
+            .@blvl = 270;
+            .@status = SC_COPE_ZEROCELL_VITA;
+            .@req = 70;
+            break;
+    }
+    if ( BaseLevel < .@blvl ) {
+        cutin "ch1_delegacy02.png",2;
+        mes "[Newt]";
+        mes "Adventurer~! Even with the resistance buff, going through this much dimensional magic will strain your body.";
+        mes "You need to strengthen out more to enter~";
+        next;
+        cutin "",255;
+        mes "- You need to be atleast level " + .@blvl + " to do this quest. -";
+        close;
+    }
+    if ( !getstatus(.@status) ) {
+        cutin "ch1_delegacy02.png",2;
+        mes "[Newt]";
+        mes "Oh? It seems that you don't have the magic resistance buff yet. Do you want to get one, you will need it to enter the laboratory.";
+        mes "For this laboratory, I need ^0000CD" + .@req + "^000000 Mana Rings to give you a pure resistance buff.";
+        next;
+        if ( select("Take a buff and enter.", "Cancel") == 2 ) {
+            mes "[Newt]";
+            mes "Come talk to me again when you're ready to enter!";
+            close3;
+        }
+        if ( countitem("Ch1_Root_Coin") < .@req ) {
+            mes "[Newt]";
+            mes "You don't have enough ^0000CDMana Rings^000000 to create a resistance buff.";
+            mes "Make sure you bring enough, you can purchase them back in the village.";
+            close3;
+        }
+        delitem "Ch1_Root_Coin", .@req;
+        sc_start .@status, 3600000, true;
+        mes "[Newt]";
+        mes "Here you go~! I've given you the resistance buff to withstand the dimensional magic!";
+        next;
+    }
+    else {
+        cutin "ch1_delegacy02.png",2;
+        mes "[Newt]";
+        mes "Oh? You still have the magic resistance buff from before? What would you like to do? Do you want to get a new one? If you get a new one, your buff will be overwritten.";
+        next;
+        if ( select("I'll enter as is.", "Get a new one.") == 2 ) {
+            if ( countitem("Ch1_Root_Coin") < .@req ) {
+                mes "[Newt]";
+                mes "You don't have enough ^0000CDMana Rings^000000 to create a resistance buff.";
+                mes "Make sure you bring enough, you can purchase them back in the village.";
+                close3;
+            }
+            delitem "Ch1_Root_Coin", .@req;
+            sc_start .@status, 3600000, true;
+            mes "[Newt]";
+            mes "Here you go~! I overwritten the active resistance buff that you have ensuring it's capability!";
+            next;
+        }
+    }
+    cutin "",255;
+    switch ( .@s ) {
+        case 1:
+            cutin "ch1_delegacy02.png",2;
+            mes "[Newt]";
+            mes "The ^0000CDLux^000000 laboratory, right? Would you like to go to the ^0000CDeast or west section^000000?";
+            next;
+            if ( select("East Section", "West Section") == 1 ) {
+                .@x = 254;
+                .@y = 140;
+                .@map$ = "ch1zero1";
+            } else {
+                .@x = 34;
+                .@y = 140;
+                .@map$ = "ch1zero1";
+            }
+            break;
+        case 2:
+            cutin "ch1_delegacy02.png",2;
+            mes "[Newt]";
+            mes "The ^0000CDNox^000000 laboratory, right? Would you like to go to the ^0000CDeast or west section^000000?";
+            next;
+            if ( select("East Section", "West Section") == 1 ) {
+                .@x = 281;
+                .@y = 157;
+                .@map$ = "ch1zero2";
+            } else {
+                .@x = 17;
+                .@y = 152;
+                .@map$ = "ch1zero2";
+            }
+            break;
+        case 3:
+            cutin "ch1_delegacy02.png",2;
+            mes "[Newt]";
+            mes "The ^0000CDVita^000000 laboratory, right? Would you like to go to the ^0000CDeast or west section^000000?";
+            next;
+            if ( select("East Section", "West Section") == 1 ) {
+                .@x = 256;
+                .@y = 190;
+                .@map$ = "ch1zero3";
+            } else {
+                .@x = 43;
+                .@y = 190;
+                .@map$ = "ch1zero3";
+            }
+            break;
+        case 4:
+            cutin "ch1_delegacy02.png",2;
+            mes "[Newt]";
+            mes "The ^0000CDArc^000000 laboratory, right? Would you like to go to the ^0000CDeast or west section^000000?";
+            next;
+            if ( select("East Section", "West Section") == 1 ) {
+                .@x = 256;
+                .@y = 190;
+                .@map$ = "ch1zero4";
+            } else {
+                .@x = 43;
+                .@y = 190;
+                .@map$ = "ch1zero4";
+            }
+            break;
+    }
+    mes "[Newt]";
+    mes "Don't forget that you need to come back before the effect wears off, take care out there~!";
+    close2;
+    warp .@map$, .@x, .@y;
+    end;
+
+OnInit:
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(27093) == 2 && isbegin_quest(27102) == 0";
+    questinfo QTYPE_CLICKME, QMARK_YELLOW, "isbegin_quest(27102) == 2";
+end;
+}
+
+ch1fild1,105,82,1	script(CLOAKED)	Rubiel#ch1msz10	4_CH1_DELEGACY03,{
+    end;
+}
+
+ch1fild1,25,132,0	script	#ch1msz12	HIDDEN_WARP_NPC,5,5,{
+    end;
+
+OnTouch:
+    if ( isbegin_quest(27091) == 1 || isbegin_quest(27092) == 1 ) {
+        cloaknpc( "Robin#ch1msz12", false, getcharid(0) );
+        cloaknpc( "Scattered Documents#ch1msz1", false, getcharid(0) );
+        cloaknpc( "Scattered Documents#ch1msz2", false, getcharid(0) );
+        cloaknpc( "Scattered Documents#ch1msz3", false, getcharid(0) );
+        cloaknpc( "Scattered Documents#ch1msz4", false, getcharid(0) );
+        cloaknpc( "Scattered Documents#ch1msz5", false, getcharid(0) );
+    }
+end;
+}
+
+ch1fild1,25,132,5	script(CLOAKED)	Robin#ch1msz12	4_4JOB_ROBIN,{
+    if ( isbegin_quest(27091) == 1 ) {
+        cutin "4job_robin_01.png",2;
+        mes "[Robin]";
+        mes "Have you taken a look around? Take a look at this. I picked this up on the way here. It might have some clues about this place. I think someone was carrying these documents and got attacked.";
+        next;
+        mes "[Robin]";
+        mes "There are also traces and marks that got left behind. I'd rather not read, but in order to understand anything we might have to do so.";
+        next;
+        mes "[Robin]";
+        mes "Maybe we'll be able to figure out what that place is and what it's used for~ If we have more information, we'll be able to prepare before we enter.";
+        next;
+        cutin "",255;
+        mes "<FONT SIZE=13><B>Homunculus Laboratory Zerocell</B></FONT>";
+        setdialogsize(250, 300);
+        setdialogalign(DIALOG_ALIGN_CENTER);
+        setdialogalign(DIALOG_ALIGN_MIDDLE);
+        next;
+        mes "<FONT SIZE=13><B>Purpose of Establishment</B></FONT>";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "Research for weapon against undead legion ^FF0000▒▒▒▒▒^000000 based on Homunculus ^FF0000▒▒▒▒▒^000000 establish with special permit ^FF0000▒▒▒▒▒▒▒^000000 various ^FF0000▒▒▒▒▒▒▒^000000 imminent ^FF0000▒▒▒▒▒▒▒▒▒▒▒▒^000000 for the purpose ^FF0000▒▒▒▒▒▒▒▒^000000 having seen it's power ^FF0000▒▒▒▒▒▒^000000 the legion acts as ordinary monster ^FF0000▒▒▒▒▒^000000 in order to respond ^FF0000▒▒▒▒▒▒▒▒▒▒▒▒^000000 scattered ^FF0000▒▒▒▒▒▒▒▒^000000";
+        setdialogalign(DIALOG_ALIGN_LEFT);
+        setdialogalign(DIALOG_ALIGN_TOP);
+        next;
+        mes "<FONT SIZE=13><B>Main Facilities</B></FONT>";
+        mes "Lux, Nox, Vita, and Arc.";
+        mes "Person in charge - Fortner O^FF0000▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        next;
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "Utilizing fragments of Ymir's Heart ^FF0000▒▒▒▒▒▒^000000";
+        mes "From existing Homunculus ^FF0000▒▒▒▒▒▒▒▒▒^000000";
+        mes "Extracing ^FF0000▒▒▒▒▒▒▒▒▒^000000 from humans";
+        mes "Succesfully ^FF0000▒▒▒▒▒▒▒▒▒^000000 to use skills ^FF0000▒▒▒▒▒▒▒▒▒^000000";
+        mes "Therefore, there is significant difference between humanoid and existing forms of Homunculus.";
+        mes "Reports of different forms than humans";
+        mes "Case 1 - Common Homunculi^FF0000▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        next;
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "The Orig^FF0000▒▒▒▒^000000, first successful humanoid homunculus distinguished by purple light";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000Mass-produced Homunculus^FF0000▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        next;
+        mes "The invasion progressed more quickly than expected, and the facility ^FF0000▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒^000000 Out of control ^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "Project suspended ^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "Evacuate ^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        mes "^FF0000▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒^000000";
+        next;
+        cutin "4job_robin_01.png",2;
+        mes "[Robin]";
+        mes "What do you think?";
+        next;
+        cutin "",255;
+        select("It seems like a Homunculus Laboratory?");
+        cutin "4job_robin_01.png",2;
+        mes "[Robin]";
+        mes "Right. ^0000CDZerocell^000000. This place was probably a laboratory that was destroyed by the legion. The creatures roaming around here are probably one of those Homunculus.";
+        next;
+        mes "[Robin]";
+        mes "It seems that some of them escaped from the laboratory. I'm worried that there might be an opening where they can escape through.";
+        next;
+        mes "[Robin]";
+        mes "More importantly, these documents, it doesn't seem like it's the only one left. We need to look for more. I also need to warn the others about the Homunculus that escaped, it's about time we should go back.";
+        completequest 27091;
+        setquest 27092;
+        close2;
+        cutin "",255;
+        cloaknpc( "Robin#ch1msz12", true, getcharid(0) );
+        cloaknpc( "Scattered Documents#ch1msz1", true, getcharid(0) );
+        cloaknpc( "Scattered Documents#ch1msz2", true, getcharid(0) );
+        cloaknpc( "Scattered Documents#ch1msz3", true, getcharid(0) );
+        cloaknpc( "Scattered Documents#ch1msz4", true, getcharid(0) );
+        cloaknpc( "Scattered Documents#ch1msz5", true, getcharid(0) );
+        end;
+    }
+    end;
+
+OnInit:
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(27091) == 1";
+    questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(27092) == 1";
+end;
+}
+
+ygg_fruit,162,126,6	script	Bitoli#ch1msz00	4_M_NOVELIST,{
+    if ( isbegin_quest(27094) < 2 ) {
+        mes "[Bitoli]";
+        mes "There's a new rumor that a new invaded site has been discovered...";
+        close;
+    }
+    mes "[Bitoli]";
+    mes "Welcome. You have been to the new invaded site 1, right? Have a chat with me, I'm sure I can be of help.";
+    next;
+    switch( select("Purchase Magic Tuning Formulas", ((BaseLevel >= 265)?"Craft Rune Crown":""), ((BaseLevel >= 265)?"Enchant Rune Crown":"")) ) {
+        case 1:
+            mes "[Bitoli]";
+            mes "I have the most advanced magic tuning formulas from the World Tree. I hope it helps you.";
+            close2;
+            callshop "CH1_SCROLLS";
+            end;
+        case 2:
+            if ( BaseLevel < 265 ) {
+                end;
+            }
+            mes "[Bitoli]";
+            mes "If you want to craft a Rune Crown, you are in the right place. I've even segregated it by class.";
+            next;
+            .@s = select("Swordsman Class", "Merchant Class", "Thief Class", "Mage Class", "Acolyte Class", "Archer Class", "Expanded Class");
+            mes "[Bitoli]";
+            mes "I hope this help you as much as possible.";
+            close2;
+            callshop "CH1_CROWN_" + .@s;
+            end;
+        case 3:
+            if ( BaseLevel < 265 ) {
+                end;
+            }
+            mes "[Bitoli]";
+            mes "A Rune Crown enchant, huh? A great choice.";
+            close2;
+            item_enchant(164);
+            end;
+    }
+    end;
+
+OnTouch:
+    if ( isbegin_quest(27094) == 2 ) {
+        npctalk "Are you interested in magic tuning formulas or Rune Crowns?", "", BC_SELF;
+    }
+end;
+
+OnInit:
+    questinfo QTYPE_CLICKME, QMARK_YELLOW, "isbegin_quest(27094) == 2";
+end;
+}
+
+ch1fild1,27,132,3	duplicate(dummynpc)	Scattered Documents#ch1msz1	4_EP18_PAPERS
+ch1fild1,24,134,5	duplicate(dummynpc)	Scattered Documents#ch1msz2	4_EP18_PAPERS
+ch1fild1,23,126,3	duplicate(dummynpc)	Scattered Documents#ch1msz3	4_EP18_PAPERS
+ch1fild1,22,127,1	duplicate(dummynpc)	Scattered Documents#ch1msz4	4_EP18_PAPERS
+ch1fild1,24,128,1	duplicate(dummynpc)	Scattered Documents#ch1msz5	4_EP18_PAPERS
+
+ygg_roots,151,345,0	warp	to_ch1fild1	1,1,ch1fild1,120,17
+ch1fild1,122,13,0	warp	ch1fild1_to_ygg_roots	1,1,ygg_roots,151,341
+ch1zero1,140,30,0	warp	ch1zero1_to_ch1fild1	1,1,ch1fild1,104,26
+ch1zero2,146,19,0	warp	ch1zero2_to_ch1fild1	1,1,ch1fild1,104,26
+ch1zero3,244,61,0	warp	ch1zero3_to_ch1fild1	1,1,ch1fild1,104,26
+ch1zero4,244,61,0	warp	ch1zero4_to_ch1fild1	1,1,ch1fild1,104,26
+
+ch1fild1	monster	--en--	22669,8,5000
+ch1fild1	monster	--en--	22670,8,5000
+ch1fild1	monster	--en--	22671,8,5000
+
+ch1zero1	monster	--en--	22507,60,5000
+ch1zero1	monster	--en--	22508,60,5000
+ch1zero1	monster	--en--	22509,60,5000
+ch1zero1	monster	--en--	22510,40,5000
+ch1zero1	monster	--en--	22511,40,5000
+ch1zero1	monster	--en--	22512,40,5000
+ch1zero1	monster	--en--	22513,60,5000
+ch1zero1	monster	--en--	22514,60,5000
+
+ch1zero2	monster	--en--	22516,90,5000
+ch1zero2	monster	--en--	22517,90,5000
+ch1zero2	monster	--en--	22518,90,5000
+ch1zero2	monster	--en--	22519,70,5000
+ch1zero2	monster	--en--	22520,70,5000
+ch1zero2	monster	--en--	22521,70,5000
+ch1zero2	monster	--en--	22522,90,5000
+ch1zero2	monster	--en--	22523,90,5000
+
+ch1zero3	monster	--en--	22525,65,5000
+ch1zero3	monster	--en--	22526,65,5000
+ch1zero3	monster	--en--	22527,65,5000
+ch1zero3	monster	--en--	22528,45,5000
+ch1zero3	monster	--en--	22529,45,5000
+ch1zero3	monster	--en--	22530,45,5000
+ch1zero3	monster	--en--	22531,65,5000
+ch1zero3	monster	--en--	22532,65,5000
+
+ch1zero4	monster	--en--	22542,65,5000
+ch1zero4	monster	--en--	22543,65,5000
+ch1zero4	monster	--en--	22544,45,5000
+ch1zero4	monster	--en--	22545,65,5000
+ch1zero4	monster	--en--	22546,45,5000
+ch1zero4	monster	--en--	22547,45,5000
+ch1zero4	monster	--en--	22548,45,5000
+ch1zero4	monster	--en--	22549,65,5000
+
+ch1zero1	mapflag	noteleport
+ch1zero2	mapflag	noteleport
+ch1zero3	mapflag	noteleport
+ch1zero4	mapflag	noteleport
+ch1zero1	mapflag	nomemo
+ch1zero2	mapflag	nomemo
+ch1zero3	mapflag	nomemo
+ch1zero4	mapflag	nomemo
+ch1zero1	mapflag	nosave
+ch1zero2	mapflag	nosave
+ch1zero3	mapflag	nosave
+ch1zero4	mapflag	nosave

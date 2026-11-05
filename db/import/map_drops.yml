@@ -251,3 +251,695 @@ Body:
                 - Index: 4
                   Item: Fourth_Bh_Staff
                   Rate: 150
+    - Map: mu_fild01
+      GlobalDrops:
+      - Index: 0
+        Item: Shadowdecon_Ore
+        Rate: 1500
+      - Index: 1
+        Item: Shadowdecon
+        Rate: 200
+      - Index: 2
+        Item: Zelunium_Ore
+        Rate: 1500
+      - Index: 3
+        Item: Zelunium
+        Rate: 200
+      - Index: 4
+        Item: Etel_Dust
+        Rate: 875
+      - Index: 5
+        Item: aegis_1001977
+        Rate: 7500
+    - Map: hem_fild
+      GlobalDrops:
+      - Index: 0
+        Item: Shadowdecon_Ore
+        Rate: 1000
+      - Index: 1
+        Item: Shadowdecon
+        Rate: 100
+      - Index: 2
+        Item: Zelunium_Ore
+        Rate: 1000
+      - Index: 3
+        Item: Zelunium
+        Rate: 100
+      - Index: 4
+        Item: Etel_Dust
+        Rate: 475
+    - Map: hem_dun01
+      GlobalDrops:
+      - Index: 0
+        Item: Shadowdecon_Ore
+        Rate: 1500
+      - Index: 1
+        Item: Shadowdecon
+        Rate: 200
+      - Index: 2
+        Item: Zelunium_Ore
+        Rate: 1500
+      - Index: 3
+        Item: Zelunium
+        Rate: 200
+      - Index: 4
+        Item: Etel_Dust
+        Rate: 875
+    - Map: uknw_ruin
+      GlobalDrops:
+      - Index: 0
+        Item: Shadowdecon_Ore
+        Rate: 1500
+      - Index: 1
+        Item: Shadowdecon
+        Rate: 200
+      - Index: 2
+        Item: Zelunium_Ore
+        Rate: 1500
+      - Index: 3
+        Item: Zelunium
+        Rate: 200
+      - Index: 4
+        Item: Etel_Dust
+        Rate: 875
+    - Map: uknw_ruin2
+      GlobalDrops:
+      - Index: 0
+        Item: Shadowdecon_Ore
+        Rate: 1500
+      - Index: 1
+        Item: Shadowdecon
+        Rate: 200
+      - Index: 2
+        Item: Zelunium_Ore
+        Rate: 1500
+      - Index: 3
+        Item: Zelunium
+        Rate: 200
+      - Index: 4
+        Item: Etel_Dust
+        Rate: 875
+    - Map: hem_dun02
+      GlobalDrops:
+      - Index: 0
+        Item: Shadowdecon
+        Rate: 2000
+      - Index: 1
+        Item: Zelunium
+        Rate: 2000
+      - Index: 2
+        Item: Etel_Dust
+        Rate: 7500
+      - Index: 3
+        Item: Frontier_Magic_Dust
+        Rate: 6000
+      - Index: 4
+        Item: Illusion_Fragment_BL
+        Rate: 3500
+      - Index: 5
+        Item: Illusion_Fragment_YL
+        Rate: 3500
+      - Index: 6
+        Item: Dimension_Energy_BL
+        Rate: 2500
+      - Index: 7
+        Item: Dimension_Energy_YL
+        Rate: 2500
+      - Index: 8
+        Item: Chaotic_Rune_Ore
+        Rate: 500
+      - Index: 9
+        Item: Chaotic_Rune
+        Rate: 200
+    - Map: ch1_gfn01
+      GlobalDrops:
+      - Index: 0
+        Item: Shadowdecon
+        Rate: 3000
+      - Index: 1
+        Item: Zelunium
+        Rate: 3000
+      - Index: 2
+        Item: Etel_Dust
+        Rate: 10000
+      - Index: 3
+        Item: Frontier_Magic_Dust
+        Rate: 6000
+      - Index: 4
+        Item: Illusion_Fragment_GR
+        Rate: 3500
+      - Index: 5
+        Item: Illusion_Fragment_BK
+        Rate: 3500
+      - Index: 6
+        Item: Dimension_Energy_GR
+        Rate: 2500
+      - Index: 7
+        Item: Dimension_Energy_BK
+        Rate: 2500
+      - Index: 8
+        Item: Disparate_Rune_Ore
+        Rate: 3500
+      - Index: 9
+        Item: Disparate_Rune
+        Rate: 2000
+      - Index: 10
+        Item: Disparate_Essence
+        Rate: 500
+      - Index: 11
+        Item: Chaotic_Essence
+        Rate: 500
+      - Index: 12
+        Item: Frontier_M_Stone
+        Rate: 500
+    - Map: ch1_gfn03
+      GlobalDrops:
+      - Index: 0
+        Item: Shadowdecon
+        Rate: 3000
+      - Index: 1
+        Item: Zelunium
+        Rate: 3000
+      - Index: 2
+        Item: Etel_Dust
+        Rate: 10000
+      - Index: 3
+        Item: Frontier_Magic_Dust
+        Rate: 6000
+      - Index: 4
+        Item: Illusion_Fragment_GR
+        Rate: 3500
+      - Index: 5
+        Item: Illusion_Fragment_BK
+        Rate: 3500
+      - Index: 6
+        Item: Dimension_Energy_GR
+        Rate: 2500
+      - Index: 7
+        Item: Dimension_Energy_BK
+        Rate: 2500
+      - Index: 8
+        Item: Disparate_Rune_Ore
+        Rate: 3500
+      - Index: 9
+        Item: Disparate_Rune
+        Rate: 2000
+      - Index: 10
+        Item: Disparate_Essence
+        Rate: 500
+      - Index: 11
+        Item: Chaotic_Essence
+        Rate: 500
+      - Index: 12
+        Item: Frontier_M_Stone
+        Rate: 500
+    - Map: ch1zero1
+      GlobalDrops:
+      - Index: 0
+        Item: Frontier_Magic_Dust
+        Rate: 5000
+      - Index: 1
+        Item: Chaotic_Rune_Ore
+        Rate: 5000
+      - Index: 2
+        Item: Disparate_Rune_Ore
+        Rate: 5000
+      - Index: 3
+        Item: Frontier_M_Stone
+        Rate: 1000
+      - Index: 4
+        Item: Chaotic_Rune
+        Rate: 1000
+      - Index: 5
+        Item: Disparate_Rune
+        Rate: 1000
+      - Index: 6
+        Item: Frontier_M_Stone
+        Rate: 300
+      - Index: 7
+        Item: Chaotic_Essence
+        Rate: 100
+      - Index: 8
+        Item: Disparate_Essence
+        Rate: 300
+      - Index: 9
+        Item: Tiem_SpellScroll
+        Rate: 500
+      - Index: 10
+        Item: Dimansion_SpellScroll
+        Rate: 500
+      - Index: 11
+        Item: Pure_SpellScoll
+        Rate: 500
+      - Index: 12
+        Item: Polluted_SpellScroll
+        Rate: 500
+      - Index: 13
+        Item: Immortal_SpellScroll
+        Rate: 500
+      SpecificDrops:
+      - Monster: CH1_RK
+        Drops:
+        - Index: 0
+          Item: Encroached_Sword
+          Rate: 1000
+        - Index: 1
+          Item: Encroached_T_Sword
+          Rate: 1000
+        - Index: 2
+          Item: A_DM_Fix_BO_Sword
+          Rate: 300
+        - Index: 3
+          Item: A_DM_Fix_DK_T_Spear
+          Rate: 300
+      - Monster: CH1_MC_M
+        Drops:
+        - Index: 0
+          Item: Encroached_T_Axe
+          Rate: 1000
+        - Index: 1
+          Item: Encroached_T_Axe
+          Rate: 1000
+      - Monster: CH1_SC
+        Drops:
+        - Index: 0
+          Item: Encroached_Dagger
+          Rate: 1000
+        - Index: 1
+          Item: A_DM_Fix_ABC_Bow
+          Rate: 300
+      - Monster: CH1_RA
+        Drops:
+        - Index: 0
+          Item: Encroached_Bow
+          Rate: 1000
+      - Monster: CH1_SO
+        Drops:
+        - Index: 0
+          Item: Encroached_Book
+          Rate: 1000
+        - Index: 1
+          Item: Encroached_Foxtail
+          Rate: 1000
+        - Index: 2
+          Item: A_DM_Fix_EM_Book
+          Rate: 300
+      - Monster: CH1_AB
+        Drops:
+        - Index: 0
+          Item: Encroached_Staff
+          Rate: 1000
+        - Index: 1
+          Item: A_DM_Fix_CD_Book
+          Rate: 300
+        - Index: 2
+          Item: A_DM_Fix_SKE_Book
+          Rate: 300
+      - Monster: CH1_MI_D
+        Drops:
+        - Index: 0
+          Item: Encroached_Instrument
+          Rate: 1000
+        - Index: 1
+          Item: A_DM_Fix_TR_Violin
+          Rate: 300
+      - Monster: CH1_GC_D
+        Drops:
+        - Index: 0
+          Item: Encroached_Katar
+          Rate: 1000
+        - Index: 1
+          Item: Encroached_Humma
+          Rate: 1000
+        - Index: 2
+          Item: A_DM_Fix_SHC_Katar
+          Rate: 300
+    - Map: ch1zero2
+      GlobalDrops:
+      - Index: 0
+        Item: Frontier_Magic_Dust
+        Rate: 5000
+      - Index: 1
+        Item: Chaotic_Rune_Ore
+        Rate: 5000
+      - Index: 2
+        Item: Disparate_Rune_Ore
+        Rate: 5000
+      - Index: 3
+        Item: Frontier_M_Stone
+        Rate: 1000
+      - Index: 4
+        Item: Chaotic_Rune
+        Rate: 1000
+      - Index: 5
+        Item: Disparate_Rune
+        Rate: 1000
+      - Index: 6
+        Item: Frontier_M_Stone
+        Rate: 300
+      - Index: 7
+        Item: Chaotic_Essence
+        Rate: 300
+      - Index: 8
+        Item: Disparate_Essence
+        Rate: 300
+      - Index: 9
+        Item: Tiem_SpellScroll
+        Rate: 500
+      - Index: 10
+        Item: Dimansion_SpellScroll
+        Rate: 500
+      - Index: 11
+        Item: Pure_SpellScoll
+        Rate: 500
+      - Index: 12
+        Item: Polluted_SpellScroll
+        Rate: 500
+      - Index: 13
+        Item: Immortal_SpellScroll
+        Rate: 500
+      SpecificDrops:
+      - Monster: CH1_RG
+        Drops:
+        - Index: 0
+          Item: Encroached_Spear
+          Rate: 1000
+        - Index: 1
+          Item: Encroached_T_Spear
+          Rate: 1000
+        - Index: 1
+          Item: A_DM_Fix_IG_Spear
+          Rate: 300
+      - Monster: CH1_MC
+        Drops:
+        - Index: 0
+          Item: Encroached_T_Axe
+          Rate: 1000
+        - Index: 1
+          Item: Encroached_T_Axe
+          Rate: 1000
+      - Monster: CH1_GN
+        Drops:
+        - Index: 0
+          Item: Encroached_Mace
+          Rate: 1000
+        - Index: 1
+          Item: A_DM_Fix_HN_Mace
+          Rate: 300
+        - Index: 2
+          Item: A_DM_Fix_MT_Mace
+          Rate: 300
+      - Monster: CH1_GC
+        Drops:
+        - Index: 0
+          Item: Encroached_Katar
+          Rate: 1000
+        - Index: 1
+          Item: Encroached_Humma
+          Rate: 1000
+        - Index: 2
+          Item: A_DM_Fix_SHC_Katar
+          Rate: 300
+      - Monster: CH1_MI
+        Drops:
+        - Index: 0
+          Item: Encroached_Rifle
+          Rate: 1000
+        - Index: 1
+          Item: A_DM_Fix_NW_Launcher
+          Rate: 300
+      - Monster: CH1_SR
+        Drops:
+        - Index: 0
+          Item: Encroached_Knuckle
+          Rate: 1000
+      - Monster: CH1_WL
+        Drops:
+        - Index: 0
+          Item: Encroached_T_Staff
+          Rate: 1000
+        - Index: 1
+          Item: A_DM_Fix_AG_T_Staff
+          Rate: 300
+      - Monster: CH1_WA
+        Drops:
+        - Index: 0
+          Item: Encroached_Whip
+          Rate: 1000
+        - Index: 1
+          Item: A_DM_Fix_TR_Whip
+          Rate: 300
+    - Map: ch1zero3
+      GlobalDrops:
+      - Index: 0
+        Item: Frontier_Magic_Dust
+        Rate: 10000
+      - Index: 1
+        Item: Chaotic_Rune_Ore
+        Rate: 10000
+      - Index: 2
+        Item: Disparate_Rune_Ore
+        Rate: 10000
+      - Index: 3
+        Item: Frontier_M_Stone
+        Rate: 2000
+      - Index: 4
+        Item: Chaotic_Rune
+        Rate: 2000
+      - Index: 5
+        Item: Disparate_Rune
+        Rate: 2000
+      - Index: 6
+        Item: Frontier_M_Stone
+        Rate: 600
+      - Index: 7
+        Item: Chaotic_Essence
+        Rate: 600
+      - Index: 8
+        Item: Disparate_Essence
+        Rate: 600
+      - Index: 9
+        Item: Tiem_SpellScroll
+        Rate: 1000
+      - Index: 10
+        Item: Dimansion_SpellScroll
+        Rate: 1000
+      - Index: 11
+        Item: Pure_SpellScoll
+        Rate: 1000
+      - Index: 12
+        Item: Polluted_SpellScroll
+        Rate: 1000
+      - Index: 13
+        Item: Immortal_SpellScroll
+        Rate: 1000
+      SpecificDrops:
+      - Monster: CH1_RK_1
+        Drops:
+        - Index: 0
+          Item: Encroached_Sword
+          Rate: 3000
+        - Index: 1
+          Item: Encroached_T_Sword
+          Rate: 3000
+        - Index: 2
+          Item: Fron_Fix_DK_T_Sword
+          Rate: 300
+      - Monster: CH1_MC_M_1
+        Drops:
+        - Index: 0
+          Item: Encroached_T_Axe
+          Rate: 3000
+        - Index: 1
+          Item: Encroached_T_Axe
+          Rate: 3000
+        - Index: 2
+          Item: Fron_Fix_MT_T_Axe
+          Rate: 300
+      - Monster: CH1_SC_1
+        Drops:
+        - Index: 0
+          Item: Encroached_Dagger
+          Rate: 3000
+        - Index: 1
+          Item: Fron_Fix_ABC_Dagger
+          Rate: 300
+      - Monster: CH1_RA_1
+        Drops:
+        - Index: 0
+          Item: Encroached_Bow
+          Rate: 3000
+        - Index: 1
+          Item: Fron_Fix_WH_Bow
+          Rate: 300
+      - Monster: CH1_SO_1
+        Drops:
+        - Index: 0
+          Item: Encroached_Book
+          Rate: 3000
+        - Index: 1
+          Item: Encroached_Foxtail
+          Rate: 3000
+        - Index: 2
+          Item: Fron_Fix_EM_Book
+          Rate: 300
+        - Index: 3
+          Item: Fron_Fix_SOA_Staff
+          Rate: 300
+        - Index: 4
+          Item: Fron_Fix_SH_Foxtail
+          Rate: 300
+      - Monster: CH1_AB_1
+        Drops:
+        - Index: 0
+          Item: Encroached_Staff
+          Rate: 3000
+        - Index: 1
+          Item: Fron_Fix_CD_Rod
+          Rate: 300
+        - Index: 2
+          Item: Fron_Fix_SKE_Book
+          Rate: 300
+      - Monster: CH1_MI_D_1
+        Drops:
+        - Index: 0
+          Item: Encroached_Instrument
+          Rate: 3000
+        - Index: 1
+          Item: Fron_Fix_TR_Vilolin
+          Rate: 300
+      - Monster: CH1_GC_D_1
+        Drops:
+        - Index: 0
+          Item: Encroached_Katar
+          Rate: 3000
+        - Index: 1
+          Item: Encroached_Humma
+          Rate: 3000
+        - Index: 2
+          Item: Fron_Fix_SHC_Katar
+          Rate: 300
+        - Index: 3
+          Item: Fron_Fix_SS_Humma
+          Rate: 300
+    - Map: ch1zero4
+      GlobalDrops:
+      - Index: 0
+        Item: Frontier_Magic_Dust
+        Rate: 10000
+      - Index: 1
+        Item: Chaotic_Rune_Ore
+        Rate: 10000
+      - Index: 2
+        Item: Disparate_Rune_Ore
+        Rate: 10000
+      - Index: 3
+        Item: Frontier_M_Stone
+        Rate: 2000
+      - Index: 4
+        Item: Chaotic_Rune
+        Rate: 2000
+      - Index: 5
+        Item: Disparate_Rune
+        Rate: 2000
+      - Index: 6
+        Item: Frontier_M_Stone
+        Rate: 600
+      - Index: 7
+        Item: Chaotic_Essence
+        Rate: 600
+      - Index: 8
+        Item: Disparate_Essence
+        Rate: 600
+      - Index: 9
+        Item: Tiem_SpellScroll
+        Rate: 1000
+      - Index: 10
+        Item: Dimansion_SpellScroll
+        Rate: 1000
+      - Index: 11
+        Item: Pure_SpellScoll
+        Rate: 1000
+      - Index: 12
+        Item: Polluted_SpellScroll
+        Rate: 1000
+      - Index: 13
+        Item: Immortal_SpellScroll
+        Rate: 1000
+      SpecificDrops:
+      - Monster: CH1_RG_1
+        Drops:
+        - Index: 0
+          Item: Encroached_Spear
+          Rate: 3000
+        - Index: 1
+          Item: Encroached_T_Spear
+          Rate: 3000
+        - Index: 2
+          Item: Fron_Fix_IG_Spear
+          Rate: 300
+      - Monster: CH1_MC_1
+        Drops:
+        - Index: 0
+          Item: Encroached_T_Axe
+          Rate: 3000
+        - Index: 1
+          Item: Encroached_T_Axe
+          Rate: 3000
+      - Monster: CH1_GN_1
+        Drops:
+        - Index: 0
+          Item: Encroached_Mace
+          Rate: 3000
+        - Index: 1
+          Item: Fron_Fix_BO_Hall
+          Rate: 300
+      - Monster: CH1_GC_1
+        Drops:
+        - Index: 0
+          Item: Encroached_Katar
+          Rate: 3000
+        - Index: 1
+          Item: Encroached_Humma
+          Rate: 3000
+        - Index: 2
+          Item: Fron_Fix_SHC_Katar
+          Rate: 300
+        - Index: 3
+          Item: Fron_Fix_SS_Humma
+          Rate: 300
+      - Monster: CH1_MI_1
+        Drops:
+        - Index: 0
+          Item: Encroached_Rifle
+          Rate: 3000
+        - Index: 1
+          Item: Fron_Fix_NW_Rifle
+          Rate: 300
+      - Monster: CH1_SR_1
+        Drops:
+        - Index: 0
+          Item: Encroached_Knuckle
+          Rate: 3000
+        - Index: 1
+          Item: Fron_Fix_IQ_Claw
+          Rate: 300
+      - Monster: CH1_WL_1
+        Drops:
+        - Index: 0
+          Item: Encroached_T_Staff
+          Rate: 3000
+        - Index: 1
+          Item: Fron_Fix_AG_Staff
+          Rate: 300
+        - Index: 2
+          Item: Fron_Fix_HN_Rod
+          Rate: 300
+      - Monster: CH1_WA_1
+        Drops:
+        - Index: 0
+          Item: Encroached_Whip
+          Rate: 3000
+        - Index: 1
+          Item: Fron_Fix_TR_Rope
+          Rate: 300

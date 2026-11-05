@@ -1,0 +1,141 @@
+Header:
+  Type: BARTER_DB
+  Version: 2
+
+Body:
+  - Name: EP21_STORE5
+    Items:
+    - Index: 0
+      Item: aegis_300585
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001837
+        Amount: 30
+    - Index: 1
+      Item: aegis_300586
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001838
+        Amount: 30
+    - Index: 2
+      Item: aegis_300587
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001839
+        Amount: 30
+    - Index: 3
+      Item: aegis_300588
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001840
+        Amount: 30
+    - Index: 4
+      Item: aegis_300589
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001841
+        Amount: 30
+    - Index: 5
+      Item: aegis_300590
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001842
+        Amount: 30
+    - Index: 6
+      Item: aegis_300591
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001843
+        Amount: 30
+    - Index: 7
+      Item: aegis_300592
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001844
+        Amount: 30
+    - Index: 8
+      Item: aegis_300593
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001845
+        Amount: 30
+    - Index: 9
+      Item: aegis_300594
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001846
+        Amount: 30
+    - Index: 10
+      Item: aegis_300595
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001847
+        Amount: 30
+    - Index: 11
+      Item: aegis_300596
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001848
+        Amount: 30
+    - Index: 12
+      Item: aegis_300597
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001849
+        Amount: 30
+    - Index: 13
+      Item: aegis_300598
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001850
+        Amount: 30
+    - Index: 14
+      Item: aegis_300599
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001851
+        Amount: 30
+    - Index: 15
+      Item: aegis_300600
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001852
+        Amount: 30
+    - Index: 15
+      Item: aegis_300601
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001853
+        Amount: 30
+    - Index: 16
+      Item: aegis_300602
+      RequiredItems:
+      - Index: 0
+        Item: aegis_1001854
+        Amount: 30
+  - Name: EP21_STORE6
+    Items:
+    - Index: 0
+      Item: Yorscalp_P_Circlet
+      RequiredItems:
+      - Index: 0
+        Item: aegis_103523
+        Amount: 5
+      - Index: 1
+        Item: Yorscalp_Spirit
+        Amount: 100
+      - Index: 2
+        Item: Yorscalp_Symbol
+        Amount: 30
+    - Index: 2
+      Item: Yorscalp_M_Circlet
+      RequiredItems:
+      - Index: 0
+        Item: aegis_103523
+        Amount: 5
+      - Index: 1
+        Item: Yorscalp_Spirit
+        Amount: 100
+      - Index: 2
+        Item: Yorscalp_Symbol
+        Amount: 30

@@ -1,0 +1,1637 @@
+//===== rAthena Script ===========================================|
+//= Episode 21 - Final Battle                                    =|
+//===== By: ======================================================|
+//= crazyarashi                                                  =|
+//===== Current Version: =========================================|
+//= 1.0 Initial Version                                          =|
+//= 1.1 Yorscalp Update - EP21 Update                            =|
+//================================================================|
+
+1@ep21b,1,1,0	script	#EP21_final_battle	-1,{
+function StoryGroupWalk;
+    end;
+
+OnInstanceInit:
+    set_instance_var("map$", instance_mapname("1@ep21b"));
+    set_instance_var("fb", 0);
+    set_instance_var("event_control", 0);
+    set_instance_var("control$",instance_npcname(strnpcinfo(0)));
+    if(instance_live_info(ILI_NAME) == "Final Battle")
+        instance_enable("#s_con_1",true);
+    else
+        instance_enable("Nyar#rtr",true);
+end;
+
+OnEvent:
+    set_instance_var("event_control",get_instance_var("event_control") + 1);
+    instance_event(strnpcinfo(0),"OnEvent" + (get_instance_var("event_control") > 9 ? get_instance_var("event_control") : ("0" + get_instance_var("event_control"))),false);
+end;
+
+OnEvent01:
+    set_instance_var("fb",1);
+    sleep 1500;
+    instance_announce instance_id(),"Ilse El Heine: It seems that I messed up everyone's coordinates.",bc_map,0xAAFFFF;
+    sleep 2000;
+    instance_announce instance_id(),"Tris: Where are we? Where is everyone? It's pitch black here!",bc_map,0xFFFFAA;
+    sleep 2000;
+    specialeffect EF_BEGINSPELL6,AREA,instance_npcname("Heine#_1");
+    sleep 1000;
+    specialeffect EF_READYPORTAL,AREA,instance_npcname("Heine#_1");
+    sleep 1500;
+    specialeffect EF_PORTAL,AREA,instance_npcname("Heine#_1");
+    sleep 1000;
+    instance_enable("Heine#_1",true);
+    specialeffect EF_REDBODY,AREA,instance_npcname("Heine#_1");
+    sleep 2000;
+    npctalk "Calm down, Tris. I'll find your coordinates using the tablet.",instance_npcname("Heine#_1");
+    sleep 3000;
+    npctalk "Alright, I'll start by scanning the surroundings area's mana. That could help us understand our surrounding.",instance_npcname("Heine#_1");
+    specialeffect EF_BEGINSPELL6,AREA,instance_npcname("Tan#_1");
+    sleep 1000;
+    npctalk "Oh, I detected someone already. Can the tablet detect mana without any issues?",instance_npcname("Heine#_1");
+    specialeffect EF_READYPORTAL,AREA,instance_npcname("Tan#_1");
+    sleep 1500;
+    specialeffect EF_PORTAL,AREA,instance_npcname("Tan#_1");
+    sleep 1000;
+    instance_enable("Tan#_1",true);
+    specialeffect EF_REDBODY,AREA,instance_npcname("Tan#_1");
+    sleep 2000;
+    npctalk "I apologize to interrupt you while things are still chaotic, but we have a problem over here.",instance_npcname("Tan#_1");
+    sleep 2000;
+    npctalk "Oh, Tan? You were the one with the closest to us. I'm still indentifying the others coordinates, so wait for a bit.",instance_npcname("Heine#_1");
+    sleep 2000;
+    npctalk "It's not a coordinate problem. I've found what appears to be a serpent's egg where I landed.",instance_npcname("Tan#_1");
+    sleep 2000;
+    npctalk "I see... how big was it?",instance_npcname("Heine#_1");
+    sleep 500;
+    npctalk "Hmm, It looked pretty big. It seems like the traces of the eggs lead somewhere",instance_npcname("Tan#_1");
+    sleep 3500;
+    npctalk "Tan. Don't touch anything and stay where you are. We'll resolve it once the I find everyone's coordinate.",instance_npcname("Heine#_1");
+    sleep 3500;
+    npctalk "What's your plan?",instance_npcname("Tan#_1");
+    sleep 1000;
+    npctalk "I've been working on my area warp magic recently. But, I didn't expect that I would use it in this situation.",instance_npcname("Heine#_1");
+    sleep 3000;
+    instance_announce instance_id(),"Tris' Shout: Ah, Whatever you will do, do it quickly, Heine. It's pitch black in here.",bc_map,0xFFFFAA;
+    sleep 3000;
+    npctalk "Heine, can you detect my coordinates?",instance_npcname("Tan#_1");
+    sleep 3000;
+    npctalk "Tes, I've found yours first. I'm almost done locating everyone else.",instance_npcname("Heine#_1");
+    sleep 4000;
+    specialeffect EF_BEGINSPELL6,AREA,instance_npcname("Heine#_1");
+    sleep 1000;
+    npctalk "Just like this...",instance_npcname("Heine#_1");
+    sleep 3000;
+    specialeffect EF_READYPORTAL,AREA,instance_npcname("Tan#_1");
+    specialeffect EF_READYPORTAL,AREA,instance_npcname("Heine#_1");
+    npctalk "Oh... It seems that I found everyone." + get_instance_var("pt_leader$") + ", letting you hold the tablet was a stroke of genius. The compatibility is perfect~",instance_npcname("Heine#_1");
+    sleep 1500;
+    specialeffect EF_PORTAL,AREA,instance_npcname("Tan#_1");
+    specialeffect EF_PORTAL,AREA,instance_npcname("Heine#_1");
+    sleep 3000;
+    npctalk "Alright. I hope this works. Everyone get ready to experience my Hopi-hop Spacial Jump!",instance_npcname("Heine#_1");
+    sleep 1000;
+    specialeffect EF_READYPORTAL,AREA,instance_npcname("Tan#_1");
+    specialeffect EF_READYPORTAL,AREA,instance_npcname("Heine#_1");
+    sleep 1500;
+    specialeffect EF_PORTAL,AREA,instance_npcname("Tan#_1");
+    specialeffect EF_PORTAL,AREA,instance_npcname("Heine#_1");
+    npctalk "Please change that ridiculous name!",instance_npcname("Tan#_1");
+    sleep 1000;
+    mapwarp get_instance_var("map$"),get_instance_var("map$"),100,175;
+end;
+
+OnEvent02:
+    set_instance_var("fb",2);
+    instance_enable("Tan#_1",false);
+    instance_enable("Tan#_2",true);
+    instance_enable("Heine#_1",false);
+    instance_enable("#s_con_2",true);
+    instance_enable("Tris#_4",true);
+    cloaknpc(instance_npcname("Tris#_4"),true);
+end;
+
+OnEvent03:
+    set_instance_var("fb",3);
+    instance_enable("#s_con_2",false);
+    pcblock(true,get_instance_var("pt_leader"));
+    sleep 500;
+    specialeffect2 EF_READYPORTAL,AREA,get_instance_var("pt_leader$");
+    sleep 1000;
+    pcblock(false,get_instance_var("pt_leader"));
+    specialeffect2 EF_PORTAL,AREA,get_instance_var("pt_leader$");
+    npctalk "Are they coming now?",instance_npcname("Tan#_2");
+    setarray .@names$,"Tris#_2","Heine#_2","Maristella#_2","Galaxia#_2","Yohan#_2","Gunter#_2","Ivan#_2","Wilhelm#_2","Richard#_2","Reinhardt#_2","Laura#_2","Aurelie#_2","Nadoyo#_2";
+    .@size = getarraysize(.@names$);
+    for(.@i = 0; .@i < .@size; .@i++){
+        specialeffect EF_BEGINSPELL6,AREA,instance_npcname(.@names$[.@i]);
+        sleep 100;
+    }
+    for(.@i = 0; .@i < .@size; .@i++){
+        specialeffect EF_READYPORTAL,AREA,instance_npcname(.@names$[.@i]);
+        sleep 100;
+    }
+    for(.@i = 0; .@i < .@size; .@i++){
+        specialeffect EF_PORTAL,AREA,instance_npcname(.@names$[.@i]);
+        sleep 100;
+    }
+    for(.@i = 0; .@i < .@size; .@i++){
+        specialeffect EF_FIRE_RAIN,instance_npcname(.@names$[.@i]);
+        specialeffect EF_TETRA,AREA,instance_npcname(.@names$[.@i]);
+        sleep 100;
+    }
+    npctalk "I should be thankful that I'm not the target of this Hopi-hopi whatever it is called.",instance_npcname("Tan#_2");
+    for(.@i = 0; .@i < .@size; .@i++){
+        instance_enable(.@names$[.@i],true);
+        specialeffect EF_REDBODY,AREA,instance_npcname(.@names$[.@i]);
+        sleep 100;
+    }
+    for(.@i = 0; .@i < .@size; .@i++){
+        removespecialeffect EF_REDBODY,AREA,instance_npcname(.@names$[.@i]);
+        specialeffect EF_MASS_SPIRAL,instance_npcname(.@names$[.@i]);
+        sleep 100;
+    }
+    npctalk "Ueeeeek~~~~",instance_npcname("Laura#_2");
+    emotion ET_OOPS,getnpcid(0,instance_npcname("Laura#_2"));
+    sleep 1000;
+    npctalk "I don't want to use this... Hipo-hopo? What it is again. Heine!",instance_npcname("Maristella#_2");
+    emotion ET_ABS,getnpcid(0,instance_npcname("Maristella#_2"));
+    sleep 3000;
+    npctalk "Ugh, it feels disgusting. It feels like my insides were flipped, soaked in oil, and swallowed it again.",instance_npcname("Galaxia#_2");
+    emotion ET_CONFUSE,getnpcid(0,instance_npcname("Galaxia#_2"));
+    sleep 3000;
+    npctalk "Heine, never use that magic called Hopi-hopi whatever it is on me again. This isn't a request.",instance_npcname("Richard#_2");
+    emotion ET_OTL,getnpcid(0,instance_npcname("Richard#_2"));
+    sleep 4000;
+    npctalk "Ah, seeing that everyone is still in one piece, maybe it's safe to announce Hopi-hop spacial jump to the world after all.",instance_npcname("Heine#_2");
+    sleep 4000;
+    npctalk "Can everyone quiet down? Tan has something to say.",instance_npcname("Tris#_2");
+    sleep 3000;
+    npctalk "Hopi-hopi... No, not that, I was thinking of smashing this giant egg before all of you arrived.",instance_npcname("Tan#_2");
+    sleep 3000;
+    npctalk "But I held back because Heine told me not to touch it. What I'm saying is…",instance_npcname("Tan#_2");
+    sleep 3000;
+    npctalk "Tan, I think I know what you're about to say. How about we reconsider?",instance_npcname("Reinhardt#_2");
+    sleep 3000;
+    npctalk "What if we just smash the egg and see what happens?",instance_npcname("Tan#_2");
+    sleep 1500;
+    npctalk "Oh, please. How could you even think about that without thinking of the possible consequences. Do you have extra lives?",instance_npcname("Heine#_2");
+    sleep 4000;
+    npctalk "If we smash it, the serpent might detect our location.",instance_npcname("Wilhelm#_2");
+    sleep 3000;
+    npctalk "But if we leave it, there's a chance that it might hatch. ",instance_npcname("Nadoyo#_2");
+    sleep 3000;
+    npctalk "I don't like leaving a potential danger. I'm with Tan on this.",instance_npcname("Ivan#_2");
+    sleep 3000;
+    npctalk "I don't think this egg is related to the giant serpent. We should examine the mana traces before destroying it.",instance_npcname("Tris#_2");
+    sleep 5000;
+    npctalk "Can we do that without Heine being here?",instance_npcname("Maristella#_2");
+    sleep 3000;
+    npctalk "Hm. It's possible. Everyone, can you focus your mana on the egg?",instance_npcname("Heine#_2");
+    sleep 3000;
+    npctalk "Hm...",instance_npcname("Tan#_2");
+    sleep 2000;
+    npctalk "So, do I just channel my mana to the egg?",instance_npcname("Tan#_2");
+    specialeffect EF_GREENCASTING,AREA,instance_npcname("Tan#_2");
+    specialeffect EF_WHITEBODY,AREA,instance_npcname("Tan#_2");
+    specialeffect EF_BEGINSPELL_N2,AREA,instance_npcname("#s_con_3");
+    sleep 2500;
+    npctalk "Is this correct?",instance_npcname("Aurelie#_2");
+    specialeffect EF_GREENCASTING,AREA,instance_npcname("Aurelie#_2");
+    specialeffect EF_WHITEBODY,AREA,instance_npcname("Aurelie#_2");
+    specialeffect EF_BEGINSPELL_N2,AREA,instance_npcname("#s_con_3");
+    sleep 500;
+    npctalk "Am I doing this right? Well, I'm going to it anyway.",instance_npcname("Galaxia#_2");
+    specialeffect EF_GREENCASTING,AREA,instance_npcname("Galaxia#_2");
+    specialeffect EF_WHITEBODY,AREA,instance_npcname("Galaxia#_2");
+    specialeffect EF_BEGINSPELL_N2,AREA,instance_npcname("#s_con_3");
+    sleep 2000;
+    npctalk "Done.",instance_npcname("Gunter#_2");
+    specialeffect EF_GREENCASTING,AREA,instance_npcname("Gunter#_2");
+    specialeffect EF_WHITEBODY,AREA,instance_npcname("Gunter#_2");
+    specialeffect EF_BEGINSPELL_N2,AREA,instance_npcname("#s_con_3");
+    sleep 500;
+    npctalk "I'm doing it, I'm not sure if it's correct.",instance_npcname("Wilhelm#_2");
+    specialeffect EF_GREENCASTING,AREA,instance_npcname("Wilhelm#_2");
+    specialeffect EF_WHITEBODY,AREA,instance_npcname("Wilhelm#_2");
+    specialeffect EF_BEGINSPELL_N2,AREA,instance_npcname("#s_con_3");
+    sleep 2000;
+    npctalk "I'm doing it too. I'm also not sure if it's correct.",instance_npcname("Reinhardt#_2");
+    specialeffect EF_GREENCASTING,AREA,instance_npcname("Reinhardt#_2");
+    specialeffect EF_WHITEBODY,AREA,instance_npcname("Reinhardt#_2");
+    specialeffect EF_BEGINSPELL_N2,AREA,instance_npcname("#s_con_3");
+    sleep 2500;
+    npctalk "I did it also.",instance_npcname("Tris#_2");
+    specialeffect EF_GREENCASTING,AREA,instance_npcname("Tris#_2");
+    specialeffect EF_WHITEBODY,AREA,instance_npcname("Tris#_2");
+    specialeffect EF_BEGINSPELL_N2,AREA,instance_npcname("#s_con_3");
+    sleep 1000;
+    npctalk "Done.",instance_npcname("Maristella#_2");
+    specialeffect EF_GREENCASTING,AREA,instance_npcname("Maristella#_2");
+    specialeffect EF_WHITEBODY,AREA,instance_npcname("Maristella#_2");
+    specialeffect EF_BEGINSPELL_N2,AREA,instance_npcname("#s_con_3");
+    sleep 500;
+    npctalk "Done.",instance_npcname("Yohan#_2");
+    specialeffect EF_GREENCASTING,AREA,instance_npcname("Yohan#_2");
+    specialeffect EF_WHITEBODY,AREA,instance_npcname("Yohan#_2");
+    specialeffect EF_BEGINSPELL_N2,AREA,instance_npcname("#s_con_3");
+    sleep 500;
+    npctalk "I did it.",instance_npcname("Ivan#_2");
+    specialeffect EF_GREENCASTING,AREA,instance_npcname("Ivan#_2");
+    specialeffect EF_WHITEBODY,AREA,instance_npcname("Ivan#_2");
+    specialeffect EF_BEGINSPELL_N2,AREA,instance_npcname("#s_con_3");
+    sleep 500;
+    npctalk "Done.",instance_npcname("Richard#_2");
+    specialeffect EF_GREENCASTING,AREA,instance_npcname("Richard#_2");
+    specialeffect EF_WHITEBODY,AREA,instance_npcname("Richard#_2");
+    specialeffect EF_BEGINSPELL_N2,AREA,instance_npcname("#s_con_3");
+    sleep 500;
+    npctalk "All done.",instance_npcname("Laura#_2");
+    specialeffect EF_GREENCASTING,AREA,instance_npcname("Laura#_2");
+    specialeffect EF_WHITEBODY,AREA,instance_npcname("Laura#_2");
+    specialeffect EF_BEGINSPELL_N2,AREA,instance_npcname("#s_con_3");
+    sleep 500;
+    npctalk "Done.",instance_npcname("Nadoyo#_2");
+    specialeffect EF_GREENCASTING,AREA,instance_npcname("Nadoyo#_2");
+    specialeffect EF_WHITEBODY,AREA,instance_npcname("Nadoyo#_2");
+    specialeffect EF_BEGINSPELL_N2,AREA,instance_npcname("#s_con_3");
+    sleep 500;
+    instance_event("#EP21_final_battle","OnEvent",false);
+end;
+
+OnEvent04:
+    set_instance_var("fb",4);
+    instance_enable("#s_con_3",true);
+    specialeffect EF_MARKING_USE_CHANGEMONSTER,AREA,instance_npcname("#s_con_3");
+    playBGMall "158",get_instance_var("map$");
+end;
+
+OnEvent05:
+    set_instance_var("fb",5);
+    specialeffect2 EF_GREENCASTING,AREA,get_instance_var("pt_leader$");
+    specialeffect2 EF_WHITEBODY,AREA,get_instance_var("pt_leader$");
+    specialeffect EF_BEGINSPELL_N2,AREA,instance_npcname("#s_con_3");
+    instance_announce instance_id(),"[[ So many appetizing preys have come to me. ]]",bc_map,0xFFC3B9;
+    sleep 500;
+    instance_enable("#s_con_3",false);
+    removespecialeffect EF_MARKING_USE_CHANGEMONSTER,AREA,instance_npcname("#s_con_3");
+    instance_event(strnpcinfo(0),"OnDevil",false);
+    sleep 2000;
+    instance_announce instance_id(),"[[ Have you come to celebrate me attaining divinity rivaling Jormungandr? ]]",bc_map,0xFFC3B9;
+    sleep 5000;
+    npctalk "Who are you! What have you done to my mind? Reveal yourself!",instance_npcname("Tan#_2");
+    sleep 3000;
+    instance_announce instance_id(),"[[ I shall stand as the new god of this era! ]]",bc_map,0xFFC3B9;
+    sleep 2000;
+    npctalk "What is this. Could it be the will of the Rgan?",instance_npcname("Tris#_2");
+    sleep 2000;
+    npctalk "This immense mana. Has it truly gained divinity?",instance_npcname("Heine#_2");
+    sleep 3000;
+    instance_announce instance_id(),"[[ The life energy that I feel from your bodies is irresistably enticing. ]]",bc_map,0xFFC3B9;
+    sleep 4000;
+    instance_announce instance_id(),"[[ It's such a waste for it to be spent idly by foolish humans. ]]",bc_map,0xFFC3B9;
+    sleep 4000;
+    instance_announce instance_id(),"[[ Come to me, and I will transform your brief existence into infinite source of life. ]]",bc_map,0xFFC3B9;
+    sleep 3000;
+    setarray .@names$,"Tan#_2","Tris#_2","Heine#_2","Maristella#_2","Galaxia#_2","Yohan#_2","Gunter#_2","Ivan#_2","Wilhelm#_2","Richard#_2","Reinhardt#_2","Laura#_2","Aurelie#_2","Nadoyo#_2";
+    .@size = getarraysize(.@names$);
+    for(.@i = 0; .@i < .@size; .@i++){
+        specialeffect EF_BIG_PORTAL,AREA,instance_npcname(.@names$[.@i]);
+        sleep 50;
+    }
+    for(.@i = 0; .@i < .@size; .@i++){
+        specialeffect EF_REDBODY,AREA,instance_npcname(.@names$[.@i]);
+        sleep 50;
+    }
+    for(.@i = 0; .@i < .@size; .@i++){
+        specialeffect EF_FIRE_RAIN,AREA,instance_npcname(.@names$[.@i]);
+        sleep 50;
+    }
+    for(.@i = 0; .@i < .@size; .@i++){
+        specialeffect EF_BANISHING_BUSTER,AREA,instance_npcname(.@names$[.@i]);
+        sleep 50;
+    }
+    for(.@i = 0; .@i < .@size; .@i++){
+        instance_enable(.@names$[.@i],false);
+        sleep 50;
+    }
+    mapwarp get_instance_var("map$"),get_instance_var("map$"),99,164;
+end;
+
+OnDevil:
+    addrid(1);
+    specialeffect2 EF_DEVIL9;
+end;
+
+OnEvent06:
+    set_instance_var("fb",6);
+    instance_enable("#s_con_4", true);
+end;
+
+OnEvent07:
+    set_instance_var("fb",7);
+    instance_enable("#s_con_4",false);
+    instance_enable("#spnt1",true);
+    instance_enable("#spnt2",true);
+    instance_event("#spnt1","OnResize",false);
+    instance_event("#spnt2","OnResize",false);
+    specialeffect EF_REDBODY,AREA,instance_npcname("#spnt1");
+    setarray .@names$,"Tan#_3","Tris#_3","Heine#_3","Maristella#_3","Galaxia#_3","Yohan#_3","Gunter#_3","Ivan#_3","Wilhelm#_3","Richard#_3","Reinhardt#_3","Laura#_3","Aurelie#_3","Nadoyo#_3";
+    setarray .@speed,200,200,200,200,100,200,30,200,200,200,200,100,200,200;
+    .@size = getarraysize(.@names$);
+    for(.@i = 0; .@i < .@size; .@i++){
+        specialeffect EF_HAMMER_OF_GOD,AREA,instance_npcname(.@names$[.@i]);
+        npcspeed .@speed[.@i],instance_npcname(.@names$[.@i]);
+        sleep 50;
+    }
+    for(.@i = 0; .@i < .@size; .@i++){
+        instance_enable(.@names$[.@i],true);
+        specialeffect EF_REDBODY,AREA,instance_npcname(.@names$[.@i]);
+        sleep 50;
+    }
+    for(.@i = 0; .@i < .@size; .@i++){
+        removespecialeffect EF_REDBODY,AREA,instance_npcname(.@names$[.@i]);
+        sleep 50;
+    }
+    npctalk "Where are we?",instance_npcname("Maristella#_3");
+    sleep 500;
+    npctalk "Is everyone alright?",instance_npcname("Heine#_3");
+    sleep 500;
+    npctalk "Damn! It's the enemy!",instance_npcname("Tan#_3");
+    sleep 500;
+    npctalk "Everyone, defensive position!",instance_npcname("Tris#_3");
+    sleep 500;
+    specialeffect EF_HAMICASTLE,AREA,instance_npcname("Aurelie#_3");
+    setnpcdisplay(instance_npcname("Aurelie#_3"), 20995);
+    specialeffect EF_HAMICASTLE,AREA,instance_npcname("Heine#_3");
+    setnpcdisplay(instance_npcname("Heine#_3"), 20995);
+    StoryGroupWalk("Tan#_3",28,27,"OnWalk01");
+    StoryGroupWalk("Heine#_3",26,26,"OnWalk01");
+    StoryGroupWalk("Galaxia#_3",26,24,"OnWalk01");
+    StoryGroupWalk("Gunter#_3",24,25,"OnWalk01");
+    StoryGroupWalk("Wilhelm#_3",24,22,"OnWalk01");
+    StoryGroupWalk("Reinhardt#_3",22,24,"OnWalk01");
+    StoryGroupWalk("Aurelie#_3",22,21,"OnWalk01");
+    StoryGroupWalk("Tris#_3",30,27,"OnWalk01");
+    StoryGroupWalk("Maristella#_3",32,26,"OnWalk01");
+    StoryGroupWalk("Yohan#_3",32,24,"OnWalk01");
+    StoryGroupWalk("Ivan#_3",34,25,"OnWalk01");
+    StoryGroupWalk("Richard#_3",34,23,"OnWalk01");
+    StoryGroupWalk("Laura#_3",36,24,"OnWalk01");
+end;
+
+OnEvent08:
+    sleep 250;
+    specialeffect EF_HAMICASTLE,AREA,instance_npcname("Aurelie#_3");
+    setnpcdisplay(instance_npcname("Aurelie#_3"), 4_EP21_AURELIE);
+    specialeffect EF_HAMICASTLE,AREA,instance_npcname("Heine#_3");
+    setnpcdisplay(instance_npcname("Heine#_3"), 4_EP21_HEINE_TAB);
+    instance_announce instance_id(),"[[ Mmm, fresh life force! ]]",bc_map,0xFFC3B9;
+    specialeffect EF_CLOUD4,AREA,instance_npcname("#spnt1");
+    setarray .@names$,"Tan#_3","Tris#_3","Heine#_3","Maristella#_3","Galaxia#_3","Yohan#_3","Gunter#_3","Ivan#_3","Wilhelm#_3","Richard#_3","Reinhardt#_3","Laura#_3","Aurelie#_3","Nadoyo#_3";
+    for(.@i = 0; .@i < .@size; .@i++)
+        npcspeed .@speed[.@i],instance_npcname(.@names$[.@i]);
+    npcspeed 100,instance_npcname("Richard#_3");
+    StoryGroupWalk("Tan#_3",28,28,"OnWalk02");
+    StoryGroupWalk("Heine#_3",26,27,"OnWalk02");
+    StoryGroupWalk("Galaxia#_3",26,25,"OnWalk02");
+    StoryGroupWalk("Gunter#_3",24,26,"OnWalk02");
+    StoryGroupWalk("Wilhelm#_3",24,24,"OnWalk02");
+    StoryGroupWalk("Reinhardt#_3",22,25,"OnWalk02");
+    StoryGroupWalk("Aurelie#_3",22,23,"OnWalk02");
+    StoryGroupWalk("Tris#_3",30,28,"OnWalk02");
+    StoryGroupWalk("Maristella#_3",32,27,"OnWalk02");
+    StoryGroupWalk("Yohan#_3",32,25,"OnWalk02");
+    StoryGroupWalk("Ivan#_3",34,26,"OnWalk02");
+    StoryGroupWalk("Richard#_3",34,24,"OnWalk02");
+    StoryGroupWalk("Laura#_3",36,25,"OnWalk02");
+    StoryGroupWalk("Nadoyo#_3",36,23,"OnWalk02");
+    StoryGroupWalk("#spnt1",28,34,"OnWalk02");
+    StoryGroupWalk("#spnt2",28,34,"OnWalk02");
+end;
+
+OnEvent09:
+    sleep 250;
+    instance_event("#EP21_final_battle","OnDamage",false);
+    sleep 1500;
+    instance_announce instance_id(),"[[ Absorbing all of you will bring me one step closer to godhood ]]",bc_map,0xFFC3B9;
+    sleep 3000;
+    instance_announce instance_id(),"[[ Witness a rebirth of a new god! ]]",bc_map,0xFFC3B9;
+    sleep 2000;
+    specialeffect EF_DQ9_CHARGE3,AREA,instance_npcname("#spnt1");
+    npctalk "It's casting something!",instance_npcname("Reinhardt#_3");
+    sleep 1000;
+    npctalk "An immense power is closing onto us!",instance_npcname("Maristella#_3");
+    sleep 4000;
+    specialeffect EF_DQ9_CHARGE4,AREA,instance_npcname("#spnt1");
+    sleep 2000;
+    setarray .@names$,"Tan#_3","Tris#_3","Heine#_3","Maristella#_3","Galaxia#_3","Yohan#_3","Gunter#_3","Ivan#_3","Wilhelm#_3","Richard#_3","Reinhardt#_3","Laura#_3","Aurelie#_3","Nadoyo#_3";
+    setarray .@talk$,"Gah!","Ugh","Ugh…","No, noo!","Argh.","Ahh!!","Ugh","How dare you!","Grgh..","Grr","This…","Ugh","Wahh!!";
+    .@size = getarraysize(.@names$);
+    instance_event(strnpcinfo(0),"OnBurn",false);
+    for(.@i = 0; .@i < .@size; .@i++){
+        specialeffect EF_NPC_BURNT,AREA,instance_npcname(.@names$[.@i]);
+        npctalk .@talk$[.@i],instance_npcname(.@names$[.@i]);
+        sleep 100;
+    }
+    instance_event(strnpcinfo(0),"OnVisual",false);
+    for(.@x = 0; .@x < 3; .@x++){
+        for(.@i = 0; .@i < .@size; .@i++){
+            specialeffect EF_DARKBREATH,AREA,instance_npcname(.@names$[.@i]);
+            sleep 50;
+        }
+    }
+    npctalk "What is happening!",instance_npcname("Heine#_3");
+    sleep 2000;
+    npctalk "Our life force is being drained.",instance_npcname("Ivan#_3");
+    sleep 2000;
+    instance_event(strnpcinfo(0),"OnVisual",false);
+    for(.@i = 0; .@i < .@size; .@i++){
+        specialeffect EF_DARKBREATH,AREA,instance_npcname(.@names$[.@i]);
+        sleep 50;
+    }
+    npctalk "Everyone, stay focused, it's over if you lose consciousness!!",instance_npcname("Tris#_3");
+    sleep 2000;
+    npctalk "This is a power beyond what we can handle. We need to find a way out.",instance_npcname("Galaxia#_3");
+    sleep 3000;
+    instance_event(strnpcinfo(0),"OnVisual",false);
+    for(.@i = 0; .@i < .@size; .@i++){
+        specialeffect EF_DARKBREATH,AREA,instance_npcname(.@names$[.@i]);
+        sleep 50;
+    }
+    npctalk "I've got a rough idea of what's going on. Listen up everyone!",instance_npcname("Heine#_3");
+    sleep 3000;
+    npctalk "I'll try to get us all out of here! Hold on as long as you can!",instance_npcname("Heine#_3");
+    sleep 2500;
+    instance_event(strnpcinfo(0),"OnVisual",false);
+    for(.@i = 0; .@i < .@size; .@i++){
+        specialeffect EF_DARKBREATH,AREA,instance_npcname(.@names$[.@i]);
+        sleep 50;
+    }
+    npctalk "It looks like we're running out of time, I'll hold off the serpent to buy us some time!",instance_npcname("Tris#_3");
+    sleep 3000;
+    npctalk "Stop! The mana interference near the serpent is too strong! None of my spells would work there!",instance_npcname("Heine#_3");
+    sleep 3000;
+    specialeffect EF_MAPSPHERE,AREA,instance_npcname("#spnt1");
+    npctalk "Yes, Heine is right. Stop it Tris. You've got more important things to do.",instance_npcname("Tan#_3");
+    unitwalk getnpcid(0,instance_npcname("Tan#_3")),28,31,get_instance_var("control$") + "::OnEvent";
+end;
+
+OnEvent10:
+    sleep 3000;
+    npctalk "Tan! Don't do it.",instance_npcname("Tris#_3");
+    unitwalk getnpcid(0,instance_npcname("Tris#_3")),28,30,get_instance_var("control$") + "::OnEvent";
+end;
+
+OnEvent11:
+    sleep 100;
+    specialeffect EF_TETRA,AREA,instance_npcname("Tris#_3");
+    specialeffect EF_FIRESPLASHHIT,AREA,instance_npcname("Tris#_3");
+    cloaknpc(instance_npcname("Tris#_3"),true);
+    cloaknpc(instance_npcname("Tris#_4"),false);
+    specialeffect EF_NPC_BURNT,AREA,instance_npcname("Tris#_4");
+    sleep 1000;
+    npctalk "I'll hold it off here. All of you...",instance_npcname("Tan#_3");
+    sleep 3000;
+    npctalk "survive...",instance_npcname("Tan#_3");
+    setarray .@names$,"Tan#_3","Tris#_3","Heine#_3","Maristella#_3","Galaxia#_3","Yohan#_3","Gunter#_3","Ivan#_3","Wilhelm#_3","Richard#_3","Reinhardt#_3","Laura#_3","Aurelie#_3","Nadoyo#_3";
+    .@size = getarraysize(.@names$);
+    instance_event(strnpcinfo(0),"OnVisual",false);
+    for(.@i = 0; .@i < .@size; .@i++){
+        specialeffect EF_DARKBREATH,AREA,instance_npcname(.@names$[.@i]);
+        sleep 50;
+    }
+    specialeffect EF_BEGINSPELL_YB,AREA,instance_npcname("Tan#_3");
+    sleep 2000;
+    npctalk "Tan! Come back here! My teleportation magic won't work over there!!",instance_npcname("Heine#_3");
+    sleep 2000;
+    instance_announce instance_id(),"[[ Your wriggling is annoying. Stay still, all of you. ]]",bc_map,0xFFC3B9;
+    unitwalk getnpcid(0,instance_npcname("#spnt1")),28,31,get_instance_var("control$") + "::OnEvent";
+end;
+
+OnEvent12:
+    sleep 2000;
+    setarray .@names$,"Tan#_3","Tris#_3","Heine#_3","Maristella#_3","Galaxia#_3","Yohan#_3","Gunter#_3","Ivan#_3","Wilhelm#_3","Richard#_3","Reinhardt#_3","Laura#_3","Aurelie#_3","Nadoyo#_3";
+    for(.@i = 1; .@i < .@size; .@i++){
+        specialeffect EF_LIGHTSPHERE_MOON,AREA,instance_npcname(.@names$[.@i]);
+        sleep 50;
+    }
+    sleep 500;
+    npctalk "Argh! The mana interference is too strong!",instance_npcname("Heine#_3");
+    sleep 100;
+    npctalk "What kind of power is this?",instance_npcname("Galaxia#_3");
+    sleep 100;
+    npctalk "No",instance_npcname("Gunter#_3");
+    sleep 100;
+    npctalk "Ugh! My body won't move even with magic!!",instance_npcname("Wilhelm#_3");
+    sleep 100;
+    npctalk "Tan! Get out of there! If you get any closer...",instance_npcname("Reinhardt#_3");
+    sleep 100;
+    npctalk "What is this mana! I can't move!",instance_npcname("Aurelie#_3");
+    sleep 100;
+    npctalk "I can't move my body...",instance_npcname("Tris#_4");
+    sleep 100;
+    npctalk "Run away, Tan!",instance_npcname("Maristella#_3");
+    sleep 100;
+    npctalk "Please don't…",instance_npcname("Yohan#_3");
+    sleep 100;
+    npctalk "Why! Why can't I move!!",instance_npcname("Ivan#_3");
+    sleep 100;
+    npctalk "Tan! Don' get any closer, stay back!!",instance_npcname("Richard#_3");
+    sleep 100;
+    npctalk "Argh…",instance_npcname("Laura#_3");
+    sleep 100;
+    npctalk "This doesn't feel right!",instance_npcname("Nadoyo#_3");
+    sleep 3000;
+    specialeffect EF_PRIMECHARGE2,AREA,instance_npcname("#spnt1");
+    setnpcdisplay(instance_npcname("Tan#_3"),22371);
+    setnpcdisplay(instance_npcname("Tan#_3"),22302);
+    specialeffect EF_POTION_BERSERK,AREA,instance_npcname("Tan#_3");
+    sleep 2000;
+    npctalk "Gaaaaaah!!",instance_npcname("Tan#_3");
+    setnpcdisplay(instance_npcname("Tan#_3"),22371);
+    setnpcdisplay(instance_npcname("Tan#_3"),22302);
+    specialeffect EF_POTION_BERSERK,AREA,instance_npcname("Tan#_3");
+    sleep 1000;
+    setnpcdisplay(instance_npcname("Tan#_3"),22371);
+    setnpcdisplay(instance_npcname("Tan#_3"),22302);
+    specialeffect EF_POTION_BERSERK,AREA,instance_npcname("Tan#_3");
+    instance_enable("#tan_effect",true);
+    sleep 1000;
+    npctalk "Yaaaaaah!!",instance_npcname("Tan#_3");
+    specialeffect EF_POTION_BERSERK,AREA,instance_npcname("Tan#_3");
+    setnpcdisplay(instance_npcname("Tan#_3"),22371);
+    instance_event("#tan_effect","OnEffect",false);
+    setnpcdisplay(instance_npcname("Tan#_3"),22302);
+    instance_event(strnpcinfo(0),"OnBerserk",false);
+    for(.@i = 0; .@i < 5; .@i++){
+        sleep 900;
+        setnpcdisplay(instance_npcname("Tan#_3"),22371);
+        sleep 100;
+        setnpcdisplay(instance_npcname("Tan#_3"),22302);
+    }
+    npctalk "Heine! If you don't do this now, you won't have time to cast that damn Hipo-hopo whatever.",instance_npcname("Tan#_3");
+    specialeffect EF_PRIMECHARGE4,AREA,instance_npcname("Tan#_3");
+    sleep 2000;
+    npctalk "On it!",instance_npcname("Heine#_3");
+    sleep 1000;
+    npctalk "Hopi-hop spacial jump! I can't hold it any longer, do it while I'm still sane!!",instance_npcname("Tan#_3");
+    specialeffect EF_SCREEN_QUAKE,AREA,instance_npcname("Tan#_3");
+    specialeffect EF_PRIMECHARGE4,AREA,instance_npcname("Tan#_3");
+    instance_event("#tan_effect","OnEffect",false);
+    instance_event("#EP21_final_battle","OnEffect2",false);
+    sleep 9500;
+    setarray .@names$,"Tan#_3","Tris#_4","Heine#_3","Maristella#_3","Galaxia#_3","Yohan#_3","Gunter#_3","Ivan#_3","Wilhelm#_3","Richard#_3","Reinhardt#_3","Laura#_3","Aurelie#_3","Nadoyo#_3";
+    for(.@i = 1; .@i < getarraysize(.@names$); .@i++){
+        specialeffect EF_READYPORTAL,AREA,instance_npcname(.@names$[.@i]);
+        specialeffect EF_PORTAL,AREA,instance_npcname(.@names$[.@i]);
+        specialeffect EF_REDBODY,AREA,instance_npcname(.@names$[.@i]);
+        specialeffect EF_REDLINE,AREA,instance_npcname(.@names$[.@i]);
+        specialeffect EF_TETRA,AREA,instance_npcname(.@names$[.@i]);
+        instance_enable(.@names$[.@i], false);
+        sleep 50;
+    }
+    instance_event("#EP21_final_battle","OnEvent",false);
+end;
+
+OnBerserk:
+    for(.@i = 0; .@i < 120; .@i++){
+        specialeffect EF_POTION_BERSERK,AREA,instance_npcname("Tan#_3");
+        sleep 50;
+    }
+end;
+
+OnEvent13:
+    set_instance_var("fb",7);
+    instance_enable("#tan_effect",false);
+    instance_enable("#s_con_5", true);
+    sleep 10;
+    setnpcdisplay(instance_npcname("Tan#_3"),22371);
+    mapwarp get_instance_var("map$"),get_instance_var("map$"),28,27;
+end;
+
+OnEvent14:
+    set_instance_var("fb",8);
+    instance_event("#EP21_final_battle","OnEffect3",false);
+    sleep 10;
+    instance_event("#EP21_final_battle","OnDevil2",false);
+    sleep 4500;
+    instance_announce instance_id(),"[[ Do you really think you could escape me? How foolish. ]]",bc_map,0xFFC3B9;
+    sleep 4000;
+    instance_enable("#s_con_5",false);
+    npctalk "[[ The power coming from you. It's extraordinary. ]]",instance_npcname("Tan#_3");
+    unitwalk getnpcid(0,instance_npcname("Tan#_3")),28,28,get_instance_var("control$") + "::OnEvent";
+end;
+
+OnEffect3:
+    for(.@i = 0; .@i < 100; .@i++){
+        specialeffect EF_POTION_BERSERK,AREA,instance_npcname("Tan#_3");
+        sleep 50;
+    }
+end;
+
+OnDevil2:
+    addrid(1);
+    specialeffect2 EF_DEVIL10;
+end;
+
+OnEvent15:
+    mapwarp get_instance_var("map$"),get_instance_var("map$"),28,25;
+    instance_enable("#spnt1",false);
+    instance_enable("#spnt2",false);
+    instance_enable("Tan#_3",false);
+    instance_event("#EP21_final_battle","OnSummonStory",false);
+end;
+
+OnEvent16:
+    set_instance_var("fb", 11);
+    sleep 500;
+    npctalk "Tris... I still sense your presence.",instance_npcname("Tan#_ed");
+    sleep 2000;
+    instance_announce instance_id(),"Tris: Tan. We're on our way back, hold on a little longer!",bc_map,0xFFFFAA;
+    sleep 5000;
+    npctalk "Yeah... hurry up. The time I can hold this thing down is not long.",instance_npcname("Tan#_ed");
+    sleep 5000;
+    setnpcdisplay(instance_npcname("Tan#_ed"),22300);
+    npctalk "[[ Are you coming back to kill your friend, Tris. This is going to be entertaining. ]]",instance_npcname("Tan#_ed");
+    sleep 5000;
+    setnpcdisplay(instance_npcname("Tan#_ed"),22371);
+    npctalk "Shut up! You damn serpent!",instance_npcname("Tan#_ed");
+    sleep 3000;
+    setnpcdisplay(instance_npcname("Tan#_ed"),22300);
+    npctalk "[[ Your body already belongs to me. I would like to see what would your friend do when they see me beg for my life with tears on my eyes. ]]",instance_npcname("Tan#_ed");
+    sleep 5000;
+    setnpcdisplay(instance_npcname("Tan#_ed"),22371);
+    npctalk "Tris... No matter what I say, don't listen!",instance_npcname("Tan#_ed");
+    sleep 3000;
+    setnpcdisplay(instance_npcname("Tan#_ed"),22300);
+    npctalk "[[ It doesn't matter if this body lives or dies, but can your human friends really kill you? I wonder. ]]",instance_npcname("Tan#_ed");
+    sleep 5000;
+    instance_announce instance_id(),"Tris: Tan! Don't give up until the end!",bc_map,0xFFFFAA;
+    sleep 5000;
+    npctalk "[[ Tris... are you really going to kill me? Your dear friend with your own hands? Ahahahaha! ]]",instance_npcname("Tan#_ed");
+    sleep 5000;
+    setnpcdisplay(instance_npcname("Tan#_ed"),22371);
+    npctalk "Shut up! Shut up!!! Shut up! You wretched creature!",instance_npcname("Tan#_ed");
+    sleep 5000;
+    setnpcdisplay(instance_npcname("Tan#_ed"),22300);
+    npctalk "[[ Save me... we're friends right, Tris. I want to live. ]]",instance_npcname("Tan#_ed");
+    sleep 5000;
+    instance_announce instance_id(),"Tris: Tan...",bc_map,0xFFFFAA;
+    sleep 5000;
+    playBGMall "156",get_instance_var("map$");
+    setnpcdisplay(instance_npcname("Tan#_ed"),22371);
+    npctalk "Tris! Don't be fooled by my voice! Don't listen to anything it says...",instance_npcname("Tan#_ed");
+    sleep 5000;
+    setnpcdisplay(instance_npcname("Tan#_ed"),22300);
+    npctalk "[[ Don't... kill me. Please... Tris. I'm begging you. ]]",instance_npcname("Tan#_ed");
+    sleep 3000;
+    setnpcdisplay(instance_npcname("Tan#_ed"),22371);
+    npctalk "Tris--! Do it! Now--!",instance_npcname("Tan#_ed");
+    sleep 3000;
+    setnpcdisplay(instance_npcname("Tan#_ed"),22300);
+    npctalk "[[ Please... Tris, I want to live. Hehehe ]]",instance_npcname("Tan#_ed");
+    sleep 3000;
+    setnpcdisplay(instance_npcname("Tan#_ed"),22371);
+    npctalk "Finish it! Tris!",instance_npcname("Tan#_ed");
+    sleep 2000;
+    instance_announce instance_id(),"Tris: Tan, forgive me.",bc_map,0xFFFFAA;
+    sleep 5000;
+    specialeffect EF_READYPORTAL,AREA,instance_npcname("Tris#_ed");
+    specialeffect EF_PORTAL,AREA,instance_npcname("Tris#_ed");
+    specialeffect EF_D_TAIL,AREA,instance_npcname("Tris#_ed");
+    specialeffect EF_TETRA,AREA,instance_npcname("Tris#_ed");
+    instance_enable("Tris#_ed",true);
+    npcspeed 20,instance_npcname("Tris#_ed");
+    specialeffect EF_REDBODY,AREA,instance_npcname("Tris#_ed");
+    removespecialeffect EF_REDBODY,AREA,instance_npcname("Tris#_ed");
+    specialeffect EF_MASS_SPIRAL,AREA,instance_npcname("Tris#_ed");
+    specialeffect EF_HFLIMOON3,AREA,instance_npcname("Tan#_ed");
+    specialeffect EF_TETRA,AREA,instance_npcname("Tan#_ed");
+    npcwalkto(28,28,instance_npcname("Tris#_ed"));
+    sleep 1000;
+    specialeffect EF_HFLIMOON3,AREA,instance_npcname("Tan#_ed");
+    specialeffect EF_TETRA,AREA,instance_npcname("Tan#_ed");
+    npcwalkto(28,36,instance_npcname("Tris#_ed"));
+    sleep 1000;
+    specialeffect EF_HFLIMOON3,AREA,instance_npcname("Tan#_ed");
+    specialeffect EF_TETRA,AREA,instance_npcname("Tan#_ed");
+    npcwalkto(28,28,instance_npcname("Tris#_ed"));
+    sleep 1000;
+    specialeffect EF_HFLIMOON3,AREA,instance_npcname("Tan#_ed");
+    specialeffect EF_TETRA,AREA,instance_npcname("Tan#_ed");
+    npcwalkto(28,36,instance_npcname("Tris#_ed"));
+    sleep 1000;
+    unitwalk getnpcid(0,instance_npcname("Tris#_ed")),28,28,get_instance_var("control$") + "::OnEvent";
+end;
+
+OnEvent17:
+    instance_enable("Tris#_ed",false);
+    mapwarp get_instance_var("map$"),get_instance_var("map$"),28,25;
+    sleep 500;
+    instance_enable("Heine#_3",true);
+    instance_enable("Galaxia#_3",true);
+    instance_enable("Tris#_4",true);
+    instance_enable("Maristella#_3",true);
+    instance_enable("Yohan#_3",true);
+    instance_enable("Gunter#_3",true);
+    instance_enable("Ivan#_3",true);
+    instance_enable("Wilhelm#_3",true);
+    instance_enable("Richard#_3",true);
+    instance_enable("Reinhardt#_3",true);
+    instance_enable("Laura#_3",true);
+    instance_enable("Aurelie#_3",true);
+    instance_enable("Nadoyo#_3",true);
+    specialeffect EF_HAMICASTLE,AREA,instance_npcname("Aurelie#_3");
+    setnpcdisplay(instance_npcname("Aurelie#_3"), 20995);
+    specialeffect EF_HAMICASTLE,AREA,instance_npcname("Heine#_3");
+    setnpcdisplay(instance_npcname("Heine#_3"), 20995);
+    StoryGroupWalk("Heine#_3",26,26);
+    StoryGroupWalk("Galaxia#_3",26,24);
+    StoryGroupWalk("Gunter#_3",24,25);
+    StoryGroupWalk("Wilhelm#_3",24,23);
+    StoryGroupWalk("Reinhardt#_3",22,24);
+    StoryGroupWalk("Tris#_4",30,27);
+    StoryGroupWalk("Maristella#_3",32,26);
+    StoryGroupWalk("Yohan#_3",32,24);
+    StoryGroupWalk("Ivan#_3",34,25);
+    StoryGroupWalk("Richard#_3",34,23);
+    StoryGroupWalk("Laura#_3",36,24);
+    StoryGroupWalk("Nadoyo#_3",36,22);
+end;
+
+OnEvent18:
+    StoryGroupWalk("Heine#_3",26,27);
+    StoryGroupWalk("Galaxia#_3",26,25);
+    StoryGroupWalk("Gunter#_3",24,26);
+    StoryGroupWalk("Wilhelm#_3",24,24);
+    StoryGroupWalk("Reinhardt#_3",22,25);
+    StoryGroupWalk("Tris#_4",30,28);
+    StoryGroupWalk("Maristella#_3",32,27);
+    StoryGroupWalk("Yohan#_3",32,25);
+    StoryGroupWalk("Ivan#_3",34,26);
+    StoryGroupWalk("Richard#_3",34,24);
+    StoryGroupWalk("Laura#_3",36,25);
+    StoryGroupWalk("Nadoyo#_3",36,23);
+end;
+
+OnEvent19:
+    specialeffect EF_HAMICASTLE,AREA,instance_npcname("Aurelie#_3");
+    setnpcdisplay(instance_npcname("Aurelie#_3"), 4_EP21_AURELIE);
+    specialeffect EF_HAMICASTLE,AREA,instance_npcname("Heine#_3");
+    setnpcdisplay(instance_npcname("Heine#_3"), 4_EP21_HEINE_TAB);
+    specialeffect EF_CLOAKING,AREA,instance_npcname("Tan#_ed");
+    instance_event(strnpcinfo(0),"OnBerserk3",false);
+    setnpcdisplay(instance_npcname("Tan#_ed"),4_EP21_TAN_S);
+    sleep 500;
+    setnpcdisplay(instance_npcname("Tan#_ed"),22371);
+    sleep 500;
+    setnpcdisplay(instance_npcname("Tan#_ed"),4_EP21_TAN_S);
+    sleep 500;
+    setnpcdisplay(instance_npcname("Tan#_ed"),22371);
+    sleep 500;
+    npctalk "With this... it's done...",instance_npcname("Tan#_ed");
+    setnpcdisplay(instance_npcname("Tan#_ed"),4_EP21_TAN_S);
+    npcspeed 100,instance_npcname("Heine#_3");
+    npcspeed 350,instance_npcname("Tris#_4");
+    unitwalk getnpcid(0,instance_npcname("Heine#_3")),26,29,get_instance_var("control$") + "::OnDummyWalk";
+    unitwalk getnpcid(0,instance_npcname("Tris#_4")),28,31,get_instance_var("control$") + "::OnEvent";
+OnDummyWalk:
+end;
+
+OnBerserk3:
+    for(.@i = 0; .@i < 30; .@i++){
+        specialeffect EF_POTION_BERSERK,AREA,instance_npcname("Tan#_ed");
+        sleep 100;
+    }
+end;
+
+OnEvent20:
+    npctalk "Tan...",instance_npcname("Tris#_4");
+    playBGMall "156",get_instance_var("map$");
+    sleep 3000;
+    npctalk "Well done Tris. You've finally stopped hesitating.",instance_npcname("Tan#_ed");
+    sleep 3000;
+    npctalk "...",instance_npcname("Tris#_4");
+    sleep 3000;
+    npctalk "You'll have to make many tough decisions. Remember this battle when that time comes.",instance_npcname("Tan#_ed");
+    sleep 3000;
+    npctalk "Tan, I can't do it. Without you...",instance_npcname("Tris#_4");
+    sleep 2000;
+    npctalk "You can do it. I'll be watching over you, Tris.",instance_npcname("Tan#_ed");
+    sleep 2000;
+    specialeffect EF_DELUGE,AREA,instance_npcname("Tan#_ed");
+    sleep 1000;
+    specialeffect EF_BIG_PORTAL,AREA,instance_npcname("Tan#_ed");
+    sleep 1000;
+    npctalk "Tan!!",instance_npcname("Tris#_4");
+    specialeffect EF_PROVIDENCE,AREA,instance_npcname("Tan#_ed");
+    sleep 500;
+    npctalk "Tan!! No!!",instance_npcname("Tris#_4");
+    sleep 500;
+    instance_enable("Tan#_ed",false);
+    sleep 1000;
+    npctalk "Tris... I understand your grief. But there's still work to be done.",instance_npcname("Heine#_3");
+    sleep 2000;
+    npctalk "But, Tan is...",instance_npcname("Tris#_4");
+    instance_enable("Nyar#ep21",true);
+    npcspeed 350,instance_npcname("Nyar#ep21");
+    unitwalk getnpcid(0,instance_npcname("Nyar#ep21")),32,30,get_instance_var("control$") + "::OnEvent";
+    sleep 300;
+    emotion ET_PROFUSELY_SWEAT,getnpcid(0,instance_npcname("Nyar#ep21"));
+end;
+
+OnEvent21:
+    specialeffect EF_MARKING_USE_CHANGEMONSTER,AREA,instance_npcname("Nyar#ep21");
+    npctalk "Meow!!~",instance_npcname("Nyar#ep21");
+    set_instance_var("fb", 12);
+end;
+
+OnWalk01:
+    .@var = get_instance_var("walk") + 1;
+    set_instance_var("walk", .@var);
+    if(.@var < 13) end;
+    set_instance_var("walk", 0);
+    sleep 100;
+    instance_event("#EP21_final_battle","OnEvent",false);
+end;
+
+OnWalk02:
+    .@var = get_instance_var("walk") + 1;
+    set_instance_var("walk", .@var);
+    if(.@var < 16) end;
+    set_instance_var("walk", 0);
+    sleep 100;
+    instance_event("#EP21_final_battle","OnEvent",false);
+end;
+
+function StoryGroupWalk {
+    .@gid = getnpcid(0,instance_npcname(getarg(0)));
+    .@x = getarg(1);
+    .@y = getarg(2);
+    getunitdata .@gid,.@unit;
+    // Keep the command out of a logical expression: script expressions do not
+    // short-circuit. Otherwise an actor already on its mark can be counted
+    // here and again by the walk callback, advancing the next scene too early.
+    if (.@unit[UNPC_X] == .@x && .@unit[UNPC_Y] == .@y) {
+        instance_event("#EP21_final_battle",getarg(3,"OnWalk03"),false);
+        return;
+    }
+    if (!unitwalk(.@gid,.@x,.@y,get_instance_var("control$") + "::" + getarg(3,"OnWalk03")))
+        instance_event("#EP21_final_battle",getarg(3,"OnWalk03"),false);
+    return;
+}
+
+OnWalk03:
+    .@var = get_instance_var("walk") + 1;
+    set_instance_var("walk", .@var);
+    if(.@var < 12) end;
+    set_instance_var("walk", 0);
+    sleep 100;
+    instance_event("#EP21_final_battle","OnEvent",false);
+end;
+
+OnWalk04:
+    .@var = get_instance_var("walk") + 1;
+    set_instance_var("walk", .@var);
+    if(.@var < 2) end;
+    set_instance_var("walk", 0);
+    sleep 100;
+    instance_event("#EP21_final_battle","OnEvent",false);
+end;
+
+OnDamage:
+    addrid(1);
+    specialeffect2 EF_CLAYMORE;
+    specialeffect2 EF_ACIDDEMON;
+    pushpc 3,3;
+    Hp = (MaxHp / 10);
+end;
+
+OnBurn:
+    addrid(1);
+    specialeffect2 EF_NPC_BURNT;
+end;
+
+OnVisual:
+    addrid(1);
+    specialeffect2 EF_DARKBREATH;
+end;
+
+OnEffect2:
+    sleep 3500;
+    npctalk "Tan. Sorry...",instance_npcname("Heine#_3");
+    sleep 3500;
+    specialeffect EF_BEGINSPELL6,AREA,instance_npcname("Heine#_3");
+    specialeffect EF_SCREEN_QUAKE,AREA,instance_npcname("Tan#_3");
+    npctalk "I'm not going to simply die like this! I'll find a way out, get out of here and leave this to me!",instance_npcname("Tan#_3");
+end;
+
+OnSummonStory:
+    set_instance_var("fb", 9);
+    monster get_instance_var("map$"),28,28,"Devoured Tan",22371,1,instance_npcname(strnpcinfo(0)) + "::OnStoryKill";
+    set_instance_var("gid", $@mobid[0]);
+    instance_event("#EP21_final_battle","OnSkill",false);
+end;
+
+OnStoryKill:
+    set_instance_var("fb", 10);
+    instance_enable("Tan#_ed", true);
+    instance_enable("#snd4", true);
+    mapwarp get_instance_var("map$"),get_instance_var("map$"),28,28;
+end;
+
+OnSkill:
+    sleep 1000;
+    .@gid = get_instance_var("gid");
+    if(unitexists(.@gid))
+        instance_event("#ep21_story_skill","OnSummon",false);
+end;
+}
+
+1@ep21b,74,77,3	script	Nyar#rtr	4_EP20_NYAR,{
+    if(is_party_leader() && get_instance_var("fbd") == 0){
+        mes "[Nyar]";
+        mes "Nyeow~";
+        npctalk "Nyeow~",instance_npcname("Nyar#rtr");
+        next;
+        cutin "",255;
+        mes "["+strcharinfo(0)+"]";
+        mes "Oh... a repetition?? Hm.. Is that what it this is? It might change? Variables? I don't understand.";
+        pctalk "Oh... a repetition?? Hm.. Is that what it this is? It might change? Variables? I don't understand.";
+        next;
+        cutin "ep20_nyar04.png",1;
+        mes "[Nyar]";
+        mes "Meow--!! Meow~";
+        npctalk "Meow--!! Meow~",instance_npcname("Nyar#rtr");
+        next;
+        cutin "",255;
+        mes "["+strcharinfo(0)+"]";
+        mes "A distorted time... not the same event... adjustment of levels. I think I understand.";
+        pctalk "A distorted time... not the same event... adjustment of levels. I think I understand.";
+        next;
+        if(instance_live_info(ILI_NAME) != "Final Battle(Hard)"){
+            switch(select("Quit","Begin Normal Trial","Begin Easy Trial")){
+                case 1:
+                    cutin "ep20_nyar05.png",1;
+                    mes "[Nyar]";
+                    mes "Meow~";
+                    npctalk "Meow~";
+                    close3;
+
+                case 2:
+                    set_instance_var("summon_count",40);
+                    set_instance_var("threshold", 25);
+                    set_instance_var("dmode",2);
+                    break;
+
+                case 3:
+                    set_instance_var("summon_count",30);
+                    set_instance_var("threshold", 15);
+                    set_instance_var("dmode",1);
+                    break;
+            }
+        } else {
+            switch(select("Quit","^FF0000Begin Hard Trial^000000","Begin Normal Trial")){
+                case 1:
+                    cutin "ep20_nyar05.png",1;
+                    mes "[Nyar]";
+                    mes "Meow~";
+                    npctalk "Meow~";
+                    close3;
+
+                case 2:
+                    set_instance_var("summon_count",50);
+                    set_instance_var("threshold", 35);
+                    set_instance_var("dmode",3);
+                    break;
+
+                case 3:
+                    set_instance_var("summon_count",40);
+                    set_instance_var("threshold", 25);
+                    set_instance_var("dmode",2);
+                    break;
+            }
+        }
+        set_instance_var("fbd",1);
+        instance_enable("Tan#r_1",true);
+        mapwarp get_instance_var("map$"),get_instance_var("map$"),169,27;
+        sleep 500;
+        instance_event("Tan#r_1","OnStart",false);
+    }
+    end;
+
+OnInstanceInit:
+    set_instance_var("fbd",0);
+end;
+}
+
+1@ep21b,169,34,7	script(DISABLED)	Tan#r_1	EP21_YOR_TAN,{
+    end;
+
+OnStart:
+    instance_event(strnpcinfo(0),"OnDevil",false);
+    instance_event(strnpcinfo(0),"OnEffect1",false);
+    sleep 2500;
+    instance_announce instance_id(),"[[ Do you really think you could escape me? How foolish. ]]",bc_map,0xFFC3B9;
+    sleep 3500;
+    npctalk "[[ The power coming from you. It's extraordinary. ]]",instance_npcname("Tan#r_1");
+    npcspeed 500;
+    unitwalk getnpcid(0,instance_npcname("Tan#r_1")),169,28,instance_npcname("#ep21_fb_daily") + "::OnSummon";
+end;
+
+OnDevil:
+    addrid(1);
+    specialeffect2 EF_DEVIL10;
+end;
+
+OnEffect1:
+    for(.@i = 0; .@i < 50; .@i++){
+        specialeffect EF_POTION_BERSERK;
+        sleep 60;
+    }
+end;
+}
+
+1@ep21b,1,1,0	script	#ep21_fb_daily	HIDDEN_WARP_NPC,{
+    end;
+
+OnSummon:
+    npctalk "[[ I will end you and your weak companions. You won't be able to escape me.. ]]",instance_npcname("Tan#r_1");
+    sleep 200;
+    mapwarp get_instance_var("map$"),get_instance_var("map$"),98,165;
+    instance_enable("Tan#r_1",false);
+    monster get_instance_var("map$"),169,28,"Devoured Tan",22373,1,instance_npcname(strnpcinfo(0)) + "::OnBossKill";
+    set_instance_var("gid",$@mobid[0]);
+    getunitdata $@mobid[0],.@data;
+    set_instance_var("fbd",2);
+    switch(get_instance_var("dmode")){
+        case 2:
+            setunitdata $@mobid[0],UMOB_RES,.@data[UMOB_RES] + 500;
+            setunitdata $@mobid[0],UMOB_MRES,.@data[UMOB_MRES] + 500;
+            setunitdata $@mobid[0],UMOB_MAXHP,.@data[UMOB_MAXHP] + 500000000;
+            setunitdata $@mobid[0],UMOB_HP,.@data[UMOB_HP] + 500000000;
+            for(.@i = UMOB_STR; .@i < UMOB_LUK; .@i++)
+                setunitdata $@mobid[0],.@i,.@data[.@i] + 50;
+            break;
+
+        case 3:
+            setunitdata $@mobid[0],UMOB_RES,.@data[UMOB_RES] + 1000;
+            setunitdata $@mobid[0],UMOB_MRES,.@data[UMOB_MRES] + 1000;
+            setunitdata $@mobid[0],UMOB_MAXHP,2000000000;
+            setunitdata $@mobid[0],UMOB_HP,2000000000;
+            for(.@i = UMOB_STR; .@i < UMOB_LUK; .@i++)
+                setunitdata $@mobid[0],.@i,.@data[.@i] + 100;
+    }
+    sleep 3000;
+    instance_event(strnpcinfo(0),"OnSkill",false);
+end;
+
+OnSkill:
+    function SafeSkill;
+    .@gid = get_instance_var("gid");
+    if(!unitexists(.@gid)) end;
+    setunitdata .@gid,UMOB_SPEED,150;
+    Safeskill("NPC_WIDEWEB",5);
+    sleep 100;
+    Safeskill("NPC_JACKFROST",5);
+    sleep 100;
+    Safeskill("NPC_RUN",12);
+    instance_event(strnpcinfo(0),"OnSpeed",false);
+    instance_event(strnpcinfo(0),"OnSummonBomb",false);
+    sleep 1500;
+    Safeskill("HP_ASSUMPTIO",5);
+    sleep 100;
+    Safeskill("AB_PRAEFATIO",5);
+    sleep 100;
+    Safeskill("AB_RENOVATIO",5);
+end;
+
+OnSummonBomb:
+    set_instance_var("kill_count",0);
+    .@gid = get_instance_var("gid");
+    .@map$ = get_instance_var("map$");
+    for(.@i = 0; .@i < max(20,get_instance_var("summon_count")); .@i++){
+        areamonster .@map$,168,18,188,38,"",22300,1,instance_npcname(strnpcinfo(0)) + "::OnBombKill",Size_Medium;
+        .@bomb_gid[.@i] = $@mobid[0];
+        specialeffect EF_BABYBODY,AREA,$@mobid[0];
+        specialeffect EF_CLOAKING3,AREA,$@mobid[0];
+        sleep rand(400,500);
+    }
+    sleep 2000;
+    for(.@i = 0; .@i < max(20,get_instance_var("summon_count")); .@i++){
+        if(!unitexists(.@gid)){
+            killmonster .@map$,instance_npcname(strnpcinfo(0)) + "::OnBombKill";
+            end;
+        }
+        if(unitexists(.@gid) && unitexists(.@bomb_gid[.@i])){
+            setunitdata .@bomb_gid[.@i],UMOB_HP,rand(8000,15000);
+            unitskilluseid .@bomb_gid[.@i],"NPC_SELFDESTRUCTION",1,.@bomb_gid[.@i],-20000;
+            set_instance_var("kill_count",get_instance_var("kill_count") - 1);
+        }
+        sleep 50;
+    }
+    sleep 500;
+    if(get_instance_var("kill_count") < get_instance_var("threshold")){
+        initnpctimer;
+        end;
+    }
+    if(!unitexists(.@gid)) end;
+    unitskilluseid .@gid,"NPC_GROGGY_ON",5;
+    setunitdata .@gid,UMOB_CLASS,22300;
+    if(get_instance_var("dmode") == 1)
+        setunitdata .@gid,UMOB_DAMAGETAKEN,10;
+    else if(get_instance_var("dmode") == 2)
+        setunitdata .@gid,UMOB_DAMAGETAKEN,5;
+    specialeffect EF_GREEN99_3,AREA,.@gid;
+    specialeffect EF_GREEN99_5,AREA,.@gid;
+    specialeffect EF_GREEN99_6,AREA,.@gid;
+    sleep 5000;
+    if(!unitexists(.@gid)) end;
+    skilleffect 2218,1,.@gid;
+    skilleffect 2219,1,.@gid;
+    skilleffect 2220,1,.@gid;
+    skilleffect 2221,1,.@gid;
+    setunitdata .@gid,UMOB_DAMAGETAKEN,1;
+    setunitdata .@gid,UMOB_CLASS,22371;
+    switch(rand(1,3)){
+        case 1:
+            unittalk .@gid,"[[ Impressive. You were able to reveal my true form.  ]]";
+        case 2:
+            unittalk .@gid,"[[ Fool! This body already belongs to me! ]]";
+            break;
+        case 3:
+            unittalk .@gid,"[[ Such futile actions, this body is already mine! ]]";
+            break;
+    }
+    if(unitexists(.@gid))
+        initnpctimer;
+    end;
+end;
+
+OnBombKill:
+    set_instance_var("kill_count",get_instance_var("kill_count") + 1);
+end;
+
+OnSpeed:
+    sleep 1500;
+    .@gid = get_instance_var("gid");
+    if(!unitexists(.@gid)) end;
+    setunitdata .@gid,UMOB_SPEED,200;
+end;
+
+OnBossKill:
+    set_instance_var("fbd",3);
+    mapwarp get_instance_var("map$"),get_instance_var("map$"),168,28;
+    instance_enable("Tan#_rt",true);
+    sleep 3000;
+    npctalk "[[ How could I be defeated by such inferior beings. ]]",instance_npcname("Tan#_rt");
+    sleep 3000;
+    npctalk "[[ How can a human, a weak human defeat me... ]]",instance_npcname("Tan#_rt");
+    instance_event(strnpcinfo(0),"OnEndEffect1",false);
+    instance_event(strnpcinfo(0),"OnEndEffect2",false);
+    instance_event(strnpcinfo(0),"OnEndEffect3",false);
+    sleep 3000;
+    npctalk "Is it... over...",instance_npcname("Tan#_rt");
+    specialeffect EF_DELUGE,AREA,instance_npcname("Tan#_rt");
+    sleep 1000;
+    specialeffect EF_BIG_PORTAL,AREA,instance_npcname("Tan#_rt");
+    sleep 1000;
+    specialeffect EF_PROVIDENCE,AREA,instance_npcname("Tan#_rt");
+    sleep 1000;
+    instance_enable("Tan#_rt",false);
+    if(get_instance_var("dmode") > 1)
+        monster get_instance_var("map$"),169,28,"",22374,1;
+    instance_enable("Nyar#rt",true);
+    instance_event("Nyar#rt","OnWalk",false);
+end;
+
+OnEndEffect1:
+    for(.@i = 0; .@i < 120; .@i++){
+        specialeffect EF_POTION_BERSERK,AREA,instance_npcname("Tan#_rt");
+        sleep 10;
+    }
+end;
+
+OnEndEffect2:
+    for(.@i = 0; .@i < 30; .@i++){
+        specialeffect EF_MANHOLE,AREA,instance_npcname("Tan#_rt");
+        sleep 50;
+    }
+end;
+
+OnEndEffect3:
+    setnpcdisplay(instance_npcname("Tan#_rt"),10594);
+    for(.@i = 0; .@i < 5; .@i++){
+        sleep 300;
+        setnpcdisplay(instance_npcname("Tan#_rt"),22371);
+        sleep 300;
+        setnpcdisplay(instance_npcname("Tan#_rt"),10594);
+    }
+end;
+
+function	Safeskill	{
+    if(unitexists(get_instance_var("gid"))){
+        if(getargcount() < 3)
+            unitskilluseid get_instance_var("gid"),getarg(0),getarg(1),get_instance_var("gid"),-10000;
+        else
+            unitskilluseid get_instance_var("gid"),getarg(0),getarg(1),getarg(2),-10000;
+        return;
+    }
+    end;
+}
+
+OnTimer10000:
+    stopnpctimer;
+    if(unitexists(get_instance_var("gid")))
+        instance_event(strnpcinfo(0),"OnSkill",false);
+end;
+}
+
+1@ep21b,169,32,7	script(DISABLED)	Tan#_rt	22373,{ end; }
+
+1@ep21b,180,28,3	script(DISABLED)	Nyar#rt	22006,{
+    if(get_instance_var("fbd") < 4){
+        cutin "ep20_nyar02.png",1;
+        mes "[Nyar]";
+        mes "Meow! Meeow!-";
+        close3;
+    }
+    .@reward_amount = get_instance_var("dmode") == 3 ? 50 : 10;
+    if (!checkweight(1001618,.@reward_amount)) {
+        mes "Make room in your inventory before collecting the reward.";
+        close;
+    }
+    switch(get_instance_var("dmode")){
+        case 1:
+            if(checkquest(12649) == 1){
+                erasequest 12649;
+                getitem "EP21_Wigner_Ticket",10;
+            }
+            break;
+
+        case 2:
+            if(checkquest(12650) == 1){
+                erasequest 12650;
+                getitem "EP21_Wigner_Ticket",10;
+            }
+            break;
+
+        case 3:
+            if(checkquest(12651) == 1){
+                erasequest 12651;
+                getitem "EP21_Wigner_Ticket",50;
+            }
+            break;
+    }
+    cutin "ep20_nyar02.png",1;
+    mes "[Nyar]";
+    mes "Meooow~";
+    close2;
+    cutin "",255;
+    warp "luna_sf2",260,40;
+    end;
+
+OnWalk:
+    npcspeed 250;
+    emotion ET_PROFUSELY_SWEAT;
+    unitwalk getnpcid(0,instance_npcname(strnpcinfo(0))),172,26,instance_npcname(strnpcinfo(0)) + "::OnEnd";
+end;
+
+OnEnd:
+    set_instance_var("fbd",4);
+    npctalk "Meow!!~";
+    specialeffect 1090;
+end;
+}
+
+1@ep21b,28,28,0	script(DISABLED)	#ep21_story_skill	HIDDEN_WARP_NPC,2,2,{
+    end;
+
+OnSummon:
+    .@map$ = get_instance_var("map$");
+    .@gid = get_instance_var("gid");
+    if(!unitexists(.@gid)) end;
+    unittalk .@gid,"[[ Come forth, lost souls ]]";
+    unitskilluseid .@gid,"NPC_RUN",10;
+    for(.@i = 0; .@i < 20; .@i++){
+        areamonster .@map$,18,18,38,38,"",22300,1,instance_npcname(strnpcinfo(0)) + "::OnExplode",Size_Medium;
+        .@bomb_gid[.@i] = $@mobid[0];
+        specialeffect EF_BABYBODY,AREA,$@mobid[0];
+        specialeffect EF_CLOAKING3,AREA,$@mobid[0];
+        sleep 500;
+    }
+    sleep 500;
+    for(.@i = 0; .@i < 20; .@i++){
+        if(!unitexists(.@gid)){
+            killmonster .@map$,instance_npcname(strnpcinfo(0)) + "::OnExplode";
+            end;
+        }
+        if(unitexists(.@gid) && unitexists(.@bomb_gid[.@i])){
+            setunitdata .@bomb_gid[.@i],UMOB_HP,rand(8000,15000);
+            unitskilluseid .@bomb_gid[.@i],"NPC_SELFDESTRUCTION",1,.@bomb_gid[.@i],-20000;
+        }
+        sleep 50;
+    }
+    sleep 1000;
+    if(!unitexists(.@gid)) end;
+    switch(rand(1,3)){
+        case 1:
+            unittalk .@gid,"Tan's Consciousness - Attacking won't work if it's not the real body, your opportunity is now!";
+            break;
+        case 2:
+            unittalk .@gid,"Tan's Consciousness - Argh. I've forced out its true form! Attack me now!";
+            break;
+        case 3:
+            unittalk .@gid,"Tan's Consciousness - The time where I can reveal the serpent's true form is short. Hurry and do it!";
+            break;
+    }
+    unitskilluseid .@gid,"NPC_GROGGY_ON",5;
+    setunitdata .@gid,UMOB_CLASS,22300;
+    setunitdata .@gid,UMOB_DAMAGETAKEN,10;
+    specialeffect EF_GREEN99_3,AREA,.@gid;
+    specialeffect EF_GREEN99_5,AREA,.@gid;
+    specialeffect EF_GREEN99_6,AREA,.@gid;
+    sleep 5000;
+    if(!unitexists(.@gid)) end;
+    setunitdata .@gid,UMOB_CLASS,22371;
+    switch(rand(1,3)){
+        case 1:
+            unittalk .@gid,"[[ Impressive. For a moment, you managed to reveal my true form.  ]]";
+        case 2:
+            unittalk .@gid,"[[ Fool! You are struggling in vain. Your body already belongs to me! ]]";
+            break;
+        case 3:
+            unittalk .@gid,"[[ These futile efforts are only draining your life force. Give up Tan. ]]";
+            break;
+    }
+    if(unitexists(.@gid)){
+        skilleffect 2218,1,.@gid;
+        skilleffect 2219,1,.@gid;
+        skilleffect 2220,1,.@gid;
+        skilleffect 2221,1,.@gid;
+        getunitdata .@gid,.@data;
+        .@max_hp = .@data[UMOB_MAXHP];
+        .@current_hp = .@data[UMOB_HP];
+        .@damage = (.@max_HP/10) * 2;
+        .@remaining_hp = .@current_hp - .@damage;
+        if(.@remaining_hp < 1){
+            killmonster .@map$,instance_npcname("#EP21_final_battle") + "::OnStoryKill";
+            instance_event("#EP21_final_battle","OnStoryKill",false);
+        } else {
+            if(!unitexists(.@gid)) end;
+            setunitdata .@gid,UMOB_HP,.@remaining_hp;
+        }
+    }
+    initnpctimer;
+OnExplode:
+end;
+
+OnTimer15000:
+    stopnpctimer;
+    if(unitexists(get_instance_var("gid")))
+        instance_event(strnpcinfo(0),"OnSummon",false);
+end;
+}
+
+1@ep21b,99,30,0	script(DISABLED)	#s_con_1	HIDDEN_WARP_NPC,2,2,{
+    end;
+
+OnTouch:
+    playBGM "162";
+    if(get_instance_var("fb") == 0 && is_party_leader()){
+        if(select("Hold your position.","Use the tablet.") == 1) end;
+        pctalk "Heine? Can you hear me? It seems everyone is scattered.";
+        set_instance_var("pt_leader$",strcharinfo(0));
+        set_instance_var("pt_leader",getcharid(3));
+        instance_event("#EP21_final_battle","OnEvent",false);
+    }
+end;
+}
+
+1@ep21b,100,128,0	script(DISABLED)	#s_con_2	HIDDEN_WARP_NPC,2,2,{
+    end;
+
+OnTouch:
+    if(get_instance_var("fb") == 2 && is_party_leader()){
+        instance_event("#EP21_final_battle","OnEvent",false);
+        end;
+    }
+end;
+}
+
+1@ep21b,100,124,5	script(DISABLED)	#s_con_3	CLEAR_NPC,1,1,{
+    if(get_instance_var("fb") == 4 && is_party_leader()){
+        instance_event("#EP21_final_battle","OnEvent",false);
+        end;
+    }
+    end;
+}
+
+1@ep21b,28,31,0	script(DISABLED)	#s_con_4	HIDDEN_WARP_NPC,2,2,{
+    end;
+
+OnTouch:
+    if(get_instance_var("fb") == 6 && is_party_leader()){
+        instance_event("#EP21_final_battle","OnEvent",false);
+        end;
+    }
+end;
+}
+
+1@ep21b,28,27,0	script(DISABLED)	#s_con_5	HIDDEN_WARP_NPC,2,2,{
+    end;
+
+OnTouch:
+    specialeffect2 EF_DEVIL10;
+    if(get_instance_var("fb") == 7 && is_party_leader()){
+        instance_event("#EP21_final_battle","OnEvent",false);
+        end;
+    }
+end;
+}
+
+1@ep21b,100,175,0	script	#snd1	HIDDEN_WARP_NPC,3,3,{
+    end;
+
+OnTouch:
+    switch(atoi(replacestr(strnpcinfo(2),"snd",""))){
+        case 1:
+            playBGM "174";
+            if(get_instance_var("fb") == 1 && is_party_leader())
+                instance_event("#EP21_final_battle","OnEvent",false);
+            warp get_instance_var("map$"),100,128;
+            end;
+
+        case 2:
+            if(get_instance_var("fbd") > 0){
+                warp get_instance_var("map$"),169,24;
+                playBGM "203";
+                end;
+            }
+            playBGM "203";
+            if(get_instance_var("fb") == 5 && is_party_leader())
+                instance_event("#EP21_final_battle","OnEvent",false);
+            warp get_instance_var("map$"),28,31;
+            end;
+
+        case 3:
+            break; //JUST A DUMMY
+    }
+end;
+}
+
+1@ep21b,99,164,0	duplicate(#snd1)	#snd2	HIDDEN_WARP_NPC,3,3
+1@ep21b,106,169,0	duplicate(#snd1)	#snd3	HIDDEN_WARP_NPC,3,3
+1@ep21b,28,29,0	script(DISABLED)	#snd4	HIDDEN_WARP_NPC,3,3,{
+    end;
+
+OnTouch:
+    if(get_instance_var("fb") == 10 && is_party_leader())
+        instance_event("#EP21_final_battle","OnEvent",false);
+    end;
+end;
+}
+
+1@ep21b,168,28,0	script	#snd5	HIDDEN_WARP_NPC,3,3,{
+    end;
+
+OnTouch:
+    if(get_instance_var("fbd") == 1){
+        switch(get_instance_var("dmode")){
+            case 1:
+                if(isbegin_quest(12649) == 0)
+                    setquest 12649;
+                if(isbegin_quest(12650))
+                    erasequest 12650;
+                if(isbegin_quest(12651))
+                    erasequest 12651;
+                break;
+            case 2:
+                if(isbegin_quest(12650) == 0)
+                    setquest 12650;
+                if(isbegin_quest(12649))
+                    erasequest 12649;
+                if(isbegin_quest(12651))
+                    erasequest 12651;
+                break;
+            case 3:
+                if(isbegin_quest(12651) == 0)
+                    setquest 12651;
+                if(isbegin_quest(12649))
+                    erasequest 12649;
+                if(isbegin_quest(12650))
+                    erasequest 12650;
+                break;
+        }
+    }
+    if(get_instance_var("fbd") == 3)
+        PlayBGM "183";
+end;
+}
+
+1@ep21b,42,32,3	script(DISABLED)	Nyar#ep21	4_EP20_NYAR,{
+    if(get_instance_var("fb") < 12) end;
+    if(isbegin_quest(12656) == 1){
+        if (!checkweight(1001618,90)) {
+            mes "Make room in your inventory before collecting the reward.";
+            close;
+        }
+        cutin "ep20_nyar02.png",1;
+        mes "[Nyar]";
+        mes "Meooow~";
+        next;
+        sleep2 317;
+        cutin "",255;
+        mes "["+strcharinfo(0)+"]";
+        mes "(Leave now? Should... I really leave just like that?)";
+        next;
+        mes "[Heine]";
+        mes "Talking to yourself all of a sudden... You must be shocked too "+strcharinfo(0)+". ";
+        next;
+        mes "["+strcharinfo(0)+"]";
+        mes "Ah... Heine.";
+        next;
+        mes "[Heine]";
+        mes "It seems that Tris need some time to gather his thoughts.";
+        next;
+        mes "[Heine]";
+        mes "For now, we're going to hold a simple funeral for Tan. But we don't have the luxury to delay for too long.";
+        next;
+        mes "[Heine]";
+        mes "The cult's power is still growing. I'd like to you to leave first and continue tracking down the cult's movements.";
+        next;
+        cutin "ep20_nyar02.png",1;
+        mes "[Nyar]";
+        mes "Meow!~Meooow!!";
+        next;
+        cutin "",255;
+        mes "[Heine]";
+        mes "Well, until we meet again... "+strcharinfo(0)+".";
+        close2;
+        cutin "",255;
+        completequest 12656;
+        setquest 18349;
+        getitem "EP21_Wigner_Ticket",90;
+        getexp 224735900,119990000;
+        add_reputation_points(13,110);
+    }
+    warp "luna_sf2",252,147;
+    end;
+}
+1@ep21b,28,31,7	script(DISABLED)	#tan_effect	CLEAR_NPC,{
+    end;
+
+OnEffect:
+    progressbar_npc "FF0000",10;
+end;
+}
+
+1@ep21b,103,34,4	script(DISABLED)	Heine#_1	4_EP21_HEINE_TAB,1,1,{ end; }
+1@ep21b,96,34,5	script(DISABLED)	Tan#_1	22302,1,1,{ end; }
+1@ep21b,103,128,4	script(DISABLED)	Tan#_2	22302,1,1,{ end; }
+1@ep21b,97,128,5	script(DISABLED)	Tris#_2	EP21_NPC_TRIS,1,1,{ end; }
+1@ep21b,105,126,4	script(DISABLED)	Heine#_2	4_EP21_HEINE_TAB,1,1,{ end; }
+1@ep21b,94,130,5	script(DISABLED)	Maristella#_2	EP21_NPC_MARISTELLA,1,1,{ end; }
+1@ep21b,103,131,4	script(DISABLED)	Galaxia#_2	EP21_NPC_GALAXIA,1,1,{ end; }
+1@ep21b,92,128,5	script(DISABLED)	Yohan#_2	EP21_NPC_YOHAN,1,1,{ end; }
+1@ep21b,105,129,4	script(DISABLED)	Gunter#_2	EP21_NPC_GUNTER,1,1,{ end; }
+1@ep21b,94,127,5	script(DISABLED)	Ivan#_2	EP21_NPC_IVAN,1,1,{ end; }
+1@ep21b,107,127,4	script(DISABLED)	Wilhelm#_2	EP21_NPC_WILHELM,1,1,{ end; }
+1@ep21b,96,130,5	script(DISABLED)	Richard#_2	EP21_NPC_RICHARD,1,1,{ end; }
+1@ep21b,102,130,4	script(DISABLED)	Reinhardt#_2	EP21_NPC_REINHARDT,1,1,{ end; }
+1@ep21b,98,132,5	script(DISABLED)	Laura#_2	EP21_NPC_EIBA,1,1,{ end; }
+1@ep21b,101,132,4	script(DISABLED)	Aurelie#_2	4_EP21_AURELIE,1,1,{ end; }
+1@ep21b,99,130,5	script(DISABLED)	Nadoyo#_2	EP21_NPC_NADOYO,1,1,{ end; }
+1@ep21b,26,25,7	script(DISABLED)	Tan#_3	22302,1,1,{ end; }
+1@ep21b,29,26,1	script(DISABLED)	Tris#_3	EP21_NPC_TRIS,1,1,{ end; }
+1@ep21b,28,26,1	script(DISABLED)	Tris#_4	EP21_NPC_TRIS,1,1,{ end; }
+1@ep21b,28,27,7	script(DISABLED)	Heine#_3	4_EP21_HEINE_TAB,1,1,{ end; }
+1@ep21b,35,29,1	script(DISABLED)	Maristella#_3	EP21_NPC_MARISTELLA,1,1,{ end; }
+1@ep21b,23,22,7	script(DISABLED)	Galaxia#_3	EP21_NPC_GALAXIA,1,1,{ end; }
+1@ep21b,32,22,1	script(DISABLED)	Yohan#_3	EP21_NPC_YOHAN,1,1,{ end; }
+1@ep21b,26,23,7	script(DISABLED)	Gunter#_3	EP21_NPC_GUNTER,1,1,{ end; }
+1@ep21b,36,23,1	script(DISABLED)	Ivan#_3	EP21_NPC_IVAN,1,1,{ end; }
+1@ep21b,20,27,7	script(DISABLED)	Wilhelm#_3	EP21_NPC_WILHELM,1,1,{ end; }
+1@ep21b,35,28,1	script(DISABLED)	Richard#_3	EP21_NPC_RICHARD,1,1,{ end; }
+1@ep21b,21,22,7	script(DISABLED)	Reinhardt#_3	EP21_NPC_REINHARDT,1,1,{ end; }
+1@ep21b,34,27,1	script(DISABLED)	Laura#_3	EP21_NPC_EIBA,1,1,{ end; }
+1@ep21b,19,21,7	script(DISABLED)	Aurelie#_3	4_EP21_AURELIE,1,1,{ end; }
+1@ep21b,36,22,1	script(DISABLED)	Nadoyo#_3	EP21_NPC_NADOYO,1,1,{ end; }
+1@ep21b,28,32,7	script(DISABLED)	Tan#_ed	22371,1,1,{ end; }
+1@ep21b,28,36,1	script(DISABLED)	Tris#_ed	EP21_NPC_TRIS,1,1,{ end; }
+
+1@ep21b,28,38,5	script(DISABLED)	#spnt1	22300,3,3,{
+    end;
+
+OnResize:
+    npc_resize(Size_Large);
+end;
+}
+1@ep21b,28,38,5	script(DISABLED)	#spnt2	22300,3,3,{
+    end;
+
+OnResize:
+    npc_resize(Size_Large);
+end;
+}

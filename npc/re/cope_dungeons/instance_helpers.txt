@@ -1,0 +1,10 @@
+-	script	CopeDungeonHelpers	-1,{
+    end;
+}
+
+function	script	instance_disable	{
+    .@name$ = instance_npcname(getarg(0));
+    hideoffnpc .@name$;
+    disablenpc .@name$;
+    return;
+}

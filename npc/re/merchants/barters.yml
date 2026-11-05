@@ -71,3 +71,14 @@ Footer:
         - Path: npc/re/merchants/barters/midgame_items.yml
         - Path: npc/re/merchants/barters/early_midgame.yml
         - Path: npc/re/merchants/barters/lategame.yml
+
+        - Path: npc/re/ep21/merchants/barter/quest_21_misc.yml
+        - Path: npc/re/chapter1/barter/chapter1.yml
+        - Path: npc/re/chapter1/barter/zerocell.yml
+        - Path: npc/re/cope_dungeons/barter/remorse.yml
+        - Path: npc/re/cope_dungeons/barter/thanatos.yml
+        - Path: npc/re/cope_dungeons/barter/constellation.yml
+        - Path: npc/re/ep21/merchants/barter/yorscalp.yml
+
+        - Path: npc/re/merchants/barters/biosphere_depth1.yml
+        - Path: npc/re/merchants/barters/biosphere_abyss.yml

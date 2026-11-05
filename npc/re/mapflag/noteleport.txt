@@ -473,3 +473,10 @@ for_dun01	mapflag	noteleport
 // Forgotten Area 2
 //============================================================
 for_dun02	mapflag	noteleport
+1@gl_kh	mapflag	noteleport
+2@gl_kh	mapflag	noteleport
+1@gl_kh	mapflag	monster_noteleport
+2@gl_kh	mapflag	monster_noteleport
+
+
+bl_depth1	mapflag	noteleport

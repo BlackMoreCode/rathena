@@ -487,8 +487,8 @@ D51: Restrict("Pre-RE",1,2);
 	 Disp("Carpenter's Shop in the Tree:Passage to a Foreign World:Hvergermil's Fountain");
 	 Pick("","um_dun01","um_dun02","yggdrasil01");
 D52: Restrict("RE");
-	 setarray @c[2],275,21,15,115,15,115,159,27,162,36,159,11,156,33,337,333,314,64,163,18,156,20,39,81;
-	 Disp("Sewage Treatment Plant:1st Power Plant:2nd Power Plant:Large Bath Meditathio:Lost Farm Valley:Library Memory Corridor:Upper Floor of Tartaros Storage:Lower Floor of Tartaros Storage:Death Rune:Fire Rune:Grass Rune:Ice Rune"); Pick("","ba_pw02","ba_pw01","ba_pw03","ba_bath","ba_lost","ba_lib","ba_2whs01","ba_2whs02","bl_death","bl_lava","bl_grass","bl_ice");
+	 setarray @c[2],275,21,15,115,15,115,159,27,162,36,159,11,156,33,337,333,314,64,163,18,156,20,39,81,291,104;
+	 Disp("Sewage Treatment Plant:1st Power Plant:2nd Power Plant:Large Bath Meditathio:Lost Farm Valley:Library Memory Corridor:Upper Floor of Tartaros Storage:Lower Floor of Tartaros Storage:Death Rune:Fire Rune:Grass Rune:Ice Rune:Biosphere Depth Research"); Pick("","ba_pw02","ba_pw01","ba_pw03","ba_bath","ba_lost","ba_lib","ba_2whs01","ba_2whs02","bl_death","bl_lava","bl_grass","bl_ice","ba_in01");
 D53: Restrict("RE");
 	 setarray @c[2],244,61,72,20,122,22;
 	 Disp("Lab-OPTATIO:R&D-WISH:Verus Center Square"); Pick("verus");
@@ -566,7 +566,8 @@ menu	"Bakonawa Lake",I1, "Bangungot Hospital 2F",I2, "Buwaya Cave",I3,
 		"Hazy Forest",I10, "Horror Toy Factory",I11, "Malangdo Culvert",I12,
 		"Nidhoggur's Nest",I13, "Octopus Cave",I14, "Old Glast Heim",I15,
 		"Orc's Memory",I16, "Sarah and Fenrir",I17, "Sara Memory",I18,
-		"Sealed Shrine",I19, "Wolfchev's Laboratory",I20;
+		"Sealed Shrine",I19, "Wolfchev's Laboratory",I20,
+		"Tomb of Remorse",I21, "Thanatos Tower (Rework)",I22, "Constellation Tower",I23, "Fall of Glast Heim",I24, "Old Glast Heim Hard",I25, "Garden of Time",I26, "Biosphere Abyss Research",I27;
 
 I1: Restrict("RE");
 	Go("ma_scene01",172,175);
@@ -604,6 +605,20 @@ I18: Restrict("RE");
 I19: Go("monk_test",306,143);
 I20: Restrict("RE");
 	Go("lhz_dun04",148,269);
+I21: Restrict("RE");
+	Go("dali",123,88);
+I22: Restrict("RE");
+	Go("tha_t01",160,78);
+I23: Restrict("RE");
+	Go("alberta",217,77);
+I24: Restrict("RE");
+	Go("glast_01",244,290);
+I25: Restrict("RE");
+	Go("glast_01",180,283);
+I26: Restrict("RE");
+	Go("t_garden",166,230);
+I27: Restrict("RE");
+	Go("ba_maison",241,128);
 
 // --------------------------------------------------
 	Special:
@@ -1289,6 +1304,14 @@ OnNaviGenerate:
 	end;
 
 	// instances
+	naviregisterwarp("Warper > Garden of Time", "t_garden", 166, 230);
+	naviregisterwarp("Warper > Biosphere Abyss Research", "ba_maison", 241, 128);
+	naviregisterwarp("Warper > Tomb of Remorse", "dali", 123, 88);
+	naviregisterwarp("Warper > Thanatos Tower (Rework)", "tha_t01", 160, 78);
+	naviregisterwarp("Warper > Constellation Tower", "alberta", 217, 77);
+	naviregisterwarp("Warper > Fall of Glast Heim", "glast_01", 244, 290);
+	naviregisterwarp("Warper > Old Glast Heim Hard", "glast_01", 180, 283);
+	naviregisterwarp("Warper > Biosphere Depth Research", "ba_in01", 291, 104);
 	naviregisterwarp("Warper > Endless Tower", "e_tower", 72, 112);
 	naviregisterwarp("Warper > Nidhoggur's Nest", "nyd_dun02", 95, 193);
 	naviregisterwarp("Warper > Orc's Memory", "gef_fild10", 240, 198);

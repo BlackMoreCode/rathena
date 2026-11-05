@@ -545,3 +545,23 @@ Header:
 #    Gender: Female
 #  - Id: 5735
 #    Gender: Female
+
+Body:
+  - Id: 102433
+    AegisName: Unsealing_Scroll
+    Name: Unsealing Scroll
+    Type: Usable
+    Weight: 100
+    Flags:
+      BuyingStore: true
+    Script: "if ( getstatus(SC_COPE_BLOCK_SEAL) )\n  sc_end SC_COPE_BLOCK_SEAL;\n"
+  - Id: 102434
+    AegisName: Warm_Shield_Scroll
+    Name: Warm Shield Scroll
+    Type: Usable
+    Weight: 100
+    Flags:
+      BuyingStore: true
+    Script: 'sc_start SC_COPE_WARM_SHIELD, 30000, 0;
+
+      '

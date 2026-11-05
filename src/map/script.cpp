@@ -15609,13 +15609,18 @@ BUILDIN_FUNC(specialeffect)
 
 	if( script_hasdata(st,4) )
 	{
-		const char* name = script_getstr( st, 4 );
-		npc_data* nd = npc_name2id( name );
-		if(nd)
-			bl = nd;
-		else{
-			ShowError( "buildin_specialeffect: Unknown NPC \"%s\"\n", name );
-			return SCRIPT_CMD_FAILURE;
+		if (script_isstring(st, 4)) {
+			const char* name = script_getstr(st, 4);
+			bl = npc_name2id(name);
+			if (bl == nullptr) {
+				ShowError("buildin_specialeffect: Unknown NPC \"%s\"\n", name);
+				return SCRIPT_CMD_FAILURE;
+			}
+		} else {
+			// Delayed effects may outlive their target, such as a bomb killed by a player.
+			bl = map_id2bl(script_getnum(st, 4));
+			if (bl == nullptr)
+				return SCRIPT_CMD_SUCCESS;
 		}
 	}
 

@@ -270,3 +270,9 @@ wolfvill	mapflag	restricted	7
 //============================================================
 teg_dun01	mapflag	restricted	8
 teg_dun02	mapflag	restricted	8
+1@gl_kh	mapflag	restricted	6
+2@gl_kh	mapflag	restricted	6
+
+
+// !TODO : restricted items and skills are unknown
+bl_depth1	mapflag	restricted	6

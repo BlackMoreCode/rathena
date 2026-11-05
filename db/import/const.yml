@@ -37,3 +37,13 @@ Header:
 Body:
     - Name: REPUTATION_EP19
       Value: 4
+    - Name: REPU_EP20
+      Value: 5
+    - Name: COPE_CH1_MAGGI
+      Value: 10365
+    - Name: COPE_CH1_RED_GATE
+      Value: 21813
+    - Name: REPU_BIO_DEPTH1
+      Value: 6
+    - Name: REPU_BIO_ABYSS
+      Value: 9

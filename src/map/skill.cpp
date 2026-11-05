@@ -2092,6 +2092,9 @@ bool skill_strip_equip(block_list *src, block_list *target, uint16 skill_id, uin
 	int32 rate, time, location, mod = 100;
 
 	switch (skill_id) { // Rate
+		case NPC_STRIP_SHADOW:
+			rate = min(100, 10 * skill_lv);
+			break;
 		case RG_STRIPWEAPON:
 		case RG_STRIPARMOR:
 		case RG_STRIPSHIELD:
@@ -2135,6 +2138,9 @@ bool skill_strip_equip(block_list *src, block_list *target, uint16 skill_id, uin
 		return false;
 
 	switch (skill_id) { // Duration
+		case NPC_STRIP_SHADOW:
+			time = skill_get_time(skill_id, skill_lv);
+			break;
 		case SC_STRIPACCESSARY:
 		case GS_DISARM:
 			time = skill_get_time(skill_id, skill_lv);
@@ -2182,6 +2188,7 @@ bool skill_strip_equip(block_list *src, block_list *target, uint16 skill_id, uin
 		case SC_STRIPACCESSARY:
 			location = EQP_ACC;
 			break;
+		case NPC_STRIP_SHADOW:
 		case ABC_STRIP_SHADOW:
 			location = EQP_SHADOW_GEAR;
 			break;
@@ -11367,6 +11374,11 @@ int32 skill_trap_splash(block_list *bl, va_list ap)
 		return 0;
 
 	switch (sg->unit_id) {
+		case UNT_SEEDTRAP:
+			// Detonation uses the owner for hostility and the trap for knockback origin.
+			if (skill_attack(skill_get_type(sg->skill_id), ss, src, bl, sg->skill_id, sg->skill_lv, tick, sg->val1))
+				skill_blown(src, bl, max(0, 7 - distance_bl(src, bl)), -1, BLOWN_NONE);
+			break;
 		case UNT_B_TRAP:
 			if (battle_check_target(ss, bl, sg->target_flag&~BCT_SELF) > 0)
 				skill_castend_damage_id(ss, bl, sg->skill_id, sg->skill_lv, tick, SD_ANIMATION|SD_LEVEL|SD_SPLASH|1);
@@ -12222,6 +12234,13 @@ static int32 skill_unit_timer_sub(DBKey key, DBData *data, va_list ap)
 	if( !group->state.guildaura && (DIFF_TICK(tick,group->tick) >= group->limit || DIFF_TICK(tick,group->tick) >= unit->limit) )
 	{// skill unit expired (inlined from skill_unit_onlimit())
 		switch( group->unit_id ) {
+			case UNT_SEEDTRAP:
+				// Expire once, then remove. On-place checks must not repeatedly detonate it.
+				clif_changetraplook(bl, UNT_USED_TRAPS);
+				map_foreachinrange(skill_trap_splash, bl, skill_get_splash(group->skill_id, group->skill_lv), group->bl_flag, bl, tick);
+				group->unit_id = UNT_USED_TRAPS;
+				skill_delunit(unit);
+				break;
 			case UNT_ICEWALL:
 				unit->val1 -= 50; // icewall loses 50 hp every second
 				group->limit = DIFF_TICK(tick + group->interval,group->tick);

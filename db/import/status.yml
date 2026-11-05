@@ -44,3 +44,81 @@
 Header:
   Type: STATUS_DB
   Version: 4
+
+Body:
+  - Status: COPE_ZEROCELL_LUX
+    Icon: EFST_CONTENTS_42
+    Flags:
+      NoRemoveOnDead: true
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+  - Status: COPE_ZEROCELL_VITA
+    Icon: EFST_CONTENTS_44
+    Flags:
+      NoRemoveOnDead: true
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+  - Status: COPE_GROGGY
+    DurationLookup: NPC_GROGGY_ON
+    Icon: EFST_GROGGY
+    States:
+      NoMove: true
+      NoCast: true
+      NoAttack: true
+    Flags:
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+      BlEffect: true
+      DisplayPc: true
+      SetStand: true
+      StopWalking: true
+      StopAttacking: true
+      StopCasting: true
+  - Status: COPE_TARGET_MARKER
+    DurationLookup: NPC_TARGET_MARKER
+    Icon: EFST_TARGET_MARKER
+    Flags:
+      BlEffect: true
+      DisplayPc: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+  - Status: COPE_BLOCK_SEAL
+    DurationLookup: NPC_BLOCK_SEAL
+    Icon: EFST_BLOCK_SEAL
+    States:
+      NoMove: true
+      NoCast: true
+      NoAttack: true
+    Flags:
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+      BlEffect: true
+      DisplayPc: true
+      SetStand: true
+      StopWalking: true
+      StopAttacking: true
+      StopCasting: true
+  - Status: COPE_FROST_STORM
+    DurationLookup: NPC_FROST_FIELD
+    Icon: EFST_FROST_STORM
+    Flags:
+      BlEffect: true
+      DisplayPc: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+  - Status: COPE_WARM_SHIELD
+    Icon: EFST_WARM_SHIELD
+    Flags:
+      BlEffect: true
+      DisplayPc: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true

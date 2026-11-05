@@ -261,3 +261,5 @@
 // Sunken Tower
 //============================================================
 1@ch_u	mapflag	partylock
+1@gl_kh	mapflag	partylock
+2@gl_kh	mapflag	partylock

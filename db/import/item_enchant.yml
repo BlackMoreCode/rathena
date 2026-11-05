@@ -70,3 +70,4023 @@
 Header:
   Type: ITEM_ENCHANT_DB
   Version: 1
+
+Body:
+  - Id: 163
+    TargetItems:
+      Dimension_B_Greave: true
+      Dimension_H_Boots: true
+      Dimension_S_Shoes: true
+      Dimension_M_Shoes: true
+      Dimension_E_Boots: true
+    Reset:
+      Chance: 100000
+      Price: 5000000
+      Materials:
+      - Material: Ch1_Root_Coin
+        Amount: 25
+    Order:
+    - Slot: 3
+    - Slot: 2
+    - Slot: 1
+    Slots:
+    - Slot: 3
+      PerfectEnchants:
+      - Item: Ch01_S_E_Life01
+        Price: 2500000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 30
+        - Material: Ch1_Mana_Ring
+          Amount: 20
+        - Material: Frontier_M_Stone
+          Amount: 25
+      - Item: Ch01_S_E_Regiment01
+        Price: 2500000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 30
+        - Material: Ch1_Mana_Ring
+          Amount: 20
+        - Material: Frontier_M_Stone
+          Amount: 25
+      - Item: Ch01_S_E_GAE01
+        Price: 2500000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 30
+        - Material: Ch1_Mana_Ring
+          Amount: 20
+        - Material: Frontier_M_Stone
+          Amount: 25
+      - Item: Ch01_S_E_Immo01
+        Price: 2500000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 30
+        - Material: Ch1_Mana_Ring
+          Amount: 20
+        - Material: Frontier_M_Stone
+          Amount: 25
+      - Item: Ch01_S_E_Vain01
+        Price: 2500000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 30
+        - Material: Ch1_Mana_Ring
+          Amount: 20
+        - Material: Frontier_M_Stone
+          Amount: 25
+      Upgrades:
+      - Enchant: Ch01_S_E_Life05
+        Upgrade: Ch01_S_E_Life06
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 150
+        - Material: Frontier_Stone_YL
+          Amount: 150
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_BL
+          Amount: 25
+        - Material: Dimension_Essence_YL
+          Amount: 25
+        - Material: Dimension_Essence_GR
+          Amount: 25
+        - Material: Dimension_Essence_BK
+          Amount: 25
+      - Enchant: Ch01_S_E_Regiment05
+        Upgrade: Ch01_S_E_Regiment06
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 150
+        - Material: Frontier_Stone_YL
+          Amount: 150
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_BL
+          Amount: 25
+        - Material: Dimension_Essence_YL
+          Amount: 25
+        - Material: Dimension_Essence_GR
+          Amount: 25
+        - Material: Dimension_Essence_BK
+          Amount: 25
+      - Enchant: Ch01_S_E_GAE05
+        Upgrade: Ch01_S_E_GAE06
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 150
+        - Material: Frontier_Stone_YL
+          Amount: 150
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_BL
+          Amount: 25
+        - Material: Dimension_Essence_YL
+          Amount: 25
+        - Material: Dimension_Essence_GR
+          Amount: 25
+        - Material: Dimension_Essence_BK
+          Amount: 25
+      - Enchant: Ch01_S_E_Immo05
+        Upgrade: Ch01_S_E_Immo06
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 150
+        - Material: Frontier_Stone_YL
+          Amount: 150
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_BL
+          Amount: 25
+        - Material: Dimension_Essence_YL
+          Amount: 25
+        - Material: Dimension_Essence_GR
+          Amount: 25
+        - Material: Dimension_Essence_BK
+          Amount: 25
+      - Enchant: Ch01_S_E_Vain05
+        Upgrade: Ch01_S_E_Vain06
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 150
+        - Material: Frontier_Stone_YL
+          Amount: 150
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_BL
+          Amount: 25
+        - Material: Dimension_Essence_YL
+          Amount: 25
+        - Material: Dimension_Essence_GR
+          Amount: 25
+        - Material: Dimension_Essence_BK
+          Amount: 25
+      RandomUpgrades:
+      - Enchant: Ch01_S_E_Life01
+        Price: 5000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 12
+        - Material: Frontier_Stone_YL
+          Amount: 10
+        - Material: Chaotic_Rune
+          Amount: 30
+        - Material: Chaotic_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_Life03
+          Chance: 10000
+        - Item: Ch01_S_E_Life02
+          Chance: 90000
+      - Enchant: Ch01_S_E_Life02
+        Price: 10000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_Life04
+          Chance: 10000
+        - Item: Ch01_S_E_Life03
+          Chance: 90000
+      - Enchant: Ch01_S_E_Life03
+        Price: 17500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Disparate_Rune
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 5
+        Items:
+        - Item: Ch01_S_E_Life05
+          Chance: 10000
+        - Item: Ch01_S_E_Life04
+          Chance: 90000
+      - Enchant: Ch01_S_E_Life04
+        Price: 27500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Disparate_Rune
+          Amount: 40
+        - Material: Disparate_Essence
+          Amount: 10
+        Items:
+        - Item: Ch01_S_E_Life06
+          Chance: 10000
+        - Item: Ch01_S_E_Life05
+          Chance: 90000
+      - Enchant: Ch01_S_E_Regiment01
+        Price: 5000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 12
+        - Material: Frontier_Stone_YL
+          Amount: 10
+        - Material: Chaotic_Rune
+          Amount: 30
+        - Material: Chaotic_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_Regiment03
+          Chance: 10000
+        - Item: Ch01_S_E_Regiment02
+          Chance: 90000
+      - Enchant: Ch01_S_E_Regiment02
+        Price: 10000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_Regiment04
+          Chance: 10000
+        - Item: Ch01_S_E_Regiment03
+          Chance: 90000
+      - Enchant: Ch01_S_E_Regiment03
+        Price: 17500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Disparate_Rune
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 5
+        Items:
+        - Item: Ch01_S_E_Regiment05
+          Chance: 10000
+        - Item: Ch01_S_E_Regiment04
+          Chance: 90000
+      - Enchant: Ch01_S_E_Regiment04
+        Price: 27500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Disparate_Rune
+          Amount: 40
+        - Material: Disparate_Essence
+          Amount: 10
+        Items:
+        - Item: Ch01_S_E_Regiment06
+          Chance: 10000
+        - Item: Ch01_S_E_Regiment05
+          Chance: 90000
+      - Enchant: Ch01_S_E_GAE01
+        Price: 5000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 12
+        - Material: Frontier_Stone_YL
+          Amount: 10
+        - Material: Chaotic_Rune
+          Amount: 30
+        - Material: Chaotic_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_GAE03
+          Chance: 10000
+        - Item: Ch01_S_E_GAE02
+          Chance: 90000
+      - Enchant: Ch01_S_E_GAE02
+        Price: 10000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_GAE04
+          Chance: 10000
+        - Item: Ch01_S_E_GAE03
+          Chance: 90000
+      - Enchant: Ch01_S_E_GAE03
+        Price: 17500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Disparate_Rune
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 5
+        Items:
+        - Item: Ch01_S_E_GAE05
+          Chance: 10000
+        - Item: Ch01_S_E_GAE04
+          Chance: 90000
+      - Enchant: Ch01_S_E_GAE04
+        Price: 27500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Disparate_Rune
+          Amount: 40
+        - Material: Disparate_Essence
+          Amount: 10
+        Items:
+        - Item: Ch01_S_E_GAE06
+          Chance: 10000
+        - Item: Ch01_S_E_GAE05
+          Chance: 90000
+      - Enchant: Ch01_S_E_Immo01
+        Price: 5000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 12
+        - Material: Frontier_Stone_YL
+          Amount: 10
+        - Material: Chaotic_Rune
+          Amount: 30
+        - Material: Chaotic_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_Immo03
+          Chance: 10000
+        - Item: Ch01_S_E_Immo02
+          Chance: 90000
+      - Enchant: Ch01_S_E_Immo02
+        Price: 10000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_Immo04
+          Chance: 10000
+        - Item: Ch01_S_E_Immo03
+          Chance: 90000
+      - Enchant: Ch01_S_E_Immo03
+        Price: 17500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Disparate_Rune
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 5
+        Items:
+        - Item: Ch01_S_E_Immo05
+          Chance: 10000
+        - Item: Ch01_S_E_Immo04
+          Chance: 90000
+      - Enchant: Ch01_S_E_Immo04
+        Price: 27500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Disparate_Rune
+          Amount: 40
+        - Material: Disparate_Essence
+          Amount: 10
+        Items:
+        - Item: Ch01_S_E_Immo06
+          Chance: 10000
+        - Item: Ch01_S_E_Immo05
+          Chance: 90000
+      - Enchant: Ch01_S_E_Vain01
+        Price: 5000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 12
+        - Material: Frontier_Stone_YL
+          Amount: 10
+        - Material: Chaotic_Rune
+          Amount: 30
+        - Material: Chaotic_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_Vain03
+          Chance: 10000
+        - Item: Ch01_S_E_Vain02
+          Chance: 90000
+      - Enchant: Ch01_S_E_Vain02
+        Price: 10000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_Vain04
+          Chance: 10000
+        - Item: Ch01_S_E_Vain03
+          Chance: 90000
+      - Enchant: Ch01_S_E_Vain03
+        Price: 17500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Disparate_Rune
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 5
+        Items:
+        - Item: Ch01_S_E_Vain05
+          Chance: 10000
+        - Item: Ch01_S_E_Vain04
+          Chance: 90000
+      - Enchant: Ch01_S_E_Vain04
+        Price: 27500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Disparate_Rune
+          Amount: 40
+        - Material: Disparate_Essence
+          Amount: 10
+        Items:
+        - Item: Ch01_S_E_Vain06
+          Chance: 10000
+        - Item: Ch01_S_E_Vain05
+          Chance: 90000
+    - Slot: 2
+      PerfectEnchants:
+      - Item: Ch01_S_E_Flame01
+        Price: 3500000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 50
+        - Material: Ch1_Mana_Ring
+          Amount: 30
+        - Material: Frontier_M_Stone
+          Amount: 35
+      - Item: Ch01_S_E_Frozen01
+        Price: 3500000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 50
+        - Material: Ch1_Mana_Ring
+          Amount: 30
+        - Material: Frontier_M_Stone
+          Amount: 35
+      - Item: Ch01_S_E_Earth01
+        Price: 3500000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 50
+        - Material: Ch1_Mana_Ring
+          Amount: 30
+        - Material: Frontier_M_Stone
+          Amount: 35
+      - Item: Ch01_S_E_Death01
+        Price: 3500000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 50
+        - Material: Ch1_Mana_Ring
+          Amount: 30
+        - Material: Frontier_M_Stone
+          Amount: 35
+      - Item: Ch01_S_E_Poison01
+        Price: 3500000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 50
+        - Material: Ch1_Mana_Ring
+          Amount: 30
+        - Material: Frontier_M_Stone
+          Amount: 35
+      Upgrades:
+      - Enchant: Ch01_S_E_Flame05
+        Upgrade: Ch01_S_E_Flame06
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 150
+        - Material: Frontier_Stone_YL
+          Amount: 150
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_BL
+          Amount: 25
+        - Material: Dimension_Essence_YL
+          Amount: 25
+        - Material: Dimension_Essence_GR
+          Amount: 25
+        - Material: Dimension_Essence_BK
+          Amount: 25
+      - Enchant: Ch01_S_E_Frozen05
+        Upgrade: Ch01_S_E_Frozen06
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 150
+        - Material: Frontier_Stone_YL
+          Amount: 150
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_BL
+          Amount: 25
+        - Material: Dimension_Essence_YL
+          Amount: 25
+        - Material: Dimension_Essence_GR
+          Amount: 25
+        - Material: Dimension_Essence_BK
+          Amount: 25
+      - Enchant: Ch01_S_E_Earth05
+        Upgrade: Ch01_S_E_Earth06
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 150
+        - Material: Frontier_Stone_YL
+          Amount: 150
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_BL
+          Amount: 25
+        - Material: Dimension_Essence_YL
+          Amount: 25
+        - Material: Dimension_Essence_GR
+          Amount: 25
+        - Material: Dimension_Essence_BK
+          Amount: 25
+      - Enchant: Ch01_S_E_Death05
+        Upgrade: Ch01_S_E_Death06
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 150
+        - Material: Frontier_Stone_YL
+          Amount: 150
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_BL
+          Amount: 25
+        - Material: Dimension_Essence_YL
+          Amount: 25
+        - Material: Dimension_Essence_GR
+          Amount: 25
+        - Material: Dimension_Essence_BK
+          Amount: 25
+      - Enchant: Ch01_S_E_Poison05
+        Upgrade: Ch01_S_E_Poison05
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 150
+        - Material: Frontier_Stone_YL
+          Amount: 150
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_BL
+          Amount: 25
+        - Material: Dimension_Essence_YL
+          Amount: 25
+        - Material: Dimension_Essence_GR
+          Amount: 25
+        - Material: Dimension_Essence_BK
+          Amount: 25
+      RandomUpgrades:
+      - Enchant: Ch01_S_E_Flame01
+        Price: 5000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 12
+        - Material: Frontier_Stone_YL
+          Amount: 10
+        - Material: Chaotic_Rune
+          Amount: 30
+        - Material: Chaotic_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_Flame03
+          Chance: 10000
+        - Item: Ch01_S_E_Flame02
+          Chance: 90000
+      - Enchant: Ch01_S_E_Flame02
+        Price: 10000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_Flame04
+          Chance: 10000
+        - Item: Ch01_S_E_Flame03
+          Chance: 90000
+      - Enchant: Ch01_S_E_Flame03
+        Price: 17500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Disparate_Rune
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 5
+        Items:
+        - Item: Ch01_S_E_Flame05
+          Chance: 10000
+        - Item: Ch01_S_E_Flame04
+          Chance: 90000
+      - Enchant: Ch01_S_E_Flame04
+        Price: 27500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Disparate_Rune
+          Amount: 40
+        - Material: Disparate_Essence
+          Amount: 10
+        Items:
+        - Item: Ch01_S_E_Flame06
+          Chance: 10000
+        - Item: Ch01_S_E_Flame05
+          Chance: 90000
+      - Enchant: Ch01_S_E_Frozen01
+        Price: 5000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 12
+        - Material: Frontier_Stone_YL
+          Amount: 10
+        - Material: Chaotic_Rune
+          Amount: 30
+        - Material: Chaotic_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_Frozen03
+          Chance: 10000
+        - Item: Ch01_S_E_Frozen02
+          Chance: 90000
+      - Enchant: Ch01_S_E_Frozen02
+        Price: 10000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_Frozen04
+          Chance: 10000
+        - Item: Ch01_S_E_Frozen03
+          Chance: 90000
+      - Enchant: Ch01_S_E_Frozen03
+        Price: 17500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Disparate_Rune
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 5
+        Items:
+        - Item: Ch01_S_E_Frozen05
+          Chance: 10000
+        - Item: Ch01_S_E_Frozen04
+          Chance: 90000
+      - Enchant: Ch01_S_E_Frozen04
+        Price: 27500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Disparate_Rune
+          Amount: 40
+        - Material: Disparate_Essence
+          Amount: 10
+        Items:
+        - Item: Ch01_S_E_Frozen06
+          Chance: 10000
+        - Item: Ch01_S_E_Frozen05
+          Chance: 90000
+      - Enchant: Ch01_S_E_Earth01
+        Price: 5000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 12
+        - Material: Frontier_Stone_YL
+          Amount: 10
+        - Material: Chaotic_Rune
+          Amount: 30
+        - Material: Chaotic_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_Earth03
+          Chance: 10000
+        - Item: Ch01_S_E_Earth02
+          Chance: 90000
+      - Enchant: Ch01_S_E_Earth02
+        Price: 10000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_Earth04
+          Chance: 10000
+        - Item: Ch01_S_E_Earth03
+          Chance: 90000
+      - Enchant: Ch01_S_E_Earth03
+        Price: 17500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Disparate_Rune
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 5
+        Items:
+        - Item: Ch01_S_E_Earth05
+          Chance: 10000
+        - Item: Ch01_S_E_Earth04
+          Chance: 90000
+      - Enchant: Ch01_S_E_Earth04
+        Price: 27500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Disparate_Rune
+          Amount: 40
+        - Material: Disparate_Essence
+          Amount: 10
+        Items:
+        - Item: Ch01_S_E_Earth06
+          Chance: 10000
+        - Item: Ch01_S_E_Earth05
+          Chance: 90000
+      - Enchant: Ch01_S_E_Death01
+        Price: 5000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 12
+        - Material: Frontier_Stone_YL
+          Amount: 10
+        - Material: Chaotic_Rune
+          Amount: 30
+        - Material: Chaotic_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_Death03
+          Chance: 10000
+        - Item: Ch01_S_E_Death02
+          Chance: 90000
+      - Enchant: Ch01_S_E_Death02
+        Price: 10000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_Death04
+          Chance: 10000
+        - Item: Ch01_S_E_Death03
+          Chance: 90000
+      - Enchant: Ch01_S_E_Death03
+        Price: 17500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Disparate_Rune
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 5
+        Items:
+        - Item: Ch01_S_E_Death05
+          Chance: 10000
+        - Item: Ch01_S_E_Death04
+          Chance: 90000
+      - Enchant: Ch01_S_E_Death04
+        Price: 27500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Disparate_Rune
+          Amount: 40
+        - Material: Disparate_Essence
+          Amount: 10
+        Items:
+        - Item: Ch01_S_E_Death06
+          Chance: 10000
+        - Item: Ch01_S_E_Death05
+          Chance: 90000
+      - Enchant: Ch01_S_E_Poison01
+        Price: 5000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 12
+        - Material: Frontier_Stone_YL
+          Amount: 10
+        - Material: Chaotic_Rune
+          Amount: 30
+        - Material: Chaotic_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_Poison03
+          Chance: 10000
+        - Item: Ch01_S_E_Poison02
+          Chance: 90000
+      - Enchant: Ch01_S_E_Poison02
+        Price: 10000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_Poison04
+          Chance: 10000
+        - Item: Ch01_S_E_Poison03
+          Chance: 90000
+      - Enchant: Ch01_S_E_Poison03
+        Price: 17500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Disparate_Rune
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 5
+        Items:
+        - Item: Ch01_S_E_Poison05
+          Chance: 10000
+        - Item: Ch01_S_E_Poison04
+          Chance: 90000
+      - Enchant: Ch01_S_E_Poison04
+        Price: 27500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Disparate_Rune
+          Amount: 40
+        - Material: Disparate_Essence
+          Amount: 10
+        Items:
+        - Item: Ch01_S_E_Poison05
+          Chance: 10000
+        - Item: Ch01_S_E_Poison05
+          Chance: 90000
+    - Slot: 1
+      PerfectEnchants:
+      - Item: Ch01_S_E_Fighting01
+        Price: 5000000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 70
+        - Material: Ch1_Mana_Ring
+          Amount: 40
+        - Material: Frontier_M_Stone
+          Amount: 45
+      - Item: Ch01_S_E_Prudence01
+        Price: 5000000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 70
+        - Material: Ch1_Mana_Ring
+          Amount: 40
+        - Material: Frontier_M_Stone
+          Amount: 45
+      - Item: Ch01_S_E_Pride01
+        Price: 5000000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 70
+        - Material: Ch1_Mana_Ring
+          Amount: 40
+        - Material: Frontier_M_Stone
+          Amount: 45
+      - Item: Ch01_S_E_Sageness01
+        Price: 5000000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 70
+        - Material: Ch1_Mana_Ring
+          Amount: 40
+        - Material: Frontier_M_Stone
+          Amount: 45
+      - Item: Ch01_S_E_Volition01
+        Price: 5000000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 70
+        - Material: Ch1_Mana_Ring
+          Amount: 40
+        - Material: Frontier_M_Stone
+          Amount: 45
+      - Item: Ch01_S_E_Will01
+        Price: 5000000
+        Materials:
+        - Material: Ch1_Root_Coin
+          Amount: 70
+        - Material: Ch1_Mana_Ring
+          Amount: 40
+        - Material: Frontier_M_Stone
+          Amount: 45
+      Upgrades:
+      - Enchant: Ch01_S_E_Fighting05
+        Upgrade: Ch01_S_E_Fighting06
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 250
+        - Material: Frontier_Stone_YL
+          Amount: 250
+        - Material: Frontier_Stone_GR
+          Amount: 200
+        - Material: Frontier_Stone_BK
+          Amount: 200
+        - Material: Dimension_Essence_BL
+          Amount: 75
+        - Material: Dimension_Essence_YL
+          Amount: 75
+        - Material: Dimension_Essence_GR
+          Amount: 75
+        - Material: Dimension_Essence_BK
+          Amount: 75
+      - Enchant: Ch01_S_E_Prudence05
+        Upgrade: Ch01_S_E_Prudence06
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 250
+        - Material: Frontier_Stone_YL
+          Amount: 250
+        - Material: Frontier_Stone_GR
+          Amount: 200
+        - Material: Frontier_Stone_BK
+          Amount: 200
+        - Material: Dimension_Essence_BL
+          Amount: 75
+        - Material: Dimension_Essence_YL
+          Amount: 75
+        - Material: Dimension_Essence_GR
+          Amount: 75
+        - Material: Dimension_Essence_BK
+          Amount: 75
+      - Enchant: Ch01_S_E_Pride05
+        Upgrade: Ch01_S_E_Pride06
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 250
+        - Material: Frontier_Stone_YL
+          Amount: 250
+        - Material: Frontier_Stone_GR
+          Amount: 200
+        - Material: Frontier_Stone_BK
+          Amount: 200
+        - Material: Dimension_Essence_BL
+          Amount: 75
+        - Material: Dimension_Essence_YL
+          Amount: 75
+        - Material: Dimension_Essence_GR
+          Amount: 75
+        - Material: Dimension_Essence_BK
+          Amount: 75
+      - Enchant: Ch01_S_E_Sageness05
+        Upgrade: Ch01_S_E_Sageness06
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 250
+        - Material: Frontier_Stone_YL
+          Amount: 250
+        - Material: Frontier_Stone_GR
+          Amount: 200
+        - Material: Frontier_Stone_BK
+          Amount: 200
+        - Material: Dimension_Essence_BL
+          Amount: 75
+        - Material: Dimension_Essence_YL
+          Amount: 75
+        - Material: Dimension_Essence_GR
+          Amount: 75
+        - Material: Dimension_Essence_BK
+          Amount: 75
+      - Enchant: Ch01_S_E_Volition05
+        Upgrade: Ch01_S_E_Volition06
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 250
+        - Material: Frontier_Stone_YL
+          Amount: 250
+        - Material: Frontier_Stone_GR
+          Amount: 200
+        - Material: Frontier_Stone_BK
+          Amount: 200
+        - Material: Dimension_Essence_BL
+          Amount: 75
+        - Material: Dimension_Essence_YL
+          Amount: 75
+        - Material: Dimension_Essence_GR
+          Amount: 75
+        - Material: Dimension_Essence_BK
+          Amount: 75
+      - Enchant: Ch01_S_E_Will05
+        Upgrade: Ch01_S_E_Will06
+        Price: 100000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 250
+        - Material: Frontier_Stone_YL
+          Amount: 250
+        - Material: Frontier_Stone_GR
+          Amount: 200
+        - Material: Frontier_Stone_BK
+          Amount: 200
+        - Material: Dimension_Essence_BL
+          Amount: 75
+        - Material: Dimension_Essence_YL
+          Amount: 75
+        - Material: Dimension_Essence_GR
+          Amount: 75
+        - Material: Dimension_Essence_BK
+          Amount: 75
+      RandomUpgrades:
+      - Enchant: Ch01_S_E_Fighting01
+        Price: 7500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Frontier_Stone_GR
+          Amount: 10
+        - Material: Frontier_Stone_BK
+          Amount: 8
+        - Material: Chaotic_Essence
+          Amount: 15
+        - Material: Disparate_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_Fighting03
+          Chance: 10000
+        - Item: Ch01_S_E_Fighting02
+          Chance: 90000
+      - Enchant: Ch01_S_E_Fighting02
+        Price: 12500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Frontier_Stone_GR
+          Amount: 12
+        - Material: Frontier_Stone_BK
+          Amount: 10
+        - Material: Chaotic_Essence
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 9
+        Items:
+        - Item: Ch01_S_E_Fighting04
+          Chance: 10000
+        - Item: Ch01_S_E_Fighting03
+          Chance: 90000
+      - Enchant: Ch01_S_E_Fighting03
+        Price: 20000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Frontier_Stone_GR
+          Amount: 14
+        - Material: Frontier_Stone_BK
+          Amount: 12
+        - Material: Chaotic_Essence
+          Amount: 25
+        - Material: Disparate_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_Fighting05
+          Chance: 10000
+        - Item: Ch01_S_E_Fighting04
+          Chance: 90000
+      - Enchant: Ch01_S_E_Fighting04
+        Price: 30000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 20
+        - Material: Frontier_Stone_YL
+          Amount: 18
+        - Material: Frontier_Stone_GR
+          Amount: 16
+        - Material: Frontier_Stone_BK
+          Amount: 14
+        - Material: Chaotic_Essence
+          Amount: 30
+        - Material: Disparate_Essence
+          Amount: 15
+        Items:
+        - Item: Ch01_S_E_Fighting06
+          Chance: 10000
+        - Item: Ch01_S_E_Fighting05
+          Chance: 90000
+      - Enchant: Ch01_S_E_Prudence01
+        Price: 7500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Frontier_Stone_GR
+          Amount: 10
+        - Material: Frontier_Stone_BK
+          Amount: 8
+        - Material: Chaotic_Essence
+          Amount: 15
+        - Material: Disparate_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_Prudence03
+          Chance: 10000
+        - Item: Ch01_S_E_Prudence02
+          Chance: 90000
+      - Enchant: Ch01_S_E_Prudence02
+        Price: 12500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Frontier_Stone_GR
+          Amount: 12
+        - Material: Frontier_Stone_BK
+          Amount: 10
+        - Material: Chaotic_Essence
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 9
+        Items:
+        - Item: Ch01_S_E_Prudence04
+          Chance: 10000
+        - Item: Ch01_S_E_Prudence03
+          Chance: 90000
+      - Enchant: Ch01_S_E_Prudence03
+        Price: 20000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Frontier_Stone_GR
+          Amount: 14
+        - Material: Frontier_Stone_BK
+          Amount: 12
+        - Material: Chaotic_Essence
+          Amount: 25
+        - Material: Disparate_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_Prudence05
+          Chance: 10000
+        - Item: Ch01_S_E_Prudence04
+          Chance: 90000
+      - Enchant: Ch01_S_E_Prudence04
+        Price: 30000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 20
+        - Material: Frontier_Stone_YL
+          Amount: 18
+        - Material: Frontier_Stone_GR
+          Amount: 16
+        - Material: Frontier_Stone_BK
+          Amount: 14
+        - Material: Chaotic_Essence
+          Amount: 30
+        - Material: Disparate_Essence
+          Amount: 15
+        Items:
+        - Item: Ch01_S_E_Prudence06
+          Chance: 10000
+        - Item: Ch01_S_E_Prudence05
+          Chance: 90000
+      - Enchant: Ch01_S_E_Pride01
+        Price: 7500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Frontier_Stone_GR
+          Amount: 10
+        - Material: Frontier_Stone_BK
+          Amount: 8
+        - Material: Chaotic_Essence
+          Amount: 15
+        - Material: Disparate_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_Pride03
+          Chance: 10000
+        - Item: Ch01_S_E_Pride02
+          Chance: 90000
+      - Enchant: Ch01_S_E_Pride02
+        Price: 12500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Frontier_Stone_GR
+          Amount: 12
+        - Material: Frontier_Stone_BK
+          Amount: 10
+        - Material: Chaotic_Essence
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 9
+        Items:
+        - Item: Ch01_S_E_Pride04
+          Chance: 10000
+        - Item: Ch01_S_E_Pride03
+          Chance: 90000
+      - Enchant: Ch01_S_E_Pride03
+        Price: 20000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Frontier_Stone_GR
+          Amount: 14
+        - Material: Frontier_Stone_BK
+          Amount: 12
+        - Material: Chaotic_Essence
+          Amount: 25
+        - Material: Disparate_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_Pride05
+          Chance: 10000
+        - Item: Ch01_S_E_Pride04
+          Chance: 90000
+      - Enchant: Ch01_S_E_Pride04
+        Price: 30000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 20
+        - Material: Frontier_Stone_YL
+          Amount: 18
+        - Material: Frontier_Stone_GR
+          Amount: 16
+        - Material: Frontier_Stone_BK
+          Amount: 14
+        - Material: Chaotic_Essence
+          Amount: 30
+        - Material: Disparate_Essence
+          Amount: 15
+        Items:
+        - Item: Ch01_S_E_Pride06
+          Chance: 10000
+        - Item: Ch01_S_E_Pride05
+          Chance: 90000
+      - Enchant: Ch01_S_E_Sageness01
+        Price: 7500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Frontier_Stone_GR
+          Amount: 10
+        - Material: Frontier_Stone_BK
+          Amount: 8
+        - Material: Chaotic_Essence
+          Amount: 15
+        - Material: Disparate_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_Sageness03
+          Chance: 10000
+        - Item: Ch01_S_E_Sageness02
+          Chance: 90000
+      - Enchant: Ch01_S_E_Sageness02
+        Price: 12500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Frontier_Stone_GR
+          Amount: 12
+        - Material: Frontier_Stone_BK
+          Amount: 10
+        - Material: Chaotic_Essence
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 9
+        Items:
+        - Item: Ch01_S_E_Sageness04
+          Chance: 10000
+        - Item: Ch01_S_E_Sageness03
+          Chance: 90000
+      - Enchant: Ch01_S_E_Sageness03
+        Price: 20000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Frontier_Stone_GR
+          Amount: 14
+        - Material: Frontier_Stone_BK
+          Amount: 12
+        - Material: Chaotic_Essence
+          Amount: 25
+        - Material: Disparate_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_Sageness05
+          Chance: 10000
+        - Item: Ch01_S_E_Sageness04
+          Chance: 90000
+      - Enchant: Ch01_S_E_Sageness04
+        Price: 30000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 20
+        - Material: Frontier_Stone_YL
+          Amount: 18
+        - Material: Frontier_Stone_GR
+          Amount: 16
+        - Material: Frontier_Stone_BK
+          Amount: 14
+        - Material: Chaotic_Essence
+          Amount: 30
+        - Material: Disparate_Essence
+          Amount: 15
+        Items:
+        - Item: Ch01_S_E_Sageness06
+          Chance: 10000
+        - Item: Ch01_S_E_Sageness05
+          Chance: 90000
+      - Enchant: Ch01_S_E_Volition01
+        Price: 7500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Frontier_Stone_GR
+          Amount: 10
+        - Material: Frontier_Stone_BK
+          Amount: 8
+        - Material: Chaotic_Essence
+          Amount: 15
+        - Material: Disparate_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_Volition03
+          Chance: 10000
+        - Item: Ch01_S_E_Volition02
+          Chance: 90000
+      - Enchant: Ch01_S_E_Volition02
+        Price: 12500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Frontier_Stone_GR
+          Amount: 12
+        - Material: Frontier_Stone_BK
+          Amount: 10
+        - Material: Chaotic_Essence
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 9
+        Items:
+        - Item: Ch01_S_E_Volition04
+          Chance: 10000
+        - Item: Ch01_S_E_Volition03
+          Chance: 90000
+      - Enchant: Ch01_S_E_Volition03
+        Price: 20000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Frontier_Stone_GR
+          Amount: 14
+        - Material: Frontier_Stone_BK
+          Amount: 12
+        - Material: Chaotic_Essence
+          Amount: 25
+        - Material: Disparate_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_Volition05
+          Chance: 10000
+        - Item: Ch01_S_E_Volition04
+          Chance: 90000
+      - Enchant: Ch01_S_E_Volition04
+        Price: 30000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 20
+        - Material: Frontier_Stone_YL
+          Amount: 18
+        - Material: Frontier_Stone_GR
+          Amount: 16
+        - Material: Frontier_Stone_BK
+          Amount: 14
+        - Material: Chaotic_Essence
+          Amount: 30
+        - Material: Disparate_Essence
+          Amount: 15
+        Items:
+        - Item: Ch01_S_E_Volition06
+          Chance: 10000
+        - Item: Ch01_S_E_Volition05
+          Chance: 90000
+      - Enchant: Ch01_S_E_Will01
+        Price: 7500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 14
+        - Material: Frontier_Stone_YL
+          Amount: 12
+        - Material: Frontier_Stone_GR
+          Amount: 10
+        - Material: Frontier_Stone_BK
+          Amount: 8
+        - Material: Chaotic_Essence
+          Amount: 15
+        - Material: Disparate_Essence
+          Amount: 6
+        Items:
+        - Item: Ch01_S_E_Will03
+          Chance: 10000
+        - Item: Ch01_S_E_Will02
+          Chance: 90000
+      - Enchant: Ch01_S_E_Will02
+        Price: 12500000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 16
+        - Material: Frontier_Stone_YL
+          Amount: 14
+        - Material: Frontier_Stone_GR
+          Amount: 12
+        - Material: Frontier_Stone_BK
+          Amount: 10
+        - Material: Chaotic_Essence
+          Amount: 20
+        - Material: Disparate_Essence
+          Amount: 9
+        Items:
+        - Item: Ch01_S_E_Will04
+          Chance: 10000
+        - Item: Ch01_S_E_Will03
+          Chance: 90000
+      - Enchant: Ch01_S_E_Will03
+        Price: 20000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 18
+        - Material: Frontier_Stone_YL
+          Amount: 16
+        - Material: Frontier_Stone_GR
+          Amount: 14
+        - Material: Frontier_Stone_BK
+          Amount: 12
+        - Material: Chaotic_Essence
+          Amount: 25
+        - Material: Disparate_Essence
+          Amount: 12
+        Items:
+        - Item: Ch01_S_E_Will05
+          Chance: 10000
+        - Item: Ch01_S_E_Will04
+          Chance: 90000
+      - Enchant: Ch01_S_E_Will04
+        Price: 30000000
+        Materials:
+        - Material: Frontier_Stone_BL
+          Amount: 20
+        - Material: Frontier_Stone_YL
+          Amount: 18
+        - Material: Frontier_Stone_GR
+          Amount: 16
+        - Material: Frontier_Stone_BK
+          Amount: 14
+        - Material: Chaotic_Essence
+          Amount: 30
+        - Material: Disparate_Essence
+          Amount: 15
+        Items:
+        - Item: Ch01_S_E_Will06
+          Chance: 10000
+        - Item: Ch01_S_E_Will05
+          Chance: 90000
+  - Id: 164
+    TargetItems:
+      Time_DM_R_Crown_DK: true
+      Time_DM_R_Crown_IG: true
+      Time_DM_R_Crown_MT: true
+      Time_DM_R_Crown_BO: true
+      Time_DM_R_Crown_SHC: true
+      Time_DM_R_Crown_ABC: true
+      Time_DM_R_Crown_AG: true
+      Time_DM_R_Crown_EM: true
+      Time_DM_R_Crown_CD: true
+      Time_DM_R_Crown_IQ: true
+      Time_DM_R_Crown_WH: true
+      Time_DM_R_Crown_TR: true
+      Time_DM_R_Crown_SS: true
+      Time_DM_R_Crown_NW: true
+      Time_DM_R_Crown_SKE: true
+      Time_DM_R_Crown_SOA: true
+      Time_DM_R_Crown_HN: true
+      Time_DM_R_Crown_SH: true
+      Frontier_R_Crown_DK: true
+      Frontier_R_Crown_IG: true
+      Frontier_R_Crown_MT: true
+      Frontier_R_Crown_BO: true
+      Frontier_R_Crown_SHC: true
+      Frontier_R_Crown_ABC: true
+      Frontier_R_Crown_AG: true
+      Frontier_R_Crown_EM: true
+      Frontier_R_Crown_CD: true
+      Frontier_R_Crown_IQ: true
+      Frontier_R_Crown_WH: true
+      Frontier_R_Crown_TR: true
+      Frontier_R_Crown_SS: true
+      Frontier_R_Crown_NW: true
+      Frontier_R_Crown_SKE: true
+      Frontier_R_Crown_SOA: true
+      Frontier_R_Crown_HN: true
+      Frontier_R_Crown_SH: true
+    Reset:
+      Chance: 100000
+      Price: 1000000
+      Materials:
+      - Material: Zelunium
+        Amount: 5
+      - Material: Shadowdecon
+        Amount: 5
+      - Material: Ch1_Mana_Ring
+        Amount: 15
+    Order:
+    - Slot: 3
+    - Slot: 2
+    - Slot: 1
+    Slots:
+    - Slot: 3
+      Price: 500000
+      Materials:
+      - Material: Frontier_Magic_Dust
+        Amount: 10
+      - Material: Abyss_Rune
+        Amount: 2
+      Enchants:
+      - Enchantgrade: 0
+        Items:
+        - Item: Strength2
+          Chance: 8000
+        - Item: Inteligence2
+          Chance: 8000
+        - Item: Vitality2
+          Chance: 8000
+        - Item: Luck2
+          Chance: 8000
+        - Item: Strength1
+          Chance: 11500
+        - Item: Inteligence1
+          Chance: 11500
+        - Item: Vitality1
+          Chance: 11500
+        - Item: Luck1
+          Chance: 11500
+        - Item: Strength3
+          Chance: 3500
+        - Item: Inteligence3
+          Chance: 3500
+        - Item: Vitality3
+          Chance: 3500
+        - Item: Luck3
+          Chance: 3500
+        - Item: Strength5
+          Chance: 500
+        - Item: Inteligence5
+          Chance: 500
+        - Item: Vitality5
+          Chance: 500
+        - Item: Luck5
+          Chance: 500
+        - Item: Strength4
+          Chance: 1500
+        - Item: Inteligence4
+          Chance: 1500
+        - Item: Vitality4
+          Chance: 1500
+        - Item: Luck4
+          Chance: 1500
+      - Enchantgrade: 1
+        Items:
+        - Item: Strength2
+          Chance: 8000
+        - Item: Inteligence2
+          Chance: 8000
+        - Item: Vitality2
+          Chance: 8000
+        - Item: Luck2
+          Chance: 8000
+        - Item: Strength1
+          Chance: 11500
+        - Item: Inteligence1
+          Chance: 11500
+        - Item: Vitality1
+          Chance: 11500
+        - Item: Luck1
+          Chance: 11500
+        - Item: Strength3
+          Chance: 3500
+        - Item: Inteligence3
+          Chance: 3500
+        - Item: Vitality3
+          Chance: 3500
+        - Item: Luck3
+          Chance: 3500
+        - Item: Strength5
+          Chance: 500
+        - Item: Inteligence5
+          Chance: 500
+        - Item: Vitality5
+          Chance: 500
+        - Item: Luck5
+          Chance: 500
+        - Item: Strength4
+          Chance: 1500
+        - Item: Inteligence4
+          Chance: 1500
+        - Item: Vitality4
+          Chance: 1500
+        - Item: Luck4
+          Chance: 1500
+      - Enchantgrade: 2
+        Items:
+        - Item: Strength2
+          Chance: 8000
+        - Item: Inteligence2
+          Chance: 8000
+        - Item: Vitality2
+          Chance: 8000
+        - Item: Luck2
+          Chance: 8000
+        - Item: Strength1
+          Chance: 11500
+        - Item: Inteligence1
+          Chance: 11500
+        - Item: Vitality1
+          Chance: 11500
+        - Item: Luck1
+          Chance: 11500
+        - Item: Strength3
+          Chance: 3500
+        - Item: Inteligence3
+          Chance: 3500
+        - Item: Vitality3
+          Chance: 3500
+        - Item: Luck3
+          Chance: 3500
+        - Item: Strength5
+          Chance: 500
+        - Item: Inteligence5
+          Chance: 500
+        - Item: Vitality5
+          Chance: 500
+        - Item: Luck5
+          Chance: 500
+        - Item: Strength4
+          Chance: 1500
+        - Item: Inteligence4
+          Chance: 1500
+        - Item: Vitality4
+          Chance: 1500
+        - Item: Luck4
+          Chance: 1500
+      - Enchantgrade: 3
+        Items:
+        - Item: Strength2
+          Chance: 8000
+        - Item: Inteligence2
+          Chance: 8000
+        - Item: Vitality2
+          Chance: 8000
+        - Item: Luck2
+          Chance: 8000
+        - Item: Strength1
+          Chance: 11500
+        - Item: Inteligence1
+          Chance: 11500
+        - Item: Vitality1
+          Chance: 11500
+        - Item: Luck1
+          Chance: 11500
+        - Item: Strength3
+          Chance: 3500
+        - Item: Inteligence3
+          Chance: 3500
+        - Item: Vitality3
+          Chance: 3500
+        - Item: Luck3
+          Chance: 3500
+        - Item: Strength5
+          Chance: 500
+        - Item: Inteligence5
+          Chance: 500
+        - Item: Vitality5
+          Chance: 500
+        - Item: Luck5
+          Chance: 500
+        - Item: Strength4
+          Chance: 1500
+        - Item: Inteligence4
+          Chance: 1500
+        - Item: Vitality4
+          Chance: 1500
+        - Item: Luck4
+          Chance: 1500
+      - Enchantgrade: 4
+        Items:
+        - Item: Strength2
+          Chance: 8000
+        - Item: Inteligence2
+          Chance: 8000
+        - Item: Vitality2
+          Chance: 8000
+        - Item: Luck2
+          Chance: 8000
+        - Item: Strength1
+          Chance: 11500
+        - Item: Inteligence1
+          Chance: 11500
+        - Item: Vitality1
+          Chance: 11500
+        - Item: Luck1
+          Chance: 11500
+        - Item: Strength3
+          Chance: 3500
+        - Item: Inteligence3
+          Chance: 3500
+        - Item: Vitality3
+          Chance: 3500
+        - Item: Luck3
+          Chance: 3500
+        - Item: Strength5
+          Chance: 500
+        - Item: Inteligence5
+          Chance: 500
+        - Item: Vitality5
+          Chance: 500
+        - Item: Luck5
+          Chance: 500
+        - Item: Strength4
+          Chance: 1500
+        - Item: Inteligence4
+          Chance: 1500
+        - Item: Vitality4
+          Chance: 1500
+        - Item: Luck4
+          Chance: 1500
+    - Slot: 2
+      Price: 1500000
+      Materials:
+      - Material: Frontier_M_Stone
+        Amount: 3
+      - Material: Chaotic_Rune
+        Amount: 3
+      - Material: Disparate_Rune
+      Enchants:
+      - Enchantgrade: 0
+        Items:
+        - Item: T_D_Jewel_STR_1
+          Chance: 5600
+        - Item: T_D_Jewel_AGI_1
+          Chance: 5600
+        - Item: T_D_Jewel_DEX_1
+          Chance: 5600
+        - Item: T_D_Jewel_VIT_1
+          Chance: 5600
+        - Item: T_D_Jewel_INT_1
+          Chance: 5600
+        - Item: T_D_Jewel_SPR_1
+          Chance: 5600
+        - Item: T_D_Jewel_WIS_1
+          Chance: 5600
+        - Item: T_D_Jewel_LUK_1
+          Chance: 5600
+        - Item: T_D_Jewel_POW_1
+          Chance: 5600
+        - Item: T_D_Jewel_CON_1
+          Chance: 5600
+        - Item: T_D_Jewel_STR_3
+          Chance: 1440
+        - Item: T_D_Jewel_AGI_3
+          Chance: 1440
+        - Item: T_D_Jewel_DEX_3
+          Chance: 1440
+        - Item: T_D_Jewel_VIT_3
+          Chance: 1440
+        - Item: T_D_Jewel_INT_3
+          Chance: 1440
+        - Item: T_D_Jewel_SPR_3
+          Chance: 1440
+        - Item: T_D_Jewel_WIS_3
+          Chance: 1440
+        - Item: T_D_Jewel_LUK_3
+          Chance: 1440
+        - Item: T_D_Jewel_POW_3
+          Chance: 1440
+        - Item: T_D_Jewel_CON_3
+          Chance: 1440
+        - Item: T_D_Jewel_STR_2
+          Chance: 2960
+        - Item: T_D_Jewel_AGI_2
+          Chance: 2960
+        - Item: T_D_Jewel_DEX_2
+          Chance: 2960
+        - Item: T_D_Jewel_VIT_2
+          Chance: 2960
+        - Item: T_D_Jewel_INT_2
+          Chance: 2960
+        - Item: T_D_Jewel_SPR_2
+          Chance: 2960
+        - Item: T_D_Jewel_WIS_2
+          Chance: 2960
+        - Item: T_D_Jewel_LUK_2
+          Chance: 2960
+        - Item: T_D_Jewel_POW_2
+          Chance: 2960
+        - Item: T_D_Jewel_CON_2
+          Chance: 2960
+      - Enchantgrade: 1
+        Items:
+        - Item: T_D_Jewel_STR_1
+          Chance: 5600
+        - Item: T_D_Jewel_AGI_1
+          Chance: 5600
+        - Item: T_D_Jewel_DEX_1
+          Chance: 5600
+        - Item: T_D_Jewel_VIT_1
+          Chance: 5600
+        - Item: T_D_Jewel_INT_1
+          Chance: 5600
+        - Item: T_D_Jewel_SPR_1
+          Chance: 5600
+        - Item: T_D_Jewel_WIS_1
+          Chance: 5600
+        - Item: T_D_Jewel_LUK_1
+          Chance: 5600
+        - Item: T_D_Jewel_POW_1
+          Chance: 5600
+        - Item: T_D_Jewel_CON_1
+          Chance: 5600
+        - Item: T_D_Jewel_STR_3
+          Chance: 1440
+        - Item: T_D_Jewel_AGI_3
+          Chance: 1440
+        - Item: T_D_Jewel_DEX_3
+          Chance: 1440
+        - Item: T_D_Jewel_VIT_3
+          Chance: 1440
+        - Item: T_D_Jewel_INT_3
+          Chance: 1440
+        - Item: T_D_Jewel_SPR_3
+          Chance: 1440
+        - Item: T_D_Jewel_WIS_3
+          Chance: 1440
+        - Item: T_D_Jewel_LUK_3
+          Chance: 1440
+        - Item: T_D_Jewel_POW_3
+          Chance: 1440
+        - Item: T_D_Jewel_CON_3
+          Chance: 1440
+        - Item: T_D_Jewel_STR_2
+          Chance: 2960
+        - Item: T_D_Jewel_AGI_2
+          Chance: 2960
+        - Item: T_D_Jewel_DEX_2
+          Chance: 2960
+        - Item: T_D_Jewel_VIT_2
+          Chance: 2960
+        - Item: T_D_Jewel_INT_2
+          Chance: 2960
+        - Item: T_D_Jewel_SPR_2
+          Chance: 2960
+        - Item: T_D_Jewel_WIS_2
+          Chance: 2960
+        - Item: T_D_Jewel_LUK_2
+          Chance: 2960
+        - Item: T_D_Jewel_POW_2
+          Chance: 2960
+        - Item: T_D_Jewel_CON_2
+          Chance: 2960
+      - Enchantgrade: 2
+        Items:
+        - Item: T_D_Jewel_STR_1
+          Chance: 5600
+        - Item: T_D_Jewel_AGI_1
+          Chance: 5600
+        - Item: T_D_Jewel_DEX_1
+          Chance: 5600
+        - Item: T_D_Jewel_VIT_1
+          Chance: 5600
+        - Item: T_D_Jewel_INT_1
+          Chance: 5600
+        - Item: T_D_Jewel_SPR_1
+          Chance: 5600
+        - Item: T_D_Jewel_WIS_1
+          Chance: 5600
+        - Item: T_D_Jewel_LUK_1
+          Chance: 5600
+        - Item: T_D_Jewel_POW_1
+          Chance: 5600
+        - Item: T_D_Jewel_CON_1
+          Chance: 5600
+        - Item: T_D_Jewel_STR_3
+          Chance: 1440
+        - Item: T_D_Jewel_AGI_3
+          Chance: 1440
+        - Item: T_D_Jewel_DEX_3
+          Chance: 1440
+        - Item: T_D_Jewel_VIT_3
+          Chance: 1440
+        - Item: T_D_Jewel_INT_3
+          Chance: 1440
+        - Item: T_D_Jewel_SPR_3
+          Chance: 1440
+        - Item: T_D_Jewel_WIS_3
+          Chance: 1440
+        - Item: T_D_Jewel_LUK_3
+          Chance: 1440
+        - Item: T_D_Jewel_POW_3
+          Chance: 1440
+        - Item: T_D_Jewel_CON_3
+          Chance: 1440
+        - Item: T_D_Jewel_STR_2
+          Chance: 2960
+        - Item: T_D_Jewel_AGI_2
+          Chance: 2960
+        - Item: T_D_Jewel_DEX_2
+          Chance: 2960
+        - Item: T_D_Jewel_VIT_2
+          Chance: 2960
+        - Item: T_D_Jewel_INT_2
+          Chance: 2960
+        - Item: T_D_Jewel_SPR_2
+          Chance: 2960
+        - Item: T_D_Jewel_WIS_2
+          Chance: 2960
+        - Item: T_D_Jewel_LUK_2
+          Chance: 2960
+        - Item: T_D_Jewel_POW_2
+          Chance: 2960
+        - Item: T_D_Jewel_CON_2
+          Chance: 2960
+      - Enchantgrade: 3
+        Items:
+        - Item: T_D_Jewel_STR_1
+          Chance: 5600
+        - Item: T_D_Jewel_AGI_1
+          Chance: 5600
+        - Item: T_D_Jewel_DEX_1
+          Chance: 5600
+        - Item: T_D_Jewel_VIT_1
+          Chance: 5600
+        - Item: T_D_Jewel_INT_1
+          Chance: 5600
+        - Item: T_D_Jewel_SPR_1
+          Chance: 5600
+        - Item: T_D_Jewel_WIS_1
+          Chance: 5600
+        - Item: T_D_Jewel_LUK_1
+          Chance: 5600
+        - Item: T_D_Jewel_POW_1
+          Chance: 5600
+        - Item: T_D_Jewel_CON_1
+          Chance: 5600
+        - Item: T_D_Jewel_STR_3
+          Chance: 1440
+        - Item: T_D_Jewel_AGI_3
+          Chance: 1440
+        - Item: T_D_Jewel_DEX_3
+          Chance: 1440
+        - Item: T_D_Jewel_VIT_3
+          Chance: 1440
+        - Item: T_D_Jewel_INT_3
+          Chance: 1440
+        - Item: T_D_Jewel_SPR_3
+          Chance: 1440
+        - Item: T_D_Jewel_WIS_3
+          Chance: 1440
+        - Item: T_D_Jewel_LUK_3
+          Chance: 1440
+        - Item: T_D_Jewel_POW_3
+          Chance: 1440
+        - Item: T_D_Jewel_CON_3
+          Chance: 1440
+        - Item: T_D_Jewel_STR_2
+          Chance: 2960
+        - Item: T_D_Jewel_AGI_2
+          Chance: 2960
+        - Item: T_D_Jewel_DEX_2
+          Chance: 2960
+        - Item: T_D_Jewel_VIT_2
+          Chance: 2960
+        - Item: T_D_Jewel_INT_2
+          Chance: 2960
+        - Item: T_D_Jewel_SPR_2
+          Chance: 2960
+        - Item: T_D_Jewel_WIS_2
+          Chance: 2960
+        - Item: T_D_Jewel_LUK_2
+          Chance: 2960
+        - Item: T_D_Jewel_POW_2
+          Chance: 2960
+        - Item: T_D_Jewel_CON_2
+          Chance: 2960
+      - Enchantgrade: 4
+        Items:
+        - Item: T_D_Jewel_STR_1
+          Chance: 5600
+        - Item: T_D_Jewel_AGI_1
+          Chance: 5600
+        - Item: T_D_Jewel_DEX_1
+          Chance: 5600
+        - Item: T_D_Jewel_VIT_1
+          Chance: 5600
+        - Item: T_D_Jewel_INT_1
+          Chance: 5600
+        - Item: T_D_Jewel_SPR_1
+          Chance: 5600
+        - Item: T_D_Jewel_WIS_1
+          Chance: 5600
+        - Item: T_D_Jewel_LUK_1
+          Chance: 5600
+        - Item: T_D_Jewel_POW_1
+          Chance: 5600
+        - Item: T_D_Jewel_CON_1
+          Chance: 5600
+        - Item: T_D_Jewel_STR_3
+          Chance: 1440
+        - Item: T_D_Jewel_AGI_3
+          Chance: 1440
+        - Item: T_D_Jewel_DEX_3
+          Chance: 1440
+        - Item: T_D_Jewel_VIT_3
+          Chance: 1440
+        - Item: T_D_Jewel_INT_3
+          Chance: 1440
+        - Item: T_D_Jewel_SPR_3
+          Chance: 1440
+        - Item: T_D_Jewel_WIS_3
+          Chance: 1440
+        - Item: T_D_Jewel_LUK_3
+          Chance: 1440
+        - Item: T_D_Jewel_POW_3
+          Chance: 1440
+        - Item: T_D_Jewel_CON_3
+          Chance: 1440
+        - Item: T_D_Jewel_STR_2
+          Chance: 2960
+        - Item: T_D_Jewel_AGI_2
+          Chance: 2960
+        - Item: T_D_Jewel_DEX_2
+          Chance: 2960
+        - Item: T_D_Jewel_VIT_2
+          Chance: 2960
+        - Item: T_D_Jewel_INT_2
+          Chance: 2960
+        - Item: T_D_Jewel_SPR_2
+          Chance: 2960
+        - Item: T_D_Jewel_WIS_2
+          Chance: 2960
+        - Item: T_D_Jewel_LUK_2
+          Chance: 2960
+        - Item: T_D_Jewel_POW_2
+          Chance: 2960
+        - Item: T_D_Jewel_CON_2
+          Chance: 2960
+    - Slot: 1
+      PerfectEnchants:
+      - Item: Acute_Jewel_1
+        Price: 100000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 85
+        - Material: Chaotic_Essence
+          Amount: 100
+      - Item: Mettle_Jewel_1
+        Price: 100000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 85
+        - Material: Chaotic_Essence
+          Amount: 100
+      - Item: Tenacity_Jewel_1
+        Price: 100000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 85
+        - Material: Chaotic_Essence
+          Amount: 100
+      - Item: Master_A_Jewel_1
+        Price: 100000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 85
+        - Material: Chaotic_Essence
+          Amount: 100
+      - Item: Magic_E_Jewel_1
+        Price: 100000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 85
+        - Material: Chaotic_Essence
+          Amount: 100
+      - Item: Spell_Jewel_1
+        Price: 100000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 85
+        - Material: Chaotic_Essence
+          Amount: 100
+      - Item: Adamatine_Jewel_1
+        Price: 100000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 85
+        - Material: Chaotic_Essence
+          Amount: 100
+      - Item: Affection_Jewel_1
+        Price: 100000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 85
+        - Material: Chaotic_Essence
+          Amount: 100
+      - Item: Fierce_A_Jewel_1
+        Price: 100000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 85
+        - Material: Chaotic_Essence
+          Amount: 100
+      - Item: Great_C_Jewel_1
+        Price: 100000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 85
+        - Material: Chaotic_Essence
+          Amount: 100
+      RandomUpgrades:
+      - Enchant: Mettle_Jewel_1
+        Price: 35000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 40
+        Items:
+        - Item: Mettle_Jewel_3
+          Chance: 10000
+        - Item: Mettle_Jewel_2
+          Chance: 90000
+      - Enchant: Mettle_Jewel_2
+        Price: 40000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 80
+        - Material: Chaotic_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Tiem_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Mettle_Jewel_4
+          Chance: 10000
+        - Item: Mettle_Jewel_3
+          Chance: 90000
+      - Enchant: Mettle_Jewel_3
+        Price: 45000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 100
+        - Material: Chaotic_Essence
+          Amount: 120
+        - Material: Time_D_Ma_Rune
+          Amount: 65
+        - Material: Dimansion_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Mettle_Jewel_5
+          Chance: 10000
+        - Item: Mettle_Jewel_4
+          Chance: 90000
+      - Enchant: Mettle_Jewel_4
+        Price: 50000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 85
+        - Material: Pure_SpellScoll
+          Amount: 30
+        Items:
+        - Item: Mettle_Jewel_6
+          Chance: 10000
+        - Item: Mettle_Jewel_5
+          Chance: 80000
+        - Item: Mettle_Jewel_4
+          Chance: 10000
+      - Enchant: Mettle_Jewel_5
+        Price: 55000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 80
+        - Material: Disparate_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 110
+        - Material: Polluted_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Mettle_Jewel_7
+          Chance: 10000
+        - Item: Mettle_Jewel_6
+          Chance: 80000
+        - Item: Mettle_Jewel_5
+          Chance: 10000
+      - Enchant: Mettle_Jewel_6
+        Price: 60000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 70
+        - Material: Time_D_Ma_Rune
+          Amount: 20
+        - Material: Polluted_SpellScroll
+          Amount: 10
+        Items:
+        - Item: Mettle_Jewel_5
+          Chance: 80000
+        - Item: Mettle_Jewel_7
+          Chance: 20000
+      - Enchant: Mettle_Jewel_7
+        Price: 65000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 70
+        - Material: Disparate_Essence
+          Amount: 85
+        - Material: Time_D_Ma_Rune
+          Amount: 30
+        - Material: Polluted_SpellScroll
+          Amount: 15
+        Items:
+        - Item: Mettle_Jewel_6
+          Chance: 90000
+        - Item: Mettle_Jewel_8
+          Chance: 10000
+      - Enchant: Mettle_Jewel_8
+        Price: 70000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 90
+        - Material: Disparate_Essence
+          Amount: 110
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Immortal_SpellScroll
+          Amount: 20
+        Items:
+        - Item: Mettle_Jewel_7
+          Chance: 93000
+        - Item: Mettle_Jewel_9
+          Chance: 7000
+      - Enchant: Mettle_Jewel_9
+        Price: 75000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 120
+        - Material: Disparate_Essence
+          Amount: 145
+        - Material: Time_D_Ma_Rune
+          Amount: 80
+        - Material: Immortal_SpellScroll
+          Amount: 25
+        Items:
+        - Item: Mettle_Jewel_8
+          Chance: 95000
+        - Item: Mettle_Jewel_10
+          Chance: 5000
+      - Enchant: Tenacity_Jewel_1
+        Price: 35000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 40
+        Items:
+        - Item: Tenacity_Jewel_3
+          Chance: 10000
+        - Item: Tenacity_Jewel_2
+          Chance: 90000
+      - Enchant: Tenacity_Jewel_2
+        Price: 40000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 80
+        - Material: Chaotic_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Tiem_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Tenacity_Jewel_4
+          Chance: 10000
+        - Item: Tenacity_Jewel_3
+          Chance: 90000
+      - Enchant: Tenacity_Jewel_3
+        Price: 45000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 100
+        - Material: Chaotic_Essence
+          Amount: 120
+        - Material: Time_D_Ma_Rune
+          Amount: 65
+        - Material: Dimansion_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Tenacity_Jewel_5
+          Chance: 10000
+        - Item: Tenacity_Jewel_4
+          Chance: 90000
+      - Enchant: Tenacity_Jewel_4
+        Price: 50000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 85
+        - Material: Pure_SpellScoll
+          Amount: 30
+        Items:
+        - Item: Tenacity_Jewel_6
+          Chance: 10000
+        - Item: Tenacity_Jewel_5
+          Chance: 80000
+        - Item: Tenacity_Jewel_4
+          Chance: 10000
+      - Enchant: Tenacity_Jewel_5
+        Price: 55000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 80
+        - Material: Disparate_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 110
+        - Material: Polluted_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Tenacity_Jewel_7
+          Chance: 10000
+        - Item: Tenacity_Jewel_6
+          Chance: 80000
+        - Item: Tenacity_Jewel_5
+          Chance: 10000
+      - Enchant: Tenacity_Jewel_6
+        Price: 60000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 70
+        - Material: Time_D_Ma_Rune
+          Amount: 20
+        - Material: Polluted_SpellScroll
+          Amount: 10
+        Items:
+        - Item: Tenacity_Jewel_5
+          Chance: 80000
+        - Item: Tenacity_Jewel_7
+          Chance: 20000
+      - Enchant: Tenacity_Jewel_7
+        Price: 65000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 70
+        - Material: Disparate_Essence
+          Amount: 85
+        - Material: Time_D_Ma_Rune
+          Amount: 30
+        - Material: Polluted_SpellScroll
+          Amount: 15
+        Items:
+        - Item: Tenacity_Jewel_6
+          Chance: 90000
+        - Item: Tenacity_Jewel_8
+          Chance: 10000
+      - Enchant: Tenacity_Jewel_8
+        Price: 70000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 90
+        - Material: Disparate_Essence
+          Amount: 110
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Immortal_SpellScroll
+          Amount: 20
+        Items:
+        - Item: Tenacity_Jewel_7
+          Chance: 93000
+        - Item: Tenacity_Jewel_9
+          Chance: 7000
+      - Enchant: Tenacity_Jewel_9
+        Price: 75000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 120
+        - Material: Disparate_Essence
+          Amount: 145
+        - Material: Time_D_Ma_Rune
+          Amount: 80
+        - Material: Immortal_SpellScroll
+          Amount: 25
+        Items:
+        - Item: Tenacity_Jewel_8
+          Chance: 95000
+        - Item: Tenacity_Jewel_10
+          Chance: 5000
+      - Enchant: Master_A_Jewel_1
+        Price: 35000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 40
+        Items:
+        - Item: Master_A_Jewel_3
+          Chance: 10000
+        - Item: Master_A_Jewel_2
+          Chance: 90000
+      - Enchant: Master_A_Jewel_2
+        Price: 40000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 80
+        - Material: Chaotic_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Tiem_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Master_A_Jewel_4
+          Chance: 10000
+        - Item: Master_A_Jewel_3
+          Chance: 90000
+      - Enchant: Master_A_Jewel_3
+        Price: 45000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 100
+        - Material: Chaotic_Essence
+          Amount: 120
+        - Material: Time_D_Ma_Rune
+          Amount: 65
+        - Material: Dimansion_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Master_A_Jewel_5
+          Chance: 10000
+        - Item: Master_A_Jewel_4
+          Chance: 90000
+      - Enchant: Master_A_Jewel_4
+        Price: 50000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 85
+        - Material: Pure_SpellScoll
+          Amount: 30
+        Items:
+        - Item: Master_A_Jewel_6
+          Chance: 10000
+        - Item: Master_A_Jewel_5
+          Chance: 80000
+        - Item: Master_A_Jewel_4
+          Chance: 10000
+      - Enchant: Master_A_Jewel_5
+        Price: 55000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 80
+        - Material: Disparate_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 110
+        - Material: Polluted_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Master_A_Jewel_7
+          Chance: 10000
+        - Item: Master_A_Jewel_6
+          Chance: 80000
+        - Item: Master_A_Jewel_5
+          Chance: 10000
+      - Enchant: Master_A_Jewel_6
+        Price: 60000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 70
+        - Material: Time_D_Ma_Rune
+          Amount: 20
+        - Material: Polluted_SpellScroll
+          Amount: 10
+        Items:
+        - Item: Master_A_Jewel_5
+          Chance: 80000
+        - Item: Master_A_Jewel_7
+          Chance: 20000
+      - Enchant: Master_A_Jewel_7
+        Price: 65000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 70
+        - Material: Disparate_Essence
+          Amount: 85
+        - Material: Time_D_Ma_Rune
+          Amount: 30
+        - Material: Polluted_SpellScroll
+          Amount: 15
+        Items:
+        - Item: Master_A_Jewel_6
+          Chance: 90000
+        - Item: Master_A_Jewel_8
+          Chance: 10000
+      - Enchant: Master_A_Jewel_8
+        Price: 70000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 90
+        - Material: Disparate_Essence
+          Amount: 110
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Immortal_SpellScroll
+          Amount: 20
+        Items:
+        - Item: Master_A_Jewel_7
+          Chance: 93000
+        - Item: Master_A_Jewel_9
+          Chance: 7000
+      - Enchant: Master_A_Jewel_9
+        Price: 75000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 120
+        - Material: Disparate_Essence
+          Amount: 145
+        - Material: Time_D_Ma_Rune
+          Amount: 80
+        - Material: Immortal_SpellScroll
+          Amount: 25
+        Items:
+        - Item: Master_A_Jewel_8
+          Chance: 95000
+        - Item: Master_A_Jewel_10
+          Chance: 5000
+      - Enchant: Acute_Jewel_1
+        Price: 35000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 40
+        Items:
+        - Item: Acute_Jewel_3
+          Chance: 10000
+        - Item: Acute_Jewel_2
+          Chance: 90000
+      - Enchant: Acute_Jewel_2
+        Price: 40000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 80
+        - Material: Chaotic_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Tiem_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Acute_Jewel_4
+          Chance: 10000
+        - Item: Acute_Jewel_3
+          Chance: 90000
+      - Enchant: Acute_Jewel_3
+        Price: 45000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 100
+        - Material: Chaotic_Essence
+          Amount: 120
+        - Material: Time_D_Ma_Rune
+          Amount: 65
+        - Material: Dimansion_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Acute_Jewel_5
+          Chance: 10000
+        - Item: Acute_Jewel_4
+          Chance: 90000
+      - Enchant: Acute_Jewel_4
+        Price: 50000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 85
+        - Material: Pure_SpellScoll
+          Amount: 30
+        Items:
+        - Item: Acute_Jewel_6
+          Chance: 10000
+        - Item: Acute_Jewel_5
+          Chance: 80000
+        - Item: Acute_Jewel_4
+          Chance: 10000
+      - Enchant: Acute_Jewel_5
+        Price: 55000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 80
+        - Material: Disparate_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 110
+        - Material: Polluted_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Acute_Jewel_7
+          Chance: 10000
+        - Item: Acute_Jewel_6
+          Chance: 80000
+        - Item: Acute_Jewel_5
+          Chance: 10000
+      - Enchant: Acute_Jewel_6
+        Price: 60000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 70
+        - Material: Time_D_Ma_Rune
+          Amount: 20
+        - Material: Polluted_SpellScroll
+          Amount: 10
+        Items:
+        - Item: Acute_Jewel_5
+          Chance: 80000
+        - Item: Acute_Jewel_7
+          Chance: 20000
+      - Enchant: Acute_Jewel_7
+        Price: 65000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 70
+        - Material: Disparate_Essence
+          Amount: 85
+        - Material: Time_D_Ma_Rune
+          Amount: 30
+        - Material: Polluted_SpellScroll
+          Amount: 15
+        Items:
+        - Item: Acute_Jewel_6
+          Chance: 90000
+        - Item: Acute_Jewel_8
+          Chance: 10000
+      - Enchant: Acute_Jewel_8
+        Price: 70000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 90
+        - Material: Disparate_Essence
+          Amount: 110
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Immortal_SpellScroll
+          Amount: 20
+        Items:
+        - Item: Acute_Jewel_7
+          Chance: 93000
+        - Item: Acute_Jewel_9
+          Chance: 7000
+      - Enchant: Acute_Jewel_9
+        Price: 75000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 120
+        - Material: Disparate_Essence
+          Amount: 145
+        - Material: Time_D_Ma_Rune
+          Amount: 80
+        - Material: Immortal_SpellScroll
+          Amount: 25
+        Items:
+        - Item: Acute_Jewel_8
+          Chance: 95000
+        - Item: Acute_Jewel_10
+          Chance: 5000
+      - Enchant: Magic_E_Jewel_1
+        Price: 35000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 40
+        Items:
+        - Item: Magic_E_Jewel_3
+          Chance: 10000
+        - Item: Magic_E_Jewel_2
+          Chance: 90000
+      - Enchant: Magic_E_Jewel_2
+        Price: 40000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 80
+        - Material: Chaotic_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Tiem_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Magic_E_Jewel_4
+          Chance: 10000
+        - Item: Magic_E_Jewel_3
+          Chance: 90000
+      - Enchant: Magic_E_Jewel_3
+        Price: 45000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 100
+        - Material: Chaotic_Essence
+          Amount: 120
+        - Material: Time_D_Ma_Rune
+          Amount: 65
+        - Material: Dimansion_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Magic_E_Jewel_5
+          Chance: 10000
+        - Item: Magic_E_Jewel_4
+          Chance: 90000
+      - Enchant: Magic_E_Jewel_4
+        Price: 50000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 85
+        - Material: Pure_SpellScoll
+          Amount: 30
+        Items:
+        - Item: Magic_E_Jewel_6
+          Chance: 10000
+        - Item: Magic_E_Jewel_5
+          Chance: 80000
+        - Item: Magic_E_Jewel_4
+          Chance: 10000
+      - Enchant: Magic_E_Jewel_5
+        Price: 55000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 80
+        - Material: Disparate_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 110
+        - Material: Polluted_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Magic_E_Jewel_7
+          Chance: 10000
+        - Item: Magic_E_Jewel_6
+          Chance: 80000
+        - Item: Magic_E_Jewel_5
+          Chance: 10000
+      - Enchant: Magic_E_Jewel_6
+        Price: 60000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 70
+        - Material: Time_D_Ma_Rune
+          Amount: 20
+        - Material: Polluted_SpellScroll
+          Amount: 10
+        Items:
+        - Item: Magic_E_Jewel_5
+          Chance: 80000
+        - Item: Magic_E_Jewel_7
+          Chance: 20000
+      - Enchant: Magic_E_Jewel_7
+        Price: 65000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 70
+        - Material: Disparate_Essence
+          Amount: 85
+        - Material: Time_D_Ma_Rune
+          Amount: 30
+        - Material: Polluted_SpellScroll
+          Amount: 15
+        Items:
+        - Item: Magic_E_Jewel_6
+          Chance: 90000
+        - Item: Magic_E_Jewel_8
+          Chance: 10000
+      - Enchant: Magic_E_Jewel_8
+        Price: 70000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 90
+        - Material: Disparate_Essence
+          Amount: 110
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Immortal_SpellScroll
+          Amount: 20
+        Items:
+        - Item: Magic_E_Jewel_7
+          Chance: 93000
+        - Item: Magic_E_Jewel_9
+          Chance: 7000
+      - Enchant: Magic_E_Jewel_9
+        Price: 75000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 120
+        - Material: Disparate_Essence
+          Amount: 145
+        - Material: Time_D_Ma_Rune
+          Amount: 80
+        - Material: Immortal_SpellScroll
+          Amount: 25
+        Items:
+        - Item: Magic_E_Jewel_8
+          Chance: 95000
+        - Item: Magic_E_Jewel_10
+          Chance: 5000
+      - Enchant: Spell_Jewel_1
+        Price: 35000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 40
+        Items:
+        - Item: Spell_Jewel_3
+          Chance: 10000
+        - Item: Spell_Jewel_2
+          Chance: 90000
+      - Enchant: Spell_Jewel_2
+        Price: 40000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 80
+        - Material: Chaotic_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Tiem_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Spell_Jewel_4
+          Chance: 10000
+        - Item: Spell_Jewel_3
+          Chance: 90000
+      - Enchant: Spell_Jewel_3
+        Price: 45000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 100
+        - Material: Chaotic_Essence
+          Amount: 120
+        - Material: Time_D_Ma_Rune
+          Amount: 65
+        - Material: Dimansion_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Spell_Jewel_5
+          Chance: 10000
+        - Item: Spell_Jewel_4
+          Chance: 90000
+      - Enchant: Spell_Jewel_4
+        Price: 50000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 85
+        - Material: Pure_SpellScoll
+          Amount: 30
+        Items:
+        - Item: Spell_Jewel_6
+          Chance: 10000
+        - Item: Spell_Jewel_5
+          Chance: 80000
+        - Item: Spell_Jewel_4
+          Chance: 10000
+      - Enchant: Spell_Jewel_5
+        Price: 55000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 80
+        - Material: Disparate_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 110
+        - Material: Polluted_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Spell_Jewel_7
+          Chance: 10000
+        - Item: Spell_Jewel_6
+          Chance: 80000
+        - Item: Spell_Jewel_5
+          Chance: 10000
+      - Enchant: Spell_Jewel_6
+        Price: 60000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 70
+        - Material: Time_D_Ma_Rune
+          Amount: 20
+        - Material: Polluted_SpellScroll
+          Amount: 10
+        Items:
+        - Item: Spell_Jewel_5
+          Chance: 80000
+        - Item: Spell_Jewel_7
+          Chance: 20000
+      - Enchant: Spell_Jewel_7
+        Price: 65000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 70
+        - Material: Disparate_Essence
+          Amount: 85
+        - Material: Time_D_Ma_Rune
+          Amount: 30
+        - Material: Polluted_SpellScroll
+          Amount: 15
+        Items:
+        - Item: Spell_Jewel_6
+          Chance: 90000
+        - Item: Spell_Jewel_8
+          Chance: 10000
+      - Enchant: Spell_Jewel_8
+        Price: 70000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 90
+        - Material: Disparate_Essence
+          Amount: 110
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Immortal_SpellScroll
+          Amount: 20
+        Items:
+        - Item: Spell_Jewel_7
+          Chance: 93000
+        - Item: Spell_Jewel_9
+          Chance: 7000
+      - Enchant: Spell_Jewel_9
+        Price: 75000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 120
+        - Material: Disparate_Essence
+          Amount: 145
+        - Material: Time_D_Ma_Rune
+          Amount: 80
+        - Material: Immortal_SpellScroll
+          Amount: 25
+        Items:
+        - Item: Spell_Jewel_8
+          Chance: 95000
+        - Item: Spell_Jewel_10
+          Chance: 5000
+      - Enchant: Adamatine_Jewel_1
+        Price: 35000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 40
+        Items:
+        - Item: Adamatine_Jewel_3
+          Chance: 10000
+        - Item: Adamatine_Jewel_2
+          Chance: 90000
+      - Enchant: Adamatine_Jewel_2
+        Price: 40000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 80
+        - Material: Chaotic_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Tiem_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Adamatine_Jewel_4
+          Chance: 10000
+        - Item: Adamatine_Jewel_3
+          Chance: 90000
+      - Enchant: Adamatine_Jewel_3
+        Price: 45000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 100
+        - Material: Chaotic_Essence
+          Amount: 120
+        - Material: Time_D_Ma_Rune
+          Amount: 65
+        - Material: Dimansion_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Adamatine_Jewel_5
+          Chance: 10000
+        - Item: Adamatine_Jewel_4
+          Chance: 90000
+      - Enchant: Adamatine_Jewel_4
+        Price: 50000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 85
+        - Material: Pure_SpellScoll
+          Amount: 30
+        Items:
+        - Item: Adamatine_Jewel_6
+          Chance: 10000
+        - Item: Adamatine_Jewel_5
+          Chance: 80000
+        - Item: Adamatine_Jewel_4
+          Chance: 10000
+      - Enchant: Adamatine_Jewel_5
+        Price: 55000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 80
+        - Material: Disparate_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 110
+        - Material: Polluted_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Adamatine_Jewel_7
+          Chance: 10000
+        - Item: Adamatine_Jewel_6
+          Chance: 80000
+        - Item: Adamatine_Jewel_5
+          Chance: 10000
+      - Enchant: Adamatine_Jewel_6
+        Price: 60000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 70
+        - Material: Time_D_Ma_Rune
+          Amount: 20
+        - Material: Polluted_SpellScroll
+          Amount: 10
+        Items:
+        - Item: Adamatine_Jewel_5
+          Chance: 80000
+        - Item: Adamatine_Jewel_7
+          Chance: 20000
+      - Enchant: Adamatine_Jewel_7
+        Price: 65000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 70
+        - Material: Disparate_Essence
+          Amount: 85
+        - Material: Time_D_Ma_Rune
+          Amount: 30
+        - Material: Polluted_SpellScroll
+          Amount: 15
+        Items:
+        - Item: Adamatine_Jewel_6
+          Chance: 90000
+        - Item: Adamatine_Jewel_8
+          Chance: 10000
+      - Enchant: Adamatine_Jewel_8
+        Price: 70000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 90
+        - Material: Disparate_Essence
+          Amount: 110
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Immortal_SpellScroll
+          Amount: 20
+        Items:
+        - Item: Adamatine_Jewel_7
+          Chance: 93000
+        - Item: Adamatine_Jewel_9
+          Chance: 7000
+      - Enchant: Adamatine_Jewel_9
+        Price: 75000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 120
+        - Material: Disparate_Essence
+          Amount: 145
+        - Material: Time_D_Ma_Rune
+          Amount: 80
+        - Material: Immortal_SpellScroll
+          Amount: 25
+        Items:
+        - Item: Adamatine_Jewel_8
+          Chance: 95000
+        - Item: Adamatine_Jewel_10
+          Chance: 5000
+      - Enchant: Affection_Jewel_1
+        Price: 35000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 40
+        Items:
+        - Item: Affection_Jewel_3
+          Chance: 10000
+        - Item: Affection_Jewel_2
+          Chance: 90000
+      - Enchant: Affection_Jewel_2
+        Price: 40000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 80
+        - Material: Chaotic_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Tiem_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Affection_Jewel_4
+          Chance: 10000
+        - Item: Affection_Jewel_3
+          Chance: 90000
+      - Enchant: Affection_Jewel_3
+        Price: 45000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 100
+        - Material: Chaotic_Essence
+          Amount: 120
+        - Material: Time_D_Ma_Rune
+          Amount: 65
+        - Material: Dimansion_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Affection_Jewel_5
+          Chance: 10000
+        - Item: Affection_Jewel_4
+          Chance: 90000
+      - Enchant: Affection_Jewel_4
+        Price: 50000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 85
+        - Material: Pure_SpellScoll
+          Amount: 30
+        Items:
+        - Item: Affection_Jewel_6
+          Chance: 10000
+        - Item: Affection_Jewel_5
+          Chance: 80000
+        - Item: Affection_Jewel_4
+          Chance: 10000
+      - Enchant: Affection_Jewel_5
+        Price: 55000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 80
+        - Material: Disparate_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 110
+        - Material: Polluted_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Affection_Jewel_7
+          Chance: 10000
+        - Item: Affection_Jewel_6
+          Chance: 80000
+        - Item: Affection_Jewel_5
+          Chance: 10000
+      - Enchant: Affection_Jewel_6
+        Price: 60000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 70
+        - Material: Time_D_Ma_Rune
+          Amount: 20
+        - Material: Polluted_SpellScroll
+          Amount: 10
+        Items:
+        - Item: Affection_Jewel_5
+          Chance: 80000
+        - Item: Affection_Jewel_7
+          Chance: 20000
+      - Enchant: Affection_Jewel_7
+        Price: 65000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 70
+        - Material: Disparate_Essence
+          Amount: 85
+        - Material: Time_D_Ma_Rune
+          Amount: 30
+        - Material: Polluted_SpellScroll
+          Amount: 15
+        Items:
+        - Item: Affection_Jewel_6
+          Chance: 90000
+        - Item: Affection_Jewel_8
+          Chance: 10000
+      - Enchant: Affection_Jewel_8
+        Price: 70000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 90
+        - Material: Disparate_Essence
+          Amount: 110
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Immortal_SpellScroll
+          Amount: 20
+        Items:
+        - Item: Affection_Jewel_7
+          Chance: 93000
+        - Item: Affection_Jewel_9
+          Chance: 7000
+      - Enchant: Affection_Jewel_9
+        Price: 75000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 120
+        - Material: Disparate_Essence
+          Amount: 145
+        - Material: Time_D_Ma_Rune
+          Amount: 80
+        - Material: Immortal_SpellScroll
+          Amount: 25
+        Items:
+        - Item: Affection_Jewel_8
+          Chance: 95000
+        - Item: Affection_Jewel_10
+          Chance: 5000
+      - Enchant: Fierce_A_Jewel_1
+        Price: 35000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 40
+        Items:
+        - Item: Fierce_A_Jewel_3
+          Chance: 10000
+        - Item: Fierce_A_Jewel_2
+          Chance: 90000
+      - Enchant: Fierce_A_Jewel_2
+        Price: 40000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 80
+        - Material: Chaotic_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Tiem_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Fierce_A_Jewel_4
+          Chance: 10000
+        - Item: Fierce_A_Jewel_3
+          Chance: 90000
+      - Enchant: Fierce_A_Jewel_3
+        Price: 45000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 100
+        - Material: Chaotic_Essence
+          Amount: 120
+        - Material: Time_D_Ma_Rune
+          Amount: 65
+        - Material: Dimansion_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Fierce_A_Jewel_5
+          Chance: 10000
+        - Item: Fierce_A_Jewel_4
+          Chance: 90000
+      - Enchant: Fierce_A_Jewel_4
+        Price: 50000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 85
+        - Material: Pure_SpellScoll
+          Amount: 30
+        Items:
+        - Item: Fierce_A_Jewel_6
+          Chance: 10000
+        - Item: Fierce_A_Jewel_5
+          Chance: 80000
+        - Item: Fierce_A_Jewel_4
+          Chance: 10000
+      - Enchant: Fierce_A_Jewel_5
+        Price: 55000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 80
+        - Material: Disparate_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 110
+        - Material: Polluted_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Fierce_A_Jewel_7
+          Chance: 10000
+        - Item: Fierce_A_Jewel_6
+          Chance: 80000
+        - Item: Fierce_A_Jewel_5
+          Chance: 10000
+      - Enchant: Fierce_A_Jewel_6
+        Price: 60000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 70
+        - Material: Time_D_Ma_Rune
+          Amount: 20
+        - Material: Polluted_SpellScroll
+          Amount: 10
+        Items:
+        - Item: Fierce_A_Jewel_5
+          Chance: 80000
+        - Item: Fierce_A_Jewel_7
+          Chance: 20000
+      - Enchant: Fierce_A_Jewel_7
+        Price: 65000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 70
+        - Material: Disparate_Essence
+          Amount: 85
+        - Material: Time_D_Ma_Rune
+          Amount: 30
+        - Material: Polluted_SpellScroll
+          Amount: 15
+        Items:
+        - Item: Fierce_A_Jewel_6
+          Chance: 90000
+        - Item: Fierce_A_Jewel_8
+          Chance: 10000
+      - Enchant: Fierce_A_Jewel_8
+        Price: 70000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 90
+        - Material: Disparate_Essence
+          Amount: 110
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Immortal_SpellScroll
+          Amount: 20
+        Items:
+        - Item: Fierce_A_Jewel_7
+          Chance: 93000
+        - Item: Fierce_A_Jewel_9
+          Chance: 7000
+      - Enchant: Fierce_A_Jewel_9
+        Price: 75000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 120
+        - Material: Disparate_Essence
+          Amount: 145
+        - Material: Time_D_Ma_Rune
+          Amount: 80
+        - Material: Immortal_SpellScroll
+          Amount: 25
+        Items:
+        - Item: Fierce_A_Jewel_8
+          Chance: 95000
+        - Item: Fierce_A_Jewel_10
+          Chance: 5000
+      - Enchant: Great_C_Jewel_1
+        Price: 35000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 60
+        - Material: Chaotic_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 40
+        Items:
+        - Item: Great_C_Jewel_3
+          Chance: 10000
+        - Item: Great_C_Jewel_2
+          Chance: 90000
+      - Enchant: Great_C_Jewel_2
+        Price: 40000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 80
+        - Material: Chaotic_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Tiem_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Great_C_Jewel_4
+          Chance: 10000
+        - Item: Great_C_Jewel_3
+          Chance: 90000
+      - Enchant: Great_C_Jewel_3
+        Price: 45000000
+        Materials:
+        - Material: Chaotic_Rune
+          Amount: 100
+        - Material: Chaotic_Essence
+          Amount: 120
+        - Material: Time_D_Ma_Rune
+          Amount: 65
+        - Material: Dimansion_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Great_C_Jewel_5
+          Chance: 10000
+        - Item: Great_C_Jewel_4
+          Chance: 90000
+      - Enchant: Great_C_Jewel_4
+        Price: 50000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 80
+        - Material: Time_D_Ma_Rune
+          Amount: 85
+        - Material: Pure_SpellScoll
+          Amount: 30
+        Items:
+        - Item: Great_C_Jewel_6
+          Chance: 10000
+        - Item: Great_C_Jewel_5
+          Chance: 80000
+        - Item: Great_C_Jewel_4
+          Chance: 10000
+      - Enchant: Great_C_Jewel_5
+        Price: 55000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 80
+        - Material: Disparate_Essence
+          Amount: 100
+        - Material: Time_D_Ma_Rune
+          Amount: 110
+        - Material: Polluted_SpellScroll
+          Amount: 30
+        Items:
+        - Item: Great_C_Jewel_7
+          Chance: 10000
+        - Item: Great_C_Jewel_6
+          Chance: 80000
+        - Item: Great_C_Jewel_5
+          Chance: 10000
+      - Enchant: Great_C_Jewel_6
+        Price: 60000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 60
+        - Material: Disparate_Essence
+          Amount: 70
+        - Material: Time_D_Ma_Rune
+          Amount: 20
+        - Material: Polluted_SpellScroll
+          Amount: 10
+        Items:
+        - Item: Great_C_Jewel_5
+          Chance: 80000
+        - Item: Great_C_Jewel_7
+          Chance: 20000
+      - Enchant: Great_C_Jewel_7
+        Price: 65000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 70
+        - Material: Disparate_Essence
+          Amount: 85
+        - Material: Time_D_Ma_Rune
+          Amount: 30
+        - Material: Polluted_SpellScroll
+          Amount: 15
+        Items:
+        - Item: Great_C_Jewel_6
+          Chance: 90000
+        - Item: Great_C_Jewel_8
+          Chance: 10000
+      - Enchant: Great_C_Jewel_8
+        Price: 70000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 90
+        - Material: Disparate_Essence
+          Amount: 110
+        - Material: Time_D_Ma_Rune
+          Amount: 50
+        - Material: Immortal_SpellScroll
+          Amount: 20
+        Items:
+        - Item: Great_C_Jewel_7
+          Chance: 93000
+        - Item: Great_C_Jewel_9
+          Chance: 7000
+      - Enchant: Great_C_Jewel_9
+        Price: 75000000
+        Materials:
+        - Material: Disparate_Rune
+          Amount: 120
+        - Material: Disparate_Essence
+          Amount: 145
+        - Material: Time_D_Ma_Rune
+          Amount: 80
+        - Material: Immortal_SpellScroll
+          Amount: 25
+        Items:
+        - Item: Great_C_Jewel_8
+          Chance: 95000
+        - Item: Great_C_Jewel_10
+          Chance: 5000
+      Upgrades:
+      - Enchant: Mettle_Jewel_6
+        Upgrade: Mettle_Jewel_7
+        Price: 200000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 80
+        - Material: Frontier_Stone_BK
+          Amount: 80
+        - Material: Dimension_Essence_GR
+          Amount: 20
+        - Material: Dimension_Essence_BK
+          Amount: 20
+        - Material: Immortal_SpellScroll
+          Amount: 120
+      - Enchant: Mettle_Jewel_7
+        Upgrade: Mettle_Jewel_8
+        Price: 300000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_GR
+          Amount: 40
+        - Material: Dimension_Essence_BK
+          Amount: 40
+        - Material: Immortal_SpellScroll
+          Amount: 150
+      - Enchant: Tenacity_Jewel_6
+        Upgrade: Tenacity_Jewel_7
+        Price: 200000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 80
+        - Material: Frontier_Stone_BK
+          Amount: 80
+        - Material: Dimension_Essence_GR
+          Amount: 20
+        - Material: Dimension_Essence_BK
+          Amount: 20
+        - Material: Immortal_SpellScroll
+          Amount: 120
+      - Enchant: Tenacity_Jewel_7
+        Upgrade: Tenacity_Jewel_8
+        Price: 300000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_GR
+          Amount: 40
+        - Material: Dimension_Essence_BK
+          Amount: 40
+        - Material: Immortal_SpellScroll
+          Amount: 150
+      - Enchant: Master_A_Jewel_6
+        Upgrade: Master_A_Jewel_7
+        Price: 200000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 80
+        - Material: Frontier_Stone_BK
+          Amount: 80
+        - Material: Dimension_Essence_GR
+          Amount: 20
+        - Material: Dimension_Essence_BK
+          Amount: 20
+        - Material: Immortal_SpellScroll
+          Amount: 120
+      - Enchant: Master_A_Jewel_7
+        Upgrade: Master_A_Jewel_8
+        Price: 300000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_GR
+          Amount: 40
+        - Material: Dimension_Essence_BK
+          Amount: 40
+        - Material: Immortal_SpellScroll
+          Amount: 150
+      - Enchant: Acute_Jewel_6
+        Upgrade: Acute_Jewel_7
+        Price: 200000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 80
+        - Material: Frontier_Stone_BK
+          Amount: 80
+        - Material: Dimension_Essence_GR
+          Amount: 20
+        - Material: Dimension_Essence_BK
+          Amount: 20
+        - Material: Immortal_SpellScroll
+          Amount: 120
+      - Enchant: Acute_Jewel_7
+        Upgrade: Acute_Jewel_8
+        Price: 300000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_GR
+          Amount: 40
+        - Material: Dimension_Essence_BK
+          Amount: 40
+        - Material: Immortal_SpellScroll
+          Amount: 150
+      - Enchant: Magic_E_Jewel_6
+        Upgrade: Magic_E_Jewel_7
+        Price: 200000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 80
+        - Material: Frontier_Stone_BK
+          Amount: 80
+        - Material: Dimension_Essence_GR
+          Amount: 20
+        - Material: Dimension_Essence_BK
+          Amount: 20
+        - Material: Immortal_SpellScroll
+          Amount: 120
+      - Enchant: Magic_E_Jewel_7
+        Upgrade: Magic_E_Jewel_8
+        Price: 300000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_GR
+          Amount: 40
+        - Material: Dimension_Essence_BK
+          Amount: 40
+        - Material: Immortal_SpellScroll
+          Amount: 150
+      - Enchant: Spell_Jewel_6
+        Upgrade: Spell_Jewel_7
+        Price: 200000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 80
+        - Material: Frontier_Stone_BK
+          Amount: 80
+        - Material: Dimension_Essence_GR
+          Amount: 20
+        - Material: Dimension_Essence_BK
+          Amount: 20
+        - Material: Immortal_SpellScroll
+          Amount: 120
+      - Enchant: Spell_Jewel_7
+        Upgrade: Spell_Jewel_8
+        Price: 300000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_GR
+          Amount: 40
+        - Material: Dimension_Essence_BK
+          Amount: 40
+        - Material: Immortal_SpellScroll
+          Amount: 150
+      - Enchant: Adamatine_Jewel_6
+        Upgrade: Adamatine_Jewel_7
+        Price: 200000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 80
+        - Material: Frontier_Stone_BK
+          Amount: 80
+        - Material: Dimension_Essence_GR
+          Amount: 20
+        - Material: Dimension_Essence_BK
+          Amount: 20
+        - Material: Immortal_SpellScroll
+          Amount: 120
+      - Enchant: Adamatine_Jewel_7
+        Upgrade: Adamatine_Jewel_8
+        Price: 300000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_GR
+          Amount: 40
+        - Material: Dimension_Essence_BK
+          Amount: 40
+        - Material: Immortal_SpellScroll
+          Amount: 150
+      - Enchant: Affection_Jewel_6
+        Upgrade: Affection_Jewel_7
+        Price: 200000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 80
+        - Material: Frontier_Stone_BK
+          Amount: 80
+        - Material: Dimension_Essence_GR
+          Amount: 20
+        - Material: Dimension_Essence_BK
+          Amount: 20
+        - Material: Immortal_SpellScroll
+          Amount: 120
+      - Enchant: Affection_Jewel_7
+        Upgrade: Affection_Jewel_8
+        Price: 300000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_GR
+          Amount: 40
+        - Material: Dimension_Essence_BK
+          Amount: 40
+        - Material: Immortal_SpellScroll
+          Amount: 150
+      - Enchant: Fierce_A_Jewel_6
+        Upgrade: Fierce_A_Jewel_7
+        Price: 200000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 80
+        - Material: Frontier_Stone_BK
+          Amount: 80
+        - Material: Dimension_Essence_GR
+          Amount: 20
+        - Material: Dimension_Essence_BK
+          Amount: 20
+        - Material: Immortal_SpellScroll
+          Amount: 120
+      - Enchant: Fierce_A_Jewel_7
+        Upgrade: Fierce_A_Jewel_8
+        Price: 300000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_GR
+          Amount: 40
+        - Material: Dimension_Essence_BK
+          Amount: 40
+        - Material: Immortal_SpellScroll
+          Amount: 150
+      - Enchant: Great_C_Jewel_6
+        Upgrade: Great_C_Jewel_7
+        Price: 200000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 80
+        - Material: Frontier_Stone_BK
+          Amount: 80
+        - Material: Dimension_Essence_GR
+          Amount: 20
+        - Material: Dimension_Essence_BK
+          Amount: 20
+        - Material: Immortal_SpellScroll
+          Amount: 120
+      - Enchant: Great_C_Jewel_7
+        Upgrade: Great_C_Jewel_8
+        Price: 300000000
+        Materials:
+        - Material: Frontier_Stone_GR
+          Amount: 100
+        - Material: Frontier_Stone_BK
+          Amount: 100
+        - Material: Dimension_Essence_GR
+          Amount: 40
+        - Material: Dimension_Essence_BK
+          Amount: 40
+        - Material: Immortal_SpellScroll
+          Amount: 150

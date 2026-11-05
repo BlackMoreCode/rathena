@@ -433,3 +433,5 @@ wolfvill	mapflag	nowarpto
 // Illusion of Twins
 //============================================================
 ant_d02_i	mapflag	nowarpto
+1@gl_kh	mapflag	nowarpto
+2@gl_kh	mapflag	nowarpto

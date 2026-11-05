@@ -191,3 +191,209 @@ Body:
           NoDamage: true
       HitCount: 1
       Duration1: -1
+    - Id: 775
+      Name: NPC_SEEDTRAP
+      Description: Seed Trap
+      MaxLevel: 5
+      Type: Misc
+      TargetType: Ground
+      Flags:
+        IsNpc: true
+      DamageFlags:
+        IgnoreFlee: true
+        IgnoreDefCard: true
+        Splash: true
+      SplashArea:
+      - Level: 1
+        Area: 3
+      - Level: 2
+        Area: 3
+      - Level: 3
+        Area: 5
+      - Level: 4
+        Area: 7
+      - Level: 5
+        Area: 7
+      Hit: Single
+      Duration1: 1000
+      HitCount: 1
+      Unit:
+        Id: Seedtrap
+        Range: 14
+        Interval: 1000
+        Target: Enemy
+        Flag:
+          PathCheck: true
+    - Id: 785
+      Name: NPC_TARGET_MARKER
+      Description: Target Marker
+      MaxLevel: 7
+      Type: Magic
+      TargetType: Self
+      DamageFlags:
+        NoDamage: true
+        Splash: true
+      Flags:
+        IsNpc: true
+      Hit: Single
+      HitCount: 1
+      Duration1: 30000
+      SplashArea:
+      - Level: 1
+        Area: 3
+      - Level: 2
+        Area: 7
+      - Level: 3
+        Area: 11
+      - Level: 4
+        Area: 15
+      - Level: 5
+        Area: 19
+      - Level: 6
+        Area: 21
+      - Level: 7
+        Area: 27
+      Status: Cope_Target_Marker
+    - Id: 786
+      Name: NPC_AIMED_SHOWER
+      Description: Aimed Shower
+      MaxLevel: 10
+      Type: Weapon
+      TargetType: Self
+      Hit: Multi_Hit
+      HitCount: 5
+      Element: Poison
+      DamageFlags:
+        Splash: true
+      Flags:
+        IsNpc: true
+      SplashArea: 27
+    - Id: 787
+      Name: NPC_BLAZING_ERUPTION
+      Description: Blazing Eruption
+      MaxLevel: 10
+      Type: Weapon
+      TargetType: Self
+      Hit: Multi_Hit
+      HitCount: 5
+      Element: Fire
+      DamageFlags:
+        Splash: true
+      Flags:
+        IsNpc: true
+      SplashArea: 27
+    - Id: 788
+      Name: NPC_BLOCK_SEAL
+      Description: Block Seal
+      MaxLevel: 10
+      Type: Magic
+      TargetType: Self
+      DamageFlags:
+        NoDamage: true
+        Splash: true
+      Flags:
+        IsNpc: true
+      Hit: Single
+      HitCount: 1
+      SplashArea: 27
+      Duration1: 5000
+      Status: Cope_Block_Seal
+    - Id: 789
+      Name: NPC_BLOCK_EXPLOSION
+      Description: Block Explosion
+      MaxLevel: 10
+      Type: Magic
+      TargetType: Self
+      Hit: Single
+      HitCount: 1
+      DamageFlags:
+        Splash: true
+      Flags:
+        IsNpc: true
+      SplashArea: 27
+    - Id: 790
+      Name: NPC_FROST_FIELD
+      Description: Frost Field
+      MaxLevel: 10
+      Type: Magic
+      TargetType: Self
+      Hit: Single
+      HitCount: 1
+      DamageFlags:
+        NoDamage: true
+        Splash: true
+      Flags:
+        IsNpc: true
+      SplashArea: 27
+      Duration1: 30000
+      Status: Cope_Frost_Storm
+    - Id: 791
+      Name: NPC_LIGHTNING_JUDGEMENT
+      Description: Lightning Judgement
+      MaxLevel: 10
+      Type: Magic
+      TargetType: Self
+      Hit: Single
+      HitCount: 5
+      Element: Wind
+      DamageFlags:
+        Splash: true
+      Flags:
+        IsNpc: true
+      SplashArea: 27
+    - Id: 792
+      Name: NPC_GROGGY_ON
+      Description: Groggy
+      MaxLevel: 10
+      TargetType: Self
+      DamageFlags:
+        NoDamage: true
+      Flags:
+        IsNpc: true
+      HitCount: 1
+      Duration1:
+      - Level: 1
+        Time: 1000
+      - Level: 2
+        Time: 2000
+      - Level: 3
+        Time: 3000
+      - Level: 4
+        Time: 4000
+      - Level: 5
+        Time: 5000
+      - Level: 6
+        Time: 6000
+      - Level: 7
+        Time: 7000
+      - Level: 8
+        Time: 8000
+      - Level: 9
+        Time: 9000
+      - Level: 10
+        Time: 10000
+      Status: Cope_Groggy
+    - Id: 793
+      Name: NPC_RESET_EFST
+      Description: Remove Debuff
+      MaxLevel: 1
+      Type: Magic
+      TargetType: Self
+      DamageFlags:
+        NoDamage: true
+      Flags:
+        IsNpc: true
+      Hit: Single
+      HitCount: 1
+    - Id: 778
+      Name: NPC_STRIP_SHADOW
+      Description: Strip Shadow Equipment
+      MaxLevel: 10
+      TargetType: Attack
+      DamageFlags:
+        NoDamage: true
+      Flags:
+        IsNpc: true
+      Range: 10
+      Duration1: 1000
+      Status: Shadow_Strip

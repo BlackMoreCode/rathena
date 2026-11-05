@@ -404,3 +404,5 @@ que_thr	mapflag	nobranch
 // Cash Mall
 //============================================================
 itemmall	mapflag	nobranch
+1@gl_kh	mapflag	nobranch
+2@gl_kh	mapflag	nobranch

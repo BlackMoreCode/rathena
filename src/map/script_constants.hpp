@@ -1988,6 +1988,10 @@
 	export_constant(SC_SBUNSHIN);
 	export_constant(SC_CONTENTS_34);
 	export_constant(SC_CONTENTS_35);
+	export_constant(SC_COPE_ZEROCELL_LUX);
+	export_constant(SC_COPE_ZEROCELL_VITA);
+	export_constant(EFST_CONTENTS_42);
+	export_constant(EFST_CONTENTS_44);
 	export_constant(SC_MTP_W_POTION_100);
 	export_constant(SC_NOACTION);
 	export_constant(SC_C_BUFF_3);
@@ -11086,6 +11090,13 @@
 	export_constant(GUILDINFO_NEXTEXP);
 	export_constant(GUILDINFO_MASTERID);
 	export_constant(GUILDINFO_MASTERNAME);
+
+	// Scoped Garden of Time extensions.
+	export_constant(SC_COPE_TARGET_MARKER);
+	export_constant(SC_COPE_BLOCK_SEAL);
+	export_constant(SC_COPE_FROST_STORM);
+	export_constant(SC_COPE_GROGGY);
+	export_constant(SC_COPE_WARM_SHIELD);
 
 	#undef export_constant
 	#undef export_constant2

@@ -502,3 +502,8 @@ ant_d02_i	mapflag	nomemo
 // Cash Mall
 //============================================================
 itemmall	mapflag	nomemo
+1@gl_kh	mapflag	nomemo
+2@gl_kh	mapflag	nomemo
+
+
+bl_depth1	mapflag	nomemo
